@@ -112,6 +112,14 @@ curl --version
 
 Dùng Docker Compose plugin v2 có `--wait` (khuyến nghị 2.20+). Nếu thiếu, cài Docker Engine và Compose plugin theo distro VM: [hướng dẫn Docker Engine chính thức](https://docs.docker.com/engine/install/), [Compose plugin](https://docs.docker.com/compose/install/linux/). Nếu lỗi permission socket, xử lý quyền user với Docker trên VM; không dùng `chmod 666 /var/run/docker.sock`. Không cần Python/Node trên VM host vì mọi runtime nằm trong image.
 
+VM hiện tại là Ubuntu 24.04, tài khoản `myserver`. Repository có script cài từ kho APT chính thức của Docker; script dừng nếu gặp runtime/package xung đột và không xóa dữ liệu hoặc tắt firewall:
+
+```sh
+sudo sh scripts/install-docker-ubuntu.sh myserver
+```
+
+Nhập mật khẩu sudo trực tiếp trên terminal VM. Script thêm `myserver` vào group `docker` để quản trị Docker, nên cần mở phiên SSH mới sau khi cài. Không gửi mật khẩu vào chat hoặc cấp `NOPASSWD: ALL` để vượt bước xác thực này.
+
 ### 2. Clone đúng repo và branch
 
 ```sh
