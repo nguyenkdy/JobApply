@@ -35,7 +35,7 @@ Browser/HTTP smoke local ở trên **không** chứng minh Docker, Nginx, Postgr
 - Truy cập từ máy thật tới `http://<VM_IP>:8080`, Bridged/NAT/firewall/port forwarding.
 - Deploy/update script thực thi đầy đủ qua GitHub → VM.
 
-Chưa có remote GitHub, IP/user SSH hoặc quyền vào VM. Chưa push và chưa SSH/deploy. Local branch: `main`. Không tạo repo GitHub hoặc đoán URL.
+Repository GitHub được người dùng cung cấp sau bước kiểm thử: `https://github.com/nguyenkdy/JobApply.git`; branch triển khai `main`. Chưa có IP/user SSH hoặc quyền vào VM, chưa SSH/deploy. Việc đưa code lên GitHub không thay thế nghiệm thu trên VM.
 
 ## Lệnh nghiệm thu trên VM
 

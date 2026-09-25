@@ -6,7 +6,7 @@
 
 ## Khởi động nhanh
 
-Cần Git, Docker Engine đang chạy, Docker Compose plugin v2.20+ và curl **trên VM Linux**; khoảng 3 GB RAM trống. VM host không cần cài Python/Node. Clone `<GITHUB_REPO_URL>` và checkout branch triển khai (local hiện là `main`) theo [tài liệu VM](docs/deploy-vm.md).
+Cần Git, Docker Engine đang chạy, Docker Compose plugin v2.20+ và curl **trên VM Linux**; khoảng 3 GB RAM trống. VM host không cần cài Python/Node. Clone `https://github.com/nguyenkdy/JobApply.git` và checkout branch `main` theo [tài liệu VM](docs/deploy-vm.md).
 
 Chuẩn bị `.env` **một lần trên VM**, không tạo/commit secrets trên máy VS Code:
 

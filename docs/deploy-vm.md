@@ -6,8 +6,8 @@ Luồng cập nhật: VS Code → commit/push GitHub → SSH VM → kiểm tra w
 
 ## Thông tin cần có
 
-- `<GITHUB_REPO_URL>`: URL repository GitHub do bạn chọn, không tự tạo/đoán repo.
-- `<DEPLOY_BRANCH>`: branch triển khai; mã nguồn local được chuẩn bị trên `main`. Dùng `main` nếu repo đích cũng sử dụng branch này.
+- Repository GitHub đã được người dùng xác định: `https://github.com/nguyenkdy/JobApply.git`.
+- Branch triển khai: `main`.
 - `<VM_IP>`, `<VM_USER>`: IP và user Linux thực tế. Chưa có các thông tin này hoặc quyền SSH thì chưa thể triển khai/xác nhận kết quả trên VM.
 - `<HOST_IP>` hoặc `<TRUSTED_SUBNET>`: địa chỉ máy thật/mạng tin cậy được phép truy cập web.
 
@@ -72,7 +72,7 @@ git remote -v
 Nếu chưa có remote:
 
 ```sh
-git remote add origin <GITHUB_REPO_URL>
+git remote add origin https://github.com/nguyenkdy/JobApply.git
 git remote -v
 ```
 
@@ -115,13 +115,13 @@ Dùng Docker Compose plugin v2 có `--wait` (khuyến nghị 2.20+). Nếu thi�
 ### 2. Clone đúng repo và branch
 
 ```sh
-git clone --branch <DEPLOY_BRANCH> <GITHUB_REPO_URL> JobApply
+git clone --branch main https://github.com/nguyenkdy/JobApply.git JobApply
 cd JobApply
 git status --short --branch
 git remote -v
 ```
 
-Thông thường thay `<DEPLOY_BRANCH>` bằng `main`. Không clone đè lên thư mục có dữ liệu.
+Branch triển khai là `main`. Không clone đè lên thư mục có dữ liệu.
 
 ### 3. Tạo cấu hình riêng trên VM
 
@@ -214,7 +214,7 @@ Script kiểm tra working tree/upstream, chạy `git pull --ff-only`, build trư
 Lệnh thủ công tương đương sau khi working tree sạch và đúng branch/remote:
 
 ```sh
-git pull --ff-only origin <DEPLOY_BRANCH>
+git pull --ff-only origin main
 docker compose config --quiet
 docker compose build account job application frontend
 docker compose stop frontend application job account
