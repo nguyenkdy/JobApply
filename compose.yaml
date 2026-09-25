@@ -1,0 +1,114 @@
+name: jobapply
+x-health: &api-health
+  test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+  interval: 10s
+  timeout: 5s
+  retries: 10
+  start_period: 20s
+x-environment: &api-environment
+  JWT_SECRET: ${JWT_SECRET:?Prepare .env as described in README}
+  TOKEN_MINUTES: ${TOKEN_MINUTES:-120}
+  ACCOUNT_SERVICE_URL: http://account:8000
+  JOB_SERVICE_URL: http://job:8000
+  APPLICATION_SERVICE_URL: http://application:8000
+services:
+  postgres:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      ACCOUNT_DB_PASSWORD: ${ACCOUNT_DB_PASSWORD:?Set ACCOUNT_DB_PASSWORD}
+      JOB_DB_PASSWORD: ${JOB_DB_PASSWORD:?Set JOB_DB_PASSWORD}
+      APPLICATION_DB_PASSWORD: ${APPLICATION_DB_PASSWORD:?Set APPLICATION_DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/init-databases.sh:/docker-entrypoint-initdb.d/10-databases.sh:ro
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  account:
+    build:
+      context: .
+      dockerfile: services/account/Dockerfile
+    environment:
+      <<: *api-environment
+      ACCOUNT_DATABASE_URL: postgresql+psycopg://account_user:${ACCOUNT_DB_PASSWORD}@postgres:5432/account_db
+      API_ROOT_PATH: /api/account
+      CV_STORAGE_PATH: /data/cvs
+    volumes:
+      - cv_data:/data/cvs
+    depends_on:
+      postgres: {condition: service_healthy}
+    healthcheck: *api-health
+    restart: unless-stopped
+  job:
+    build:
+      context: .
+      dockerfile: services/job/Dockerfile
+    environment:
+      <<: *api-environment
+      JOB_DATABASE_URL: postgresql+psycopg://job_user:${JOB_DB_PASSWORD}@postgres:5432/job_db
+      API_ROOT_PATH: /api/job
+    depends_on:
+      postgres: {condition: service_healthy}
+    healthcheck: *api-health
+    restart: unless-stopped
+  application:
+    build:
+      context: .
+      dockerfile: services/application/Dockerfile
+    environment:
+      <<: *api-environment
+      APPLICATION_DATABASE_URL: postgresql+psycopg://application_user:${APPLICATION_DB_PASSWORD}@postgres:5432/application_db
+      API_ROOT_PATH: /api/application
+    depends_on:
+      postgres: {condition: service_healthy}
+      account: {condition: service_healthy}
+      job: {condition: service_healthy}
+    healthcheck: *api-health
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    ports:
+      - "${APP_BIND_ADDRESS:-0.0.0.0}:${APP_PORT:-8080}:80"
+    depends_on:
+      account: {condition: service_healthy}
+      job: {condition: service_healthy}
+      application: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1/health]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+  seed:
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: services/account/Dockerfile
+    environment:
+      ACCOUNT_SERVICE_URL: http://account:8000
+      JOB_SERVICE_URL: http://job:8000
+      APPLICATION_SERVICE_URL: http://application:8000
+    command: [python, scripts/seed.py]
+    depends_on:
+      account: {condition: service_healthy}
+      job: {condition: service_healthy}
+      application: {condition: service_healthy}
+    restart: "no"
+  tests:
+    profiles: [test]
+    build:
+      context: .
+      dockerfile: tests/Dockerfile
+    environment:
+      TEST_DATABASE_URL: postgresql+psycopg://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
+    depends_on:
+      postgres: {condition: service_healthy}
+volumes:
+  postgres_data:
+  cv_data:

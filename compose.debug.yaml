@@ -1,0 +1,5 @@
+# Optional PostgreSQL access from the host; still bound exclusively to loopback.
+services:
+  postgres:
+    ports:
+      - "127.0.0.1:5432:5432"
