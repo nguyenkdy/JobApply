@@ -29,7 +29,7 @@ test('recruiter publishes, candidate applies, recruiter reviews, candidate sees 
   await recruiter.getByRole('button', {
     name: 'Tạo công ty'
   }).click();
-  await expect(recruiter.getByRole('status')).toContainText('Đã lưu hồ sơ công ty');
+  await expect(recruiter.getByRole('status').filter({ hasText: 'Đã lưu hồ sơ công ty' })).toBeVisible();
   await recruiter.goto('/recruiter/jobs/new');
   await recruiter.getByLabel('Tên vị trí').fill(`Python E2E ${suffix}`);
   await recruiter.getByLabel('Địa điểm', {
@@ -57,7 +57,7 @@ test('recruiter publishes, candidate applies, recruiter reviews, candidate sees 
   await candidate.getByRole('button', {
     name: 'Lưu hồ sơ'
   }).click();
-  await expect(candidate.getByRole('status')).toContainText('Đã lưu hồ sơ cá nhân');
+  await expect(candidate.getByRole('status').filter({ hasText: 'Đã lưu hồ sơ cá nhân' })).toBeVisible();
   await candidate.getByLabel('Tên phiên bản').fill('CV browser demo');
   // Real valid one-page PDF built with byte offsets (no application API mocks).
   let pdf = '%PDF-1.4\n';
@@ -120,6 +120,10 @@ test('recruiter publishes, candidate applies, recruiter reviews, candidate sees 
   await candidate.goto(applicationUrl);
   await expect(candidate.locator('.badge.Reviewing')).toBeVisible();
   await expect(candidate.getByText('Đã nộp → Đang xét')).toBeVisible();
+  // Keep test records for diagnosis without leaving a test vacancy in public search.
+  await recruiter.goto('/recruiter');
+  await recruiter.getByRole('button', { name: 'Đóng tin', exact: true }).click();
+  await expect(recruiter.locator('.badge.Closed')).toBeVisible();
   await recruiterContext.close();
   await candidateContext.close();
 });
@@ -132,6 +136,7 @@ test('search page is responsive, filters work, empty results are explicit', asyn
   await expect(page.getByRole('heading', {
     name: 'Việc làm dành cho bạn.'
   })).toBeVisible();
+  await expect(page.locator('.results .loading')).toHaveCount(0);
   await page.screenshot({
     path: 'test-results/home-desktop.png',
     fullPage: true
@@ -159,9 +164,12 @@ test('search page is responsive, filters work, empty results are explicit', asyn
     name: 'Đặt lại',
     exact: true
   }).click();
+  await expect(page).toHaveURL(/\/$/);
+  // Router navigation commits asynchronously; wait for checked state after the click.
   await page.getByLabel('Từ xa', {
     exact: true
-  }).check();
+  }).click();
   await expect(page).toHaveURL(/work_mode=Remote/);
+  await expect(page.getByLabel('Từ xa', { exact: true })).toBeChecked();
   expect(errors).toEqual([]);
 });

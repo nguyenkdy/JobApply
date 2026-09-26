@@ -1,6 +1,6 @@
 # Biên bản kiểm tra JobApply
 
-Ngày kiểm tra: 25/09/2026. Máy phát triển Windows; Python 3.14.3; Node.js portable 22.16.0 trong `.tools/`; Chrome có sẵn. `.tools/`, `.venv/`, file CV/database smoke và kết quả browser được Git ignore.
+Kiểm tra local ngày 25/09/2026; cập nhật kết quả VM ngày 26/09/2026. Máy phát triển Windows; Python 3.14.3; Node.js portable 22.16.0 trong `.tools/`; Chrome có sẵn. `.tools/`, `.venv/`, file CV/database smoke và kết quả browser được Git ignore.
 
 ## Đã chạy trên máy VS Code
 
@@ -21,21 +21,29 @@ Ngày kiểm tra: 25/09/2026. Máy phát triển Windows; Python 3.14.3; Node.js
 
 Backend có 1 cảnh báo deprecation từ Starlette về adapter httpx của TestClient; không có test fail. TestClient hiện dùng adapter httpx phù hợp với test transport. Không thay đổi runtime HTTP production vì cảnh báo của test tooling.
 
-Trước khi thống nhất mô hình VM, bản Compose ban đầu đã qua kiểm tra `config --quiet` bằng CLI portable. **Bản cấu hình VM cuối chỉ được kiểm tra tĩnh/YAML trên máy này; không chạy Docker Compose thêm sau yêu cầu tách môi trường.** Cần chạy `docker compose config --quiet` trên VM với `.env` thật.
+Các lệnh Docker trong đợt nghiệm thu bên dưới chỉ chạy trên VM. Máy VS Code chạy Git và các kiểm thử có runtime phù hợp; Chrome trên máy thật truy cập IP VM.
 
-Browser/HTTP smoke local ở trên **không** chứng minh Docker, Nginx, PostgreSQL, network VMware, firewall hoặc volume persistence đã hoạt động. Giao diện được kiểm tra qua Vite; PostgreSQL DDL chỉ compile offline, không kết nối PostgreSQL.
+Kết quả local ở bảng trên dùng Vite/SQLite; kết quả VM bên dưới dùng Nginx, các container Python và PostgreSQL thật. Hai phạm vi được ghi riêng.
 
-## Chưa chạy — cần VM Linux
+## Đã chạy trên VM Linux — 26/09/2026
 
-- Build các Docker image Linux; `docker compose config --quiet` với cấu hình thực tế.
-- Khởi tạo 3 database/user PostgreSQL và migration trên PostgreSQL thật.
-- Healthcheck, Nginx `/api` routing, Swagger sau reverse proxy, kết nối service qua Docker DNS.
-- Bộ pytest PostgreSQL, bao gồm unique constraint/request đồng thời và transaction lịch sử.
-- HTTP workflow qua Nginx/container/PostgreSQL; persistence database/CV qua recreate/restart.
-- Truy cập từ máy thật tới `http://<VM_IP>:8080`, Bridged/NAT/firewall/port forwarding.
-- Deploy/update script thực thi đầy đủ qua GitHub → VM.
+VM Ubuntu 24.04, Docker Engine 29.8.1, Docker Compose 5.5.1. Repository `nguyenkdy/JobApply`, branch `main`; mã ứng dụng triển khai từ commit `587602a` (các commit sau cập nhật test/biên bản không thay đổi mã chạy).
 
-Repository GitHub được người dùng cung cấp sau bước kiểm thử: `https://github.com/nguyenkdy/JobApply.git`; branch triển khai `main`. Chưa có IP/user SSH hoặc quyền vào VM, chưa SSH/deploy. Việc đưa code lên GitHub không thay thế nghiệm thu trên VM.
+| Kiểm tra | Kết quả |
+|---|---|
+| Build 4 image ứng dụng Linux, `deploy-vm.sh first` | **Pass**; PostgreSQL được khởi động trước, 3 migration hoàn tất rồi khởi động API/gateway |
+| `docker compose config --quiet` với `.env` riêng VM | **Pass**; secrets không được in hoặc commit |
+| Sau khi người dùng tắt/bật lại VM | Cả **5 container tự khởi động và healthy**, PostgreSQL/CV vẫn dùng named volumes hiện có |
+| `scripts/smoke-vm.sh http://192.168.123.136:8080` | **Pass** toàn bộ endpoint, bao gồm kiểm tra anonymous bị trả 401 |
+| HTTP từ máy thật tới IP VM | Trang React, gateway và health của cả ba API đều trả **200** |
+| Seed riêng trên VM | **Pass**; 8 tin Published thuộc 3 công ty; hai tài khoản demo Candidate/Recruiter đều đăng nhập 200 |
+| `docker compose exec -T account python scripts/smoke-workflow.py --base-url http://frontend` | **PASS**, luồng nghiệp vụ HTTP thật qua Nginx/Docker DNS/PostgreSQL, bao gồm tải CV và nộp trùng |
+| `docker compose --profile test run --build --rm tests` | **26 passed**, 1 cảnh báo deprecation TestClient; database test độc lập được teardown, không reset database ứng dụng |
+| Chrome từ máy thật, `E2E_BASE_URL=http://192.168.123.136:8080` | **2 passed** sau khi sửa test chờ đúng thông báo/loading và trạng thái radio sau điều hướng bất đồng bộ |
+
+Test browser tạo tài khoản/công ty giả; job của ca thành công được đóng sau kiểm tra để không xuất hiện trong tìm kiếm công khai. Workflow smoke cũng rút application và đóng job test, giữ lịch sử để chẩn đoán. Không xóa CV/database hoặc reset volume trong quá trình kiểm tra.
+
+Chưa kiểm chứng riêng: hiển thị Swagger UI sau proxy; giữ nguyên nội dung CV/application qua một lần recreate sau khi nộp (CV demo được thêm sau lần reboot nói trên); quy trình update có migration schema mới; giới hạn truy cập từ các máy ngoài mạng tin cậy. Kết nối từ máy thật tới VM đã hoạt động, nhưng không suy ra toàn bộ chính sách firewall/NAT đã được kiểm toán.
 
 ## Lệnh nghiệm thu trên VM
 
