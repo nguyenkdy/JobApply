@@ -1,0 +1,5 @@
+Backend Developer Python/Django, 2 năm kinh nghiệm phát triển ứng dụng web.
+Python, Django, Django REST Framework, PostgreSQL, SQL, Redis, Git, Docker, pytest.
+Xây dựng REST API cho hệ thống quản lý đơn hàng. Thiết kế cơ sở dữ liệu PostgreSQL, tối ưu truy vấn SQL, xử lý xác thực và phân quyền. Viết unit test bằng pytest, sửa lỗi và review code trong nhóm Agile. Đóng gói ứng dụng bằng Docker và sử dụng Git để quản lý mã nguồn.
+Dự án giả lập: API quản lý sản phẩm và đơn hàng bằng Django, PostgreSQL; cache bằng Redis; kiểm thử API tự động.
+Đọc hiểu tài liệu kỹ thuật và giao tiếp công việc bằng tiếng Anh.

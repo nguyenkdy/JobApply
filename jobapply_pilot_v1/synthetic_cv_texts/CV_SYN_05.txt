@@ -1,0 +1,5 @@
+DevOps Engineer, 2 năm kinh nghiệm vận hành ứng dụng trên Linux và AWS.
+Linux, Bash, Python, Docker, Kubernetes, AWS, Terraform, Jenkins, Git, Prometheus, Grafana, CI/CD, DNS, networking.
+Xây dựng pipeline Jenkins để kiểm thử và triển khai ứng dụng Docker lên Kubernetes. Cấp phát hạ tầng AWS bằng Terraform. Giám sát hệ thống với Prometheus và Grafana; xử lý sự cố mạng, DNS và container. Viết Bash và Python để tự động hóa tác vụ vận hành.
+Dự án giả lập: triển khai ứng dụng microservices với CI/CD, giám sát CPU, RAM, lỗi và cảnh báo. Chưa có chứng chỉ cloud chuyên sâu.
+Giao tiếp công việc và đọc tài liệu bằng tiếng Anh.

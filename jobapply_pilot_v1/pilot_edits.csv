@@ -1,0 +1,32 @@
+﻿job_id,field,action,reason,before,after
+job_8a31539554089ba6c499,requirements_text,remove_line,birth_year_preference,- Ưu tiên các ứng viên trẻ từ 2000,
+job_0465350c72bbd5ec060b,preferred_requirements_text,remove_line,redundant_source_tags,"Skills Tags: Python, Django, DB",
+job_23ea3536dd60e343f94d,tasks_text,remove_line,company_marketing,"Development is the largest discipline at Endava. Our developers design, build, and release software products in multiple programming languages, frameworks, and libraries. Always collaborating with cross-functional project teams, our developers are adaptable problem-solvers with a client-oriented mindset.",
+job_23ea3536dd60e343f94d,tasks_text,remove_metadata,employer_name,"As a Senior Developer (Java) at Endava, you are responsible for implementing and delivering high-quality software products using Agile Scrum methodology. As a part of a global project, you can contribute your technical expertise and experience in order to the project succeed.","As a Senior Developer (Java), you are responsible for implementing and delivering high-quality software products using Agile Scrum methodology. As a part of a global project, you can contribute your technical expertise and experience in order to the project succeed."
+job_9a6c25a9e0775da6a725,title_for_matching,remove_metadata,salary_location_or_company_in_title,Frontend Engineer (Chinese-speaking) - 4K NET,Frontend Engineer (Chinese-speaking)
+job_9a6c25a9e0775da6a725,tasks_text,remove_line,company_marketing,"We are a growing software development company focused on delivering high-performance, user-centric web platforms for clients in the online entertainment industries, particularly across Asia. Our team specializes in developing responsive, scalable frontend solutions tailored for high-traffic environments. As part of our continued growth, we’re looking for an experienced Frontend React Engineer to help us build and optimize next-generation web platforms for our clients.",
+job_9a6c25a9e0775da6a725,preferred_requirements_text,remove_line,logistics_heading,Working hours & Location,
+job_c127b9a9842a80ca1b3d,requirements_text,remove_line,company_brand_value_statement,- Thấu hiểu sứ mệnh và giá trị của Nodo,
+job_7aff0f0a326b3c874236,title_for_matching,remove_metadata,salary_location_or_company_in_title,HN - Junior Frontend Developer (19M),Junior Frontend Developer
+job_01514c7926f6ef9d1a4b,requirements_text,remove_line,non_professional_personal_condition,- Non-smoker.,
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,The Brilliant Career You Love,
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,Are you passionate about innovative software development and eager to sharpen your expertise every day?,
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,Do you dream of being part of a Great Team that creates awesome billion-dollar Software Products for U.S clients?,
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,"Would you love to work in one of the Best Places to Work in Vietnam, a Top 10 ITC Company in Vietnam that invests in people development?",
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,"If your answer is yes, we firmly believe that you will enjoy every single working day at KMS Healthcare.",
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,"This vacancy is an ideal opportunity for beginners who want to start their career on a high note. As one of our Software Engineer Interns, you will have the chance to acquire one of the hottest skills in the industry. You will receive training and work on complex systems using cutting-edge technology-based frameworks. Additionally, you will collaborate with talented developers, following high standard software development practices and CI/CD processes.",
+job_d330c29a32697d0f5a00,tasks_text,remove_line,company_marketing_or_redundant_intro,"As an intern at KMS Healthcare, you will have the opportunity to learn and practice a wide range of skills, including but not limited to:",
+job_d330c29a32697d0f5a00,requirements_text,remove_line,application_instructions,"To help us have a good understanding about your competencies & your dream job to match with future suitable KMSH opportunities, we look forward to receiving your academic transcript & the latest CV mentioning your desired position.",
+job_839395ca374f6bd7c5ec,requirements_text,remove_line,privacy_notice,Any personal data you share with us during the application process will be processed strictly in compliance with applicable data protection laws and our Privacy Notice.,
+job_f8b5f70d8b4ae8757d1c,title_for_matching,remove_metadata,salary_location_or_company_in_title,[iKame Apps] Manual Tester,Manual Tester
+job_db7d95cf020eb5437f89,tasks_text,restore_source_lines,missing_tasks_section,,"Using automated tools to extract data from primary and secondary sources.
+Removing corrupted data and fixing coding errors and related problems.
+Developing and maintaining databases, data systems – reorganizing data in a readable format.
+Performing analysis to assess quality and meaning of data.
+Filter Data by reviewing reports and performance indicators to identify and correct code problems.
+Using statistical tools to identify, analyze, and interpret patterns and trends in complex data sets that could be helpful for the diagnosis and prediction.
+Assigning numerical value to essential business functions so that business performance can be assessed and compared over periods of time.
+Analyzing local, national, and global trends that impact both the organization and the industry.
+Preparing reports for the management stating trends, patterns, and predictions using relevant data.
+Working with programmers, engineers, and management heads to identify process improvement opportunities, propose system modifications, and devise data governance strategies.
+Preparing final analysis reports for the stakeholders to understand the data-analysis steps, enabling them to take important decisions based on various facts and trends."

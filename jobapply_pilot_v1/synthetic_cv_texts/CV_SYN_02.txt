@@ -1,0 +1,5 @@
+Data Analyst, 2 năm kinh nghiệm phân tích dữ liệu kinh doanh và xây dựng báo cáo.
+Python, pandas, SQL, SQL Server, Power BI, DAX, Excel, data visualization, statistics.
+Làm sạch dữ liệu bán hàng bằng Python và pandas. Viết SQL tổng hợp chỉ số doanh thu, phân tích hành vi khách hàng và theo dõi KPI. Xây dựng dashboard Power BI, mô hình dữ liệu và báo cáo định kỳ. Trao đổi với bộ phận kinh doanh để giải thích kết quả phân tích.
+Dự án giả lập: dashboard doanh thu, phân tích tỷ lệ giữ chân khách hàng, tự động hóa cập nhật báo cáo từ SQL Server.
+Đọc hiểu tài liệu và trình bày kết quả công việc bằng tiếng Anh.

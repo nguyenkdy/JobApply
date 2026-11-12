@@ -1,0 +1,5 @@
+Junior Frontend Developer, 1 năm kinh nghiệm phát triển giao diện web với React.
+React, JavaScript, TypeScript, HTML5, CSS3, Redux, Git, REST API, Jest, responsive design.
+Xây dựng giao diện quản lý bán hàng bằng React và TypeScript. Tạo component tái sử dụng, quản lý state bằng Redux, tích hợp REST API. Viết kiểm thử component, sửa lỗi giao diện trên các trình duyệt và tối ưu bố cục responsive. Phối hợp với designer và backend developer.
+Dự án giả lập: dashboard quản lý đơn hàng có tìm kiếm, phân trang và biểu đồ; kiểm thử bằng Jest.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh.

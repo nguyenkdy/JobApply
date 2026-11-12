@@ -1,0 +1,17 @@
+{
+  "score_file_sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+  "label_file_sha256": "3964d5a4430ad04279c968e026a7c1dfa53b399f4c1721cc7c86616067a52832",
+  "job_notes_sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+  "cv_notes_sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+  "sklearn_version": "1.9.1",
+  "features": [
+    "bm25_score",
+    "cosine",
+    "coverage",
+    "gap_years_input"
+  ],
+  "pair_count": 300,
+  "pairs_with_measured_gap": 45,
+  "pairs_with_positive_gap": 28,
+  "scope": "Development pilot; AI-proposed labels; held-out CVs, shared JDs."
+}

@@ -1,0 +1,5 @@
+QA Automation Engineer, 2 năm kinh nghiệm kiểm thử ứng dụng web và API.
+Python, Selenium, pytest, Postman, API testing, SQL, Jira, Git, Jenkins, regression testing.
+Phân tích yêu cầu, viết test case, kiểm thử hồi quy và báo lỗi trên Jira. Viết script Python với Selenium để kiểm thử giao diện và dùng pytest kiểm thử REST API. Chuẩn bị dữ liệu test bằng SQL, tích hợp kiểm thử tự động vào Jenkins và phối hợp với developer để tái hiện lỗi.
+Dự án giả lập: bộ kiểm thử tự động đăng nhập, giỏ hàng và thanh toán cho ứng dụng web.
+Đọc tài liệu và trao đổi lỗi bằng tiếng Anh.

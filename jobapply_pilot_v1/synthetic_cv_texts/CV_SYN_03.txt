@@ -1,0 +1,5 @@
+Backend Developer Java, 3 năm kinh nghiệm xây dựng dịch vụ web.
+Java, Spring Boot, Hibernate, JPA, MySQL, SQL, REST API, Kafka, Git, Docker, JUnit, Maven.
+Phát triển microservices quản lý thanh toán bằng Java và Spring Boot. Thiết kế API, tích hợp dịch vụ qua Kafka, tối ưu truy vấn MySQL. Áp dụng OOP, design patterns, viết unit test JUnit và tham gia code review. Làm việc theo Scrum và triển khai qua pipeline CI/CD.
+Dự án giả lập: dịch vụ thanh toán và đối soát, có kiểm thử tự động và tài liệu API bằng Swagger.
+Giao tiếp công việc bằng tiếng Anh.

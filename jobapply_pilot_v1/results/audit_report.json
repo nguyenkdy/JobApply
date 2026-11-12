@@ -1,0 +1,36 @@
+{
+  "scope": "synthetic_perturbation_only_not_fairness_certification",
+  "pairs": 30,
+  "metadata_excluded_invariance_passes": 30,
+  "raw_cv_text_pairs_with_top5_order_change": 9,
+  "raw_cv_text_pairs_with_top1_change": 2,
+  "by_facet": {
+    "gender": {
+      "top5_order_changed": 0,
+      "pairs": 6
+    },
+    "age": {
+      "top5_order_changed": 0,
+      "pairs": 6
+    },
+    "address": {
+      "top5_order_changed": 2,
+      "pairs": 6
+    },
+    "name": {
+      "top5_order_changed": 3,
+      "pairs": 6
+    },
+    "school_name_proxy": {
+      "top5_order_changed": 4,
+      "pairs": 6
+    }
+  },
+  "limitations": [
+    "No PDF parsing or automatic anonymization is implemented.",
+    "Metadata invariance only tests the current field allowlist.",
+    "A zero change on these samples does not imply no discrimination or proxy leakage.",
+    "The school probe changes the institution while holding degree and field constant.",
+    "Do not include personal metadata when constructing cv_text for real use."
+  ]
+}

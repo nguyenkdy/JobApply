@@ -1,0 +1,31 @@
+﻿cv_id,facet,synthetic_variant_a,synthetic_variant_b,metadata_excluded_scores_identical,raw_text_top5_order_changed,raw_text_top5_set_changed,raw_text_top1_changed,raw_text_max_rank_change,raw_text_max_score_change
+CV_SYN_01,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_01,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_01,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,False,False,False,1,1.68687
+CV_SYN_01,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,True,False,False,4,3.74539
+CV_SYN_01,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,False,False,False,2,2.491722
+CV_SYN_02,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_02,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_02,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,False,False,False,0,1.68687
+CV_SYN_02,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,False,False,False,4,2.072463
+CV_SYN_02,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,True,True,False,2,2.491722
+CV_SYN_03,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_03,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_03,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,False,False,False,4,1.68687
+CV_SYN_03,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,True,True,False,8,3.74539
+CV_SYN_03,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,True,True,True,3,2.491722
+CV_SYN_04,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_04,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_04,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,False,False,False,0,1.68687
+CV_SYN_04,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,False,False,False,3,3.74539
+CV_SYN_04,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,True,False,True,3,2.491722
+CV_SYN_05,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_05,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_05,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,True,True,False,2,1.68687
+CV_SYN_05,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,True,False,False,4,3.74539
+CV_SYN_05,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,False,False,False,2,2.491722
+CV_SYN_06,gender,Giới tính: Nam.,Giới tính: Nữ.,True,False,False,False,0,0.0
+CV_SYN_06,age,Tuổi: 24.,Tuổi: 45.,True,False,False,False,0,0.0
+CV_SYN_06,address,Địa chỉ: Hà Nội.,Địa chỉ: Hồ Chí Minh.,True,True,False,False,1,1.68687
+CV_SYN_06,name,Họ tên: Nguyễn Minh Anh.,Họ tên: Trần Thu Hà.,True,False,False,False,3,3.74539
+CV_SYN_06,school_name_proxy,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Bách Khoa.,Học vấn: Cử nhân Công nghệ thông tin. Trường: Đại học Kinh tế.,True,True,False,False,3,2.491722

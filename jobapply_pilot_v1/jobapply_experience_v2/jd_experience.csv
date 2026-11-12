@@ -1,0 +1,55 @@
+﻿job_id,title,scope,threshold_months,strictly_greater,evidence,note
+job_ceeaffbebff7bef2ece4,"Python Backend Developer (Django, FastAPI, MongoDB)",Python backend,24,1,- Trên 2 năm kinh nghiệm ở vị trí backend với ngôn ngữ Python sử dụng thành thạo framework Django (biết sử dụng framework FastAPI là một lợi thế).,
+job_a637579a3cb80dc602d5,"Backend Software Engineer (Python, Django)",Backend,36,0,🔗AT LEAST 3 years of industry experience in a back-end or full-stack engineering role,
+job_8a31539554089ba6c499,Python Developer,Python backend,24,0,- Có ít nhất 2 năm kinh nghiệm & thành thạo ngôn ngữ lập trình Python.,
+job_8a31539554089ba6c499,Python Developer,Python web frameworks,12,0,"- Có ít nhất 1 năm với một trong các framework Python như: FastAPI, Flask, Django...",
+job_82df663e7bcac4e82cab,Python Developer,Python backend,24,0,"- Có từ 2-3 năm kinh nghiệm phát triển backend với Python, ưu tiên sử dụng FastAPI.",
+job_3916eaf809684572fced,Python Developer,Python backend,36,0,- Ít nhất 3 năm kinh nghiệm làm việc với Python.,
+job_0465350c72bbd5ec060b,Python Developer (Middle/Senior),Python backend,36,0,- From 3 years of experience in Python,
+job_f7b563f46736c8a6e2eb,Backend Engineer (Python) - AGI,Software development,36,1,- Over 3 years of experience in software engineering.,
+job_5a5d314b72a31054bdfd,Python Developer,Python web frameworks,24,0,- Từ 2 năm kinh nghiệm trở lên làm Python/Dejango hoặc Python/Odoo,
+job_27615f263663521ccf7b,"Backend (Python, NodeJS)",Backend,36,0,- Có ít nhất 3 năm làm việc thực tế với Backend.,
+job_69337cea70b53eb82ad7,Chuyên viên phát triển phần mềm (Python Developer),Python backend,36,1,- Trên 3 năm kinh nghiệm ở vị trí backend với ngôn ngữ Python;,
+job_25b8501bc87231acf7ca,Java Developer,,,,,No reliable numeric minimum in requirements.
+job_e9135acd611d79bb8a27,Java Developer (Junior),,,,,No reliable numeric minimum in requirements.
+job_8ed77fa54d4c38daf214,Junior/Middle Java Developer (Spring),Software development,24,0,- 2+ years of experience in software development.,
+job_23ea3536dd60e343f94d,Senior Developer (Java),Java backend,72,0,- 6+ years of experience in Java Back-end development.,
+job_f12956a6aa8c97969416,"Senior Backend Developer (C#, Java, Python)",Backend,48,1,"- Có từ hơn 4 năm kinh nghiệm phát triển backend, ưu tiên sử dụng một trong các ngôn ngữ: C#, Java, Python, NodeJS.",
+job_4798f0c89bca9ed3de3f,"Java Kotlin Dev (OOP, SQL, Spring, Git)",Java or Kotlin with Spring Boot,24,0,- 2+ years experience in Java/Kotlin Spring Boot,
+job_27e84f3bd1762409744d,Java Developer,Java backend,36,1,"● Có trên 3 năm kinh nghiệm lập trình bằng ngôn ngữ Java, sử dụng framework Spring Boot.",
+job_d9b809cc4b0227cceccf,Java Developer,Java backend,24,0,"- Từ 02 năm kinh nghiệm về phát triển dịch vụ web với JAVA framework, yêu thích việc lập trình bằng ngôn ngữ JAVA",
+job_e3a8d5803b85370fc038,API Integration Engineer (Java/Python/Golang),,,,,A few years: no numeric minimum.
+job_077f952653dbb6c1aef6,Java Developer,Java backend,48,0,+ Tối thiểu 4 năm kinh nghiệm phát triển dự án phần mềm sử dụng ngôn ngữ lập trình Java;,
+job_9a6c25a9e0775da6a725,Frontend Engineer (Chinese-speaking),React frontend,36,0,3+ years of frontend development experience with a strong focus on React.js and component-based architecture,
+job_a1c36c653c0363ff0bcb,Junior Frontend Developer,Frontend,12,0,"+ Tối thiểu 1 năm kinh nghiệm ở vị trí Frontend Engineer hoặc tương đương, đã tham gia phát triển ứng dụng thực tế sử dụng React/React Native.",
+job_70be2421676f1f47c43b,Senior Frontend Engineer (ReactJs/NextJs),Frontend,48,0,"- 4-8 years of experience in frontend development with strong expertise in ReactJS, NextJS, and modern JavaScript.",
+job_c127b9a9842a80ca1b3d,Senior Frontend Developer,Frontend,48,1,- Hơn 4 năm kinh nghiệm trong vai trò phát triển phần mềm: Lập trình viên Frontend,
+job_7483938767f27d106fa9,"Frontend Engineer (ReactJS, Javascript)",,,,,No reliable numeric minimum in requirements.
+job_7aff0f0a326b3c874236,Junior Frontend Developer,Frontend,24,0,At least 2 years of experience working as a frontend developer.,
+job_4d1c2f665d9e027dabee,Front-End Developer,Frontend,24,0,"- Có 2-3 năm kinh nghiệm phát triển front-end với các framework React, Vue.js, hoặc Angular.",
+job_01514c7926f6ef9d1a4b,"Front End Developer ( Nodejs, Flutter, C/C++, MFC )",Frontend,12,0,- At least 1 year of experience in a similar position.,
+job_2051d8524f018a1dc065,React Js Developer,React frontend,24,0,2 years experience.,
+job_1c6ba1a2de0f5ae33e51,Jr/Sr Software Frontend (Angular/TypeScript/HTML5/CSS3),Angular and SASS,12,0,- Ít nhất 1 năm kinh nghiệm lập trình angular 8+ và trình biên dịch CSS:SASS.,
+job_e7935087f6a26cd8830c,DevOps Engineer (Junior/Middle),DevOps,24,0,"At least 2 years of experience in DevOps roles, especially in international software projects",
+job_d330c29a32697d0f5a00,DevOps Engineer Intern,,,,,"3-6 months refers to internship duration, not prior experience."
+job_d908374d9ee82d0e7a9b,"Senior PHP Fullstack (Mạnh Laravel, DevOps, Aws, Trên 5 Năm Kinh Nghiệm)",PHP development,84,0,"- Có ít nhất 7 năm kinh nghiệm làm các dự án PHP, sử dụng thành thạo một trong các framework PHP (Laravel, WordPress, CakePHP, Zend, CodeIgniter)",
+job_d908374d9ee82d0e7a9b,"Senior PHP Fullstack (Mạnh Laravel, DevOps, Aws, Trên 5 Năm Kinh Nghiệm)",DevOps on AWS,60,0,- Có ít nhất 5 năm kinh nghiệm về DevOps và AWS,
+job_a02336dc9111ddd1d0e9,"Senior DevOps Engineer (Cloud, AWS)",,,,,No reliable numeric minimum in requirements.
+job_c7023e06a2d3aec44def,Cloud Engineer/SRE,,,,,No reliable numeric minimum in requirements.
+job_43d6381c0138dfde9e87,Devops Engineer,DevOps,24,0,Có từ 2-3 năm kinh nghiệm thực tế trong lĩnh vực DevOps.,
+job_7f84fdf0089b2b6a7cc7,"DevOps Engineer (Linux, Docker, CI/CD)",DevOps,60,0,- Có ít nhất 5 năm kinh nghiệm ở vị trí DevOps hoặc tương đương.,
+job_d1f277550517338e0963,DevOps Engineer (Cloud),,,,,No reliable numeric minimum in requirements.
+job_50ae67776c5eef782992,QA QC Contractor - 4 months,Software testing,36,0,- At least 3 years of experience in software QA or testing roles.,
+job_839395ca374f6bd7c5ec,Junior QA Engineer (AI),,,,,No reliable numeric minimum in requirements.
+job_82fd39da2311dbd0be24,Senior Tester,Software testing,48,0,- At least 4 years of experience as a QA/QC or tester in software development projects.,
+job_e98cdd65ba7c839eecc2,"Game Tester (Manual Tester, QA QC)",Software testing,24,0,"- 2 years of experience in QA/QC/testing roles (games, mobile apps, or web applications).",
+job_1792be2401777b4ddce1,Tester,Software testing,24,0,- Có ít nhất 2 năm kinh nghiệm ở vị trí tương đương,
+job_a2fdf846115512654caa,Automation Tester (QA QC/ Tester),Test automation,36,0,- 3+ years of experience working in automation testing in overall 4+ working in testing experience.,
+job_a2fdf846115512654caa,Automation Tester (QA QC/ Tester),Software testing,48,0,- 3+ years of experience working in automation testing in overall 4+ working in testing experience.,
+job_f8b5f70d8b4ae8757d1c,Manual Tester,Software testing,12,0,- Có ít nhất từ 1 năm kinh nghiệm trong lĩnh vực kiểm thử. Ưu tiên đã có kinh nghiệm Mobile App,
+job_ae11b60bd2878228ef3f,Junior/Middle Automation Tester (Python),Web automation with BDD,12,0,- 1+ years’ experience in Web automation testing using BDD framework (Behave is preferred),
+job_ae11b60bd2878228ef3f,Junior/Middle Automation Tester (Python),API test automation,12,0,"- 1+ years’ experience in API automation testing (Python, JMeter, Postman, etc.)",
+job_06be4da301218aead0a4,"Senior Data Analyst (SQL,Python)",Data analysis,60,0,"- At least 5 years of experience in the data field, with experience in tech companies being advantageous. BA degree from a university in Statistics, Business, Data Analytics, or related fields.",
+job_309fd6597950042f67d7,"Senior MIS Specialist (Data Analyst, SQL, Python, Java)",Data analysis,36,0,"• Tối thiểu 3 năm kinh nghiệm trong lĩnh vực MIS, phân tích dữ liệu, hoặc Business Intelligence.",
+job_fa1e4b0bb4029f07128c,Data Analyst,Data analysis,24,0,• 2 years+ experiences of work related to data analysis.,
+job_db7d95cf020eb5437f89,"Data Analytics Specialist (SQL, Oracle, Python)",Data analysis,24,0,At least 2 years of experience as a Data Analyst Specialist in a related industry.,

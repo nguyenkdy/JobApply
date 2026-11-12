@@ -1,0 +1,33 @@
+{
+  "algorithm": "BM25_positive_idf",
+  "version": "1.0.0",
+  "k1": 1.5,
+  "b": 0.75,
+  "jobs": 50,
+  "cvs": 6,
+  "top_k": 5,
+  "jobs_sha256": "82b6949d841a8cf9685bcd9313fd0041a5e45d01a80039b51369c91ee162fa1b",
+  "cvs_sha256": "194719035230f844f940db698c996c518178cf729341804061cd20b09e15fbfd",
+  "features": [
+    "match_text",
+    "cv_text"
+  ],
+  "not_used_as_features": [
+    "pilot_group",
+    "site",
+    "company",
+    "job_id",
+    "cv_id",
+    "job_url",
+    "target_role",
+    "experience_months"
+  ],
+  "metrics": {
+    "recall_at_k": null,
+    "ndcg_at_k": null
+  },
+  "metrics_status": "not_computed_no_human_relevance_labels",
+  "score_is_probability": false,
+  "embedding_run": false,
+  "supervised_training_run": false
+}
