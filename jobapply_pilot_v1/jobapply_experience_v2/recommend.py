@@ -37,10 +37,10 @@ def recommend(args):
     docs = [r["match_text"] for r in jobs]
     cosine = None
     if mode == "full":
-        from compare_embeddings import MODEL, encode_texts
+        from compare_embeddings import MODEL, REVISION, encode_texts
         from sentence_transformers import SentenceTransformer
 
-        encoder = SentenceTransformer(MODEL, device="cpu")
+        encoder = SentenceTransformer(MODEL, revision=REVISION, device="cpu", local_files_only=True)
         vectors, _ = encode_texts(encoder, docs, "passage: ")
         query, _ = encode_texts(encoder, [text], "query: ")
         cosine = vectors @ query[0]
@@ -56,7 +56,9 @@ def recommend(args):
     model = bundle["pipeline"]
     predicted = model.predict_proba(x) @ model.classes_
     order = sorted(range(len(jobs)), key=lambda i:(-predicted[i],jobs[i]["job_id"]))
-    for rank,i in enumerate(order[:5],1):
+    from baseline_common import validate_k
+    validate_k(args.k, len(jobs))
+    for rank,i in enumerate(order[:args.k],1):
         gap = items[i]["gap_months_observed"]
         print(f"{rank}. {jobs[i]['title_for_matching']} | {jobs[i]['job_id']} | "
               f"score={predicted[i]:.3f}/2 | documented gap (months)={gap if gap is not None else 'unknown'}")
@@ -66,6 +68,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--pilot", type=Path, default=Path.cwd())
     ap.add_argument("--lexical-check", action="store_true")
+    ap.add_argument("--k", type=int, default=5)
     group = ap.add_mutually_exclusive_group(required=True)
     group.add_argument("--cv-id")
     group.add_argument("--cv-text", type=Path)

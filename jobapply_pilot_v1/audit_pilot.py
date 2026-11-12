@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 from run_bm25 import BM25, read_csv, write_csv
+from baseline_common import new_run_path
 
 PAIRS={
     "gender":("Giới tính: Nam.","Giới tính: Nữ."),
@@ -19,7 +20,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--jobs",type=Path,default=Path("jobs_pilot.csv"))
     ap.add_argument("--cvs",type=Path,default=Path("cvs_synthetic.csv"))
-    ap.add_argument("--output-dir",type=Path,default=Path("results"))
+    ap.add_argument("--output-dir",type=Path,default=new_run_path(Path.cwd(), "audit"))
     args=ap.parse_args()
     jobs,cvs=read_csv(args.jobs),read_csv(args.cvs)
     index=BM25([r["match_text"] for r in jobs])
@@ -47,7 +48,7 @@ def main():
                 "raw_text_top1_changed":order_a[0]!=order_b[0],
                 "raw_text_max_rank_change":max(abs(ra[i]-rb[i]) for i in ra),
                 "raw_text_max_score_change":round(max(abs(x-y) for x,y in zip(raw_a,raw_b)),6)})
-    args.output_dir.mkdir(parents=True,exist_ok=True)
+    args.output_dir.mkdir(parents=True,exist_ok=False)
     write_csv(args.output_dir/"fairness_probe.csv",rows)
     summary={"scope":"synthetic_perturbation_only_not_fairness_certification","pairs":len(rows),
         "metadata_excluded_invariance_passes":len(rows),

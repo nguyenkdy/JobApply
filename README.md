@@ -8,12 +8,14 @@ Ví dụ cần kiểm chứng: CV Backend Python/Django 2 năm nên được ưu
 
 README là tài liệu bàn giao cho người phát triển/Codex, đối chiếu với code và dữ liệu tại commit [2008a38d](https://github.com/nguyenkdy/JobApply/commit/2008a38d4d01455d3519048f6b48534156a556d1), ngày 12/11/2026. Các phần ghi **đề xuất/cần làm** chưa được triển khai chỉ vì xuất hiện trong tài liệu.
 
+**Cập nhật Mốc 0:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp. Xem [báo cáo và lệnh tái tạo](docs/ml/baseline.md); các mốc nhãn độc lập, extraction và tích hợp vẫn chưa hoàn tất.
+
 ## 1. Đọc repo trước khi tiếp tục code
 
 Đọc toàn bộ file được Git theo dõi, đặc biệt các nhóm dưới. Đối chiếu code/CSV thực tế thay vì chỉ dựa vào tài liệu tiến độ cũ.
 
 - [jobapply_pilot_v1/](jobapply_pilot_v1/): dữ liệu và toàn bộ pipeline offline. Đọc `prepare_pilot.py`, `run_bm25.py`, `compare_embeddings.py`, `evaluate_top5.py`, `evaluate_topk.py`, `train_matcher.py`, `audit_pilot.py`, schema CSV và các kết quả.
-- [jobapply_pilot_v1/jobapply_experience_v2/](jobapply_pilot_v1/jobapply_experience_v2/): `run_experiment.py`, `recommend.py`, CSV chú thích kinh nghiệm và `HUONG_DAN.md`. Có bản sao `train_matcher.py` giống bản ở thư mục pilot; cần hợp nhất khi refactor.
+- [jobapply_pilot_v1/jobapply_experience_v2/](jobapply_pilot_v1/jobapply_experience_v2/): `run_experiment.py`, `recommend.py`, CSV chú thích kinh nghiệm và `HUONG_DAN.md`. Entrypoint `train_matcher.py` ở thư mục con chuyển tiếp về trainer dùng chung ở thư mục pilot.
 - [services/account/](services/account/): upload/download PDF, ownership, models và migrations. [services/job/](services/job/): danh mục JD, trạng thái và hạn ứng tuyển. [services/application/](services/application/): nộp hồ sơ, snapshot và lịch sử.
 - [shared/runtime.py](shared/runtime.py): JWT, phân quyền, DB và gọi liên service. [frontend/src/](frontend/src/): luồng upload, API client, giao diện và kiểm thử client.
 - [compose.yaml](compose.yaml), [scripts/](scripts/), [infra/](infra/), các Dockerfile, dependencies, migrations, [Nginx](frontend/nginx.conf), [Vite config](frontend/vite.config.js): vận hành và điểm nối service mới.
@@ -52,10 +54,10 @@ Một hàng nhãn thuộc **cặp (cv_id, job_id)**. Cùng JD có thể phù h�
 
 1. Header hiện tại của `judgments_ai_draft.csv` là `cv_id,job_id,relevance_0_1_2,,rationale`: cột thứ tư mất tên, cả 300 giá trị đều trống. Khôi phục schema và provenance từ bằng chứng; không điền reviewer/trạng thái “đã duyệt” bằng suy đoán. Script train vẫn chạy vì chỉ cần ID và nhãn, không có nghĩa provenance hợp lệ.
 2. `results/embedding_vs_bm25.csv` hiện có điểm đọc được. Bản `embedding_vs_bm25_backup_20261110_163750.csv` có 277 giá trị BM25 không parse được, ví dụ `64.431.045`. Loại backup khỏi input manifest; không sửa số bằng xóa dấu chấm. Nếu thiếu bản đúng, tạo lại điểm từ văn bản.
-3. Bốn checksum trong `results/experience_v2/run_info.json` không khớp byte với file hiện tại. Ba checksum điểm/chú thích kinh nghiệm khớp khi chuyển sang UTF-8 BOM + CRLF; checksum nhãn chưa khớp với các biến thể BOM/LF/CRLF đã kiểm tra. Giá trị nhãn và hai feature vẫn khớp các bảng training/prediction đã lưu, nhưng chưa khôi phục đầy đủ lịch sử artifact.
-4. Chưa có lockfile môi trường ML và revision cố định của E5. Dependency backend không mô tả môi trường train.
+3. Trong snapshot Git chuẩn hóa LF, bốn checksum trong `results/experience_v2/run_info.json` không khớp byte. Ba checksum điểm/chú thích kinh nghiệm khớp khi chuyển sang UTF-8 BOM + CRLF; checksum nhãn chưa khớp với các biến thể BOM/LF/CRLF đã kiểm tra. Giá trị nhãn và hai feature vẫn khớp các bảng training/prediction đã lưu, nhưng chưa khôi phục đầy đủ lịch sử artifact.
+4. Tại thời điểm bàn giao ban đầu chưa có lockfile ML/revision E5. Mốc 0 hiện có `requirements-ml-win-py314.lock.txt` và `encoder.lock.json`, được xác minh trên môi trường Windows CPython 3.14.3 hiện có; dependency backend vẫn tách riêng.
 
-Giữ bản gốc, sửa schema có nhật ký, tạo manifest snapshot mới và tái chạy vào thư mục run mới khi đã giải quyết provenance. Ghi byte hash và quy tắc line endings; không ghi đè lịch sử để biến kết quả cũ thành kết quả “đã xác minh”.
+Mốc 0 dùng `run_baseline.py` để giữ bản gốc, tạo bản nhãn dẫn xuất có nhật ký, snapshot/manifest và tái chạy vào thư mục mới. Header `reviewer` được dựng lại theo template/code; reviewer vẫn trống, nhãn giữ `ai_draft/needs_review`. Không khôi phục được checksum nhãn lịch sử và không tuyên bố đã giải quyết provenance con người. Trên working copy Windows ngày 12/11, ba checksum điểm/chú thích khớp byte; Git blob chuẩn hóa LF vẫn khác checksum cũ. Chi tiết và lệnh tái tạo: [Mốc 0](docs/ml/baseline.md).
 
 ## 3. Các phương pháp đã chạy
 
@@ -110,7 +112,7 @@ Các bảng trong repo ghi:
 - **Coverage control:** Recall@5 **0,5476**; NDCG@5 **0,6458**.
 - **Experience classifier:** Recall@5 **0,6270**; NDCG@5 **0,7661**.
 
-Nguồn: [supervised/metrics_by_cv.csv](jobapply_pilot_v1/results/supervised/metrics_by_cv.csv), [experience_v2/macro_metrics.csv](jobapply_pilot_v1/results/experience_v2/macro_metrics.csv) và các `held_out_predictions.csv`. BM25/E5 Top 5 được tính lại từ CSV hiện tại khi viết README. Bảng classifier đã được đối chiếu; đợt sửa tài liệu này không train lại model.
+Nguồn lịch sử: [supervised/metrics_by_cv.csv](jobapply_pilot_v1/results/supervised/metrics_by_cv.csv), [experience_v2/macro_metrics.csv](jobapply_pilot_v1/results/experience_v2/macro_metrics.csv) và các `held_out_predictions.csv`. Mốc 0 đã encode/train lại và tái tạo các metric trên: [bảng run mới](docs/ml/reports/20261112-macro_metrics.csv). Điểm số có sai khác nhỏ với lịch sử, được ghi trong [báo cáo](docs/ml/baseline.md); thứ hạng và metric giữ nguyên.
 
 **Recall@5** của một CV = số JD nhãn 2 trong Top 5 / tổng JD nhãn 2 của CV trong danh mục 50 JD đã chấm. Tìm được 2 trong 3 JD nhãn 2 → Recall = 2/3. Không phải tỷ lệ năm đề xuất đúng.
 
@@ -264,7 +266,7 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 ### 10.3. Điểm kỹ thuật cần xử lý
 
-- Backend hiện nhắm Python 3.14; xác minh môi trường PyTorch/Sentence Transformers/scikit-learn riêng rồi khóa dependency. Không mặc định joblib tương thích mọi phiên bản; chỉ nạp artifact tin cậy do dự án tạo.
+- Backend hiện nhắm Python 3.14; Mốc 0 đã kiểm tra và khóa môi trường ML Windows CPython 3.14.3 riêng. Môi trường ML Linux/container còn cần xác minh. Không mặc định joblib tương thích mọi phiên bản; chỉ nạp artifact tin cậy do dự án tạo.
 - `shared.runtime.remote()` trả JSON, timeout 5 giây; không dùng nguyên hàm này để tải PDF binary hoặc cold inference dài. Warm model lúc startup, cache JD, giới hạn thời gian; chỉ thêm background task/polling nếu latency thực tế cần.
 - Cache theo quyền sở hữu/phiên bản CV, không lộ dữ liệu chéo user. Không log raw CV/JWT/PII; giới hạn trang/token/thời gian xử lý.
 - Version index/catalog theo lifecycle JD. BM25 phụ thuộc corpus: đổi kho tin làm đổi phân bố score; phải đánh giá classifier khi chuyển từ 50 JD sang kho mới.
@@ -275,7 +277,7 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 ### Mốc 0 — Baseline có thể tái tạo
 
-Xử lý mục 2.3, khóa môi trường/encoder revision, kiểm tra schema/ID/điểm hữu hạn và manifest. Tổng quát hóa số CV/JD/k thay hard-code 6/50/300; hợp nhất utilities. Giữ pilot làm regression. Hoàn tất khi một run có config/hash đầy đủ, tái tạo metric được và không ghi đè lịch sử.
+Đã triển khai runner `jobapply_pilot_v1/run_baseline.py`, validation/metric dùng chung, CLI với CV/JD/k động, lock môi trường Windows và E5 revision/hash. Runner tái tạo điểm từ văn bản, đánh giá leave-one-CV-out, lưu config/split/hash/source snapshot vào thư mục run mới, từ chối ghi đè. Báo cáo kiểm chứng và giới hạn tại [docs/ml/baseline.md](docs/ml/baseline.md). Nhãn AI và chú thích kinh nghiệm vẫn cần chuyên gia xác minh; upstream và checksum nhãn lịch sử chưa khôi phục. Đây là baseline kỹ thuật của pilot, chưa phải nghiệm thu chất lượng model.
 
 ### Mốc 1 — Rubric và công cụ annotation
 
@@ -297,36 +299,32 @@ Triển khai mục 10, ownership, catalog/index/cache và trạng thái lỗi. D
 
 Test quyền CV chéo user/JWT/role; PDF rỗng/scan/lỗi; JD đóng/hết hạn; phân trang; cache/version; timeout và dependency failure. Thêm E2E recommendation, chạy lại tests app và smoke trên VM. Báo cáo đúng phạm vi đã chạy, model/data versions và hạn chế; giữ trạng thái thử nghiệm nếu nhãn/test chưa đạt.
 
-Đầu ra đề xuất: rubric/data/model documentation, manifest/split/config, package preprocessing–features–ranking, CLI train/evaluate, service/UI và tests. Có thể tổ chức thành `ml/`, `services/recommendation/`, `tests/ml/`, `docs/ml/`; **các thư mục này là đề xuất, chưa tồn tại trong snapshot hiện tại**. Không di chuyển hàng loạt file trước khi bảo toàn baseline.
+Đầu ra đề xuất: rubric/data/model documentation, manifest/split/config, package preprocessing–features–ranking, CLI train/evaluate, service/UI và tests. Có thể tổ chức thành `ml/`, `services/recommendation/`, `tests/ml/`, `docs/ml/`; **Mốc 0 đã thêm `tests/ml/` và `docs/ml/`; package `ml/` và service recommendation vẫn là đề xuất**. Không di chuyển hàng loạt file trước khi bảo toàn baseline.
 
 ## 12. Lệnh đối chiếu hiện tại
 
 ### Windows / VS Code — PowerShell cho ML
 
-Chạy ở `jobapply_pilot_v1`. Nếu clone vào `D:\JobApply` thì dùng `D:\JobApply\jobapply_pilot_v1`; workspace cũ là `D:\jobapply_pilot_v1`. Ví dụ giả định env `.venv-embedding` đã có dependencies và nằm trong thư mục pilot; nếu khác, sửa đường dẫn interpreter.
+Chạy từ root `D:\JobApply`, dùng môi trường ML riêng đã được kiểm tra. Lệnh mặc định dùng cache E5 offline với revision/hash cố định; nếu thiếu cache thì xem hướng dẫn tải đúng revision trong [Mốc 0](docs/ml/baseline.md).
 
 ```powershell
-Set-Location D:\jobapply_pilot_v1
-& .\.venv-embedding\Scripts\python.exe .\evaluate_topk.py --labels .\judgments_ai_draft.csv --rankings .\results\embedding_vs_bm25.csv --k 5
+Set-Location D:\JobApply
+$mlPython = '.\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe'
+$runId = Get-Date -Format 'yyyyMMdd_HHmmss_fffffff'
+$baselineOut = ".\jobapply_pilot_v1\results\reruns\${runId}_baseline"
+& $mlPython .\jobapply_pilot_v1\run_baseline.py --output $baselineOut --k 5
+if ($LASTEXITCODE -ne 0) { throw 'Baseline failed; inspect the new run directory.' }
+& $mlPython .\jobapply_pilot_v1\run_baseline.py --verify-run $baselineOut
 ```
 
-Lệnh trên chỉ đánh giá CSV, không train. Script mặc định k=10 nên phải truyền `--k 5`. Train lại từ điểm đã lưu vào thư mục run mới:
+Run có bản nhãn `labels_ai_draft.normalized.csv`; không sửa `judgments_ai_draft.csv`. Đánh giá CSV không cần tải E5 hay train:
 
 ```powershell
-$runId = Get-Date -Format 'yyyyMMdd_HHmmss'
-$supervisedOut = ".\results\reruns\$runId\supervised"
-$experienceOut = ".\results\reruns\$runId\experience_v2"
-& .\.venv-embedding\Scripts\python.exe .\train_matcher.py --output $supervisedOut
-& .\.venv-embedding\Scripts\python.exe .\jobapply_experience_v2\run_experiment.py --output $experienceOut
+& $mlPython .\jobapply_pilot_v1\evaluate_topk.py --labels "$baselineOut\labels_ai_draft.normalized.csv" --rankings "$baselineOut\embedding_vs_bm25.csv" --k 5
+& $mlPython -m unittest discover -s tests/ml -v
 ```
 
-Hai lệnh train không tải E5. Nếu cần tái tạo embedding, lệnh dưới load model và **ghi lại** `results/embedding_vs_bm25.csv`; bảo toàn bản hiện tại/manifest trước khi chạy. Không mở rồi lưu đè CSV số bằng Excel để trình bày.
-
-```powershell
-& .\.venv-embedding\Scripts\python.exe .\compare_embeddings.py
-```
-
-Repo chưa có requirements ML tái lập đầy đủ. Imports cần NumPy, scikit-learn, joblib, Sentence Transformers và dependencies encoder; xác minh rồi khóa môi trường, không khẳng định cài bản mới nhất tái tạo được artifact cũ. `evaluate_topk.py` chỉ cần thư viện chuẩn Python.
+Các CLI train/evaluate yêu cầu truyền nhãn đã chuẩn hóa. `compare_embeddings.py`, trainer, BM25 và audit mặc định tạo thư mục run mới, từ chối thư mục đã tồn tại. `prepare_pilot.py` vẫn là công cụ dựng lại pilot cố định từ nguồn upstream đang thiếu, không thuộc lệnh Mốc 0. Không chạy nó đè dữ liệu hiện có. `evaluate_topk.py` chỉ cần thư viện chuẩn Python.
 
 ### Linux VM / VMware — shell cho Docker
 
@@ -340,7 +338,7 @@ sh scripts/smoke-vm.sh http://127.0.0.1:8080
 
 Lần đầu chuẩn bị .env theo [hướng dẫn VM](docs/deploy-vm.md), chạy `sh scripts/deploy-vm.sh first`; cập nhật theo hướng dẫn `update`. Không reset database/volume để thêm ML. Seed là bước riêng: `docker compose --profile tools run --build --rm seed`.
 
-Demo local sau seed: `candidate@example.com`, `recruiter@example.com`, mật khẩu `DemoJobApply123!`. Windows truy cập `http://<VM_IP>:8080`. Nghiệp vụ/API/kiểm thử ở [tài liệu app](docs/application.md), [TESTING.md](TESTING.md). Sửa README không đồng nghĩa đã chạy lại Docker, train hoặc nghiệm thu recommendation.
+Demo local sau seed: `candidate@example.com`, `recruiter@example.com`, mật khẩu `DemoJobApply123!`. Windows truy cập `http://192.168.123.136:8080`. Nghiệp vụ/API/kiểm thử ở [tài liệu app](docs/application.md), [TESTING.md](TESTING.md). Mốc 0 chỉ chạy ML offline, không chạy lại Docker hoặc nghiệm thu recommendation.
 
 ## 13. Chỉ dẫn bàn giao cho Codex
 

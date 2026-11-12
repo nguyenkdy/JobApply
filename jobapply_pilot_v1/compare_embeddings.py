@@ -1,16 +1,17 @@
 """Run from the extracted jobapply_pilot_v1 folder, beside run_bm25.py."""
-import csv
-import os
+import argparse
+import json
 from pathlib import Path
-from tempfile import NamedTemporaryFile
 
 import numpy as np
 
-from run_bm25 import read_csv, run
+from run_bm25 import run
+from baseline_common import catalog, new_run_path, sha256, write_json, write_table
 
 
 ROOT = Path(__file__).resolve().parent
 MODEL = "intfloat/multilingual-e5-small"
+REVISION = "614241f622f53c4eeff9890bdc4f31cfecc418b3"
 
 
 def split_for_model(text, fits):
@@ -94,46 +95,58 @@ def compare(cvs, jobs, baseline, cosines, cv_chunks, jd_chunks):
     return rows
 
 
-def main():
+def encoder_snapshot(local_files_only=True):
+    from huggingface_hub import snapshot_download
+    lock = json.loads((ROOT / "encoder.lock.json").read_text(encoding="utf-8"))
+    if (lock["model"], lock["revision"]) != (MODEL, REVISION):
+        raise ValueError("Encoder code and lock disagree")
+    snapshot = Path(snapshot_download(MODEL, revision=REVISION, local_files_only=local_files_only,
+                                     allow_patterns=list(lock["files"])))
+    for name, expected in lock["files"].items():
+        if sha256(snapshot / name) != expected["sha256"]:
+            raise ValueError(f"Encoder file checksum mismatch: {name}")
+    return snapshot, lock
+
+
+def generate(jobs, cvs, baseline, local_files_only=True):
+    import torch
     from sentence_transformers import SentenceTransformer
 
-    jobs = read_csv(ROOT / "jobs_pilot.csv")
-    cvs = read_csv(ROOT / "cvs_synthetic.csv")
-    if len({r["job_id"] for r in jobs}) != 50 or len(jobs) != 50:
-        raise ValueError("Expected the original pilot with 50 unique JDs.")
-    if len({r["cv_id"] for r in cvs}) != 6 or len(cvs) != 6:
-        raise ValueError("Expected 6 unique synthetic CVs.")
-    baseline, _ = run(jobs, cvs)
-    model = SentenceTransformer(MODEL, device="cpu")
+    torch.manual_seed(0)
+    torch.set_num_threads(1)
+    torch.use_deterministic_algorithms(True)
+    snapshot, lock = encoder_snapshot(local_files_only)
+    model = SentenceTransformer(str(snapshot), device="cpu", local_files_only=True, trust_remote_code=False)
+    if model.max_seq_length != lock["max_seq_length"]:
+        raise ValueError("Encoder token limit differs from lock")
     jd_vectors, jd_chunks = encode_texts(model, [r["match_text"] for r in jobs], "passage: ")
     cv_vectors, cv_chunks = encode_texts(model, [r["cv_text"] for r in cvs], "query: ")
     cosines = cv_vectors @ jd_vectors.T
     if not np.isfinite(cosines).all():
         raise ValueError("Non-finite cosine score.")
-    rows = compare(cvs, jobs, baseline, cosines, cv_chunks, jd_chunks)
-    path = ROOT / "results" / "embedding_vs_bm25.csv"
-    path.parent.mkdir(exist_ok=True)
-    with NamedTemporaryFile(mode="w", encoding="utf-8-sig", newline="", dir=path.parent,
-                            delete=False) as temp:
-        temp_path = Path(temp.name)
-        writer = csv.DictWriter(temp, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
-    try:
-        os.replace(temp_path, path)
-    finally:
-        temp_path.unlink(missing_ok=True)
+    return compare(cvs, jobs, baseline, cosines, cv_chunks, jd_chunks), dict(
+        model=MODEL, revision=REVISION, device="cpu", max_seq_length=model.max_seq_length,
+        query_prefix="query: ", passage_prefix="passage: ", batch_size=4,
+        pooling="normalized chunks; token-weighted mean; L2 normalization",
+        torch_threads=1, seed=0, deterministic_algorithms=True,
+        score_decimals=6, local_files_only=local_files_only)
 
-    print("\nPreviously tested pair (ranks are now within 50 JDs):")
-    for row in rows:
-        if row["cv_id"] == "CV_SYN_03" and row["job_id"] in {
-                "job_3916eaf809684572fced", "job_27e84f3bd1762409744d"}:
-            print(f"  {row['title']}: cosine={row['cosine']:.4f}, embedding rank={row['rank_embedding']}")
-    for cv in cvs:
-        ranked = [r for r in rows if r["cv_id"] == cv["cv_id"]]
-        bm = min(ranked, key=lambda r: r["rank_bm25"])
-        print(f"{cv['cv_id']} | BM25 #1: {bm['title']} | E5 #1: {ranked[0]['title']}")
-    print(f"Saved {len(rows)} comparisons to {path}")
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pilot", type=Path, default=ROOT)
+    parser.add_argument("--output", type=Path, default=new_run_path(ROOT, "embedding"))
+    parser.add_argument("--allow-download", action="store_true")
+    args = parser.parse_args()
+    jobs = catalog(args.pilot / "jobs_pilot.csv", "job_id", "match_text")
+    cvs = catalog(args.pilot / "cvs_synthetic.csv", "cv_id", "cv_text")
+    args.output.mkdir(parents=True, exist_ok=False)
+    baseline, _ = run(jobs, cvs)
+    rows, info = generate(jobs, cvs, baseline, not args.allow_download)
+    write_table(args.output / "embedding_vs_bm25.csv", rows)
+    write_json(args.output / "encoder.json", info)
+    print(json.dumps(info))
+    print(f"Saved {len(rows)} comparisons to {args.output}")
 
 
 if __name__ == "__main__":

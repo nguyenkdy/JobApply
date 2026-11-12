@@ -1,5 +1,11 @@
 # Biên bản kiểm tra JobApply
 
+## ML baseline — 12/11/2026
+
+Mốc 0 chạy offline trên Windows bằng môi trường ML riêng: **11 test unittest đạt**, encode E5 revision/hash cố định và train lại đầy đủ. Hai run `_02`/`_03` có bảy bảng đầu ra giống byte; hash 33 artifact gốc giữ nguyên. **4 test cấu hình app đạt**; module ML skip trong môi trường backend không có dependencies ML, và đã chạy riêng đủ 11 test bằng `.venv-embedding`. Chi tiết số đo, lệnh, sai khác điểm với lịch sử và phần cần chuyên gia: [docs/ml/baseline.md](docs/ml/baseline.md). Không chạy lại Docker, workflow app hay E2E trong đợt này.
+
+Các biên bản bên dưới là lịch sử kiểm thử ứng dụng, không phải kết quả chạy lại ngày 12/11.
+
 Kiểm tra local ngày 25/09/2026; cập nhật kết quả VM ngày 26/09/2026. Máy phát triển Windows; Python 3.14.3; Node.js portable 22.16.0 trong `.tools/`; Chrome có sẵn. `.tools/`, `.venv/`, file CV/database smoke và kết quả browser được Git ignore.
 
 ## Đã chạy trên máy VS Code

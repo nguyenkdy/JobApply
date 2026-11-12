@@ -14,6 +14,7 @@ import re
 import unicodedata
 from collections import Counter
 from pathlib import Path
+from baseline_common import catalog, new_run_path, validate_k
 
 VERSION="1.0.0"
 STOP_WORDS=set("""a an the and or of to for in on at by with as is are be been being was were
@@ -102,18 +103,19 @@ def main():
     inputs.add_argument("--cvs",type=Path)
     inputs.add_argument("--cv-text",type=Path)
     ap.add_argument("--top-k",type=int,default=5)
-    ap.add_argument("--output-dir",type=Path,default=Path("results"))
+    ap.add_argument("--output-dir",type=Path,default=new_run_path(Path.cwd(), "bm25"))
     args=ap.parse_args()
     if args.top_k<1:ap.error("top-k must be positive")
-    jobs=read_csv(args.jobs)
-    cvs=read_csv(args.cvs) if args.cvs else [{"cv_id":args.cv_text.stem,"cv_text":args.cv_text.read_text(encoding="utf-8-sig")}]
+    jobs=catalog(args.jobs, "job_id", "match_text")
+    cvs=catalog(args.cvs, "cv_id", "cv_text") if args.cvs else [{"cv_id":args.cv_text.stem,"cv_text":args.cv_text.read_text(encoding="utf-8-sig")}]
+    validate_k(args.top_k, len(jobs))
     if not jobs or not cvs:ap.error("Empty input")
     if len({r['job_id'] for r in jobs})!=len(jobs):ap.error("Duplicate job_id")
     if len({r['cv_id'] for r in cvs})!=len(cvs):ap.error("Duplicate cv_id")
     if any(not r.get('match_text','').strip() for r in jobs):ap.error("A JD has empty match_text")
     if any(not tokenize(r.get('cv_text','')) for r in cvs):ap.error("A CV has no usable tokens")
     all_rows,top=run(jobs,cvs,args.top_k)
-    args.output_dir.mkdir(parents=True,exist_ok=True)
+    args.output_dir.mkdir(parents=True,exist_ok=False)
     write_csv(args.output_dir/"rankings_all.csv",all_rows)
     write_csv(args.output_dir/"top_matches.csv",top,list(all_rows[0]))
     report={"algorithm":"BM25_positive_idf","version":VERSION,"k1":1.5,"b":0.75,
