@@ -77,6 +77,24 @@ Chạy runner đầy đủ để có manifest/provenance toàn run. Các CLI nh�
 
 Docker Compose, migrations, CV/database VM và deployment không được chạy hoặc thay đổi trong công việc Mốc 0.
 
+## Demo từ run đã chọn — cập nhật sau Mốc 0
+
+`jobapply_experience_v2/recommend.py` hiện bắt buộc `--run-dir`; không dùng `--pilot`/`--lexical-check` hay model cố định cũ. Loader kiểm run complete, toàn bộ hash, config, môi trường ML, provenance model, pipeline/classes/thứ tự feature và khả năng tương thích các hàm BM25/chunking/pooling/experience với source snapshot. Không thực thi code từ snapshot. Hash đảm bảo toàn vẹn, không phải chữ ký xác thực nguồn: chỉ chọn run do dự án tạo hoặc kho tin cậy.
+
+JD, CV giả lập và chú thích đều lấy từ `inputs/` của run. Encoder dùng chung `generate/load_encoder` với baseline, kiểm cache theo `source/encoder.lock.json` của run. BM25/cosine được làm tròn sáu chữ số như khi train; feature kinh nghiệm dùng chung `pair_features/gap_features`. Với CV cũ, giữ cùng lô query như baseline để kiểm parity; với CV mới chỉ encode query mới. Mặc định offline, CPU một thread, Top 5 cố định.
+
+```powershell
+Set-Location D:\JobApply
+$mlPython = '.\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe'
+$run = '.\jobapply_pilot_v1\results\reruns\20261112_baseline_03'
+& $mlPython .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir $run --cv-id CV_SYN_05
+& $mlPython .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir $run --cv-text .\docs\ml\examples\cv_demo_synthetic.txt
+```
+
+CV mới là văn bản chuyên môn đã ẩn danh; có thể truyền `--months` trỏ tới JSON `{ "DevOps": 24 }` nếu có bằng chứng đúng phạm vi. Thiếu JSON/scope giữ gap unknown, coverage=0, không tự suy tháng từ tuổi hoặc skill. `--cv-id` không nhận `--months` để tránh trộn chú thích ngoài run. `--output` lưu JSON vào file mới **ngoài run**, không ghi đè artifact.
+
+Đã chạy thật offline bằng E5 và model `_03`: [CV_SYN_05](reports/20261112-demo-run03-cv05.json) có Top 5 và score khớp model refit đọc từ feature đã đóng băng, [delta feature/score đều 0](reports/20261112-demo-parity.json). [CV demo mới giả lập](reports/20261112-demo-run03-new-cv.json) chạy không cần ID trong train và giữ kinh nghiệm unknown khi không có chú thích. Các kết quả này kiểm tra tích hợp suy luận, không thay thế đánh giá held-out hoặc chọn model.
+
 ## Kết quả thực chạy ngày 12/11/2026
 
 Run bàn giao: `jobapply_pilot_v1/results/reruns/20261112_baseline_03`, so với `_02`. `_01` là run phát triển trước khi thêm khóa checksum encoder và các kiểm tra bổ sung; vẫn giữ nguyên để truy vết.

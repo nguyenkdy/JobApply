@@ -1,0 +1,76 @@
+{
+  "run_dir": "D:\\JobApply\\jobapply_pilot_v1\\results\\reruns\\20261112_baseline_03",
+  "run_manifest_sha256": "7bae1dfa73e3456c2d96f0ef41f5881b34887c453aaa50770847df811c09356d",
+  "model_sha256": "56d5a92be005584ad3a61ee48872042b14bc1b94b0e067291b393e9c22e25a8e",
+  "cv_id": "CV_SYN_05",
+  "scope": "pilot demo, refit model; not held-out evaluation or live jobs",
+  "score_type": "expected AI-draft relevance on 0..2; not a probability of hiring",
+  "top_k": 5,
+  "items": [
+    {
+      "rank": 1,
+      "job_id": "job_e7935087f6a26cd8830c",
+      "title": "DevOps Engineer (Junior/Middle)",
+      "score": 1.8707120377727238,
+      "bm25_score": 33.389807,
+      "cosine": 0.932294,
+      "known_constraints": 1,
+      "numeric_constraints": 1,
+      "gap_months_observed": 0,
+      "coverage": 1.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 2,
+      "job_id": "job_43d6381c0138dfde9e87",
+      "title": "Devops Engineer",
+      "score": 1.7957483730292476,
+      "bm25_score": 83.424268,
+      "cosine": 0.936234,
+      "known_constraints": 1,
+      "numeric_constraints": 1,
+      "gap_months_observed": 0,
+      "coverage": 1.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 3,
+      "job_id": "job_a02336dc9111ddd1d0e9",
+      "title": "Senior DevOps Engineer (Cloud, AWS)",
+      "score": 1.1568255917892616,
+      "bm25_score": 23.562861,
+      "cosine": 0.919572,
+      "known_constraints": 0,
+      "numeric_constraints": 0,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 4,
+      "job_id": "job_3916eaf809684572fced",
+      "title": "Python Developer",
+      "score": 1.0594602969713696,
+      "bm25_score": 44.995199,
+      "cosine": 0.919263,
+      "known_constraints": 0,
+      "numeric_constraints": 1,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 5,
+      "job_id": "job_7f84fdf0089b2b6a7cc7",
+      "title": "DevOps Engineer (Linux, Docker, CI/CD)",
+      "score": 0.9936084940498436,
+      "bm25_score": 70.172891,
+      "cosine": 0.938211,
+      "known_constraints": 1,
+      "numeric_constraints": 1,
+      "gap_months_observed": 36,
+      "coverage": 1.0,
+      "gap_years_input": 3.0
+    }
+  ]
+}

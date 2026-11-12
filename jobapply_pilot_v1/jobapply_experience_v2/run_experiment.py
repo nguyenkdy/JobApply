@@ -15,6 +15,14 @@ from baseline_common import (catalog, complete_grid, finite, macro_metrics, metr
                              new_run_path, read_csv, sha256 as sha, validate_k,
                              validate_ranks, write_json, write_table)
 
+EXPERIENCE_FEATURES = ("bm25_score", "cosine", "coverage", "gap_years_input")
+
+
+def pair_features(score, requirements, experience):
+    """Use already-rounded retrieval scores, as in the baseline training table."""
+    return {**{key: finite(score[key], key) for key in ("bm25_score", "cosine") if key in score},
+            **gap_features(requirements, experience)}
+
 
 def gap_features(requirements, experience):
     known_gaps = []
@@ -126,7 +134,7 @@ def main(args):
     if set(scores) != {(c, j["job_id"]) for c in experience for j in jobs}:
         raise ValueError("Scores must cover the same input CVs and JDs.")
     for row in rows:
-        row.update(gap_features(requirements[row["job_id"]], experience[row["cv_id"]]))
+        row.update(pair_features(row, requirements[row["job_id"]], experience[row["cv_id"]]))
 
     # Separate the effect of knowing a comparable duration from the size of the shortfall.
     models = {"base_classifier": base, "coverage_control": base + ["coverage"],

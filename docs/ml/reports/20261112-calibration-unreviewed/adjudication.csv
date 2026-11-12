@@ -1,0 +1,724 @@
+pair_id,rubric_version,cv_version,job_version,cv_text,jd_text,queue_reason,A_annotator_id,A_annotation_origin,A_label_status,A_relevance_0_1_2,A_cv_evidence,A_jd_evidence,A_rationale,A_reviewed_at,B_annotator_id,B_annotation_origin,B_label_status,B_relevance_0_1_2,B_cv_evidence,B_jd_evidence,B_rationale,B_reviewed_at,adjudicator_id,annotation_origin,final_status,final_label,cv_evidence,jd_evidence,adjudication_rationale,adjudicated_at
+CAL_03da01da936b3418,jobapply-relevance-draft-v0.1,82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b,6b0aff7df08ec73f5ecd09880904b769c893fa8928cc91b324bbc96037f9bc6a,"QA Automation Engineer, 2 năm kinh nghiệm kiểm thử ứng dụng web và API.
+Python, Selenium, pytest, Postman, API testing, SQL, Jira, Git, Jenkins, regression testing.
+Phân tích yêu cầu, viết test case, kiểm thử hồi quy và báo lỗi trên Jira. Viết script Python với Selenium để kiểm thử giao diện và dùng pytest kiểm thử REST API. Chuẩn bị dữ liệu test bằng SQL, tích hợp kiểm thử tự động vào Jenkins và phối hợp với developer để tái hiện lỗi.
+Dự án giả lập: bộ kiểm thử tự động đăng nhập, giỏ hàng và thanh toán cho ứng dụng web.
+Đọc tài liệu và trao đổi lỗi bằng tiếng Anh.","Chức danh:
+React Js Developer
+
+Nhiệm vụ:
+Collaborate with the UK back-end team to develop and maintain front-end components of the platform.
+Translate design requirements and wireframes into high-quality code.
+Ensure cross-browser compatibility, responsiveness, and performance.
+Participate in sprint planning, code reviews, and knowledge-sharing sessions.
+Troubleshoot and debug front-end issues.
+
+Yêu cầu:
+Bachelor's degree in Information Technology, Software Engineering, or a related field.
+2 years experience.
+Proficiency in React (mandatory)
+Knowledge of .NET is a strong plus
+Familiarity with HTML/CSS, RESTful APIs, version control (Git)
+Understanding of cross-browser compatibility and front-end optimization
+Comfortable working with foreign clients — the client is based in the UK, and the English accent may be challenging for some
+
+Ưu tiên / Nice to have:
+Experience in working with UK or European clients
+Understanding of Agile/Scrum methodologies
+Full-stack capabilities with .NET (bonus)",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_0871302db0bed450,jobapply-relevance-draft-v0.1,0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4,8fa2f588bf82be9daf00b9f86c2d9b7d1f9e2d39f18a07ff4cc5a4febb672d2f,"Backend Developer Java, 3 năm kinh nghiệm xây dựng dịch vụ web.
+Java, Spring Boot, Hibernate, JPA, MySQL, SQL, REST API, Kafka, Git, Docker, JUnit, Maven.
+Phát triển microservices quản lý thanh toán bằng Java và Spring Boot. Thiết kế API, tích hợp dịch vụ qua Kafka, tối ưu truy vấn MySQL. Áp dụng OOP, design patterns, viết unit test JUnit và tham gia code review. Làm việc theo Scrum và triển khai qua pipeline CI/CD.
+Dự án giả lập: dịch vụ thanh toán và đối soát, có kiểm thử tự động và tài liệu API bằng Swagger.
+Giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Senior Developer (Java)
+
+Nhiệm vụ:
+As a Senior Developer (Java), you are responsible for implementing and delivering high-quality software products using Agile Scrum methodology. As a part of a global project, you can contribute your technical expertise and experience in order to the project succeed.
+- Designs, estimates, and implements technical solutions for medium/high complexity applications.
+- Participates actively in all phases of the application development lifecycle.
+- Collaborates with various project stakeholders to provide support for clarifying requirements, processes, architecture, and priorities.
+- Recommends and promotes IT industry standards, tools, and practices (DevOps, etc.) to achieve well-engineered software products.
+- Proposes improvements and escalates risks/issues related to development activities.
+- Participates in the review of the work done by development team members.
+- Learns and applies new technologies, practices, and tools as appropriate to the project.
+- Participates in internal and external tech communities, events, etc.
+- Shares experience and knowledge gained from projects.
+
+Yêu cầu:
+- 6+ years of experience in Java Back-end development.
+- Strong understanding of different common programming paradigms (OOP, Functional, etc.).
+- Strong familiarity with design/architectural patterns and clean code principles (e.g., SOLID, GoF, MVVM).
+- Proficient in relevant programming languages, frameworks, and tools such as Java, IntelliJ IDEA, Spring, Hibernate, Maven, Gradle. Nice to have:
+Kotlin.
+- Practical experience in platform-specific database systems and SQL.
+- Good understanding of version control systems like Git or similar.
+- Solid experience with testing and mocking frameworks.
+- Familiar with common communication protocols and standards such as HTTP, REST, JSON, TCP/IP, and others.
+- Experience with Agile methodologies (e.g., SCRUM, KANBAN).
+- Knowledge of CI/CD tools and practices.
+- Good problem-solving skills and analytical thinking.
+- Excellent communication and teamwork abilities.
+- Upper English proficiency.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_10053a63aabd68cd,jobapply-relevance-draft-v0.1,c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7,31691e449152fb31de9a3dc65540a8bd427e17b5b0adbe767f135693593cd1fa,"DevOps Engineer, 2 năm kinh nghiệm vận hành ứng dụng trên Linux và AWS.
+Linux, Bash, Python, Docker, Kubernetes, AWS, Terraform, Jenkins, Git, Prometheus, Grafana, CI/CD, DNS, networking.
+Xây dựng pipeline Jenkins để kiểm thử và triển khai ứng dụng Docker lên Kubernetes. Cấp phát hạ tầng AWS bằng Terraform. Giám sát hệ thống với Prometheus và Grafana; xử lý sự cố mạng, DNS và container. Viết Bash và Python để tự động hóa tác vụ vận hành.
+Dự án giả lập: triển khai ứng dụng microservices với CI/CD, giám sát CPU, RAM, lỗi và cảnh báo. Chưa có chứng chỉ cloud chuyên sâu.
+Giao tiếp công việc và đọc tài liệu bằng tiếng Anh.","Chức danh:
+Python Developer
+
+Nhiệm vụ:
+- Tham gia thiết kế và phát triển API cho các ứng dụng quản lý nhân sự HRM
+- Xây dựng và tối ưu hóa các API, Microservices
+- Nghiên cứu, học hỏi các công nghệ mới phục vụ nhu cầu dự án
+- Thực hiện các công việc khác theo yêu cầu của quản lý sản phẩm
+
+Yêu cầu:
+- Tốt nghiệp các trường chuyên ngành Công nghệ thông tin, Khoa học máy tính, Điện tử viễn thông, Công nghệ phần mềm, Hệ thống thông tin ..
+- Có ít nhất 2 năm kinh nghiệm & thành thạo ngôn ngữ lập trình Python.
+- Có ít nhất 1 năm với một trong các framework Python như: FastAPI, Flask, Django...
+- Có kinh nghiệm làm việc với các hệ cơ sở dữ liệu: PostgreSQL, MongoDB, MySQL...
+- Có kinh nghiệm làm việc với hệ thống message queue như Celery, Redis Queue
+- Hiểu biết về các kiến trúc phát triển phần mềm: Microservices, Monolithic
+- Thành thạo công cụ quản lý mã nguồn Git. Viết tài liệu cho API
+- Sử dụng các công cụ như JIRA, Clickup hoặc Redmine để quản lý công việc
+- Đam mê, chủ động trong công việc, có kỹ năng làm việc nhóm và làm việc độc lập
+- Có khả năng quản lý, sắp xếp, điều phối và đốc thúc công việc
+- Có khả năng đọc hiểu các tài liệu bằng tiếng Anh",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_1f64d8aaffc1692f,jobapply-relevance-draft-v0.1,e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d,0427eccf80f5a53f8d6dd888351c6450b3095cfae72aaf4e0f8796e5d251bea6,"Data Analyst, 2 năm kinh nghiệm phân tích dữ liệu kinh doanh và xây dựng báo cáo.
+Python, pandas, SQL, SQL Server, Power BI, DAX, Excel, data visualization, statistics.
+Làm sạch dữ liệu bán hàng bằng Python và pandas. Viết SQL tổng hợp chỉ số doanh thu, phân tích hành vi khách hàng và theo dõi KPI. Xây dựng dashboard Power BI, mô hình dữ liệu và báo cáo định kỳ. Trao đổi với bộ phận kinh doanh để giải thích kết quả phân tích.
+Dự án giả lập: dashboard doanh thu, phân tích tỷ lệ giữ chân khách hàng, tự động hóa cập nhật báo cáo từ SQL Server.
+Đọc hiểu tài liệu và trình bày kết quả công việc bằng tiếng Anh.","Chức danh:
+Python Developer
+
+Nhiệm vụ:
+- Tham gia vào toàn bộ vòng đời của ứng dụng, tập trung và coding và debug các dự án website và hệ thống
+- Viết API kết nối giữa các hệ thống, và phục vụ trao đổi dữ liệu với mobile & front-end
+- Thu thập và xử lí các yêu cầu thiết kế và kĩ thuật
+- Nghiên cứu và áp dụng các công nghệ mới để tối ưu hóa hiệu quả phát triển sản phẩm.
+- Phân tích yêu cầu, thiết kế hệ thống.
+- Tối ưu hiệu năng hệ thống
+
+Yêu cầu:
+- Từ 2 năm kinh nghiệm trở lên làm Python/Dejango hoặc Python/Odoo
+- Có kinh nghiệm hoặc kiến thức về hệ thống vận hành Linux
+- Có kiến thức Design Pattern và thiết kế hệ thống
+- Hiểu biết hoặc từng làm việc theo mô hình Agile/Scrum.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_278bfa5e29d0ecda,jobapply-relevance-draft-v0.1,09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35,0427eccf80f5a53f8d6dd888351c6450b3095cfae72aaf4e0f8796e5d251bea6,"Backend Developer Python/Django, 2 năm kinh nghiệm phát triển ứng dụng web.
+Python, Django, Django REST Framework, PostgreSQL, SQL, Redis, Git, Docker, pytest.
+Xây dựng REST API cho hệ thống quản lý đơn hàng. Thiết kế cơ sở dữ liệu PostgreSQL, tối ưu truy vấn SQL, xử lý xác thực và phân quyền. Viết unit test bằng pytest, sửa lỗi và review code trong nhóm Agile. Đóng gói ứng dụng bằng Docker và sử dụng Git để quản lý mã nguồn.
+Dự án giả lập: API quản lý sản phẩm và đơn hàng bằng Django, PostgreSQL; cache bằng Redis; kiểm thử API tự động.
+Đọc hiểu tài liệu kỹ thuật và giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Python Developer
+
+Nhiệm vụ:
+- Tham gia vào toàn bộ vòng đời của ứng dụng, tập trung và coding và debug các dự án website và hệ thống
+- Viết API kết nối giữa các hệ thống, và phục vụ trao đổi dữ liệu với mobile & front-end
+- Thu thập và xử lí các yêu cầu thiết kế và kĩ thuật
+- Nghiên cứu và áp dụng các công nghệ mới để tối ưu hóa hiệu quả phát triển sản phẩm.
+- Phân tích yêu cầu, thiết kế hệ thống.
+- Tối ưu hiệu năng hệ thống
+
+Yêu cầu:
+- Từ 2 năm kinh nghiệm trở lên làm Python/Dejango hoặc Python/Odoo
+- Có kinh nghiệm hoặc kiến thức về hệ thống vận hành Linux
+- Có kiến thức Design Pattern và thiết kế hệ thống
+- Hiểu biết hoặc từng làm việc theo mô hình Agile/Scrum.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_34eef5a59bb29bc1,jobapply-relevance-draft-v0.1,e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d,b24279b6224e56ea495c43251864d77a075341bba3e6856f1dd601d0bc582015,"Data Analyst, 2 năm kinh nghiệm phân tích dữ liệu kinh doanh và xây dựng báo cáo.
+Python, pandas, SQL, SQL Server, Power BI, DAX, Excel, data visualization, statistics.
+Làm sạch dữ liệu bán hàng bằng Python và pandas. Viết SQL tổng hợp chỉ số doanh thu, phân tích hành vi khách hàng và theo dõi KPI. Xây dựng dashboard Power BI, mô hình dữ liệu và báo cáo định kỳ. Trao đổi với bộ phận kinh doanh để giải thích kết quả phân tích.
+Dự án giả lập: dashboard doanh thu, phân tích tỷ lệ giữ chân khách hàng, tự động hóa cập nhật báo cáo từ SQL Server.
+Đọc hiểu tài liệu và trình bày kết quả công việc bằng tiếng Anh.","Chức danh:
+Senior MIS Specialist (Data Analyst, SQL, Python, Java)
+
+Nhiệm vụ:
+Báo cáo & Phân tích
+• Thiết kế và triển khai các báo cáo phân tích định kỳ và theo yêu cầu (productivity, performance, tài chính, vận hành...).
+• Đảm bảo tính chính xác, kịp thời và hiệu quả của hệ thống báo cáo MIS.
+• Xây dựng mô hình dữ liệu và bảng điều khiển (dashboard) tương tác.
+Reporting & Analysis
+• Design and implement periodic and ad-hoc analytical reports (e.g. productivity, performance, financial, operational reports).
+• Ensure the accuracy, timeliness, and efficiency of the MIS reporting system.
+• Develop data models and interactive dashboards.
+Tối ưu hóa dữ liệu
+• Rà soát, làm sạch và chuẩn hóa dữ liệu từ nhiều nguồn (SQL, Excel, APIs...)
+• Tối ưu hóa quy trình ETL và tự động hóa báo cáo
+• Hỗ trợ đề xuất cải tiến cấu trúc kho dữ liệu.
+Data Optimization
+• Review, clean, and standardize data from various sources (SQL, Excel, APIs, etc.).
+• Optimize ETL processes and automate reporting.
+• Support recommendations for improving data warehouse structures.
+Hỗ trợ hệ thống / ứng dụng
+• Quản lý và giám sát vận hành hệ thống CRM, ứng dụng mobile, website phục vụ bán hàng, chăm sóc khách hàng…
+• Phối hợp với đội IT và các bộ phận để duy trì và cải tiến các hệ thống, ứng dụng
+• Hỗ trợ kiểm thử (UAT), xác minh và hỗ trợ người dùng khi triển khai hệ thống liên quan đến các hệ thống và ứng dụng của công ty.
+• Xác định lỗi, xử lý sự cố hoặc phối hợp với nhà cung cấp phần mềm để đảm bảo hệ thống hoạt động ổn định.
+System / Application Support
+• Manage and monitor the operation of CRM systems, mobile applications, and websites for sales and customer service purposes.
+• Collaborate with the IT team and relevant departments to maintain and enhance systems and applications.
+• Support user acceptance testing (UAT), validation, and provide user support during system implementation.
+• Identify bugs, troubleshoot issues, or coordinate with software vendors to ensure system stability.
+Phân tích nâng cao
+• Ứng dụng mô hình phân tích nâng cao vào việc dự đoán xu hướng hoặc đánh giá hiệu suất.
+• Khai thác khả năng AI để tăng tốc phân tích và đề xuất giải pháp.
+Advanced Analytics
+• Apply advanced analytics models to forecast trends and evaluate performance.
+• Leverage AI capabilities to accelerate data analysis and generate actionable insights.
+Phối hợp & đào tạo
+• Hỗ trợ đào tạo người dùng nội bộ về cách sử dụng báo cáo, dashboard hoặc công cụ dữ liệu.
+• Tham gia các dự án phân tích, chuyển đổi số nội bộ.
+Collaboration & Training
+• Support internal training on how to use reports, dashboards, and data tools.
+• Participate in internal analytics and digital transformation projects.
+
+Yêu cầu:
+BẰNG CẤP VÀ YÊU CẦU GIÁO DỤC
+• Ưu tiên ứng viên Tốt nghiệp Đại học các ngành: Công nghệ thông tin, Hệ thống thông tin, Khoa học dữ liệu, Tài chính hoặc tương đương.
+• Prefer a Bachelor degree in any of the following fields: Information Technology, Information Management, Data Science, Finance or related fields.
+KĨ NĂNG YÊU CẦU
+• Tối thiểu 3 năm kinh nghiệm trong lĩnh vực MIS, phân tích dữ liệu, hoặc Business Intelligence.
+• Minimum 3 years of experience in MIS, data analysis, or Business Intelligence.
+• Ưu tiên ứng viên từng triển khai hệ thống báo cáo doanh nghiệp, hoặc hỗ trợ hệ thống CRM, ứng dụng mobile, website.
+• Prefered candidates with experience in enterprise reporting systems, or supporting CRM systems, mobile apps, or websites.
+• Thành thạo SQL, có kinh nghiệm với MongoDB.
+• Proficient in SQL; experience with MongoDB is a plus.
+• Sử dụng Python/Java để xử lý và trực quan hóa dữ liệu.
+• Hands-on experience with Python/Java for data processing and visualization.
+• Thành thạo Tableau, Power BI hoặc Excel (Pivot Table, VBA là lợi thế).
+• Skilled in Tableau, Power BI, or Excel (Pivot Table; VBA is a plus).
+• Hiểu biết cơ bản về tích hợp hệ thống qua API hoặc nền tảng cloud là điểm cộng.
+• Basic understanding of system integration via APIs or cloud platforms is a bonus.
+• Có khả năng phối hợp triển khai hoặc vận hành hệ thống CRM.
+• Experience in CRM deployment or operations is preferred.
+• Tư duy hệ thống, phân tích logic.
+• Strong system thinking and logical analysis skills.
+• Chủ động, có tinh thần hỗ trợ nội bộ.
+• Proactive and supportive team player.
+• Có khả năng giao tiếp hiệu quả với các phòng ban.
+• Ability to communicate effectively with crossfunctional teams.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_4292c348e286f7f3,jobapply-relevance-draft-v0.1,ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b,98bfbfba2a7e310298fd42a2da519637a17a3f3ae5a30f188f3752fc7eff9017,"Junior Frontend Developer, 1 năm kinh nghiệm phát triển giao diện web với React.
+React, JavaScript, TypeScript, HTML5, CSS3, Redux, Git, REST API, Jest, responsive design.
+Xây dựng giao diện quản lý bán hàng bằng React và TypeScript. Tạo component tái sử dụng, quản lý state bằng Redux, tích hợp REST API. Viết kiểm thử component, sửa lỗi giao diện trên các trình duyệt và tối ưu bố cục responsive. Phối hợp với designer và backend developer.
+Dự án giả lập: dashboard quản lý đơn hàng có tìm kiếm, phân trang và biểu đồ; kiểm thử bằng Jest.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh.","Chức danh:
+Senior Frontend Developer
+
+Nhiệm vụ:
+Phạm vi công việc
+- Thiết kế và triển khai các chức năng của sản phẩm phụ trách sử dụng VueJS/ReactJS
+- Triển khai giao diện người dùng (UI) và cải thiện trải nghiệm người dùng (UX) phù hợp với hoạt động kinh doanh của khách hàng nhằm thúc đẩy chuyển đổi số (DX)
+- Xác định yêu cầu và xây dựng tài liệu đặc tả phối hợp với quản lý sản phẩm và nhà thiết kế
+- Rà soát thiết kế và lập trình của các kỹ sư khác
+Môi trường phát triển
+- Lập trình: TypeScript/HTML/CSS
+- Khung: VueJS, NuxtJS, ReactJS, NextJS
+- Cơ sở hạ tầng: AWS/GCP
+- CI/CD: Circle CI/Bitrise/GitHub Actions
+- Công cụ kiến thức: Confluence/esa
+- VCS: GitHub
+- Khác: Slack/Jira/Trello
+
+Yêu cầu:
+Phải có:
+- Hơn 4 năm kinh nghiệm trong vai trò phát triển phần mềm: Lập trình viên Frontend
+- Kinh nghiệm với ngôn ngữ TypeScript
+- Kinh nghiệm với các framework frontend (VueJS, ReactJS, v.v.)
+- Kiến thức và khả năng giải thích các nguyên lý vận hành web và sự khác biệt giữa các trình duyệt
+- Kiến thức cơ bản về bảo mật ứng dụng web
+- Kỹ năng phát triển và vận hành sử dụng các framework khác nhau
+
+Ưu tiên / Nice to have:
+- Kiến thức về Java/Python
+- Kinh nghiệm phát triển các front-end microservices
+- Kinh nghiệm phát hiện và giải quyết sự cố từ nhật ký
+- Kinh nghiệm quyết định và triển khai chính sách kỹ thuật của nhóm với vai trò trưởng nhóm kỹ thuật
+- Kinh nghiệm sử dụng và hiểu các thư viện và framework
+- Kinh nghiệm phát hành và đóng góp vào OSS (Open Source Software)",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_4cdea223a39e868a,jobapply-relevance-draft-v0.1,0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4,6e5b474ada4a93d3bbc3e5fa40a25e39a079628aa2325bccde8268c9232b1818,"Backend Developer Java, 3 năm kinh nghiệm xây dựng dịch vụ web.
+Java, Spring Boot, Hibernate, JPA, MySQL, SQL, REST API, Kafka, Git, Docker, JUnit, Maven.
+Phát triển microservices quản lý thanh toán bằng Java và Spring Boot. Thiết kế API, tích hợp dịch vụ qua Kafka, tối ưu truy vấn MySQL. Áp dụng OOP, design patterns, viết unit test JUnit và tham gia code review. Làm việc theo Scrum và triển khai qua pipeline CI/CD.
+Dự án giả lập: dịch vụ thanh toán và đối soát, có kiểm thử tự động và tài liệu API bằng Swagger.
+Giao tiếp công việc bằng tiếng Anh.","Chức danh:
+DevOps Engineer (Cloud)
+
+Nhiệm vụ:
+- Can perform the job independently
+- Participate in 24/7 on-call rotation for after-hour issues
+- Handle tasks independently
+- Make standard changes
+- Review/approve standard changes
+- Document Process
+
+Yêu cầu:
+Tech Skills:
+- Terraform (Read / Write)
+- Terragrunt (Read / Write)
+- Helm (Read / Write)
+- Service Mesh – (Implement / Manage)
+- AWS Landing Zones (Implement / Manage)
+- AWS EKS – (Deploy / Operate)
+- API Gateway – (Implement / Manage)
+- Amazon MQ (RabbitMQ) – (Implement / Manage )
+- RDS / DMS – (Deploy / Manage)
+- AWS Organisations / SCPs / Backup & Tagging Policies (Implement / Manage)
+- AWS Account Factory, Account Factory for Terraform (Implement /Manage)
+- AWS Networking ( Implement / Manage)
+- AWS IAM Identity Center (Implement / Manage)
+Certifications
+- AWS Certified Solution Architect Professional (Required)
+- AWS Certified Advanced Networking Speciality (Required)
+- AWS Certified Security Speciality (Required)
+- CKA – Certified Kubernetes Administrator (Required)
+- HashiCorp Certified: Terraform Associate (Preferred)",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_52e915a1c5246dbc,jobapply-relevance-draft-v0.1,82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b,5f831ab0026d8a4c5732d0d0cc9e6587d7c06855e2ee78a8cd530e54197d0962,"QA Automation Engineer, 2 năm kinh nghiệm kiểm thử ứng dụng web và API.
+Python, Selenium, pytest, Postman, API testing, SQL, Jira, Git, Jenkins, regression testing.
+Phân tích yêu cầu, viết test case, kiểm thử hồi quy và báo lỗi trên Jira. Viết script Python với Selenium để kiểm thử giao diện và dùng pytest kiểm thử REST API. Chuẩn bị dữ liệu test bằng SQL, tích hợp kiểm thử tự động vào Jenkins và phối hợp với developer để tái hiện lỗi.
+Dự án giả lập: bộ kiểm thử tự động đăng nhập, giỏ hàng và thanh toán cho ứng dụng web.
+Đọc tài liệu và trao đổi lỗi bằng tiếng Anh.","Chức danh:
+QA QC Contractor - 4 months
+
+Nhiệm vụ:
+- Execute manual test cases for mobile and Firmware (as a plus) based on requirements.
+- Collaborate with stakeholders to clarify expected behavior and test coverage
+- Support regression and smoke testing for upcoming releases.
+- Assist in test case creation and documentation updates as needed.
+- Ensure timely testing feedback and bug validation within the sprint or release cycle.
+
+Yêu cầu:
+- At least 3 years of experience in software QA or testing roles.
+- Strong understanding of testing methodologies, SDLC, and defect lifecycle.
+- Experience with bug tracking and test case management tools (e.g., Jira, TestRail).
+- Solid problem-solving skills and attention to detail.
+- Ability to work independently and hit deadlines in a fast-paced environment.
+- Understanding Networking Protocols such as TCP/IP, UDP, Bluetooth, and Wi-Fi is a plus.
+- Experience working with embedded Linux systems is a plus.
+- Good written English skills.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_572eb5d15d78b590,jobapply-relevance-draft-v0.1,0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4,da670c439e91ba80ea230855b4a1666c0562be686d9fe853deb30f0feebe9cd2,"Backend Developer Java, 3 năm kinh nghiệm xây dựng dịch vụ web.
+Java, Spring Boot, Hibernate, JPA, MySQL, SQL, REST API, Kafka, Git, Docker, JUnit, Maven.
+Phát triển microservices quản lý thanh toán bằng Java và Spring Boot. Thiết kế API, tích hợp dịch vụ qua Kafka, tối ưu truy vấn MySQL. Áp dụng OOP, design patterns, viết unit test JUnit và tham gia code review. Làm việc theo Scrum và triển khai qua pipeline CI/CD.
+Dự án giả lập: dịch vụ thanh toán và đối soát, có kiểm thử tự động và tài liệu API bằng Swagger.
+Giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Junior Frontend Developer
+
+Nhiệm vụ:
+- Tham gia phát triển nền tảng quản trị giáo dục: Xây dựng và nâng cấp các ứng dụng web, di động (iOS, Android) và/hoặc desktop (Windows, macOS) nhằm cải thiện trải nghiệm học tập và tối ưu hóa quy trình vận hành.
+- Thiết kế và xây dựng giao diện người dùng (UI): Phát triển các tính năng giao diện thân thiện, tuân thủ tiêu chuẩn thiết kế, đảm bảo khả năng bảo trì, mở rộng và tương thích đa nền tảng.
+- Bảo trì và tối ưu hóa hệ thống: Xử lý các lỗi kỹ thuật, cải thiện hiệu suất và đề xuất các giải pháp nâng cao chất lượng sản phẩm.
+- Thu thập và phân tích phản hồi: Làm việc với người dùng và khách hàng để thu thập ý kiến, từ đó đề xuất và triển khai các giải pháp cải tiến nhằm nâng cao trải nghiệm người dùng.
+
+Yêu cầu:
+- Kỹ thuật:
++ React/React Native: Thành thạo các khái niệm cốt lõi của React (component, state, props, hooks) và/hoặc React Native để phát triển giao diện web hoặc di động.
++ HTML, CSS, JavaScript/TypeScript: Nắm vững các công nghệ frontend cơ bản, có khả năng xây dựng giao diện responsive và tối ưu trải nghiệm người dùng.
++ Flutter/Dart: Có kinh nghiệm phát triển ứng dụng di động hoặc desktop với Flutter, bao gồm xây dựng giao diện (Widgets) và quản lý trạng thái (Provider, Riverpod, hoặc Bloc), là một lợi thế lớn.
++ Git: Thành thạo sử dụng Git (GitHub, GitLab, Bitbucket) để quản lý mã nguồn và làm việc nhóm.
++ Kiến thức nền tảng: Hiểu rõ các khái niệm cốt lõi về phát triển web (DOM, event handling) và ứng dụng di động/desktop (vòng đời ứng dụng, quản lý tài nguyên).
++ Phân tích và xử lý lỗi: Có khả năng phân tích, phát hiện và đề xuất giải pháp cho các vấn đề kỹ thuật từ cơ bản đến phức tạp trong các module phần mềm.
++ Tối thiểu 1 năm kinh nghiệm ở vị trí Frontend Engineer hoặc tương đương, đã tham gia phát triển ứng dụng thực tế sử dụng React/React Native.
++ Có kinh nghiệm với Flutter (đặc biệt là ứng dụng desktop) là một lợi thế, nhưng không bắt buộc.
++ Có ít nhất 1-2 dự án thực tế (cá nhân, thực tập, hoặc đồ án) thể hiện kỹ năng phát triển frontend, ưu tiên nếu đã publish hoặc có mã nguồn trên GitHub.
+
+Ưu tiên / Nice to have:
++ Có kinh nghiệm tích hợp API (REST, GraphQL).
++ Hiểu biết về UI/UX và sử dụng công cụ thiết kế như Figma để phối hợp với đội ngũ thiết kế.
++ Có kinh nghiệm viết unit test hoặc integration test để đảm bảo chất lượng mã nguồn.
++ Có kinh nghiệm với cơ sở dữ liệu (SQL Server, hoặc NoSQL) là một lợi thế.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_6a8986b839cab540,jobapply-relevance-draft-v0.1,c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7,bc65090c37eaf2d337e8ca52808a3f2b8474853933688bb67da7e4ffcb3ae8b8,"DevOps Engineer, 2 năm kinh nghiệm vận hành ứng dụng trên Linux và AWS.
+Linux, Bash, Python, Docker, Kubernetes, AWS, Terraform, Jenkins, Git, Prometheus, Grafana, CI/CD, DNS, networking.
+Xây dựng pipeline Jenkins để kiểm thử và triển khai ứng dụng Docker lên Kubernetes. Cấp phát hạ tầng AWS bằng Terraform. Giám sát hệ thống với Prometheus và Grafana; xử lý sự cố mạng, DNS và container. Viết Bash và Python để tự động hóa tác vụ vận hành.
+Dự án giả lập: triển khai ứng dụng microservices với CI/CD, giám sát CPU, RAM, lỗi và cảnh báo. Chưa có chứng chỉ cloud chuyên sâu.
+Giao tiếp công việc và đọc tài liệu bằng tiếng Anh.","Chức danh:
+Senior PHP Fullstack (Mạnh Laravel, DevOps, Aws, Trên 5 Năm Kinh Nghiệm)
+
+Nhiệm vụ:
+- Tham gia thiết kế, phát triển và hoàn thiện trang web, phần mềm của Cty với đối tác;
+- Tham mưu, tư vấn, làm cầu nối để phát triển, hoàn thiện app Androi và IOS của Cty với đối tác;
+- Tham gia phát triển phần định vị lên IOS, hiện thời chỉ dung được với Androi hoặc tham mưu, tư vấn để làm việc với đối tác;
+- Tham mưu, tư vấn để phát triển phần mềm mua hàng, ghi âm điện thoại hiện cty đang sử dụng;
+- Tham mưu, tư vấn trong việc số hóa các công việc mà TCT đang thực hiện;
+- Làm các công việc theo yêu cầu của Ban Giám đốc;
+- Làm việc và hỗ trợ trực tiếp với các Team sản phẩm, Mobile Developer, CSKH, Quản lý kho sản xuất...
+
+Yêu cầu:
+- Tốt nghiệp Đại học chuyên ngành công nghệ thông tin, khoa học máy tính, kỹ thuật máy tính hoặc một lĩnh vực tương tự
+- Có ít nhất 7 năm kinh nghiệm làm các dự án PHP, sử dụng thành thạo một trong các framework PHP (Laravel, WordPress, CakePHP, Zend, CodeIgniter)
+- Sử dụng thành thạo ít nhất từ Laravel 10
+- Có ít nhất 5 năm kinh nghiệm về DevOps và AWS
+- Hiểu biết sâu về ngôn ngữ PHP hoặc JS, OOP.
+- Đã từng làm việc/hiểu biết về API RestFul.
+- Có kinh nghiệm làm việc với một trong các hệ quản trị CSDL như MySQL, Maria DB, MongoDB.
+- Cẩn thận, kiên nhẫn, đam mê lập trình và sẵn sàng học hỏi các công nghệ mới.
+- Chịu được áp lực công việc.
+- Có kỹ năng phân tích và giải quyết vấn đề.
+- Ưu tiên CV ứng tuyển bằng tiếng Anh.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_7da65c3b22145b1b,jobapply-relevance-draft-v0.1,82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b,56fa29f9cee63d728fa9d1552a02f7e01cd8694d851996b0b869a284a21a1de9,"QA Automation Engineer, 2 năm kinh nghiệm kiểm thử ứng dụng web và API.
+Python, Selenium, pytest, Postman, API testing, SQL, Jira, Git, Jenkins, regression testing.
+Phân tích yêu cầu, viết test case, kiểm thử hồi quy và báo lỗi trên Jira. Viết script Python với Selenium để kiểm thử giao diện và dùng pytest kiểm thử REST API. Chuẩn bị dữ liệu test bằng SQL, tích hợp kiểm thử tự động vào Jenkins và phối hợp với developer để tái hiện lỗi.
+Dự án giả lập: bộ kiểm thử tự động đăng nhập, giỏ hàng và thanh toán cho ứng dụng web.
+Đọc tài liệu và trao đổi lỗi bằng tiếng Anh.","Chức danh:
+Java Developer
+
+Nhiệm vụ:
+• Tham gia phát triển và bảo trì hệ thống đồng bộ dữ liệu lớn;
+• Phân tích thiết kế giải pháp cho yêu cầu của khách hàng theo full quy trình: System design, development, testing, implementation, support, maintainance, enhancement.
+
+Yêu cầu:
++ Tốt nghiệp Đại học chuyên ngành IT hoặc liên quan;
++ Tối thiểu 4 năm kinh nghiệm phát triển dự án phần mềm sử dụng ngôn ngữ lập trình Java;
++ Có kinh nghiệm với Spring Framework, Spring Boot;
++ Có kinh nghiệm về Oracle;
++ Có kinh nghiệm về MS SQL;
+
+Ưu tiên / Nice to have:
++ Có kinh nghiệm về công nghệ container như Docker;
++ Có kinh nghiệm về K8S;
++ Có kinh nghiệm triển khai và vận hành hệ thống trên hệ điều hành Linux.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_8f7db01666bc5ba2,jobapply-relevance-draft-v0.1,09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35,a190626c245e5e208f44060052474aefc0d64973ba9ac5614f7e31d778c111a3,"Backend Developer Python/Django, 2 năm kinh nghiệm phát triển ứng dụng web.
+Python, Django, Django REST Framework, PostgreSQL, SQL, Redis, Git, Docker, pytest.
+Xây dựng REST API cho hệ thống quản lý đơn hàng. Thiết kế cơ sở dữ liệu PostgreSQL, tối ưu truy vấn SQL, xử lý xác thực và phân quyền. Viết unit test bằng pytest, sửa lỗi và review code trong nhóm Agile. Đóng gói ứng dụng bằng Docker và sử dụng Git để quản lý mã nguồn.
+Dự án giả lập: API quản lý sản phẩm và đơn hàng bằng Django, PostgreSQL; cache bằng Redis; kiểm thử API tự động.
+Đọc hiểu tài liệu kỹ thuật và giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Junior/Middle Automation Tester (Python)
+
+Nhiệm vụ:
+Position Summary:
+- Design, maintain an automation framework and develop automation test cases using Behave Python.
+- Complete assigned tasks from your direct superior(s) on time.
+- Determine test objectives through detailed analysis in order to automate features comprehensively.
+- Develop, plan and implement automated test cases based on software requirements and technical understanding.
+- Develop and extend the current test automation infrastructure to be more efficient, both in execution and in reporting.
+- Run tests (including manual tests, automation tests, or both) against UAT builds/releases during the development lifecycle.
+- Perform manual testing upon request for simple features.
+- Take responsibility for certifying the quality of the product.
+- Create bug reports in Bug Tracking systems and follow Bug life cycle.
+- Report testing status and test results (daily or weekly) to superior(s) accurately and promptly.
+- Support, mentor, or coach members when needed.
+
+Yêu cầu:
+- Degree in IT/Computer Science/Computer Engineering or related discipline.
+- Programming skill is a MUST (Python)
+- 1+ years’ experience in Web automation testing using BDD framework (Behave is preferred)
+- 1+ years’ experience in API automation testing (Python, JMeter, Postman, etc.)
+- Have good knowledge of testing methodologies & techniques and the defect reporting process.
+- Experience with Version Control (SVN, GIT), CI/CD system (Jenkins).
+- Experience in testing web-based applications is required.
+- Experience with defect tracking systems and quality assurance tools (Jira, Confluence, TestRail).
+- Problem Solving skill, Issue escalation skill, Time management skill.
+- Interpersonal and communication skills, both oral and written.
+- Able to work in a dynamic and ever-changing industry.
+- Good English written and verbal communication skills are preferred.
+- Logical thinking, detail-oriented, willing to take challenges.
+- Be able to work in a fast-paced environment.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_94b503a546ad87eb,jobapply-relevance-draft-v0.1,e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d,a190626c245e5e208f44060052474aefc0d64973ba9ac5614f7e31d778c111a3,"Data Analyst, 2 năm kinh nghiệm phân tích dữ liệu kinh doanh và xây dựng báo cáo.
+Python, pandas, SQL, SQL Server, Power BI, DAX, Excel, data visualization, statistics.
+Làm sạch dữ liệu bán hàng bằng Python và pandas. Viết SQL tổng hợp chỉ số doanh thu, phân tích hành vi khách hàng và theo dõi KPI. Xây dựng dashboard Power BI, mô hình dữ liệu và báo cáo định kỳ. Trao đổi với bộ phận kinh doanh để giải thích kết quả phân tích.
+Dự án giả lập: dashboard doanh thu, phân tích tỷ lệ giữ chân khách hàng, tự động hóa cập nhật báo cáo từ SQL Server.
+Đọc hiểu tài liệu và trình bày kết quả công việc bằng tiếng Anh.","Chức danh:
+Junior/Middle Automation Tester (Python)
+
+Nhiệm vụ:
+Position Summary:
+- Design, maintain an automation framework and develop automation test cases using Behave Python.
+- Complete assigned tasks from your direct superior(s) on time.
+- Determine test objectives through detailed analysis in order to automate features comprehensively.
+- Develop, plan and implement automated test cases based on software requirements and technical understanding.
+- Develop and extend the current test automation infrastructure to be more efficient, both in execution and in reporting.
+- Run tests (including manual tests, automation tests, or both) against UAT builds/releases during the development lifecycle.
+- Perform manual testing upon request for simple features.
+- Take responsibility for certifying the quality of the product.
+- Create bug reports in Bug Tracking systems and follow Bug life cycle.
+- Report testing status and test results (daily or weekly) to superior(s) accurately and promptly.
+- Support, mentor, or coach members when needed.
+
+Yêu cầu:
+- Degree in IT/Computer Science/Computer Engineering or related discipline.
+- Programming skill is a MUST (Python)
+- 1+ years’ experience in Web automation testing using BDD framework (Behave is preferred)
+- 1+ years’ experience in API automation testing (Python, JMeter, Postman, etc.)
+- Have good knowledge of testing methodologies & techniques and the defect reporting process.
+- Experience with Version Control (SVN, GIT), CI/CD system (Jenkins).
+- Experience in testing web-based applications is required.
+- Experience with defect tracking systems and quality assurance tools (Jira, Confluence, TestRail).
+- Problem Solving skill, Issue escalation skill, Time management skill.
+- Interpersonal and communication skills, both oral and written.
+- Able to work in a dynamic and ever-changing industry.
+- Good English written and verbal communication skills are preferred.
+- Logical thinking, detail-oriented, willing to take challenges.
+- Be able to work in a fast-paced environment.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_a07db0844838ae0a,jobapply-relevance-draft-v0.1,ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b,408488fc0e5a34495336efd642d071532f4b5638cffed442176e8ed15ced5370,"Junior Frontend Developer, 1 năm kinh nghiệm phát triển giao diện web với React.
+React, JavaScript, TypeScript, HTML5, CSS3, Redux, Git, REST API, Jest, responsive design.
+Xây dựng giao diện quản lý bán hàng bằng React và TypeScript. Tạo component tái sử dụng, quản lý state bằng Redux, tích hợp REST API. Viết kiểm thử component, sửa lỗi giao diện trên các trình duyệt và tối ưu bố cục responsive. Phối hợp với designer và backend developer.
+Dự án giả lập: dashboard quản lý đơn hàng có tìm kiếm, phân trang và biểu đồ; kiểm thử bằng Jest.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh.","Chức danh:
+Front-End Developer
+
+Nhiệm vụ:
+- Phát triển giao diện người dùng cho website thương mại điện tử, đảm bảo tính thân thiện và dễ sử dụng cho khách hàng B2B, B2C và B2B2C.
+- Xây dựng và duy trì mã nguồn cho phần front-end của trang web, sử dụng các framework hiện đại như React, Vue.js hoặc Angular.
+- Tối ưu hóa trải nghiệm người dùng (UI/UX), đảm bảo website hoạt động mượt mà trên nhiều thiết bị và trình duyệt khác nhau.
+- Thực hiện các báo cáo được giao.
+- Thực hiện những nhiệm vụ khác được giao bởi cấp Quản lý trực tiếp và Ban Giám đốc.
+
+Yêu cầu:
+- Tốt nghiệp cao đẳng/đại học chuyên ngành Công nghệ thông tin, Khoa học máy tính, hoặc các ngành liên quan.
+- Có 2-3 năm kinh nghiệm phát triển front-end với các framework React, Vue.js, hoặc Angular.
+- Thành thạo HTML, CSS, JavaScript và các công cụ build front-end như Webpack, Babel.
+- Hiểu biết về phát triển responsive và tối ưu hóa hiệu suất website.
+- Có kinh nghiệm làm việc với RESTful API và các công cụ kiểm thử front-end.
+- Kỹ năng giao tiếp tốt, có khả năng trình bày kết quả phân tích cho các bên liên quan.
+- Tin học văn phòng tốt.
+- Có khả năng ra quyết định và có khả năng phân tích tốt.
+- Có khả năng làm việc độc lập, làm việc theo nhóm và khả năng chịu áp lực cao.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_bbcb380d5f82a6b9,jobapply-relevance-draft-v0.1,c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7,ae8877939f3440da2696746738f509717dd382eb81d25af8b83dea85dd199116,"DevOps Engineer, 2 năm kinh nghiệm vận hành ứng dụng trên Linux và AWS.
+Linux, Bash, Python, Docker, Kubernetes, AWS, Terraform, Jenkins, Git, Prometheus, Grafana, CI/CD, DNS, networking.
+Xây dựng pipeline Jenkins để kiểm thử và triển khai ứng dụng Docker lên Kubernetes. Cấp phát hạ tầng AWS bằng Terraform. Giám sát hệ thống với Prometheus và Grafana; xử lý sự cố mạng, DNS và container. Viết Bash và Python để tự động hóa tác vụ vận hành.
+Dự án giả lập: triển khai ứng dụng microservices với CI/CD, giám sát CPU, RAM, lỗi và cảnh báo. Chưa có chứng chỉ cloud chuyên sâu.
+Giao tiếp công việc và đọc tài liệu bằng tiếng Anh.","Chức danh:
+DevOps Engineer (Junior/Middle)
+
+Nhiệm vụ:
+Design and manage Kubernetes Helm charts and CI/CD pipelines for secure, scalable rollouts.
+Operate and secure Linux-based infrastructure
+Manage PostgreSQL
+Design, implement, and manage cloud infrastructure on platforms such as AWS
+Develop and maintain robust CI/CD pipelines using tools like Jenkins, GitLab CI/CD, GitHub Actions, AWS Codebuild, AWS CodePipeline
+Automate infrastructure deployments using Infrastructure as Code (IaC) tools such as Terraform
+Implement comprehensive monitoring, logging, and alerting solutions using tools such as ELK
+Proactively identify technical gaps in existing solution designs, conduct research and development to propose improvements, and take the lead in executing and implementing the recommended solutions.
+Ensure systems adhere to security best practices, perform security assessments, and apply patches proactively.
+
+Yêu cầu:
+At least 2 years of experience in DevOps roles, especially in international software projects
+Experience with public cloud platforms: AWS
+Experience with following languages: powershell script, bash script
+Familiarity with databases and messaging systems: PostgreSQL
+Experience with Docker, Kubernetes or another container based system
+Experience with IaC tools: Terraform
+Experience with logging system Kibana
+Experience with Jenkins or similar tools
+Familiarity with networking concepts (TCP/IP , DNS, firewalls, load balancers)
+MUST be good at verbal/non verbal English
+
+Ưu tiên / Nice to have:
+Experience with one of the following tools: Ansible, Team City, Github Action
+Willing to work over the weekend to when production server have issues
+Experience to migrate on-premise system into cloud",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_c2433d8ac232bb89,jobapply-relevance-draft-v0.1,0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4,269f02f9ecf70c68beaafac812f0c402d755eea3df0044da9005b0af139779c8,"Backend Developer Java, 3 năm kinh nghiệm xây dựng dịch vụ web.
+Java, Spring Boot, Hibernate, JPA, MySQL, SQL, REST API, Kafka, Git, Docker, JUnit, Maven.
+Phát triển microservices quản lý thanh toán bằng Java và Spring Boot. Thiết kế API, tích hợp dịch vụ qua Kafka, tối ưu truy vấn MySQL. Áp dụng OOP, design patterns, viết unit test JUnit và tham gia code review. Làm việc theo Scrum và triển khai qua pipeline CI/CD.
+Dự án giả lập: dịch vụ thanh toán và đối soát, có kiểm thử tự động và tài liệu API bằng Swagger.
+Giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Java Developer
+
+Nhiệm vụ:
+- Phát triển dịch vụ web bằng JAVA, Front-end sử dụng HTML, CSS, JavaScript, Jquery,..
+- Sử dụng Spring Boot, Framework, mô hình MVC
+- Tham gia phát triển, đề xuất giải pháp kỹ thuật cho các dự án
+- Phát triển các hệ thống mới và nâng cấp các hệ thống đã có
+- Làm việc, phối hợp công việc theo nhóm dưới sự phân công công việc của Leader
+
+Yêu cầu:
+- Trình độ đại học, cao đẳng chuyên ngành CNTT hoặc các chứng chỉ tương đương trở lên
+- Từ 02 năm kinh nghiệm về phát triển dịch vụ web với JAVA framework, yêu thích việc lập trình bằng ngôn ngữ JAVA
+- Có kiến thức về design patterns và unit test (Junit, TestNG, NUnit)
+- Nắm vững về HTML, CSS, JavaScript, Jquery là một điểm cộng (các ngôn ngữ khác, nếu không thành thạo sẽ được đào tạo)
+- Khả năng tự nghiên cứu, phân tích và giải quyết vấn đề
+- Có khả năng tư duy logic và lập trình
+- Khả năng làm việc độc lập hoặc theo nhóm
+- Sẵn sàng học hỏi các công nghệ mới cần thiết cho công việc
+- Có kiến thức về Spring/Spring Boot, MySQL, Oracle,...",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_c3340ffef99f4ada,jobapply-relevance-draft-v0.1,09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35,a52e4db20c86b43b51af41299fc31b531ae49fffc38a0a414d72f5d51c27c193,"Backend Developer Python/Django, 2 năm kinh nghiệm phát triển ứng dụng web.
+Python, Django, Django REST Framework, PostgreSQL, SQL, Redis, Git, Docker, pytest.
+Xây dựng REST API cho hệ thống quản lý đơn hàng. Thiết kế cơ sở dữ liệu PostgreSQL, tối ưu truy vấn SQL, xử lý xác thực và phân quyền. Viết unit test bằng pytest, sửa lỗi và review code trong nhóm Agile. Đóng gói ứng dụng bằng Docker và sử dụng Git để quản lý mã nguồn.
+Dự án giả lập: API quản lý sản phẩm và đơn hàng bằng Django, PostgreSQL; cache bằng Redis; kiểm thử API tự động.
+Đọc hiểu tài liệu kỹ thuật và giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Chuyên viên phát triển phần mềm (Python Developer)
+
+Nhiệm vụ:
+- Thiết kế, phát triển các tính năng mới cho hệ thống.
+- Tham gia triển khai các RESTful API cung cấp cho FE.
+- Bảo trì, tối ưu hóa hiệu suất của hệ thống để đảm bảo khả năng xử lý dữ liệu nhanh chóng và đáp ứng được khối lượng truy cập lớn.
+
+Yêu cầu:
+- Tốt nghiệp đại học trở lên chuyên ngành CNTT, Toán, hoặc các chuyên ngành liên quan
+- Trên 3 năm kinh nghiệm ở vị trí backend với ngôn ngữ Python;
+- Sử dụng thành thạo Framework FastAPI.
+- Hiểu biết về các hệ thống cơ sở dữ liệu PostgreSQL.
+- Hiểu rõ về các công cụ quản lý source code như Git, SVN.
+- Có kinh nghiệm làm việc với hệ thống Tài chính",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_d333e2c1523a2af2,jobapply-relevance-draft-v0.1,82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b,f4c40d5b5c1e86053323221b53e97961433f259a726bf29348a53d3e106bb801,"QA Automation Engineer, 2 năm kinh nghiệm kiểm thử ứng dụng web và API.
+Python, Selenium, pytest, Postman, API testing, SQL, Jira, Git, Jenkins, regression testing.
+Phân tích yêu cầu, viết test case, kiểm thử hồi quy và báo lỗi trên Jira. Viết script Python với Selenium để kiểm thử giao diện và dùng pytest kiểm thử REST API. Chuẩn bị dữ liệu test bằng SQL, tích hợp kiểm thử tự động vào Jenkins và phối hợp với developer để tái hiện lỗi.
+Dự án giả lập: bộ kiểm thử tự động đăng nhập, giỏ hàng và thanh toán cho ứng dụng web.
+Đọc tài liệu và trao đổi lỗi bằng tiếng Anh.","Chức danh:
+Automation Tester (QA QC/ Tester)
+
+Nhiệm vụ:
+- Analyzing users stories, use cases and requirements.
+- Collaborate closely with other team members and departments to define the test cases.
+- Execute all levels of testing.
+- Design, develop, maintain and extend automation scripts using various frameworks and programming languages.
+- Detect and track software defects and inconsistencies.
+- Apply quality engineering principles throughout the Agile product life cycle.
+- Provide support and documentation.
+
+Yêu cầu:
+- 3+ years of experience working in automation testing in overall 4+ working in testing experience.
+- Experience in building automation testing frameworks from scratch.
+- Automation testing experience in both front-end and back-end.
+- Deeply understanding about testing concept and having coding experience with one of languages (Java, Javascript, Python, C#).
+- Experience in Web Services/API automated testing.
+- Experience with REST testing tools.
+Would be a plus with:
+- Good knowledge of BDD.
+- Good knowledge in SQL.
+- Knowledge with Azure/AWS DevOps pipelines to set up automated builds and enable CI/CD.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_d9d6e6ba9e780814,jobapply-relevance-draft-v0.1,e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d,4eeb55059ed4d431d92822b22c7e038a296cdff4af5fb6509b766af397f91563,"Data Analyst, 2 năm kinh nghiệm phân tích dữ liệu kinh doanh và xây dựng báo cáo.
+Python, pandas, SQL, SQL Server, Power BI, DAX, Excel, data visualization, statistics.
+Làm sạch dữ liệu bán hàng bằng Python và pandas. Viết SQL tổng hợp chỉ số doanh thu, phân tích hành vi khách hàng và theo dõi KPI. Xây dựng dashboard Power BI, mô hình dữ liệu và báo cáo định kỳ. Trao đổi với bộ phận kinh doanh để giải thích kết quả phân tích.
+Dự án giả lập: dashboard doanh thu, phân tích tỷ lệ giữ chân khách hàng, tự động hóa cập nhật báo cáo từ SQL Server.
+Đọc hiểu tài liệu và trình bày kết quả công việc bằng tiếng Anh.","Chức danh:
+Senior Data Analyst (SQL,Python)
+
+Nhiệm vụ:
+- Identifying and gathering department requirements and then designing and implementing solutions that meet those needs with appropriate products or services.
+- Conduct in-depth data analysis using SQL, Python, and other relevant tools to extract, clean, transform, and visualize data.
+- Own the end-to-end data flow, and data analysis and provide insights into the effectiveness of the business and key performance indicators (KPIs) for the senior management team.
+- Create compelling data visualizations (e.g., dashboards, reports) to communicate insights effectively to both technical and non-technical audiences.
+- Preparing reports and Providing data support for various departments for predictions using relevant data;
+- Monitor partner operations and guide their action plans based on data-driven insights.
+- Document data analysis processes for future reference and knowledge sharing.
+- Propose new automated data acquisition or analysis processes.
+- Provide data support for various departments.
+- Other tasks as assigned by management.
+
+Yêu cầu:
+- At least 5 years of experience in the data field, with experience in tech companies being advantageous. BA degree from a university in Statistics, Business, Data Analytics, or related fields.
+- Strong analytical skills with the ability to identify patterns and trends in large datasets.
+- Master in SQL, data analysis, and data visualization skills using BI tools such as Data studio and Tableau. Familiarity with R and Python is a plus.
+- Excellent communication skills and the ability to work with business, product, and technical stakeholders.
+- Proactive problem-solving skills with a keen attention to detail.
+- Proficiency in data processing, analytical skills, as well as negotiation and presentation skills.
+- Experience with cloud platforms (e.g., AWS, Azure, GCP).
+- Experience with data warehousing and data modeling concepts.
+- Experience with machine learning or artificial intelligence is a plus.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_df02810843acd776,jobapply-relevance-draft-v0.1,ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b,99fbca60ee3e514480ac01dab4b9099be7ee5c4c4651fdf9da5b24f72f664166,"Junior Frontend Developer, 1 năm kinh nghiệm phát triển giao diện web với React.
+React, JavaScript, TypeScript, HTML5, CSS3, Redux, Git, REST API, Jest, responsive design.
+Xây dựng giao diện quản lý bán hàng bằng React và TypeScript. Tạo component tái sử dụng, quản lý state bằng Redux, tích hợp REST API. Viết kiểm thử component, sửa lỗi giao diện trên các trình duyệt và tối ưu bố cục responsive. Phối hợp với designer và backend developer.
+Dự án giả lập: dashboard quản lý đơn hàng có tìm kiếm, phân trang và biểu đồ; kiểm thử bằng Jest.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh.","Chức danh:
+Backend Software Engineer (Python, Django)
+
+Nhiệm vụ:
+👉 Architect and develop stable web applications
+👉 Rapidly build, iterate, test and deploy new features and products
+👉 Analyze and improve efficiency, scalability, and stability of various system resources
+👉 Maintain and monitor a high-quality robust codebase
+👉 Manage and contribute to code and large scale projects from inception to completion
+Tech Stack that we're using
+- Backend: Python , Django
+- Infrastructure: GCP , PostgreSQL , Gitlab (CI/CD)
+
+Yêu cầu:
+🔗AT LEAST 3 years of industry experience in a back-end or full-stack engineering role
+🔗 Proficient understanding of Python or equivalent programming languages such as C#, Javascript, Golang
+🔗 Experience in API designing and implementation
+🔗 Experience in databases design, development and maintenance
+🔗 Experience in architecture design is a plus
+🔗 Experience working with systems dealing with time series data, real-time data processing, and data analytics is a plus",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_e49d1430901e2228,jobapply-relevance-draft-v0.1,09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35,f81a93d6449de1249139aa718497f7be0373f0d24a01752d9182d035042bcc53,"Backend Developer Python/Django, 2 năm kinh nghiệm phát triển ứng dụng web.
+Python, Django, Django REST Framework, PostgreSQL, SQL, Redis, Git, Docker, pytest.
+Xây dựng REST API cho hệ thống quản lý đơn hàng. Thiết kế cơ sở dữ liệu PostgreSQL, tối ưu truy vấn SQL, xử lý xác thực và phân quyền. Viết unit test bằng pytest, sửa lỗi và review code trong nhóm Agile. Đóng gói ứng dụng bằng Docker và sử dụng Git để quản lý mã nguồn.
+Dự án giả lập: API quản lý sản phẩm và đơn hàng bằng Django, PostgreSQL; cache bằng Redis; kiểm thử API tự động.
+Đọc hiểu tài liệu kỹ thuật và giao tiếp công việc bằng tiếng Anh.","Chức danh:
+Data Analytics Specialist (SQL, Oracle, Python)
+
+Nhiệm vụ:
+Using automated tools to extract data from primary and secondary sources.
+Removing corrupted data and fixing coding errors and related problems.
+Developing and maintaining databases, data systems – reorganizing data in a readable format.
+Performing analysis to assess quality and meaning of data.
+Filter Data by reviewing reports and performance indicators to identify and correct code problems.
+Using statistical tools to identify, analyze, and interpret patterns and trends in complex data sets that could be helpful for the diagnosis and prediction.
+Assigning numerical value to essential business functions so that business performance can be assessed and compared over periods of time.
+Analyzing local, national, and global trends that impact both the organization and the industry.
+Preparing reports for the management stating trends, patterns, and predictions using relevant data.
+Working with programmers, engineers, and management heads to identify process improvement opportunities, propose system modifications, and devise data governance strategies.
+Preparing final analysis reports for the stakeholders to understand the data-analysis steps, enabling them to take important decisions based on various facts and trends.
+
+Yêu cầu:
+At least 2 years of experience as a Data Analyst Specialist in a related industry.
+Strong mathematical skills to help collect, measure, organize and analyze data.
+Knowledge of programming languages like SQL, Oracle, R, MATLAB, and Python.
+Technical proficiency regarding database design development, data models, techniques for data mining, and segmentation.
+Experience in handling reporting packages like Business Objects, programming (JavaScript, XML, or ETL frameworks), databases.
+Proficiency in statistics and statistical packages like Excel, SPSS, SAS to be used for data set analyzing.
+Adept at using data processing platforms like Hadoop and Apache Spark.
+Knowledge of data visualization software like Tableau, Qlik.
+Knowledge of how to create and apply the most accurate algorithms to datasets in order to find solutions.
+Great organizational and time management skills.
+Exceptional interpersonal, collaboration, and communication abilities. A team player with good social skills.
+Excellent analytical and problem-solving skills.
+Precise with deadline, detailed at work, flexible, service-oriented, and customer-driven.
+Passionate with Database creation, procedure, reporting, statistics.
+Proactive, responsible, and reliable.
+Enthusiastic and eager to learn.
+Fluent in English, French is a plus.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_e942fdc895e8e75d,jobapply-relevance-draft-v0.1,c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7,83a1616e35a90a665ccbb397c1f0f33f3b086bdec17471ad88903d77d6d07834,"DevOps Engineer, 2 năm kinh nghiệm vận hành ứng dụng trên Linux và AWS.
+Linux, Bash, Python, Docker, Kubernetes, AWS, Terraform, Jenkins, Git, Prometheus, Grafana, CI/CD, DNS, networking.
+Xây dựng pipeline Jenkins để kiểm thử và triển khai ứng dụng Docker lên Kubernetes. Cấp phát hạ tầng AWS bằng Terraform. Giám sát hệ thống với Prometheus và Grafana; xử lý sự cố mạng, DNS và container. Viết Bash và Python để tự động hóa tác vụ vận hành.
+Dự án giả lập: triển khai ứng dụng microservices với CI/CD, giám sát CPU, RAM, lỗi và cảnh báo. Chưa có chứng chỉ cloud chuyên sâu.
+Giao tiếp công việc và đọc tài liệu bằng tiếng Anh.","Chức danh:
+DevOps Engineer (Linux, Docker, CI/CD)
+
+Nhiệm vụ:
+- Thiết lập, quản lý và tối ưu hệ thống CI/CD cho các ứng dụng phát triển trên nền tảng NodeJS.
+- Triển khai, giám sát và bảo trì hệ thống trên các nền tảng Cloud (AWS, Azure, Google Cloud).
+- Xây dựng, triển khai và quản lý hệ thống container hóa sử dụng Docker và Kubernetes.
+- Theo dõi, phát hiện và xử lý kịp thời các sự cố hệ thống, đảm bảo hiệu suất hoạt động và an ninh bảo mật.
+- Phối hợp chặt chẽ với các team Frontend, Backend và Product để tối ưu hiệu năng và hỗ trợ triển khai các tính năng mới.
+
+Yêu cầu:
+- Có ít nhất 5 năm kinh nghiệm ở vị trí DevOps hoặc tương đương.
+- Thành thạo NodeJS, hiểu sâu về JavaScript, npm/yarn.
+- Kinh nghiệm làm việc thực tế với Docker, Kubernetes, và các công cụ CI/CD (Jenkins, GitLab CI, GitHub Actions).
+- Có kinh nghiệm quản trị hệ thống Linux, thành thạo Bash script.
+- Có kinh nghiệm triển khai và quản lý các dịch vụ cloud như AWS (EC2, S3, RDS), Azure hoặc Google Cloud.
+- Sử dụng thành thạo các công cụ monitoring và logging như Prometheus, Grafana, ELK Stack.
+- Chủ động, trách nhiệm cao trong công việc, khả năng phân tích và xử lý vấn đề nhanh chóng, hiệu quả.
+- Giao tiếp và làm việc nhóm tốt.",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,
+CAL_fc98678775f19a63,jobapply-relevance-draft-v0.1,ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b,ae8877939f3440da2696746738f509717dd382eb81d25af8b83dea85dd199116,"Junior Frontend Developer, 1 năm kinh nghiệm phát triển giao diện web với React.
+React, JavaScript, TypeScript, HTML5, CSS3, Redux, Git, REST API, Jest, responsive design.
+Xây dựng giao diện quản lý bán hàng bằng React và TypeScript. Tạo component tái sử dụng, quản lý state bằng Redux, tích hợp REST API. Viết kiểm thử component, sửa lỗi giao diện trên các trình duyệt và tối ưu bố cục responsive. Phối hợp với designer và backend developer.
+Dự án giả lập: dashboard quản lý đơn hàng có tìm kiếm, phân trang và biểu đồ; kiểm thử bằng Jest.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh.","Chức danh:
+DevOps Engineer (Junior/Middle)
+
+Nhiệm vụ:
+Design and manage Kubernetes Helm charts and CI/CD pipelines for secure, scalable rollouts.
+Operate and secure Linux-based infrastructure
+Manage PostgreSQL
+Design, implement, and manage cloud infrastructure on platforms such as AWS
+Develop and maintain robust CI/CD pipelines using tools like Jenkins, GitLab CI/CD, GitHub Actions, AWS Codebuild, AWS CodePipeline
+Automate infrastructure deployments using Infrastructure as Code (IaC) tools such as Terraform
+Implement comprehensive monitoring, logging, and alerting solutions using tools such as ELK
+Proactively identify technical gaps in existing solution designs, conduct research and development to propose improvements, and take the lead in executing and implementing the recommended solutions.
+Ensure systems adhere to security best practices, perform security assessments, and apply patches proactively.
+
+Yêu cầu:
+At least 2 years of experience in DevOps roles, especially in international software projects
+Experience with public cloud platforms: AWS
+Experience with following languages: powershell script, bash script
+Familiarity with databases and messaging systems: PostgreSQL
+Experience with Docker, Kubernetes or another container based system
+Experience with IaC tools: Terraform
+Experience with logging system Kibana
+Experience with Jenkins or similar tools
+Familiarity with networking concepts (TCP/IP , DNS, firewalls, load balancers)
+MUST be good at verbal/non verbal English
+
+Ưu tiên / Nice to have:
+Experience with one of the following tools: Ansible, Team City, Github Action
+Willing to work over the weekend to when production server have issues
+Experience to migrate on-premise system into cloud",awaiting_reviews,,,,,,,,,,,,,,,,,,,,,,,,

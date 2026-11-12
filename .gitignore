@@ -28,3 +28,4 @@ pytest-cache-files-*/
 test-results/
 playwright-report/
 coverage/
+annotation_work/

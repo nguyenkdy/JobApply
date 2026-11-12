@@ -10,6 +10,8 @@ README là tài liệu bàn giao cho người phát triển/Codex, đối chiế
 
 **Cập nhật Mốc 0:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp. Xem [báo cáo và lệnh tái tạo](docs/ml/baseline.md); các mốc nhãn độc lập, extraction và tích hợp vẫn chưa hoàn tất.
 
+**Cập nhật demo/Mốc 1:** demo chọn run qua `--run-dir`, xác minh artifact trước suy luận. Đã có [rubric dự thảo](docs/ml/annotation_guidelines.md), 24 cặp calibration và [phiếu A/B + CLI đối chiếu/phân xử](docs/ml/annotation_workflow.md). **Mốc 1 mới hoàn thành phần công cụ; chưa có người duyệt rubric hoặc nhãn đã xác minh.**
+
 ## 1. Đọc repo trước khi tiếp tục code
 
 Đọc toàn bộ file được Git theo dõi, đặc biệt các nhóm dưới. Đối chiếu code/CSV thực tế thay vì chỉ dựa vào tài liệu tiến độ cũ.
@@ -283,6 +285,8 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 Tạo guideline/form blind annotation/validator/báo cáo đồng thuận/phân xử. Calibration với người có chuyên môn. Hoàn tất khi rubric có xác nhận, nhãn có evidence/provenance và trạng thái chưa rõ; Codex không tự ký thay reviewer.
 
+Đã triển khai phần công cụ bằng `jobapply_pilot_v1/annotation.py`. Hai bộ phiếu 24 cặp trong `docs/ml/calibration/20261112_v1/` còn trống; seed/manifest lý do chọn tách riêng cho điều phối. Cần người có chuyên môn duyệt rubric, hai người chấm độc lập và người thứ ba phân xử theo [quy trình](docs/ml/annotation_workflow.md).
+
 ### Mốc 2 — Dataset và test độc lập
 
 Mở rộng/ẩn danh/deduplicate/phân tầng theo mục 6; chia nhóm trước mining, giữ test theo mục 7. Hoàn tất khi có manifest, phân bố, kiểm tra leakage và nhãn độc lập. Có thể code parser/API lúc chờ reviewer, nhưng chưa tuyên bố model được xác minh.
@@ -325,6 +329,16 @@ Run có bản nhãn `labels_ai_draft.normalized.csv`; không sửa `judgments_ai
 ```
 
 Các CLI train/evaluate yêu cầu truyền nhãn đã chuẩn hóa. `compare_embeddings.py`, trainer, BM25 và audit mặc định tạo thư mục run mới, từ chối thư mục đã tồn tại. `prepare_pilot.py` vẫn là công cụ dựng lại pilot cố định từ nguồn upstream đang thiếu, không thuộc lệnh Mốc 0. Không chạy nó đè dữ liệu hiện có. `evaluate_topk.py` chỉ cần thư viện chuẩn Python.
+
+Demo Top 5 dùng đúng model/input của một run hoàn tất, không fallback về model lịch sử:
+
+```powershell
+$selectedRun = '.\jobapply_pilot_v1\results\reruns\20261112_baseline_03'
+& $mlPython .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir $selectedRun --cv-id CV_SYN_05
+& $mlPython .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir $selectedRun --cv-text .\docs\ml\examples\cv_demo_synthetic.txt
+```
+
+Run đầy đủ không nằm trong Git; clone mới cần khôi phục kho run tin cậy hoặc chạy Mốc 0 vào thư mục mới rồi dùng đường dẫn đó. CV mới không cần có trong train; không truyền `--months` thì kinh nghiệm theo scope giữ unknown. Đây là demo model refit trên pilot, không phải metric held-out hoặc danh sách việc đang mở của app. Hướng dẫn nhận/kiểm phiếu A/B: [Mốc 1](docs/ml/annotation_workflow.md).
 
 ### Linux VM / VMware — shell cho Docker
 

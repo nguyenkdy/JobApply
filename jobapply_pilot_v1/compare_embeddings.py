@@ -95,30 +95,37 @@ def compare(cvs, jobs, baseline, cosines, cv_chunks, jd_chunks):
     return rows
 
 
-def encoder_snapshot(local_files_only=True):
+def encoder_snapshot(local_files_only=True, lock_path=None):
     from huggingface_hub import snapshot_download
-    lock = json.loads((ROOT / "encoder.lock.json").read_text(encoding="utf-8"))
+    lock = json.loads((lock_path or ROOT / "encoder.lock.json").read_text(encoding="utf-8"))
     if (lock["model"], lock["revision"]) != (MODEL, REVISION):
         raise ValueError("Encoder code and lock disagree")
     snapshot = Path(snapshot_download(MODEL, revision=REVISION, local_files_only=local_files_only,
                                      allow_patterns=list(lock["files"])))
     for name, expected in lock["files"].items():
+        if not (snapshot / name).resolve().is_relative_to(snapshot.resolve()):
+            raise ValueError("Encoder lock path escapes snapshot")
         if sha256(snapshot / name) != expected["sha256"]:
             raise ValueError(f"Encoder file checksum mismatch: {name}")
     return snapshot, lock
 
 
-def generate(jobs, cvs, baseline, local_files_only=True):
+def load_encoder(local_files_only=True, lock_path=None):
     import torch
     from sentence_transformers import SentenceTransformer
 
     torch.manual_seed(0)
     torch.set_num_threads(1)
     torch.use_deterministic_algorithms(True)
-    snapshot, lock = encoder_snapshot(local_files_only)
+    snapshot, lock = encoder_snapshot(local_files_only, lock_path)
     model = SentenceTransformer(str(snapshot), device="cpu", local_files_only=True, trust_remote_code=False)
     if model.max_seq_length != lock["max_seq_length"]:
         raise ValueError("Encoder token limit differs from lock")
+    return model
+
+
+def generate(jobs, cvs, baseline, local_files_only=True, lock_path=None):
+    model = load_encoder(local_files_only, lock_path)
     jd_vectors, jd_chunks = encode_texts(model, [r["match_text"] for r in jobs], "passage: ")
     cv_vectors, cv_chunks = encode_texts(model, [r["cv_text"] for r in cvs], "query: ")
     cosines = cv_vectors @ jd_vectors.T
