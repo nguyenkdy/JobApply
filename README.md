@@ -10,7 +10,7 @@ README là tài liệu bàn giao cho người phát triển/Codex, đối chiế
 
 **Cập nhật Mốc 0 & Demo:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp; demo `recommend.py` chọn run qua `--run-dir` và xác minh toàn vẹn artifact trước khi suy luận. Xem [báo cáo và lệnh tái tạo Mốc 0](docs/ml/baseline.md).
 
-**Cập nhật Mốc 2 (13/11/2026):** đã kiểm chứng ba file CSV upstream thực tế (`3.101 → 3.062 → 3.062 → 50 JD pilot`), đối chiếu liên kết `raw → clean → matching → pilot`, nhập kho JD chuẩn bằng `python -m ml_data upstream` (`888` JD `keep`, `65` trùng chính xác bị loại, `2.109` `quarantine`) và chọn lô mở rộng đầu tiên gồm **64 JD development** (kèm báo thiếu 8 JD ở nhóm `Data Analyst`). Chưa khóa split chính thức khi chưa bổ sung các nhóm CV mới. Xem chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md) và [báo cáo Mốc 2](docs/ml/reports/20261113-data-preparation.json).
+**Cập nhật Mốc 2 v2 (13/11/2026):** đã sửa điều kiện trạng thái (`sections_found`, `needs_review=false`, cờ rỗng), thống nhất ngưỡng 80 ký tự chuẩn hóa và chạy upstream hai lần: cả 51 file output giống byte. Kho matching có **888 JD qua gate kỹ thuật, 65 bản trùng bị loại và 2.109 JD cách ly**; trong keep có **100 development và 788 prospective**. Lô 64 JD gồm **60 keep + 4 Data Analyst quarantine để rà parser**, không phải 64 JD sẵn sàng huấn luyện. Data Analyst có 9 tag nguồn, 8 dấu hiệu chức danh, 4 thuộc pilot và **0 ngoài pilot qua gate**. Chưa tạo CV mới hoặc khóa split; bước sau chỉ dùng số v2 đã xác nhận. [Hướng dẫn](docs/ml/dataset_pipeline.md), [receipt từ hai run](docs/ml/reports/20261113-data-preparation.json).
 
 ## 1. Đọc repo trước khi tiếp tục code
 
@@ -31,14 +31,14 @@ Hướng dẫn app chi tiết được giữ ở [docs/application.md](docs/appl
 
 Theo báo cáo tiến độ trong repo, nguồn thực tế là **Vietnamese IT Job Posting Data** từ [SonPhatTranDeveloper/IT-Job-Posting](https://github.com/SonPhatTranDeveloper/IT-Job-Posting), file `job_descriptions.csv` có 3.101 JD: LinkedIn 1.039, ITViec 929, TopCV 1.133. Kaggle Vietnam Jobs là nguồn tham khảo ban đầu, không phải nguồn của pilot hiện tại. Repo không có bằng chứng dùng dữ liệu Indeed.
 
-Quá trình trước pilot đã được kiểm chứng thực tế từ ba file CSV tại thư mục gốc (xem chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
+Các liên kết quan sát được giữa các giai đoạn đã được kiểm tra từ ba CSV tại thư mục gốc; chưa khôi phục lịch sử biến đổi (chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
 
 1. `job_descriptions.csv` (`11.090.108` bytes, SHA256 `52801f88...`): `3.101` bản ghi nguồn (TopCV `1.133`, LinkedIn `1.039`, ITViec `929`), chưa có `job_id`, có `2.669` dòng chứa byte không hợp lệ UTF-8 và `3.075` dòng chứa ký tự thay thế `U+FFFD`.
-2. `jobs_clean.csv` (`14.384.924` bytes, UTF-8 BOM, SHA256 `a9308c6e...`): `3.062` JD có `job_id` duy nhất, khử hết lỗi UTF-8/`U+FFFD`, liên kết về `3.062` dòng chính (`source_row_number`) và `38` dòng phụ gộp trùng trong `source_records_json` (`3.100/3.101` dòng raw khớp `(site, job_url)`); dòng raw duy nhất không liên kết là dòng `1141` (`description` dài 12 ký tự).
+2. `jobs_clean.csv` (`14.384.924` bytes, UTF-8 BOM, SHA256 `a9308c6e...`): `3.062` JD có `job_id` duy nhất, không thấy byte UTF-8 lỗi hoặc `U+FFFD` trong bản hiện có; liên kết về `3.062` dòng chính (`source_row_number`) và `38` dòng phụ gộp trong `source_records_json` (`3.100/3.101` dòng raw khớp `(site, job_url)`); dòng raw duy nhất không liên kết là dòng `1141` (`description` dài 12 ký tự).
 3. `jobs_matching.csv` (`11.197.747` bytes, UTF-8 BOM, SHA256 `2f771640...`, `pipeline_version=1.0.0`): giữ nguyên `3.062` `job_id`, khớp `source_description_sha256` trên `3.061/3.062` dòng (trừ `job_906e26bf2136f879aba5`); tách nhiệm vụ, yêu cầu, ưu tiên và ghép `match_text`. Có `713` dòng `tasks_text` và `134` dòng `requirements_text` bị lỗi công thức bảng tính `#NAME?` được cổng chất lượng Mốc 2 cách ly.
 4. `jobs_pilot.csv`: `50` JD được chọn có chủ đích (`50/50` khớp `source_match_text_sha256` với `jobs_matching.csv`, `11` bản chỉnh sửa có nhật ký trong `pilot_edits.csv`).
 
-**Ba CSV nguồn lớn được giữ nguyên byte tại máy local và loại khỏi Git commit.** Trong repo chỉ có `prepare_pilot.py` tiêu thụ `jobs_clean.csv` và `jobs_matching.csv`; không có script lịch sử sinh ra hai file đó (`historical_pipeline_reproduced=false`). Mốc 2 dùng `python -m ml_data upstream` (`adapter_version=upstream-observation-v1`) để kiểm định, lưu snapshot nguyên bản và nhập `jobs_matching.csv` vào kho chuẩn.
+**Ba CSV nguồn lớn được giữ nguyên byte tại máy local và Git ignore.** Chưa tìm thấy script lịch sử sinh clean/matching trong phạm vi workspace đã kiểm kê; `prepare_pilot.py` chỉ tiêu thụ hai file đó. Mốc 2 dùng `python -m ml_data upstream` (`adapter_version=upstream-observation-v2`) để kiểm định, lưu snapshot nguyên bản và nhập matching một lần; `historical_pipeline_reproduced=false`.
 
 Tin từ nền tảng uy tín không tự trở thành nhãn CV–JD. Các trường công nghệ do LLM trích xuất ở nguồn chưa được dùng làm nhãn chuẩn. Dữ liệu JD lịch sử có thể hết hạn và **không tự nhập thành tin đang tuyển trong database app**.
 
@@ -278,7 +278,7 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 ### Mốc 2 — Kiểm chứng upstream, nhập JD và chia tập chống rò rỉ
 
-Đã kiểm kê ba CSV upstream thực tế (`job_descriptions.csv`, `jobs_clean.csv`, `jobs_matching.csv`), đối chiếu liên kết `raw → clean → matching → pilot`, nhập `3.062` JD vào kho chuẩn bằng `python -m ml_data upstream` (`888` `keep`, `65` `exclude_exact_duplicate`, `2.109` `quarantine`), cô lập `68` bản ghi liên quan pilot và chọn lô mở rộng đầu tiên gồm **64 JD development** ([docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md), [danh sách 64 JD](docs/ml/reports/20261113-upstream-jd-selection.json)). Bước tiếp theo của Mốc 2 là bổ sung các nhóm CV mới theo schema chuẩn để khóa split chính thức và lấy mẫu cặp huấn luyện/đánh giá.
+Đã kiểm kê ba CSV upstream, đối chiếu `raw → clean → matching → pilot`, nhập `3.062` JD (`888` keep, `65` trùng, `2.109` cách ly), cô lập `68` record liên quan pilot và chọn **64 JD development: 60 keep + 4 ca rà parser** ([hướng dẫn](docs/ml/dataset_pipeline.md), [danh sách](docs/ml/reports/20261113-upstream-jd-selection.json)). Kết quả v2 đã được xác minh hai run và 44 test. Cần giải quyết thiếu JD Data Analyst qua gate, bổ sung CV mới có lineage theo [schema/config](docs/ml/data_configs/new_cvs.template.json), rồi mới rà phân bố và khóa split. Giữ nhãn pilot/provenance; không tự tạo gold hoặc đổi `ai_draft` thành nhãn người.
 
 ### Mốc 3 — Extraction và benchmark
 

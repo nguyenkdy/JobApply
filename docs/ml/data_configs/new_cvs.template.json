@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "dataset_version": "REPLACE_WITH_ACTUAL_CV_DATA_VERSION",
+  "near_threshold": 0.85,
+  "sources": [
+    {
+      "path": "REPLACE_WITH_ACTUAL_CV_CSV.csv",
+      "kind": "cv",
+      "namespace": "REPLACE_WITH_STABLE_CV_SOURCE_NAMESPACE",
+      "version": "REPLACE_WITH_ACTUAL_SOURCE_VERSION",
+      "columns": {
+        "external_id": "cv_id",
+        "text": "cv_text",
+        "source_group": "source_group",
+        "template_group": "template_group",
+        "is_synthetic": "is_synthetic",
+        "role": "role",
+        "skills": "skills",
+        "stack": "stack",
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "text_scope": "text_scope"
+      },
+      "source_url": null,
+      "collected_at": null,
+      "usage_terms": null
+    }
+  ]
+}

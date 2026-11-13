@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import subprocess
 
-from .common import (ROOT, csv_rows, digest, distribution, file_hash, fresh_folder,
+from .common import (ROOT, MIN_PROFESSIONAL_BODY_CHARS, csv_rows, digest, distribution, file_hash, fresh_folder,
                      normalize, read_json, require, seal, write_json, write_lines)
 from .grouping import group_records
 
@@ -139,8 +139,8 @@ def record(raw, spec):
         result["missing_fields"].append("is_synthetic")
     if "exposure" not in value:
         result["missing_fields"].append("exposure_defaulted_development")
-    if len(normalized) < 40:
-        result["decision_reasons"].append("empty_or_short_text_under_40_chars")
+    if len(normalized) < MIN_PROFESSIONAL_BODY_CHARS:
+        result["decision_reasons"].append(f"empty_or_short_text_under_{MIN_PROFESSIONAL_BODY_CHARS}_chars")
     if result["text_scope"] != "professional":
         result["decision_reasons"].append("professional_text_not_confirmed; no automatic PII/section extraction")
     if result["kind"] == "cv":
@@ -255,6 +255,7 @@ def ingest(config_path, output):
                                 "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"])
     write_json(folder / "summary.json", summary)
     seal(folder, "dataset", dict(dataset_version=config["dataset_version"], near_threshold=threshold,
+                                  minimum_professional_body_chars=MIN_PROFESSIONAL_BODY_CHARS,
                                   normalization="NFKC, whitespace per line, blank lines omitted; dedup casefold; v1",
                                   label_status="unlabeled; source labels untouched", ranking_k=5))
     return summary

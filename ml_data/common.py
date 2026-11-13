@@ -10,6 +10,7 @@ import unicodedata
 from . import VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
+MIN_PROFESSIONAL_BODY_CHARS = 80
 
 
 def require(condition, message):

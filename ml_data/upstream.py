@@ -7,12 +7,12 @@ from pathlib import Path
 import re
 import shutil
 
-from .common import (ROOT, csv_rows, digest, file_hash, fresh_folder, normalize,
+from .common import (ROOT, MIN_PROFESSIONAL_BODY_CHARS, csv_rows, digest, file_hash, fresh_folder, normalize,
                      read_lines, require, seal, write_csv, write_json, write_lines)
 from .grouping import group_records, near_pairs
 from .ingest import ingest, pilot_anchors, record
 
-VERSION = "upstream-observation-v1"
+VERSION = "upstream-observation-v2"
 FILES = ("job_descriptions.csv", "jobs_clean.csv", "jobs_matching.csv")
 PROFESSIONAL = ("title_for_matching", "tasks_text", "requirements_text", "preferred_requirements_text",
                 "unclassified_professional_text", "match_text")
@@ -120,7 +120,7 @@ def reconcile(raw, clean, matching, pilot):
                                      linked_references=sum(len(r["raw_links"]) for r in lineage),
                                      invalid_reference_links=sum(not (x["url_matches"] and x["site_matches"]) for r in lineage for x in r["raw_links"]),
                                      changed_primary_fields=dict(raw_changes),
-                                     reason_status="38 merged source references and one short unlinked row observed; historical removal rationale not proven"),
+                                     reason_status="Counts reflect declared source references corroborated by row/URL/site; historical removal rationale not proven"),
                    clean_to_matching=dict(common_ids=len(set(cb) & set(mb)), added_ids=sorted(set(mb)-set(cb)),
                                           removed_ids=sorted(set(cb)-set(mb)),
                                           common_field_changes=sum(bool(r["fields"]) for r in clean_match_changes),
@@ -137,11 +137,11 @@ def evidence(field, text, pattern):
     return [dict(field=field, start=m.start(), end=m.end(), text=m.group()) for m in re.finditer(pattern, text, re.I)]
 
 
-def selection_features(row):
+def selection_features(row, clean=None):
     title = row["title_for_matching"]
     role = []
     patterns = {
-        "Data Analyst": r"data analyst|phân tích dữ liệu",
+        "Data Analyst": r"\bdata analy(?:st|tics)\b|phân tích dữ liệu",
         "QA/Testing": r"\bqa\b|\bqc\b|tester|test engineer|kiểm thử|automation test",
         "DevOps": r"devops|site reliability|cloud engineer",
         "Frontend": r"front[ -]?end",
@@ -163,6 +163,8 @@ def selection_features(row):
     vietnamese = evidence("match_text", text, r"[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]")
     years = evidence("requirements_text", row["requirements_text"], r"\d+(?:[.,]\d+)?(?:\s*[-–]\s*\d+)?\s*\+?\s*(?:năm|years?|months?|tháng)\b")
     return dict(rule_version=VERSION, role_candidates=role, role_evidence=ev,
+                source_role_value=clean.get("role_normalized_candidate", "") if clean else "",
+                source_role_status="unverified upstream tag, reported separately from title cues",
                 vietnamese_signal=len(vietnamese) >= 20, vietnamese_character_hits=len(vietnamese),
                 experience_mentions=years, experience_bucket=years[0]["text"].casefold() if years else "unknown",
                 must_mentions=evidence("requirements_text", row["requirements_text"], r"bắt buộc|tối thiểu|ít nhất|must|required|at least|minimum"),
@@ -180,15 +182,29 @@ def quality(row, lineage):
             reasons.append("replacement_character:" + field)
     if not lineage or not lineage["clean_matching_hash_verified"]:
         reasons.append("clean_description_hash_unverified")
-    if not lineage or not lineage["raw_primary_url_matches"] or not all(x["url_matches"] and x["site_matches"] for x in lineage["raw_links"]):
+    if not lineage or not lineage["raw_primary_url_matches"] or not lineage["raw_links"] or not all(x["url_matches"] and x["site_matches"] for x in lineage["raw_links"]):
         reasons.append("raw_source_identity_unverified")
-    for field in ("tasks_text", "requirements_text"):
-        if len(row[field].strip()) < 80:
+    for field in ("tasks_text", "requirements_text", "match_text"):
+        if len(normalize(row[field])) < MIN_PROFESSIONAL_BODY_CHARS:
             reasons.append("missing_or_short_section:" + field)
-    if row["needs_review"].casefold() != "false":
+    needs_review = row.get("needs_review", "").strip().casefold()
+    if needs_review not in {"true", "false"}:
+        reasons.append("invalid_needs_review_status")
+    if needs_review != "false":
         reasons.append("upstream_needs_review")
-    if row["extraction_status"] != "sections_found":
-        reasons.append("upstream_extraction:" + row["extraction_status"])
+    extraction = row.get("extraction_status", "").strip()
+    if extraction != "sections_found":
+        reasons.append("upstream_extraction:" + (extraction or "unknown"))
+    try:
+        flags = json.loads(row.get("review_flags_json", ""))
+        if not isinstance(flags, list) or not all(isinstance(f, str) for f in flags):
+            raise ValueError("invalid flags")
+        if flags:
+            reasons.append("upstream_review_flags_present")
+    except (ValueError, TypeError):
+        reasons.append("invalid_review_flags_schema")
+    if row.get("human_reviewed", "").strip().casefold() not in {"true", "false"}:
+        reasons.append("invalid_human_reviewed_status")
     return reasons
 
 
@@ -243,7 +259,7 @@ def prepare_upstream(source_dir, output, seed=20261113):
     canonical, metadata = [], {}
     for row in matching:
         jid = row["job_id"]
-        features = selection_features(row)
+        features = selection_features(row, cb[jid])
         metadata[jid] = features
         refs = json.loads(cb[jid]["source_records_json"])
         canonical.append(dict(**row, import_exposure="prospective", import_quality_reasons=json.dumps(quality(row, links.get(jid))),
@@ -282,13 +298,29 @@ def prepare_upstream(source_dir, output, seed=20261113):
     write_json(folder / "selection_features.json", metadata)
     write_json(folder / "selection.json", selected)
     write_csv(folder / "canonical_jd.csv", canonical, list(canonical[0]))
-    config = dict(schema_version=1, dataset_version="upstream-jd-observation-v1-" + original_hashes[FILES[2]][:12],
+    config = dict(schema_version=1, dataset_version=VERSION + "-" + original_hashes[FILES[2]][:12],
                   adapter_version=VERSION, near_threshold=0.85, sources=[spec],
                   context_files=[dict(path="snapshots/" + name, role="upstream_stage_not_additional_records") for name in FILES]
                   + [dict(path=name, role="lineage_quality_selection_evidence") for name in ("profiles.json", "relations.json", "lineage.jsonl", "selection_features.json", "selection.json")])
     write_json(folder / "import_config.json", config)
     result = ingest(folder / "import_config.json", folder / "dataset")
     final_records = read_lines(folder / "dataset/records.jsonl")
+    analyst = []
+    for r in final_records:
+        features = metadata[r["external_id"]]
+        source_tag = features["source_role_value"].strip().casefold() == "data analyst"
+        title_cue = "Data Analyst" in features["role_candidates"]
+        if source_tag or title_cue:
+            analyst.append(dict(job_id=r["external_id"], source_tag=source_tag, title_cue=title_cue,
+                                title=next(m["title_for_matching"] for m in matching if m["job_id"] == r["external_id"]),
+                                pilot_related=r["external_id"] in preselection_pilot_ids,
+                                decision=r["decision"], selected=any(s["job_id"] == r["external_id"] for s in selected)))
+    analyst_counts = dict(source_tagged=sum(r["source_tag"] for r in analyst), title_cued=sum(r["title_cue"] for r in analyst),
+                          source_only=sum(r["source_tag"] and not r["title_cue"] for r in analyst),
+                          pilot_related=sum(r["pilot_related"] for r in analyst),
+                          nonpilot_gate_passing=sum(not r["pilot_related"] and r["decision"] == "keep" for r in analyst),
+                          selected=sum(r["selected"] for r in analyst), rows=analyst,
+                          interpretation="Source tags and literal title cues are separate candidate counts, not verified occupational labels")
     batch_summary = dict(total=len(selected), seed=seed, target_per_role=12, actual_by_role=dict(Counter(r["role"] for r in selected)),
                          available=availability, shortages={role: 12-sum(r["role"] == role for r in selected) for role in ROLES
                                                            if sum(r["role"] == role for r in selected) < 12},
@@ -299,11 +331,17 @@ def prepare_upstream(source_dir, output, seed=20261113):
                          must_mentions=sum(bool(r["must_mentions"]) for r in selected),
                          development_group_closure=len(development_ids), purpose="development/parser only")
     summary = dict(version=VERSION, source_hashes=original_hashes, profiles=profiles, relations=relations, import_summary=result,
+                   quality_policy=dict(minimum_body_chars=MIN_PROFESSIONAL_BODY_CHARS, length_basis="NFKC/whitespace-normalized characters",
+                                       required_sections=["tasks_text", "requirements_text", "match_text"],
+                                       passing_status="sections_found AND needs_review=false AND review_flags=[]; valid human_reviewed boolean, not human verification",
+                                       gate_meaning="Technical screening only; no claim of verified professional content"),
+                   data_analyst_accounting=analyst_counts,
                    quality_reason_counts=dict(Counter(reason for r in final_records if r["decision"] == "quarantine" for reason in r["decision_reasons"])),
                    pilot_related_records_before_selection=len(preselection_pilot_ids), pilot_related_ids=sorted(preselection_pilot_ids),
                    decisions_by_exposure={str(dev): dict(Counter(r["decision"] for r in final_records if r["development_only"] == dev)) for dev in (True, False)},
                    batch=batch_summary, history_reconstructed=False, split_locked=False, cv_jd_labels_created=0,
                    observed_pipeline_versions=dict(Counter(r["pipeline_version"] for r in matching)),
+                   upstream_human_reviewed_values=dict(Counter(r["human_reviewed"] for r in matching)),
                    unknown=["Exact original raw encoding/text before corruption", "Original cleaning/section code and source revision",
                             "Collection dates and redistribution terms"])
     write_json(folder / "summary.json", summary)
