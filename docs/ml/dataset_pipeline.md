@@ -80,27 +80,61 @@ ID Data Analyst thực chọn: `job_3d91bd66351c91e206c7`, `job_ce9d4b53148ccab5
 
 Lô mới và closure nhóm chứa 86 record development ngoài nhóm pilot. Chưa tạo CV mới, cặp nhãn hay khóa split trong hai run v2. Không dùng preview split cũ làm split chính thức. Chưa train lại, chưa chấm hai reviewer, không nhập JD lịch sử vào database app hoặc đổi API/UI/Docker/VM.
 
-## 4. CV mới và bước tiếp theo
+## 4. 60 CV giả lập mới và chuẩn hóa metadata có bằng chứng
 
-Chỉ dùng số liệu v2 đã xác nhận để định cỡ lô CV. Cần rà/khôi phục hoặc bổ sung JD Data Analyst trước khi kỳ vọng benchmark sáu nhóm cân đối. Trước mắt có thể thiết kế CV độc lập cho năm nhóm có JD qua gate; CV Data Analyst phục vụ parser phải ghi development, không dùng quota giả để tuyên bố đủ test.
+Đã tạo bộ **60 CV giả lập mới** (`generator_version=synthetic-career-scenarios-v1`, `cohort_id=jobapply-synthetic-60-v1`) từ [design.json](../../ml_data_assets/synthetic_cv_v1/design.json) và [scenarios.json](../../ml_data_assets/synthetic_cv_v1/scenarios.json) qua `python -m ml_data synthetic-cvs`:
 
-CSV CV đề xuất, một dòng/tài liệu, mapping trong config:
+- **Phân bố nhóm nghề:** 12 CV cho mỗi nhóm `Backend Python`, `Backend Java`, `Frontend`, `DevOps/Cloud` và `QA/Testing` (tổng 60 CV). Chưa tạo CV `Data Analyst` ở đợt này vì nhóm `Data Analyst` hiện có `0` JD ngoài pilot qua cổng chất lượng kỹ thuật; không tạo quota giả để tuyên bố đủ benchmark 6 nghề.
+- **Độc lập kịch bản và giới hạn lineage:** viết chủ yếu bằng tiếng Việt kèm thuật ngữ công nghệ, đa dạng nhiệm vụ, stack, thời lượng và cách trình bày từ 60 kịch bản nghề nghiệp độc lập (`source_group = scenario:<cv_id>`), không sao chép JD đích, không xem ranking và không nhắm đạt nhãn `2` với một JD cụ thể; không viết lại 6 CV pilot (`0` nhóm nối với pilot) và không chứa PII thật. Tuy có 60 `source_group` kịch bản, toàn bộ 60 CV thuộc **6 họ khung sinh (`template_group`)** (`10` CV/họ = `2` CV/nghề × `5` nghề) và cùng một đợt tác giả kịch bản nên gom nhóm chuẩn tạo **6 nhóm CV độc lập** (`54` cạnh `template_group`, `0` cạnh gần trùng chéo họ). Đây là dữ liệu synthetic phục vụ phát triển/kiểm thử quy trình, không phải 60 ứng viên thật độc lập.
+- **6 họ khung (`template_group`) và loại thời lượng (`experience_kind`):**
+  - `employment_history` (`10` CV, `employment`): làm việc toàn thời gian (`14–54` tháng).
+  - `incident_case` (`10` CV, `employment`): hồ sơ xử lý sự cố/vận hành thực tế (`16–48` tháng).
+  - `personal_portfolio` (`10` CV, `project`): đồ án/dự án cá nhân (`5–11` tháng).
+  - `internship_log` (`10` CV, `internship`): nhật ký thực tập (`3–6` tháng).
+  - `contract_handover` (`10` CV, `contract`): hợp đồng ngắn hạn/bàn giao (`6–15` tháng).
+  - `incomplete_account` (`10` CV, `unknown`): mô tả công việc/stack nhưng thiếu mốc thời gian rõ ràng, giữ `experience_json = "{}"` (không thay bằng `0` tháng và không suy từ tổng năm làm việc hay danh sách kỹ năng).
+- **Schema và bằng chứng nguyên văn (`evidence.json`):**
 
 | Cột | Ý nghĩa |
 |---|---|
-| `cv_id`, `cv_text` | ID ổn định và text chuyên môn đã ẩn danh, tối thiểu 80 ký tự chuẩn hóa |
-| `source_group` | Cùng hồ sơ/người/tài liệu gốc dùng cùng mã qua mọi biến thể |
-| `template_group` | Bắt buộc cho synthetic; cùng khung/generator family không tách partition |
-| `is_synthetic` | `true`/`false` tường minh; CV tạo mới luôn synthetic |
-| `role`, `skills`, `stack` | Metadata có căn cứ; skills/stack phân tách `;`, không biết để trống |
-| `experience_json` | JSON scope → tháng có bằng chứng; thiếu giữ `{}`/trống, không suy từ tuổi/skill liệt kê |
-| `exposure`, `text_scope` | development nếu đã dùng chỉnh phương pháp; prospective nếu ứng viên chia tập. `professional` sau khi đã rà text, mặc định unreviewed cách ly |
+| `cv_id`, `cv_text` | ID ổn định (`CVX_<ROLE>_01..12`) và văn bản chuyên môn đã ẩn danh (`>= 80` ký tự chuẩn hóa) |
+| `source_group` | Mã kịch bản gốc (`scenario:<cv_id>`); mọi biến thể cùng kịch bản giữ chung mã |
+| `template_group` | Họ khung sinh (`synthetic-career-scenarios-v1:<family>`); không tách họ qua các partition |
+| `is_synthetic` | `true` tường minh cho toàn bộ 60 CV |
+| `role`, `skills`, `stack` | Metadata có câu bằng chứng nguyên văn và offset ký tự trong `evidence.json` |
+| `experience_json` | JSON `scope -> months` có câu bằng chứng nguyên văn; `10` CV thiếu thời lượng giữ `{}` |
+| `exposure`, `text_scope` | `prospective` (chưa dùng chỉnh parser/feature), `professional` |
+| `lineage_json` | Lưu `generator_version`, `cohort_id`, `scenario_id`, `template_family`, `variant_index`, `variant_history` và `derived_from_cv_ids=[]` |
 
-Tạo nguồn CV có version/manifest và quyền sử dụng; gom lineage trước, rà phân bố và chọn protocol `known-jd` hoặc `new-both` khi đã có CV đủ độc lập. Không mặc định ghép mọi CV với JD không được chọn là nhãn 0. [Config template](data_configs/new_cvs.template.json) chưa chứa CV thực tế.
+Xem [config mẫu CV](data_configs/new_cvs.template.json) và [config import kết hợp CV + JD v2](data_configs/synthetic_cv_jd_v2_import.json).
 
-## 5. PowerShell tái tạo và sinh báo cáo
+## 5. Import kết hợp và preview split `known-jd`
 
-Các output lớn, nguồn và text đầy đủ nằm trong `ml_data_runs/` đã Git ignore; chỉ schema/config/receipt được giữ trong repo. Ba nguồn local cần đi kèm khi tái tạo. [Config export hiện hành](data_configs/upstream_jd_import.json) trỏ tới canonical/context của run v2 local, không dùng được chỉ bằng clone mà thiếu run.
+Lệnh `python -m ml_data expand-preview` kết hợp 60 CV giả lập với kho JD chuẩn của run `20261113_upstream_v2_01` (`dataset_version = synthetic-careers-v1-jd-v2-a3127c9fa6fa`, `3.122` bản ghi = `60` CV + `3.062` JD, `2.518` nhóm = `6` nhóm CV + `2.512` nhóm JD). Kiểm tra bất biến xác nhận toàn bộ `3.062` JD giữ nguyên 100% văn bản, quality flags, lineage, group/exposure và raw row (`888` keep = `100` development + `788` prospective; `65` bản trùng loại; `2.109` quarantine; closure development giữ nguyên `154` record). Chi tiết đầy đủ tại [receipt preview](reports/20261113-cv-jd-preview.json).
+
+Preview split theo protocol **`known-jd`** (`seed=20261113`, Top `k=5`, tỷ lệ đích `60/20/20` áp lên nguyên nhóm CV, kho JD hợp lệ dùng chung là **788 JD** `keep` ngoài `development`):
+
+| Partition preview | CV | Nhóm CV (`template_group`) | JD dùng chung | Cặp dự kiến |
+|---|---:|---:|---:|---:|
+| `train` | 30 | 3 (`employment_history`, `incident_case`, `incomplete_account`) | 788 | 90 |
+| `validation` | 20 | 2 (`internship_log`, `personal_portfolio`) | 788 | 15.760 |
+| `test` | 10 | 1 (`contract_handover`) | 788 | 7.880 |
+
+- **Phân bố theo partition:**
+  - **`train` (30 CV, 3 nhóm):** mỗi nghề 6 CV (`Backend Python: 6`, `Backend Java: 6`, `Frontend: 6`, `DevOps/Cloud: 6`, `QA/Testing: 6`); loại kinh nghiệm `{'employment': 20, 'unknown': 10}`; thiếu các loại `['contract', 'internship', 'project']`.
+  - **`validation` (20 CV, 2 nhóm):** mỗi nghề 4 CV (`4 × 5 = 20`); loại kinh nghiệm `{'internship': 10, 'project': 10}`; thiếu các loại `['contract', 'employment', 'unknown']`.
+  - **`test` (10 CV, 1 nhóm):** mỗi nghề 2 CV (`2 × 5 = 10`); loại kinh nghiệm `{'contract': 10}`; thiếu các loại `['employment', 'internship', 'project', 'unknown']`.
+- **Nhận xét độ lệch và chống rò rỉ:** kiểm tra chống rò rỉ nhóm đạt (`leakage_check_passed=true`, `pilot_connected_groups=0`). Tuy nhiên vì chỉ có **6 họ khung (`template_group`)** và mỗi họ gắn với một kiểu lịch sử kinh nghiệm, việc giữ nguyên họ trong cùng partition làm các loại kinh nghiệm bị tách hẳn giữa `train`/`validation`/`test` và `test` chỉ có 1 họ (`contract_handover`). Chúng tôi giữ nguyên kết quả và báo rõ hạn chế này thay vì tách họ, sửa provenance hay đổi seed để ép tỷ lệ. Protocol `known-jd` chỉ đo khả năng xếp hạng cho CV mới trên kho JD đã biết, không đo tổng quát hóa sang JD mới.
+- **Khối lượng cặp dự kiến (chưa tạo file cặp hay nhãn):**
+  - **`train` (`mixed`):** kế hoạch lấy `3` cặp ngẫu nhiên + tối đa `2` cặp cho mỗi loại hard candidate (`same_role_diff_requirement`, `same_stack_diff_task`, `experience_gap`) trên mỗi CV (trần `270` cặp). Thực tế lấy được **90 cặp** (`uniform_random_without_replacement: 90`) và **thiếu 180 slot hard candidate** (`90` lượt thiếu nhóm CV × loại hard) vì cả `788` JD dùng chung hiện giữ `skills=[]`, `stack=[]`, `experience={}` chưa kiểm chứng (`missing_metadata = {'skills': 788, 'stack': 788, 'experience': 788}`). Không mặc định cặp khó là nhãn `0`.
+  - **`validation` (`census`):** `20 CV × 788 JD` = **15.760 cặp**.
+  - **`test` (`census`):** `10 CV × 788 JD` = **7.880 cặp**.
+  - **Tổng cộng 3 partition:** **23.730 cặp** (`pair_files_created=0`, `labels_created=0`, `final_test_ready=false`).
+- **`Data Analyst` vẫn thuộc phạm vi nghiên cứu:** có `9` JD gắn tag nguồn, `8` JD có dấu hiệu chức danh, `4` JD nối với pilot và **`0` JD ngoài pilot qua gate**. Bốn JD đã chọn để rà parser (`job_3d91bd66351c91e206c7`, `job_ce9d4b53148ccab5609b`, `job_f276ea42265aab730cdf`, `job_60e8ded349354f397062`) vẫn giữ `development`/`quarantine`. Cần khôi phục/bổ sung JD `Data Analyst` hợp lệ trước khi thêm CV và mở rộng benchmark sang nghề thứ sáu.
+
+## 6. PowerShell tái tạo và sinh báo cáo
+
+Các output lớn, nguồn và text đầy đủ nằm trong `ml_data_runs/` đã Git ignore; chỉ schema/config/receipt và kịch bản sinh CV được giữ trong repo. Ba nguồn CSV local cần đi kèm khi tái tạo. [Config upstream JD](data_configs/upstream_jd_import.json) và [config kết hợp CV + JD v2](data_configs/synthetic_cv_jd_v2_import.json) trỏ tới canonical/context của run local trong `ml_data_runs/`.
 
 ```powershell
 Set-Location D:\JobApply
@@ -115,9 +149,23 @@ if ($LASTEXITCODE -ne 0) { throw 'Reproducibility or original-file check failed'
 python -m ml_data verify --artifact "$base\first\dataset"
 ```
 
-Script report chỉ tạo output mới, xác minh nguồn/pilot và mọi hash trước khi xuất báo cáo. Không có lệnh tạo split ở lượt này. Chạy test:
+Tạo 60 CV giả lập từ kịch bản và chạy preview kết hợp với run upstream v2 đã xác minh (không chạy lại upstream v2 khi đã có `ml_data_runs\20261113_upstream_v2_01`):
+
+```powershell
+$cvBase = ".\ml_data_runs\${runId}_cv_expansion"
+python -m ml_data synthetic-cvs --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$cvBase\synthetic_cvs"
+if ($LASTEXITCODE -ne 0) { throw 'Synthetic CV generation failed' }
+python -m ml_data expand-preview --upstream-run .\ml_data_runs\20261113_upstream_v2_01 --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$cvBase\preview" --seed 20261113
+if ($LASTEXITCODE -ne 0) { throw 'Combined preview failed' }
+python -m ml_data verify --artifact "$cvBase\synthetic_cvs"
+python -m ml_data verify --artifact "$cvBase\preview"
+python -m ml_data verify --artifact "$cvBase\preview\dataset"
+python -m ml_data verify --artifact "$cvBase\preview\preview_split"
+```
+
+Chạy kiểm thử và linter:
 
 ```powershell
 & .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
-& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-upstream.py tests/ml/test_upstream.py
+& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-upstream.py tests/ml/test_data_pipeline.py tests/ml/test_upstream.py tests/ml/test_synthetic_expansion.py
 ```

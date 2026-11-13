@@ -19,7 +19,8 @@
         "stack": "stack",
         "experience": "experience_json",
         "exposure": "exposure",
-        "text_scope": "text_scope"
+        "text_scope": "text_scope",
+        "lineage": "lineage_json"
       },
       "source_url": null,
       "collected_at": null,

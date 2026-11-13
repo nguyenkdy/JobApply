@@ -10,7 +10,7 @@ README là tài liệu bàn giao cho người phát triển/Codex, đối chiế
 
 **Cập nhật Mốc 0 & Demo:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp; demo `recommend.py` chọn run qua `--run-dir` và xác minh toàn vẹn artifact trước khi suy luận. Xem [báo cáo và lệnh tái tạo Mốc 0](docs/ml/baseline.md).
 
-**Cập nhật Mốc 2 v2 (13/11/2026):** đã sửa điều kiện trạng thái (`sections_found`, `needs_review=false`, cờ rỗng), thống nhất ngưỡng 80 ký tự chuẩn hóa và chạy upstream hai lần: cả 51 file output giống byte. Kho matching có **888 JD qua gate kỹ thuật, 65 bản trùng bị loại và 2.109 JD cách ly**; trong keep có **100 development và 788 prospective**. Lô 64 JD gồm **60 keep + 4 Data Analyst quarantine để rà parser**, không phải 64 JD sẵn sàng huấn luyện. Data Analyst có 9 tag nguồn, 8 dấu hiệu chức danh, 4 thuộc pilot và **0 ngoài pilot qua gate**. Chưa tạo CV mới hoặc khóa split; bước sau chỉ dùng số v2 đã xác nhận. [Hướng dẫn](docs/ml/dataset_pipeline.md), [receipt từ hai run](docs/ml/reports/20261113-data-preparation.json).
+**Cập nhật Mốc 2 v2 & Preview CV mới (13/11/2026):** đã sửa điều kiện trạng thái (`sections_found`, `needs_review=false`, cờ rỗng), thống nhất ngưỡng 80 ký tự chuẩn hóa và chạy upstream hai lần: cả 51 file output giống byte. Kho matching có **888 JD qua gate kỹ thuật, 65 bản trùng bị loại và 2.109 JD cách ly**; trong keep có **100 development và 788 prospective** (lô 64 JD development gồm **60 keep + 4 Data Analyst quarantine để rà parser**). Đã bổ sung **60 CV giả lập mới** (12 CV × 5 nhóm `Backend Python`, `Backend Java`, `Frontend`, `DevOps/Cloud`, `QA/Testing`; 60 `source_group` kịch bản thuộc **6 họ `template_group`**; lưu câu bằng chứng nguyên văn và `experience_json={}` cho 10 CV thiếu thời lượng), import kết hợp cùng kho JD v2 (`3.122` bản ghi, giữ nguyên 100% `3.062` JD) và tạo **preview split `known-jd`** (`30` train / `20` validation / `10` test CV trên **788 JD** dùng chung; `90` cặp train ngẫu nhiên + `180` slot hard chưa điền do thiếu metadata JD, `15.760` cặp validation, `7.880` cặp test; `pair_files_created=0`, `labels_created=0`, `final_test_ready=false`). `Data Analyst` vẫn giữ trong phạm vi nghiên cứu (`0` JD ngoài pilot qua gate). [Hướng dẫn](docs/ml/dataset_pipeline.md), [receipt upstream](docs/ml/reports/20261113-data-preparation.json), [receipt preview CV + JD](docs/ml/reports/20261113-cv-jd-preview.json).
 
 ## 1. Đọc repo trước khi tiếp tục code
 
@@ -276,9 +276,9 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 Đã hoàn tất cập nhật `jobapply_pilot_v1/jobapply_experience_v2/recommend.py` và `jobapply_pilot_v1/run_artifacts.py`: bắt buộc `--run-dir`, xác minh manifest, checksum, cấu hình encoder/BM25, thứ tự feature và tương thích preprocessing trước khi suy luận; hỗ trợ CV mới dạng văn bản chuyên môn đã ẩn danh mà không trộn artifact ngoài run.
 
-### Mốc 2 — Kiểm chứng upstream, nhập JD và chia tập chống rò rỉ
+### Mốc 2 — Kiểm chứng upstream, nhập JD, bổ sung CV giả lập và preview split chống rò rỉ
 
-Đã kiểm kê ba CSV upstream, đối chiếu `raw → clean → matching → pilot`, nhập `3.062` JD (`888` keep, `65` trùng, `2.109` cách ly), cô lập `68` record liên quan pilot và chọn **64 JD development: 60 keep + 4 ca rà parser** ([hướng dẫn](docs/ml/dataset_pipeline.md), [danh sách](docs/ml/reports/20261113-upstream-jd-selection.json)). Kết quả v2 đã được xác minh hai run và 44 test. Cần giải quyết thiếu JD Data Analyst qua gate, bổ sung CV mới có lineage theo [schema/config](docs/ml/data_configs/new_cvs.template.json), rồi mới rà phân bố và khóa split. Giữ nhãn pilot/provenance; không tự tạo gold hoặc đổi `ai_draft` thành nhãn người.
+Đã kiểm kê ba CSV upstream, đối chiếu `raw → clean → matching → pilot`, nhập `3.062` JD (`888` keep, `65` trùng, `2.109` cách ly), cô lập `68` record liên quan pilot và chọn **64 JD development: 60 keep + 4 ca rà parser** ([hướng dẫn](docs/ml/dataset_pipeline.md), [danh sách](docs/ml/reports/20261113-upstream-jd-selection.json)). Tiếp đó đã tạo **60 CV giả lập mới** cho 5 nhóm nghề có JD qua gate (`ml_data_assets/synthetic_cv_v1/`), chuẩn hóa metadata có bằng chứng nguyên văn, nhập chung với kho JD v2 (`3.122` record, [config kết hợp](docs/ml/data_configs/synthetic_cv_jd_v2_import.json)) và tạo **preview split `known-jd`** (`30/20/10` CV theo `3/2/1` họ `template_group` trên `788` JD dùng chung; [receipt preview](docs/ml/reports/20261113-cv-jd-preview.json)), xác minh bằng hai lần chạy lặp giống byte và 50 test unittest. Do giữ nguyên 6 họ khung không tách qua các partition nên loại kinh nghiệm giữa `train`/`validation`/`test` còn lệch và `788` JD chưa có metadata `skills`/`stack`/`experience` đã kiểm chứng để lấy đủ hard candidates; cần bổ sung metadata JD có bằng chứng, khôi phục/bổ sung JD `Data Analyst` qua gate và thêm họ CV đa dạng trước khi khóa final test và tạo toàn bộ cặp gán nhãn. Giữ nhãn pilot/provenance; không tự tạo gold hoặc đổi `ai_draft` thành nhãn người.
 
 ### Mốc 3 — Extraction và benchmark
 
@@ -329,13 +329,15 @@ $selectedRun = '.\jobapply_pilot_v1\results\reruns\20261112_baseline_03'
 
 Run đầy đủ không nằm trong Git; clone mới cần khôi phục kho run tin cậy hoặc chạy Mốc 0 vào thư mục mới rồi dùng đường dẫn đó. CV mới không cần có trong train; không truyền `--months` thì kinh nghiệm theo scope giữ unknown. Đây là demo model refit trên pilot, không phải metric held-out hoặc danh sách việc đang mở của app.
 
-Kiểm kê ba CSV upstream, nhập kho JD chuẩn Mốc 2 và chọn lô 64 JD development (chỉ cần thư viện chuẩn Python, chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
+Kiểm kê ba CSV upstream, nhập kho JD chuẩn Mốc 2, sinh 60 CV giả lập và tạo preview split kết hợp `known-jd` (chỉ cần thư viện chuẩn Python, chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
 
 ```powershell
 $dataOut = ".\ml_data_runs\${runId}"
 .\.venv\Scripts\python.exe -m ml_data inventory --output "$dataOut\inventory"
-.\.venv\Scripts\python.exe -m ml_data upstream --source-dir . --output "$dataOut\upstream"
-.\.venv\Scripts\python.exe -m ml_data verify --artifact "$dataOut\upstream"
+.\.venv\Scripts\python.exe -m ml_data upstream --source-dir . --output "$dataOut\upstream" --seed 20261113
+.\.venv\Scripts\python.exe -m ml_data synthetic-cvs --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$dataOut\synthetic_cvs"
+.\.venv\Scripts\python.exe -m ml_data expand-preview --upstream-run "$dataOut\upstream" --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$dataOut\preview" --seed 20261113
+.\.venv\Scripts\python.exe -m ml_data verify --artifact "$dataOut\preview"
 ```
 
 ### Linux VM / VMware — shell cho Docker

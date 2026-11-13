@@ -23,6 +23,25 @@ def candidate_reasons(cv, jd):
     return reasons
 
 
+def choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type):
+    """Shared by sampling and workload preview; returns IDs, never labels."""
+    jobs = sorted(jobs, key=lambda row: row["record_id"])
+    rng = random.Random(digest(f"{seed}|{partition}|{cv['record_id']}"))
+    count = min(random_per_cv, len(jobs))
+    chosen = {jd["record_id"]: "uniform_random_without_replacement" for jd in rng.sample(jobs, count)}
+    shortages = []
+    if count < random_per_cv:
+        shortages.append(dict(cv_id=cv["record_id"], strategy="random", requested=random_per_cv, selected=count))
+    for category in ("shared_skill_different_role", "shared_skill_different_stack", "scoped_experience_requirement_gap"):
+        candidates = [jd for jd in jobs if jd["record_id"] not in chosen and category in candidate_reasons(cv, jd)]
+        count = min(hard_per_type, len(candidates))
+        chosen.update({jd["record_id"]: category for jd in rng.sample(candidates, count)})
+        if count < hard_per_type:
+            shortages.append(dict(cv_id=cv["record_id"], strategy=category, requested=hard_per_type, selected=count,
+                                  reason="not enough distinct candidates with explicit metadata; no label inferred"))
+    return chosen, shortages
+
+
 def sample_pairs(dataset, split, output, partition="train", strategy="mixed", seed=20261113,
                  random_per_cv=3, hard_per_type=2, max_pairs=100000):
     dataset, split = Path(dataset).resolve(), Path(split).resolve()
@@ -44,22 +63,11 @@ def sample_pairs(dataset, split, output, partition="train", strategy="mixed", se
     require(upper_bound <= max_pairs, "Pair budget exceeded; census is not silently truncated")
     pairs, selection, shortages = [], [], []
     for cv in cvs:
-        rng = random.Random(digest(f"{seed}|{partition}|{cv['record_id']}"))
-        chosen = {}
         if strategy == "census":
             chosen = {jd["record_id"]: "catalogue_census" for jd in jobs}
         else:
-            count = min(random_per_cv, len(jobs))
-            chosen.update({jd["record_id"]: "uniform_random_without_replacement" for jd in rng.sample(jobs, count)})
-            if count < random_per_cv:
-                shortages.append(dict(cv_id=cv["record_id"], strategy="random", requested=random_per_cv, selected=count))
-            for category in ("shared_skill_different_role", "shared_skill_different_stack", "scoped_experience_requirement_gap"):
-                candidates = [jd for jd in jobs if jd["record_id"] not in chosen and category in candidate_reasons(cv, jd)]
-                count = min(hard_per_type, len(candidates))
-                chosen.update({jd["record_id"]: category for jd in rng.sample(candidates, count)})
-                if count < hard_per_type:
-                    shortages.append(dict(cv_id=cv["record_id"], strategy=category, requested=hard_per_type, selected=count,
-                                          reason="not enough distinct candidates with explicit metadata; no label inferred"))
+            chosen, missing = choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type)
+            shortages.extend(missing)
         for jid, reason in sorted(chosen.items()):
             jd = records[jid]
             pid = "PAIR_" + digest(cv["record_id"] + "|" + jid)[:32]
