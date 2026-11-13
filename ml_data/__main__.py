@@ -39,6 +39,10 @@ def main():
     sample.add_argument("--max-pairs", type=int, default=100000)
     check = sub.add_parser("verify")
     check.add_argument("--artifact", type=Path, required=True)
+    upstream = sub.add_parser("upstream", help="Audit three supplied stages; import JD and select a development batch")
+    upstream.add_argument("--source-dir", type=Path, default=ROOT)
+    upstream.add_argument("--output", type=Path, required=True)
+    upstream.add_argument("--seed", type=int, default=20261113)
     args = parser.parse_args()
     try:
         if args.command == "inventory":
@@ -52,6 +56,10 @@ def main():
         elif args.command == "sample":
             result = sample_pairs(args.dataset, args.split, args.output, args.partition, args.strategy, args.seed,
                                   args.random_per_cv, args.hard_per_type, args.max_pairs)
+        elif args.command == "upstream":
+            from .upstream import prepare_upstream
+            full = prepare_upstream(args.source_dir, args.output, args.seed)
+            result = {k: full[k] for k in ("source_hashes", "relations", "import_summary", "batch")}
         else:
             manifest = verify(args.artifact)
             result = dict(verified=True, artifact_type=manifest["artifact_type"], files=len(manifest["artifacts"]))

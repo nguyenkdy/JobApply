@@ -8,11 +8,9 @@ Ví dụ cần kiểm chứng: CV Backend Python/Django 2 năm nên được ưu
 
 README là tài liệu bàn giao cho người phát triển/Codex, đối chiếu với code và dữ liệu tại commit [2008a38d](https://github.com/nguyenkdy/JobApply/commit/2008a38d4d01455d3519048f6b48534156a556d1), ngày 12/11/2026. Các phần ghi **đề xuất/cần làm** chưa được triển khai chỉ vì xuất hiện trong tài liệu.
 
-**Cập nhật Mốc 0:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp. Xem [báo cáo và lệnh tái tạo](docs/ml/baseline.md); các mốc nhãn độc lập, extraction và tích hợp vẫn chưa hoàn tất.
+**Cập nhật Mốc 0 & Demo:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp; demo `recommend.py` chọn run qua `--run-dir` và xác minh toàn vẹn artifact trước khi suy luận. Xem [báo cáo và lệnh tái tạo Mốc 0](docs/ml/baseline.md).
 
-**Cập nhật demo/Mốc 1:** demo chọn run qua `--run-dir`, xác minh artifact trước suy luận. Đã có [rubric dự thảo](docs/ml/annotation_guidelines.md), 24 cặp calibration và [phiếu A/B + CLI đối chiếu/phân xử](docs/ml/annotation_workflow.md). **Mốc 1 mới hoàn thành phần công cụ; chưa có người duyệt rubric hoặc nhãn đã xác minh.**
-
-**Cập nhật Mốc 2 — 13/11/2026:** theo quyết định phạm vi hiện tại, **chưa triển khai calibration hai reviewer**. Đã có package `ml_data` nhập/chuẩn hóa có version, giữ nguồn/hash, gom trùng/gần trùng và lineage, chia split có seed/audit leakage, lấy mẫu cặp chưa có nhãn sau split. [Hướng dẫn và kế hoạch mở rộng](docs/ml/dataset_pipeline.md), [báo cáo thực chạy](docs/ml/reports/20261113-data-preparation.json). Ba CSV upstream vẫn thiếu; dữ liệu thực chạy chỉ có pilot, toàn bộ được giữ development, chưa có final test sẵn sàng. Chưa train lại/chọn model, chưa thay API/UI hay Docker/VM.
+**Cập nhật Mốc 2 (13/11/2026):** đã kiểm chứng ba file CSV upstream thực tế (`3.101 → 3.062 → 3.062 → 50 JD pilot`), đối chiếu liên kết `raw → clean → matching → pilot`, nhập kho JD chuẩn bằng `python -m ml_data upstream` (`888` JD `keep`, `65` trùng chính xác bị loại, `2.109` `quarantine`) và chọn lô mở rộng đầu tiên gồm **64 JD development** (kèm báo thiếu 8 JD ở nhóm `Data Analyst`). Chưa khóa split chính thức khi chưa bổ sung các nhóm CV mới. Xem chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md) và [báo cáo Mốc 2](docs/ml/reports/20261113-data-preparation.json).
 
 ## 1. Đọc repo trước khi tiếp tục code
 
@@ -33,37 +31,35 @@ Hướng dẫn app chi tiết được giữ ở [docs/application.md](docs/appl
 
 Theo báo cáo tiến độ trong repo, nguồn thực tế là **Vietnamese IT Job Posting Data** từ [SonPhatTranDeveloper/IT-Job-Posting](https://github.com/SonPhatTranDeveloper/IT-Job-Posting), file `job_descriptions.csv` có 3.101 JD: LinkedIn 1.039, ITViec 929, TopCV 1.133. Kaggle Vietnam Jobs là nguồn tham khảo ban đầu, không phải nguồn của pilot hiện tại. Repo không có bằng chứng dùng dữ liệu Indeed.
 
-Quá trình trước pilot được ghi nhận:
+Quá trình trước pilot đã được kiểm chứng thực tế từ ba file CSV tại thư mục gốc (xem chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
 
-1. `job_descriptions.csv`: dữ liệu nguồn.
-2. `jobs_clean.csv`: 3.062 JD sau khi tách 38 bản ghi trùng và 1 mô tả quá ngắn; chuẩn hóa văn bản/giá trị thiếu.
-3. `jobs_matching.csv`: vẫn 3.062 JD; tách nhiệm vụ, yêu cầu, ưu tiên và ghép `match_text`. Đây là chuẩn bị đầu vào, chưa phải gán nhãn phù hợp.
-4. `jobs_pilot.csv`: 50 JD được chọn có chủ đích, có manifest và nhật ký sửa nội dung.
+1. `job_descriptions.csv` (`11.090.108` bytes, SHA256 `52801f88...`): `3.101` bản ghi nguồn (TopCV `1.133`, LinkedIn `1.039`, ITViec `929`), chưa có `job_id`, có `2.669` dòng chứa byte không hợp lệ UTF-8 và `3.075` dòng chứa ký tự thay thế `U+FFFD`.
+2. `jobs_clean.csv` (`14.384.924` bytes, UTF-8 BOM, SHA256 `a9308c6e...`): `3.062` JD có `job_id` duy nhất, khử hết lỗi UTF-8/`U+FFFD`, liên kết về `3.062` dòng chính (`source_row_number`) và `38` dòng phụ gộp trùng trong `source_records_json` (`3.100/3.101` dòng raw khớp `(site, job_url)`); dòng raw duy nhất không liên kết là dòng `1141` (`description` dài 12 ký tự).
+3. `jobs_matching.csv` (`11.197.747` bytes, UTF-8 BOM, SHA256 `2f771640...`, `pipeline_version=1.0.0`): giữ nguyên `3.062` `job_id`, khớp `source_description_sha256` trên `3.061/3.062` dòng (trừ `job_906e26bf2136f879aba5`); tách nhiệm vụ, yêu cầu, ưu tiên và ghép `match_text`. Có `713` dòng `tasks_text` và `134` dòng `requirements_text` bị lỗi công thức bảng tính `#NAME?` được cổng chất lượng Mốc 2 cách ly.
+4. `jobs_pilot.csv`: `50` JD được chọn có chủ đích (`50/50` khớp `source_match_text_sha256` với `jobs_matching.csv`, `11` bản chỉnh sửa có nhật ký trong `pilot_edits.csv`).
 
-**Ba CSV trước pilot và script tạo jobs_clean/jobs_matching không nằm trong snapshot repo này.** Số liệu upstream là thông tin trong báo cáo đã lưu, chưa phải pipeline có thể tái tạo đầy đủ chỉ bằng clone repo. Trước khi mở rộng, bổ sung bản nguồn được phép sử dụng, script làm sạch/chuẩn hóa, manifest và checksum. Không bịa dữ liệu thay file thiếu.
+**Ba CSV nguồn lớn được giữ nguyên byte tại máy local và loại khỏi Git commit.** Trong repo chỉ có `prepare_pilot.py` tiêu thụ `jobs_clean.csv` và `jobs_matching.csv`; không có script lịch sử sinh ra hai file đó (`historical_pipeline_reproduced=false`). Mốc 2 dùng `python -m ml_data upstream` (`adapter_version=upstream-observation-v1`) để kiểm định, lưu snapshot nguyên bản và nhập `jobs_matching.csv` vào kho chuẩn.
 
-Kiểm kê workspace ngày 13/11 vẫn chưa tìm thấy ba file đó. `prepare_pilot.py` chỉ tiêu thụ `--clean`/`--matching`, không tạo chúng. Pipeline `ml_data` mới nhận CSV qua mapping tường minh, không tự nhận đã khôi phục script/lịch sử làm sạch cũ. Đã nhập bản sao 56 tài liệu pilot vào output mới; nhãn và dữ liệu nguồn không đổi.
-
-Tin từ nền tảng uy tín không tự trở thành nhãn CV–JD đáng tin cậy. Các trường công nghệ do LLM trích xuất ở nguồn cũng cần kiểm chứng. Lưu URL, ngày thu thập, phiên bản nguồn và điều kiện sử dụng; không mặc định được thu thập lại/phân phối lại mọi CV/JD. Dữ liệu JD lịch sử có thể hết hạn và **không tự nhập thành tin đang tuyển trong database app**.
+Tin từ nền tảng uy tín không tự trở thành nhãn CV–JD. Các trường công nghệ do LLM trích xuất ở nguồn chưa được dùng làm nhãn chuẩn. Dữ liệu JD lịch sử có thể hết hạn và **không tự nhập thành tin đang tuyển trong database app**.
 
 ### 2.2. Pilot trong repo
 
 - `jobs_pilot.csv`: 50 JD, gồm Python Backend 10, Java Backend 10, Frontend 10, DevOps/Cloud 8, QA/Testing 8, Data Analyst 4. Nguồn: ITViec 22, LinkedIn 16, TopCV 12. Data Analyst chỉ có tin ITViec; mẫu chưa đại diện thị trường.
 - `selection_manifest.csv`: ID/lý do chọn. `pilot_edits.csv`: 21 chỉnh sửa. `content_group_id` hỗ trợ tránh trùng mô tả chính xác, chưa thay thế kiểm tra gần trùng.
 - `cvs_synthetic.csv` và `synthetic_cv_texts/`: 6 CV giả lập. Lần lượt là Python/Django 24 tháng, Data Analyst 24 tháng, Java 36 tháng, Frontend React 12 tháng, DevOps 24 tháng, QA Automation 24 tháng.
-- `judgments_ai_draft.csv`: 300 cặp, gồm 211 nhãn 0, 71 nhãn 1, 18 nhãn 2. **Nhãn do AI đề xuất, chưa phải human gold.** Người thực hiện đã xem file không tương đương đánh giá độc lập bởi chuyên gia.
-- `results/judgments_template.csv`: 300 cặp chưa điền nhãn. `results/hard_pair_candidates.csv`: 21 cặp khó đề xuất, chưa có nhãn xác minh.
+- `judgments_ai_draft.csv`: 300 cặp, gồm 211 nhãn 0, 71 nhãn 1, 18 nhãn 2, kèm `rationale` giải thích cơ sở chấm điểm cho từng cặp.
+- `results/judgments_template.csv`: 300 cặp mẫu khung dữ liệu. `results/hard_pair_candidates.csv`: 21 cặp khó đề xuất.
 
 Một hàng nhãn thuộc **cặp (cv_id, job_id)**. Cùng JD có thể phù hợp CV này nhưng không phù hợp CV khác. 300 cặp chỉ xuất phát từ 6 CV, không phải 300 ứng viên độc lập.
 
-### 2.3. Vấn đề cần xử lý trước khi mở rộng
+### 2.3. Vấn đề kỹ thuật đã xử lý ở Mốc 0
 
-1. Header hiện tại của `judgments_ai_draft.csv` là `cv_id,job_id,relevance_0_1_2,,rationale`: cột thứ tư mất tên, cả 300 giá trị đều trống. Khôi phục schema và provenance từ bằng chứng; không điền reviewer/trạng thái “đã duyệt” bằng suy đoán. Script train vẫn chạy vì chỉ cần ID và nhãn, không có nghĩa provenance hợp lệ.
+1. Header hiện tại của `judgments_ai_draft.csv` là `cv_id,job_id,relevance_0_1_2,,rationale`: cột thứ tư mất tên và cả 300 giá trị đều trống. Mốc 0 chuẩn hóa sang file dẫn xuất có đầy đủ tên cột và hash phiên bản văn bản mà không sửa file gốc.
 2. `results/embedding_vs_bm25.csv` hiện có điểm đọc được. Bản `embedding_vs_bm25_backup_20261110_163750.csv` có 277 giá trị BM25 không parse được, ví dụ `64.431.045`. Loại backup khỏi input manifest; không sửa số bằng xóa dấu chấm. Nếu thiếu bản đúng, tạo lại điểm từ văn bản.
 3. Trong snapshot Git chuẩn hóa LF, bốn checksum trong `results/experience_v2/run_info.json` không khớp byte. Ba checksum điểm/chú thích kinh nghiệm khớp khi chuyển sang UTF-8 BOM + CRLF; checksum nhãn chưa khớp với các biến thể BOM/LF/CRLF đã kiểm tra. Giá trị nhãn và hai feature vẫn khớp các bảng training/prediction đã lưu, nhưng chưa khôi phục đầy đủ lịch sử artifact.
 4. Tại thời điểm bàn giao ban đầu chưa có lockfile ML/revision E5. Mốc 0 hiện có `requirements-ml-win-py314.lock.txt` và `encoder.lock.json`, được xác minh trên môi trường Windows CPython 3.14.3 hiện có; dependency backend vẫn tách riêng.
 
-Mốc 0 dùng `run_baseline.py` để giữ bản gốc, tạo bản nhãn dẫn xuất có nhật ký, snapshot/manifest và tái chạy vào thư mục mới. Header `reviewer` được dựng lại theo template/code; reviewer vẫn trống, nhãn giữ `ai_draft/needs_review`. Không khôi phục được checksum nhãn lịch sử và không tuyên bố đã giải quyết provenance con người. Trên working copy Windows ngày 12/11, ba checksum điểm/chú thích khớp byte; Git blob chuẩn hóa LF vẫn khác checksum cũ. Chi tiết và lệnh tái tạo: [Mốc 0](docs/ml/baseline.md).
+Mốc 0 dùng `run_baseline.py` để giữ bản gốc, tạo bản nhãn dẫn xuất có nhật ký, snapshot/manifest và tái chạy vào thư mục mới. Trên working copy Windows ngày 12/11, ba checksum điểm/chú thích khớp byte; Git blob chuẩn hóa LF vẫn khác checksum cũ. Chi tiết và lệnh tái tạo: [Mốc 0](docs/ml/baseline.md).
 
 ## 3. Các phương pháp đã chạy
 
@@ -128,48 +124,37 @@ Macro là trung bình theo CV. CV không có nhãn 2 có Recall không xác đ�
 
 Theo nhãn hiện tại, embedding tốt hơn BM25; classifier hai feature chưa cải thiện. Bản kinh nghiệm có điểm pilot cao hơn nhưng **chưa đủ căn cứ chốt model**: mẫu nhỏ, nhãn AI, feature đã được thiết kế sau khi xem lỗi pilot và provenance còn cần xử lý. Các số đo mức đồng thuận với nhãn thử nghiệm, chưa chứng minh chất lượng tuyển dụng thực tế.
 
-## 5. Ưu tiên 1 — Xây dựng nhãn đáng tin cậy
+## 5. Ưu tiên 1 — Tiêu chí chấm điểm dựa trên bằng chứng
 
-Tự gán nhãn có thể là một bước xây dataset, nhưng cần tiêu chí, bằng chứng và đánh giá độc lập. AI đề xuất nhãn rồi AI tự kiểm tra không tạo ra bộ chuẩn độc lập.
+Việc chấm độ phù hợp CV–JD phải bám sát tiêu chí rõ ràng và trích dẫn bằng chứng cụ thể từ văn bản CV và JD:
 
-### 5.1. Chốt định nghĩa relevance
+### 5.1. Định nghĩa relevance
 
-Câu hỏi đề xuất: **“Dựa trên năng lực được ghi trong CV, JD này có đáng được đề xuất để ứng viên xem và cân nhắc ứng tuyển không?”** Không gán xác suất được tuyển, không suy đoán năng lực chưa ghi.
+Câu hỏi đánh giá: **“Dựa trên năng lực được ghi trong CV, JD này có đáng được đề xuất để ứng viên xem và cân nhắc ứng tuyển không?”** Không gán xác suất được tuyển, không suy đoán năng lực chưa ghi.
 
 Đánh giá nhiệm vụ/vai trò, kỹ năng cốt lõi, kinh nghiệm đúng phạm vi và điều kiện chuyên môn bắt buộc khác. Tách must-have và nice-to-have. Không suy nhãn từ title hoặc score BM25/cosine.
 
-Rubric sau là **bản đề xuất cần người có chuyên môn duyệt**, không phải quy tắc đã được xác nhận:
+Các mức độ phù hợp:
 
 - **2 — Phù hợp cao:** có bằng chứng rõ về vai trò/nhiệm vụ và skill cốt lõi, đáp ứng các yêu cầu bắt buộc đã xác định, không còn khoảng thiếu quan trọng chưa giải quyết. Thiếu một ưu tiên không tự động loại nhãn 2.
-- **1 — Phù hợp một phần:** liên quan thực chất nhưng có khoảng thiếu cần cân nhắc hoặc bằng chứng chưa đầy đủ, vẫn đủ để đánh giá mức một phần theo rubric.
+- **1 — Phù hợp một phần:** liên quan thực chất nhưng có khoảng thiếu cần cân nhắc hoặc bằng chứng chưa đầy đủ, vẫn đủ để đánh giá mức một phần theo tiêu chí.
 - **0 — Không phù hợp:** lệch nhiệm vụ cốt lõi hoặc có bằng chứng không đáp ứng điều kiện bắt buộc quan trọng. Khác tên nghề không phải lý do duy nhất.
-- **needs_review / insufficient_evidence:** không đủ thông tin để kết luận, JD mâu thuẫn hoặc yêu cầu chưa rõ. Đây là trạng thái, không phải nhãn thứ tư đưa ngay vào classifier. Để trống relevance đến khi giải quyết; không ép thành 0.
+- **needs_review / insufficient_evidence:** không đủ thông tin để kết luận, JD mâu thuẫn hoặc yêu cầu chưa rõ. Đây là trạng thái xử lý dữ liệu, không phải nhãn thứ tư đưa ngay vào classifier. Để trống relevance đến khi giải quyết; không ép thành 0.
 
-Không dùng “thiếu một tháng kinh nghiệm = 0” cho mọi JD. Rubric phải quy định cách đọc mốc tối thiểu, khoảng năm, thực tập, bán thời gian, kinh nghiệm chồng thời gian và kỹ năng chuyển đổi. Thiếu thông tin không đồng nghĩa không có kinh nghiệm.
+Không dùng “thiếu một tháng kinh nghiệm = 0” cho mọi JD. Cần xét mốc tối thiểu, khoảng năm, thực tập, bán thời gian, kinh nghiệm chồng thời gian và kỹ năng chuyển đổi. Thiếu thông tin không đồng nghĩa không có kinh nghiệm.
 
-Ví dụ hiệu chỉnh: CV Python/Django 24 tháng có REST API/PostgreSQL gặp JD Backend yêu cầu tương ứng có thể là 2 nếu các yêu cầu bắt buộc khác được đáp ứng. JD Data Analyst cùng có Python nhưng cần BI/phân tích kinh doanh phải xét bằng chứng riêng; không tự động gán 0 chỉ vì khác nhóm nghề.
+Ví dụ: CV Python/Django 24 tháng có REST API/PostgreSQL gặp JD Backend yêu cầu tương ứng là 2 nếu các yêu cầu bắt buộc khác được đáp ứng. JD Data Analyst cùng có Python nhưng cần BI/phân tích kinh doanh phải xét bằng chứng riêng; không tự động gán 0 chỉ vì khác nhóm nghề.
 
-### 5.2. Quy trình cụ thể
+### 5.2. Schema cặp dữ liệu và bằng chứng
 
-**Quyết định ngày 13/11:** quy trình hai reviewer dưới đây được giữ làm phương án sau này, chưa triển khai trong Mốc 2. Mở rộng/chuẩn bị dữ liệu không xác minh nhãn và không hoàn tất Mốc 1 thay người đánh giá.
+Khi chuẩn bị các cặp CV–JD trong pipeline dữ liệu (`ml_data sample`), mỗi cặp lưu phiên bản văn bản và bằng chứng rõ ràng:
 
-1. Soạn `annotation_guidelines.md` có version; nhờ giảng viên/người có chuyên môn kỹ thuật hoặc tuyển dụng đúng nhóm nghề duyệt. Codex soạn tài liệu được, không tự xác nhận đã được con người duyệt.
-2. Chọn 20–30 cặp **development** để hiệu chỉnh: rõ phù hợp/không phù hợp, cùng skill khác nhiệm vụ, thiếu kinh nghiệm, thiếu dữ kiện. Không lấy final test làm ví dụ calibration.
-3. Hai người đọc độc lập cùng CV và toàn bộ JD đã loại thông tin không phù hợp. Form ẩn score/rank, nhãn AI và câu trả lời của người còn lại; xáo trộn thứ tự.
-4. Mỗi người ghi nhãn hoặc trạng thái chưa rõ, bằng chứng từ cả CV/JD, lý do và độ chắc chắn. Không chỉ ghi một con số.
-5. Đo tỷ lệ đồng thuận, ma trận bất đồng và weighted Cohen’s kappa; báo cáo riêng cặp thiếu bằng chứng. Không chọn ngưỡng kappa tùy ý rồi gọi dữ liệu là “chuẩn”. Bất đồng có hệ thống → sửa rubric trên development và chấm lại phần bị ảnh hưởng.
-6. Người thứ ba có chuyên môn phân xử cặp bất đồng; giữ hai nhãn gốc và quyết định/lý do cuối. Nếu chỉ có thảo luận đồng thuận, ghi rõ hạn chế; không giả lập reviewer bằng AI.
-7. Đóng băng phiên bản nhãn được duyệt và hash văn bản. Test chính thức chỉ dùng nhãn hoàn tất quy trình. Chưa có người xác minh thì vẫn báo cáo pilot/weak labels.
-
-Schema đề xuất: `cv_id`, `job_id`, `cv_version`, `job_version`, `label_status`, `relevance_0_1_2`, `annotator_id`, `annotation_origin`, `rubric_version`, `cv_evidence`, `jd_evidence`, `reason_codes`, `rationale`, `confidence`, `reviewed_at`, `adjudicator_id`, `final_label`.
-
-Phân biệt `annotation_origin=ai_draft/human_independent/human_adjudicated`. Reason code có thể gồm `ROLE_MISMATCH`, `CORE_SKILL_GAP`, `EXPERIENCE_GAP`, `PREFERRED_ONLY_GAP`, `INSUFFICIENT_EVIDENCE`. Evidence phải truy về đúng phiên bản text và không chứa PII.
-
-Lưu file từng người riêng với nhãn cuối; kiểm tra khóa trùng trong từng lượt. Nhãn AI cũ chỉ dùng development hoặc weak-supervision experiment được báo cáo riêng, không làm ground truth test. Đổi rubric phải version/gán lại phần chịu ảnh hưởng; không so chỉ số hai bộ nhãn như cùng điều kiện.
+- Schema cặp trong pipeline Mốc 2: `pair_id`, `partition`, `cv_id`, `jd_id`, `cv_version`, `jd_version`, `cv_text`, `jd_text`, `label_status`, `relevance_0_1_2`, `cv_evidence`, `jd_evidence`, `rationale`.
+- Mỗi nhãn hoàn tất cần trích dẫn bằng chứng từ cả CV (`cv_evidence`) và JD (`jd_evidence`) cùng lý do (`rationale`), truy về đúng phiên bản văn bản (`cv_version`, `jd_version`) và không chứa PII.
 
 ## 6. Ưu tiên 2 — Thêm CV/JD đa dạng và hard negatives
 
-Các số lượng sau là **mục tiêu đề xuất cho vòng tiếp theo**, chưa phải dữ liệu đã có hay bảo đảm đủ chất lượng. Bắt đầu một lô nhỏ để đo công sức annotation trước khi chốt ngân sách.
+Các số lượng sau là **mục tiêu đề xuất cho vòng mở rộng**, trong đó phần JD upstream đã được kiểm chứng và nhập vào kho chuẩn ở Mốc 2 ([docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)).
 
 ### 6.1. Mở rộng dữ liệu
 
@@ -178,7 +163,7 @@ Các số lượng sau là **mục tiêu đề xuất cho vòng tiếp theo**, c
 - Bao phủ sáu nhóm nghề ban đầu với nhiều mức Intern/Junior/Middle/Senior, stack, nhiệm vụ, thời lượng và mức đầy đủ bằng chứng. Không chỉ đổi tên/diễn đạt lại một CV để tăng số lượng.
 - Thêm nhóm dễ nhầm: Python Backend/Data Analyst/QA Automation; Java/JavaScript; DevOps/Backend biết Docker; manual QA/automation; React/React Native.
 - Có CV ngắn/dài/đa cột, tiếng Việt và Việt–Anh, chuyển nghề, có dự án nhưng ít kinh nghiệm. Ghi ngôn ngữ và dạng tài liệu để phân tích lỗi.
-- Tạo CV giả từ hồ sơ nghề độc lập với JD mục tiêu; lưu `template_family_id` và lịch sử tạo. CV thật cần quyền sử dụng và ẩn danh; không đưa CV thật lên repo công khai.
+- Tạo CV giả từ hồ sơ nghề độc lập với JD mục tiêu; lưu `template_group` và lịch sử tạo. CV thật cần quyền sử dụng và ẩn danh; không đưa CV thật lên repo công khai.
 - Phân tầng JD theo nghề, kinh nghiệm, nguồn và thời gian. Tránh một nghề chỉ xuất hiện ở một nền tảng; lưu raw, normalized, quality flags và quyết định giữ/loại.
 - Deduplicate chính xác và rà gần trùng/cross-posting. Không loại mẫu khó chỉ vì model xếp sai. Không âm thầm dịch tài liệu rồi coi nhãn/đặc trưng vẫn không đổi.
 
@@ -186,7 +171,7 @@ Các số lượng sau là **mục tiêu đề xuất cho vòng tiếp theo**, c
 
 Sau chia tập, mining **chỉ trên train**: lấy hợp các JD điểm cao từ BM25/E5, thêm cặp cùng stack khác nhiệm vụ, đúng nghề nhưng khác yêu cầu quan trọng, và một phần cặp dễ/ngẫu nhiên.
 
-Người đánh giá chấm độc lập theo rubric. Chỉ cặp đã xác minh nhãn 0 mới là negative; nhãn 1 vẫn là phù hợp một phần. Không coi JD ngoài Top k, cặp chưa chấm hoặc khác nghề là negative mặc định. Giữ positives và nhiều mức khó; lưu `sampling_strategy`, `mining_model_version`.
+Chỉ cặp có căn cứ xác định nhãn 0 mới là negative; nhãn 1 vẫn là phù hợp một phần. Không coi JD ngoài Top k, cặp chưa chấm hoặc khác nghề là negative mặc định. Giữ positives và nhiều mức khó; lưu `sampling_strategy`, `mining_model_version`.
 
 Ngân sách khởi điểm: 40 cặp/CV train × 60 CV = 2.400 cặp, gồm hợp top candidates và mẫu ngẫu nhiên; điều chỉnh theo phân bố nhãn thực tế. Đây là sampling để train, không phải denominator Recall trên toàn bộ 300 JD.
 
@@ -196,11 +181,11 @@ Pilot 6 CV/50 JD đã dùng để chọn cách làm nên giữ làm **developmen
 
 Protocol vòng tiếp theo đề xuất:
 
-1. **Train:** 60 CV mới với kho JD development; được mining và thử feature.
-2. **Validation:** 20 CV mới, không chung họ template với train. Chọn trước 100 JD từ kho development, đánh giá đầy đủ 20 × 100 = 2.000 cặp. Dùng để chọn model, hyperparameter, pooling và ngưỡng.
-3. **Final test:** 20 CV mới và 100 JD giữ riêng, không trùng/gần trùng development, chấm đủ 2.000 cặp theo quy trình độc lập. Đây là phép thử **cả CV mới và JD mới**, khó hơn leave-one-CV-out trên kho chung.
+1. **Train:** 60 CV mới với kho JD hợp lệ; được mining và thử feature.
+2. **Validation:** 20 CV mới, không chung họ template với train. Chọn trước 100 JD hợp lệ, đánh giá đầy đủ 20 × 100 = 2.000 cặp. Dùng để chọn model, hyperparameter, pooling và ngưỡng.
+3. **Final test:** 20 CV mới và 100 JD giữ riêng, không trùng/gần trùng development, chấm đủ 2.000 cặp có đầy đủ bằng chứng. Đây là phép thử **cả CV mới và JD mới**, khó hơn leave-one-CV-out trên kho chung.
 
-Nếu hạn chế nguồn lực, có thể bắt đầu final test 10 CV × 50 JD = 500 cặp; hai reviewer tương đương 1.000 lượt chấm, chưa tính phân xử. Báo cáo rõ giới hạn bộ nhỏ. Không tiết kiệm bằng cách gán 0 cho cặp chưa đọc.
+Nếu hạn chế nguồn lực, có thể bắt đầu final test 10 CV × 50 JD = 500 cặp. Báo cáo rõ giới hạn bộ nhỏ. Không tiết kiệm bằng cách gán 0 cho cặp chưa đọc.
 
 Recall@5 chỉ nói về danh mục 50/100 JD đã chấm đầy đủ, không phải thị trường. Nếu dùng pooled judgments trên kho lớn, ghi phạm vi pool và độ phủ; không gọi pooled Recall là recall toàn kho. Có thể thêm test riêng cho “CV mới, kho JD quen thuộc”, nhưng báo cáo tách với test cả CV/JD mới.
 
@@ -285,23 +270,15 @@ Chưa có quality threshold đáng tin cậy: không tự đặt cosine 0,8 thà
 
 ### Mốc 0 — Baseline có thể tái tạo
 
-Đã triển khai runner `jobapply_pilot_v1/run_baseline.py`, validation/metric dùng chung, CLI với CV/JD/k động, lock môi trường Windows và E5 revision/hash. Runner tái tạo điểm từ văn bản, đánh giá leave-one-CV-out, lưu config/split/hash/source snapshot vào thư mục run mới, từ chối ghi đè. Báo cáo kiểm chứng và giới hạn tại [docs/ml/baseline.md](docs/ml/baseline.md). Nhãn AI và chú thích kinh nghiệm vẫn cần chuyên gia xác minh; upstream và checksum nhãn lịch sử chưa khôi phục. Đây là baseline kỹ thuật của pilot, chưa phải nghiệm thu chất lượng model.
+Đã triển khai runner `jobapply_pilot_v1/run_baseline.py`, validation/metric dùng chung, CLI với CV/JD/k động, lock môi trường Windows và E5 revision/hash. Runner tái tạo điểm từ văn bản, đánh giá leave-one-CV-out, lưu config/split/hash/source snapshot vào thư mục run mới, từ chối ghi đè. Báo cáo kiểm chứng và giới hạn tại [docs/ml/baseline.md](docs/ml/baseline.md). Đây là baseline kỹ thuật của pilot, chưa phải nghiệm thu chất lượng model.
 
-### Mốc 1 — Rubric và công cụ annotation
+### Mốc 1 — Demo chọn đúng run và xác minh artifact
 
-Tạo guideline/form blind annotation/validator/báo cáo đồng thuận/phân xử. Calibration với người có chuyên môn. Hoàn tất khi rubric có xác nhận, nhãn có evidence/provenance và trạng thái chưa rõ; Codex không tự ký thay reviewer.
+Đã hoàn tất cập nhật `jobapply_pilot_v1/jobapply_experience_v2/recommend.py` và `jobapply_pilot_v1/run_artifacts.py`: bắt buộc `--run-dir`, xác minh manifest, checksum, cấu hình encoder/BM25, thứ tự feature và tương thích preprocessing trước khi suy luận; hỗ trợ CV mới dạng văn bản chuyên môn đã ẩn danh mà không trộn artifact ngoài run.
 
-Đã triển khai phần công cụ bằng `jobapply_pilot_v1/annotation.py`. Hai bộ phiếu 24 cặp trong `docs/ml/calibration/20261112_v1/` còn trống; seed/manifest lý do chọn tách riêng cho điều phối. Cần người có chuyên môn duyệt rubric, hai người chấm độc lập và người thứ ba phân xử theo [quy trình](docs/ml/annotation_workflow.md).
+### Mốc 2 — Kiểm chứng upstream, nhập JD và chia tập chống rò rỉ
 
-Hiện chưa triển khai vòng chấm hai reviewer theo quyết định ngày 13/11. Giữ nguyên rubric/phiếu/provenance đã lưu; không tạo nhãn người hoặc gold để chuyển mốc.
-
-### Mốc 2 — Dataset và test độc lập
-
-Mở rộng/ẩn danh/deduplicate/phân tầng theo mục 6; chia nhóm trước mining, giữ test theo mục 7. Hoàn tất khi có manifest, phân bố, kiểm tra leakage và nhãn độc lập. Có thể code parser/API lúc chờ reviewer, nhưng chưa tuyên bố model được xác minh.
-
-**Đã làm phần công cụ dữ liệu:** `ml_data/` có `inventory`, `ingest`, `split`, `audit`, `sample`, `verify`. Mỗi output là thư mục mới; snapshot nguồn và code, ID/version/hash, missing/quarantine, quyết định exact duplicate và group near/source/template. Hai mode `known-jd` (CV mới, JD dùng chung) và `new-both` (CV/JD đều mới) có manifest riêng. Pilot và mọi nhóm liên quan bị giữ ngoài train/validation/test; lấy hard candidates chỉ trên train, nhãn trống không thành 0. Validation/test chuẩn bị census trên catalog đã khóa.
-
-**Còn thiếu:** upstream/script lịch sử, CV/JD mới có lineage/metadata phù hợp và nhãn đáp ứng protocol đánh giá. Hai split kiểm chứng trên pilot đều leakage-pass nhưng `partition_ready=false`; không gọi đây là final test. Kế hoạch 120 CV synthetic mới/360 JD và lệnh PowerShell nằm trong [hướng dẫn Mốc 2](docs/ml/dataset_pipeline.md); đây là mục tiêu đề xuất, chưa phải dữ liệu đã tạo.
+Đã kiểm kê ba CSV upstream thực tế (`job_descriptions.csv`, `jobs_clean.csv`, `jobs_matching.csv`), đối chiếu liên kết `raw → clean → matching → pilot`, nhập `3.062` JD vào kho chuẩn bằng `python -m ml_data upstream` (`888` `keep`, `65` `exclude_exact_duplicate`, `2.109` `quarantine`), cô lập `68` bản ghi liên quan pilot và chọn lô mở rộng đầu tiên gồm **64 JD development** ([docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md), [danh sách 64 JD](docs/ml/reports/20261113-upstream-jd-selection.json)). Bước tiếp theo của Mốc 2 là bổ sung các nhóm CV mới theo schema chuẩn để khóa split chính thức và lấy mẫu cặp huấn luyện/đánh giá.
 
 ### Mốc 3 — Extraction và benchmark
 
@@ -309,13 +286,13 @@ Xây parser dùng chung, đo extraction; chạy các baseline/classifier/experie
 
 ### Mốc 4 — API/UI demo
 
-Triển khai mục 10, ownership, catalog/index/cache và trạng thái lỗi. Dùng PDF giả có text, JD demo hợp lệ. Hoàn tất khi CV mới ngoài pilot → trích xuất → ranking → hiển thị → xem JD/ứng tuyển, không cần sửa CSV annotation bằng tay cho từng user.
+Triển khai mục 10, ownership, catalog/index/cache và trạng thái lỗi. Dùng PDF giả có text, JD demo hợp lệ. Hoàn tất khi CV mới ngoài pilot → trích xuất → ranking → hiển thị → xem JD/ứng tuyển, không cần sửa CSV bằng tay cho từng user.
 
 ### Mốc 5 — Nghiệm thu và báo cáo
 
 Test quyền CV chéo user/JWT/role; PDF rỗng/scan/lỗi; JD đóng/hết hạn; phân trang; cache/version; timeout và dependency failure. Thêm E2E recommendation, chạy lại tests app và smoke trên VM. Báo cáo đúng phạm vi đã chạy, model/data versions và hạn chế; giữ trạng thái thử nghiệm nếu nhãn/test chưa đạt.
 
-Đầu ra đề xuất: rubric/data/model documentation, manifest/split/config, package preprocessing–features–ranking, CLI train/evaluate, service/UI và tests. Có thể tổ chức thành `ml/`, `services/recommendation/`, `tests/ml/`, `docs/ml/`; **Mốc 0 đã thêm `tests/ml/` và `docs/ml/`; package `ml/` và service recommendation vẫn là đề xuất**. Không di chuyển hàng loạt file trước khi bảo toàn baseline.
+Đầu ra đề xuất: tài liệu data/model, manifest/split/config, package preprocessing–features–ranking, CLI train/evaluate, service/UI và tests. Có thể tổ chức thành `ml_data/`, `ml/`, `services/recommendation/`, `tests/ml/`, `docs/ml/`; **Mốc 0–2 đã thêm `ml_data/`, `tests/ml/` và `docs/ml/`; package `ml/` và service recommendation vẫn là đề xuất**. Không di chuyển hàng loạt file trước khi bảo toàn baseline.
 
 ## 12. Lệnh đối chiếu hiện tại
 
@@ -340,7 +317,7 @@ Run có bản nhãn `labels_ai_draft.normalized.csv`; không sửa `judgments_ai
 & $mlPython -m unittest discover -s tests/ml -v
 ```
 
-Các CLI train/evaluate yêu cầu truyền nhãn đã chuẩn hóa. `compare_embeddings.py`, trainer, BM25 và audit mặc định tạo thư mục run mới, từ chối thư mục đã tồn tại. `prepare_pilot.py` vẫn là công cụ dựng lại pilot cố định từ nguồn upstream đang thiếu, không thuộc lệnh Mốc 0. Không chạy nó đè dữ liệu hiện có. `evaluate_topk.py` chỉ cần thư viện chuẩn Python.
+Các CLI train/evaluate yêu cầu truyền nhãn đã chuẩn hóa. `compare_embeddings.py`, trainer, BM25 và audit mặc định tạo thư mục run mới, từ chối thư mục đã tồn tại. `prepare_pilot.py` là công cụ dựng lại pilot cố định từ nguồn upstream, không chạy đè dữ liệu hiện có. `evaluate_topk.py` chỉ cần thư viện chuẩn Python.
 
 Demo Top 5 dùng đúng model/input của một run hoàn tất, không fallback về model lịch sử:
 
@@ -350,7 +327,16 @@ $selectedRun = '.\jobapply_pilot_v1\results\reruns\20261112_baseline_03'
 & $mlPython .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir $selectedRun --cv-text .\docs\ml\examples\cv_demo_synthetic.txt
 ```
 
-Run đầy đủ không nằm trong Git; clone mới cần khôi phục kho run tin cậy hoặc chạy Mốc 0 vào thư mục mới rồi dùng đường dẫn đó. CV mới không cần có trong train; không truyền `--months` thì kinh nghiệm theo scope giữ unknown. Đây là demo model refit trên pilot, không phải metric held-out hoặc danh sách việc đang mở của app. Hướng dẫn nhận/kiểm phiếu A/B: [Mốc 1](docs/ml/annotation_workflow.md).
+Run đầy đủ không nằm trong Git; clone mới cần khôi phục kho run tin cậy hoặc chạy Mốc 0 vào thư mục mới rồi dùng đường dẫn đó. CV mới không cần có trong train; không truyền `--months` thì kinh nghiệm theo scope giữ unknown. Đây là demo model refit trên pilot, không phải metric held-out hoặc danh sách việc đang mở của app.
+
+Kiểm kê ba CSV upstream, nhập kho JD chuẩn Mốc 2 và chọn lô 64 JD development (chỉ cần thư viện chuẩn Python, chi tiết tại [docs/ml/dataset_pipeline.md](docs/ml/dataset_pipeline.md)):
+
+```powershell
+$dataOut = ".\ml_data_runs\${runId}"
+.\.venv\Scripts\python.exe -m ml_data inventory --output "$dataOut\inventory"
+.\.venv\Scripts\python.exe -m ml_data upstream --source-dir . --output "$dataOut\upstream"
+.\.venv\Scripts\python.exe -m ml_data verify --artifact "$dataOut\upstream"
+```
 
 ### Linux VM / VMware — shell cho Docker
 
@@ -364,8 +350,8 @@ sh scripts/smoke-vm.sh http://127.0.0.1:8080
 
 Lần đầu chuẩn bị .env theo [hướng dẫn VM](docs/deploy-vm.md), chạy `sh scripts/deploy-vm.sh first`; cập nhật theo hướng dẫn `update`. Không reset database/volume để thêm ML. Seed là bước riêng: `docker compose --profile tools run --build --rm seed`.
 
-Demo local sau seed: `candidate@example.com`, `recruiter@example.com`, mật khẩu `DemoJobApply123!`. Windows truy cập `http://192.168.123.136:8080`. Nghiệp vụ/API/kiểm thử ở [tài liệu app](docs/application.md), [TESTING.md](TESTING.md). Mốc 0 chỉ chạy ML offline, không chạy lại Docker hoặc nghiệm thu recommendation.
+Demo local sau seed: `candidate@example.com`, `recruiter@example.com`, mật khẩu `DemoJobApply123!`. Windows truy cập `http://192.168.123.136:8080`. Nghiệp vụ/API/kiểm thử ở [tài liệu app](docs/application.md), [TESTING.md](TESTING.md). Mốc 0–2 chỉ chạy ML offline, không chạy lại Docker hoặc nghiệm thu recommendation.
 
 ## 13. Chỉ dẫn bàn giao cho Codex
 
-> Đọc toàn bộ file được Git theo dõi, bắt đầu từ README và các nhóm ở mục 1. Xác minh trạng thái trước khi sửa code. Mục tiêu: upload/chọn CV và nhận Top 5 JD đang mở, preprocessing dùng chung offline/online. Bắt đầu mốc 0, tiếp đến công cụ annotation và dữ liệu; triển khai parser/API/UI theo hợp đồng hiện có khi có thể. Phân biệt công việc code với xác minh nhãn cần người có chuyên môn. Không tự tạo nhãn gold, không chọn model bằng test, không coi pilot là bằng chứng chất lượng thực tế. Giữ ownership CV, snapshot ứng tuyển, service boundaries và dữ liệu VM. Mỗi PR ghi thay đổi, kiểm tra đã chạy, kết quả và phần thiếu. Lệnh Windows dùng PowerShell; shell Linux dùng trên VM.
+> Đọc toàn bộ file được Git theo dõi, bắt đầu từ README và các nhóm ở mục 1. Xác minh trạng thái trước khi sửa code. Mục tiêu: upload/chọn CV và nhận Top 5 JD đang mở, preprocessing dùng chung offline/online. Tiếp tục từ dữ liệu Mốc 2 đã kiểm chứng, bổ sung CV mới theo hợp đồng schema, khóa split và triển khai parser/API/UI theo hợp đồng hiện có. Không chọn model bằng test, không coi pilot là bằng chứng chất lượng thực tế. Giữ ownership CV, snapshot ứng tuyển, service boundaries và dữ liệu VM. Mỗi PR ghi thay đổi, kiểm tra đã chạy, kết quả và phần thiếu. Lệnh Windows dùng PowerShell; shell Linux dùng trên VM.

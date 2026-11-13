@@ -1,0 +1,66 @@
+{
+  "adapter_version": "upstream-observation-v1",
+  "context_files": [
+    {
+      "path": "snapshots/job_descriptions.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "snapshots/jobs_clean.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "snapshots/jobs_matching.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "profiles.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "relations.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "lineage.jsonl",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "selection_features.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "selection.json",
+      "role": "lineage_quality_selection_evidence"
+    }
+  ],
+  "dataset_version": "upstream-jd-observation-v1-2f77164049d1",
+  "near_threshold": 0.85,
+  "schema_version": 1,
+  "sources": [
+    {
+      "collected_at": null,
+      "columns": {
+        "exposure": "import_exposure",
+        "external_id": "job_id",
+        "lineage": "import_lineage",
+        "quality_reasons": "import_quality_reasons",
+        "related_source_keys": "import_related_sources",
+        "role": "import_role",
+        "source_group": "content_group_id",
+        "text": "match_text"
+      },
+      "defaults": {
+        "is_synthetic": false,
+        "text_scope": "professional"
+      },
+      "kind": "jd",
+      "namespace": "it-job-posting-matching",
+      "path": "canonical_jd.csv",
+      "source_attribution_status": "URL from repository historical report, not independently verified source revision",
+      "source_url": "https://github.com/SonPhatTranDeveloper/IT-Job-Posting",
+      "usage_terms": null,
+      "version": "sha256:2f77164049d1e29788c3b68bdc017836ffdbc3d96b8def723c1f5dc4d32fb4ab"
+    }
+  ]
+}

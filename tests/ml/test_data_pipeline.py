@@ -1,4 +1,4 @@
-"""TEST ONLY synthetic documents. No reviewer responses or real relevance labels."""
+"""TEST ONLY synthetic documents for dataset pipeline unit tests."""
 import csv
 import random
 
@@ -228,7 +228,7 @@ class DataPipelineTests(WorkspaceTest):
         from ml_data.common import csv_rows
         _, pairs = csv_rows(a / "pairs.csv")
         self.assertEqual(len({r["pair_id"] for r in pairs}), len(pairs))
-        self.assertTrue(all(r["label_status"] == "unlabeled" and r["relevance_0_1_2"] == "" and r["annotation_origin"] == "" for r in pairs))
+        self.assertTrue(all(r["label_status"] == "unlabeled" and r["relevance_0_1_2"] == "" and r["rationale"] == "" for r in pairs))
         self.assertTrue(all(digest(r["cv_text"]) == r["cv_version"] and digest(r["jd_text"]) == r["jd_version"] for r in pairs))
         self.assertIn("uniform_random_without_replacement", report["by_strategy"])
         self.assertEqual({r["partition"] for r in pairs}, {"train"})

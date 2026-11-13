@@ -1,10 +1,10 @@
 # Biên bản kiểm tra JobApply
 
-## ML data preparation — 13/11/2026
+## ML data preparation & upstream verification — 13/11/2026
 
-**44 test unittest đạt** trong môi trường Windows ML CPython 3.14.3: 28 regression baseline/demo/annotation và 16 test pipeline dữ liệu mới. Riêng 16 test mới cũng chạy bằng Python chuẩn, không cần package ML/mạng. Kiểm tra raw/hash/ID/version, duplicate/quarantine, near search so với brute force, nhóm nguồn/template bắc cầu, bảo vệ pilot, seed/protocol, leakage, sampled/census pairs, ô trống và thiếu metadata. Dữ liệu/nhãn giả chỉ ở fixture `TEST ONLY` tạm; không có vòng reviewer thật hoặc train lại model dữ liệu thật.
+**41 test unittest đạt** trong môi trường Windows ML CPython 3.14.3 (`11` test baseline, `7` test demo recommendation `--run-dir`, `16` test pipeline dữ liệu và `7` test kiểm chứng/nhập upstream JD). Riêng **23 test** (`test_data_pipeline.py` và `test_upstream.py`) chạy trực tiếp bằng thư viện chuẩn Python, không cần package ML hay mạng. Kiểm tra bảo toàn byte raw/hash/ID/version, lỗi UTF-8/spreadsheet `#NAME?`, đối chiếu `raw → clean → matching → pilot`, duplicate/quarantine, near search so với brute force, nhóm nguồn/template bắc cầu, cô lập pilot, chọn lô JD mở rộng có báo thiếu (`shortages`), seed/protocol, leakage, sampled/census pairs, ô trống và thiếu metadata.
 
-Ruff cho `ml_data` và test mới đạt. CLI thật đã kiểm kê upstream, import pilot vào output mới, tạo/audit cả `known-jd` và `new-both`; 6 CV/50 JD đều development, chưa có partition mới đủ điều kiện. CLI sample từ pilot split từ chối đúng, không tạo cặp train/test. Chưa chạy app E2E/Docker/VM ở đợt này. Báo cáo và lệnh: [dataset pipeline](docs/ml/dataset_pipeline.md), [receipt](docs/ml/reports/20261113-data-preparation.json).
+Ruff cho `ml_data`, `recommend.py`, `run_artifacts.py` và toàn bộ `tests/ml` đạt. CLI thật đã kiểm kê ba CSV upstream (`3.101 → 3.062 → 3.062`), nhập kho JD chuẩn (`888` `keep`, `65` `exclude_exact_duplicate`, `2.109` `quarantine`), chọn 64 JD development, kiểm chứng hai lần chạy lặp giống hệt byte trên cả 51 file output, và kiểm tra preview `known-jd`/`new-both` (`partition_ready=false` do chưa có CV mới). Ba file CSV nguồn và 33 file dữ liệu pilot gốc giữ nguyên byte hash. Chưa chạy lại app E2E/Docker/VM ở đợt này. Báo cáo và lệnh: [dataset pipeline](docs/ml/dataset_pipeline.md), [receipt](docs/ml/reports/20261113-data-preparation.json), [danh sách 64 JD mở rộng](docs/ml/reports/20261113-upstream-jd-selection.json).
 
 ## ML baseline — 12/11/2026
 

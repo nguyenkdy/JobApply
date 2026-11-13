@@ -9,7 +9,8 @@ from .common import (ROOT, csv_rows, digest, distribution, file_hash, fresh_fold
 from .grouping import group_records
 
 FIELDS = {"external_id", "text", "source_group", "template_group", "role", "skills", "stack",
-          "experience", "is_synthetic", "exposure", "text_scope", "upstream_text_sha256"}
+          "experience", "is_synthetic", "exposure", "text_scope", "upstream_text_sha256",
+          "quality_reasons", "related_source_keys", "lineage"}
 UPSTREAM = ("job_descriptions.csv", "jobs_clean.csv", "jobs_matching.csv")
 
 
@@ -22,7 +23,7 @@ def inventory(workspace, output):
     for base, dirs, names in os.walk(workspace, onerror=onerror, followlinks=False):
         for name in list(dirs):
             path = Path(base) / name
-            if (name in {".git", "node_modules", "__pycache__", ".tools", ".test-data", ".ruff_cache", ".pytest_cache"}
+            if (name in {".git", "node_modules", "__pycache__", ".tools", ".test-data", ".ruff_cache", ".pytest_cache", "ml_data_runs", "reruns"}
                     or name.startswith((".venv", "pytest-cache-files-")) or path.is_symlink()):
                 dirs.remove(name)
                 excluded.append(path.relative_to(workspace).as_posix())
@@ -33,7 +34,13 @@ def inventory(workspace, output):
                 try:
                     columns, rows = csv_rows(path)
                     info.update(columns=columns, rows=len(rows))
-                except (ValueError, UnicodeError) as exc:
+                except UnicodeError as exc:
+                    import csv
+                    import io
+                    reader = csv.DictReader(io.StringIO(path.read_bytes().decode("utf-8-sig", errors="surrogateescape"), newline=""), strict=True)
+                    rows = list(reader)
+                    info.update(columns=reader.fieldnames or [], rows=len(rows), encoding_error=str(exc))
+                except ValueError as exc:
                     info["parse_error"] = str(exc)
                 found[name].append(info)
             if path.suffix in {".py", ".ipynb"} and path != Path(__file__):
@@ -48,14 +55,18 @@ def inventory(workspace, output):
         path = workspace / name
         if path.suffix == ".py" and name.startswith("jobapply_pilot_v1/") and path.is_file():
             processing.append(dict(path=name, sha256=file_hash(path)))
-    result = dict(scope="Local workspace, including ignored data; excluded dependency/cache directories listed explicitly",
+    counts_ok = (all(found[name] for name in UPSTREAM)
+                 and found["job_descriptions.csv"][0].get("rows") == 3101
+                 and found["jobs_clean.csv"][0].get("rows") == 3062
+                 and found["jobs_matching.csv"][0].get("rows") == 3062)
+    result = dict(scope="Local workspace, including ignored data; excluded dependency/cache/run directories listed explicitly",
                   upstream=found, missing=[name for name in UPSTREAM if not found[name]],
                   tracked_upstream=[name for name in tracked if Path(name).name in UPSTREAM],
                   scripts_referencing_upstream=sorted(scripts, key=lambda r: r["path"]),
                   tracked_pilot_processing_scripts=processing,
                   excluded_directories=sorted(excluded), scan_errors=errors,
-                  historical_counts_verified=False,
-                  note="No downloads or reconstruction of missing history. Source reports are not source files.")
+                  historical_counts_verified=counts_ok,
+                  note="Row counts verified from local files when present; original cleaning/section scripts remain absent.")
     folder = fresh_folder(output)
     write_json(folder / "inventory.json", result)
     seal(folder, "inventory", dict(scope=result["scope"]))
@@ -92,6 +103,7 @@ def experience(value):
 
 
 def record(raw, spec):
+    import json
     fields = spec.get("columns", {})
     defaults = spec.get("defaults", {})
     require(set(fields) <= FIELDS and set(defaults) <= FIELDS, "Unknown mapping/default field")
@@ -140,6 +152,17 @@ def record(raw, spec):
             result["decision_reasons"].append("synthetic_CV_template_lineage_unknown")
     if result["decision_reasons"]:
         result["decision"] = "quarantine"
+    for name, default, expected_type in (("quality_reasons", [], list), ("related_source_keys", [], list), ("lineage", {}, dict)):
+        field = value.get(name, default)
+        field = json.loads(field) if isinstance(field, str) else field
+        require(isinstance(field, expected_type), f"Invalid {name}")
+        if expected_type is list:
+            require(all(isinstance(item, str) and item.strip() for item in field), f"Invalid {name} entries")
+        if name == "quality_reasons" and field:
+            result["decision"] = "quarantine"
+            result["decision_reasons"].extend(field)
+        elif name != "quality_reasons":
+            result[name] = field
     return result
 
 
@@ -155,7 +178,9 @@ def pilot_anchors():
             row = record(raw, dict(kind=kind, namespace="protected_pilot", columns=dict(external_id=id_col, text=text_col),
                                   defaults=dict(exposure="development", text_scope="professional")))
             row.update(record_id="PILOT_" + raw[id_col], protected_pilot=True,
-                       upstream_text_sha256=raw.get("source_match_text_sha256", ""))
+                       upstream_text_sha256=raw.get("source_match_text_sha256", ""),
+                       source_group=raw.get("content_group_id", ""),
+                       related_source_keys=["url:" + digest(raw["job_url"].strip())] if raw.get("job_url") else [])
             anchors.append(row)
     return anchors, files
 
@@ -196,6 +221,11 @@ def ingest(config_path, output):
     records = sorted(rows_by_id.values(), key=lambda r: r["record_id"])
     anchors, pilot_files = pilot_anchors()
     groups, edges = group_records(records, anchors, threshold)
+    contexts = []
+    for index, item in enumerate(config.get("context_files", [])):
+        path = (config_path.parent / item["path"]).resolve()
+        contexts.append((path, dict(snapshot=f"context/{index:03d}{path.suffix}", role=item["role"],
+                                    sha256=file_hash(path), input_path=item["path"])))
     folder = fresh_folder(output)
     (folder / "raw").mkdir()
     (folder / "protected_pilot").mkdir()
@@ -204,6 +234,12 @@ def ingest(config_path, output):
         require(file_hash(folder / receipt["snapshot"]) == receipt["sha256"], "Source changed during import")
     for path in pilot_files:
         shutil.copyfile(path, folder / "protected_pilot" / path.name)
+    if contexts:
+        (folder / "context").mkdir()
+        for path, receipt in contexts:
+            shutil.copyfile(path, folder / receipt["snapshot"])
+            require(file_hash(folder / receipt["snapshot"]) == receipt["sha256"], "Context source changed during import")
+        write_json(folder / "context_sources.json", [receipt for _, receipt in contexts])
     write_json(folder / "config.json", config)
     write_json(folder / "sources.json", [receipt for _, receipt in sources])
     write_lines(folder / "records.jsonl", records)

@@ -1,4 +1,4 @@
-"""Temporary TEST ONLY fixtures. No generated label/reviewer represents a human judgment."""
+"""Temporary TEST ONLY fixtures for ML pipeline unit tests."""
 from pathlib import Path
 import shutil
 import sys

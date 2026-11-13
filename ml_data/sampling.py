@@ -8,7 +8,7 @@ from .common import (digest, file_hash, fresh_folder, read_json, read_lines, req
 from .splitting import PARTITIONS, audit_split
 
 FIELDS = ("pair_id", "partition", "cv_id", "jd_id", "cv_version", "jd_version", "cv_text", "jd_text",
-          "label_status", "relevance_0_1_2", "annotation_origin", "annotator_id", "cv_evidence", "jd_evidence", "rationale")
+          "label_status", "relevance_0_1_2", "cv_evidence", "jd_evidence", "rationale")
 
 
 def candidate_reasons(cv, jd):
@@ -76,7 +76,7 @@ def sample_pairs(dataset, split, output, partition="train", strategy="mixed", se
     write_json(folder / "coordinator/selection.json", selection)
     summary = dict(partition=partition, strategy=strategy, cv_count=len(cvs), jd_count=len(jobs), pairs=len(pairs),
                    by_strategy=dict(Counter(r["selection_reason"] for r in selection)), shortages=shortages,
-                   label_counts={"unlabeled": len(pairs)}, independent_reviews=0, ranking_k=5,
+                   label_counts={"unlabeled": len(pairs)}, ranking_k=5,
                    evaluation_scope="Complete catalogue candidate grid, still unlabeled" if strategy == "census"
                    else "Sampled training candidates; not the denominator for full-catalogue Recall@5",
                    no_hard_candidate_is_a_negative=True)
@@ -84,5 +84,5 @@ def sample_pairs(dataset, split, output, partition="train", strategy="mixed", se
     seal(folder, "pairs", dict(dataset_manifest_sha256=file_hash(dataset / "manifest.json"),
                                 split_manifest_sha256=file_hash(split / "manifest.json"), seed=seed,
                                 partition=partition, strategy=strategy, random_per_cv=random_per_cv,
-                                hard_per_type=hard_per_type, ranking_k=5, labels="unlabeled; no gold created"))
+                                hard_per_type=hard_per_type, ranking_k=5, labels="unlabeled"))
     return summary

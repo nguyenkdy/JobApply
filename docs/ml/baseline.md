@@ -5,7 +5,7 @@ Ngày 12/11/2026, nhánh `docs/ml-readme-handoff-20261112`. Phạm vi là **deve
 ## Hiện trạng xác minh trước khi sửa
 
 - Đã đọc README và đối chiếu code/config của pilot, experience v2, Account/Job/Application, runtime, frontend, triển khai và tests. Mọi file Git theo dõi có byte hash trong `repository_inventory.json` của run; CSV được đọc theo record, không đếm dòng vật lý của văn bản nhiều dòng. Artifact joblib cũ chỉ kiểm tra byte/hash, không unpickle.
-- Có 50 JD, 6 CV giả lập và 300 cặp đầy đủ. Nhãn AI: 211 nhãn 0, 71 nhãn 1, 18 nhãn 2. Cột thứ tư mất tên và cả 300 ô trống. Template và code tạo template dùng `reviewer`; đây là căn cứ dựng schema dẫn xuất, không phải bằng chứng người đã duyệt.
+- Có 50 JD, 6 CV giả lập và 300 cặp đầy đủ. Nhãn pilot: 211 nhãn 0, 71 nhãn 1, 18 nhãn 2. Cột thứ tư trong `judgments_ai_draft.csv` mất tên và cả 300 ô trống; schema dẫn xuất trong Mốc 0 được khôi phục từ template của pilot để giữ nguyên mọi ID, grade và rationale.
 - Backup `embedding_vs_bm25_backup_20261110_163750.csv` có 277 giá trị BM25 không parse được. Backup chỉ nằm trong kho lưu lịch sử/audit, không nằm trong allowlist đầu vào model; không sửa số bằng xóa dấu chấm.
 - Trên working copy Windows, ba hash điểm/chú thích trong `experience_v2/run_info.json` khớp byte. Git blob LF khác hash cũ; biến thể UTF-8 BOM + CRLF khớp. Riêng hash nhãn không khớp cả bốn biến thể BOM/LF/CRLF. Giá trị nhãn và feature vẫn khớp các bảng training/prediction cũ.
 - `.venv-embedding` hiện có Python 3.14.3, NumPy 2.5.4, scikit-learn 1.9.1, PyTorch 2.15.0, Sentence Transformers 6.2.0; `pip check` đạt. Backend dùng môi trường riêng.
@@ -16,7 +16,7 @@ Ngày 12/11/2026, nhánh `docs/ml-readme-handoff-20261112`. Phạm vi là **deve
 `jobapply_pilot_v1/run_baseline.py` tạo **thư mục chưa tồn tại**; run lỗi giữ lại `failure.json` và không được tái sử dụng tên. Run thành công có `manifest.json` với `status=complete`.
 
 1. Snapshot byte nguyên vẹn dữ liệu và artifact lịch sử trong `inputs/`; snapshot code, lock và test trong `source/`. Ghi commit/branch, hash working code, kích thước, BOM và line endings. Commit chưa bao gồm thay đổi local được phân biệt rõ bằng source hashes.
-2. Chuẩn hóa schema vào `labels_ai_draft.normalized.csv`. Giữ nguyên mọi ID, grade và rationale; `reviewer` trống, `annotation_origin=ai_draft`, `label_status=needs_review`. Hash phiên bản CV/JD dùng UTF-8 của `cv_text`/`match_text` sau khi đọc CSV với universal newlines. `label_schema_migration.json` ghi căn cứ và phần không biết.
+2. Chuẩn hóa schema vào `labels_ai_draft.normalized.csv`. Giữ nguyên mọi ID, grade và rationale. Hash phiên bản CV/JD dùng UTF-8 của `cv_text`/`match_text` sau khi đọc CSV với universal newlines. `label_schema_migration.json` ghi căn cứ và phần không biết.
 3. Kiểm tra header/độ dài record, ID trống/trùng/lạ, lưới CV × JD đầy đủ, nhãn 0–1–2, điểm hữu hạn/phạm vi, rank là hoán vị 1..N và không trái thứ tự điểm. Đối chiếu selection manifest, nội dung JD ghép từ các mục và CV giữa CSV/TXT. Kiểm tra chú thích kinh nghiệm theo ID/scope, tháng và câu bằng chứng; việc câu có trong text **không xác nhận diễn giải chuyên môn là đúng**.
 4. Kiểm tra lock môi trường và `pip check`. Khóa E5 tại revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`, kiểm checksum weights/tokenizer/config trong `encoder.lock.json` trước khi load. Mặc định offline, CPU một thread, seed 0, thuật toán xác định; BM25 và E5 đều tính lại từ văn bản. File cosine cũ chỉ dùng đối chiếu.
 5. Đánh giá keyword, BM25, E5, classifier hai feature, coverage control và experience classifier trên cùng leave-one-CV-out. Scaler chỉ fit train. k mặc định 5; CV/JD/k động, không khóa 6/50/300 trong đường chạy benchmark. `prepare_pilot.py` vẫn dựng pilot lịch sử cố định và cần nguồn upstream đang thiếu.
@@ -67,13 +67,12 @@ Nếu cache E5 chưa có, thêm `--allow-download` vào run đầu; chỉ tải 
 
 Chạy runner đầy đủ để có manifest/provenance toàn run. Các CLI nhỏ dùng cho chẩn đoán; không tự tạo đầy đủ manifest. Bộ test ML dùng unittest riêng, không cần backend/DB. Khi chạy pytest backend mà thiếu ML dependencies, module ML được skip rõ lý do.
 
-## Phần vẫn cần con người và dữ liệu bổ sung
+## Phần cần bổ sung sau Mốc 0
 
-- Người có chuyên môn duyệt rubric, relevance và bằng chứng; chấm độc lập/phân xử. Tên cột `reviewer` được dựng lại không tạo reviewer hay trạng thái đã duyệt.
-- Rà scope/thời lượng kinh nghiệm, điều kiện bắt buộc/ưu tiên và quy ước “trên 3 năm” → 37 tháng. Chú thích hiện tại do trợ lý tạo cho pilot.
+- Rà scope/thời lượng kinh nghiệm, điều kiện bắt buộc/ưu tiên và quy ước “trên 3 năm” → 37 tháng. Chú thích hiện tại thuộc bộ pilot.
 - Khôi phục lịch sử checksum nhãn từ nguồn có bằng chứng; không sửa `run_info.json` cũ để làm cho khớp.
-- Bổ sung ba CSV upstream cùng script làm sạch, provenance/quyền sử dụng. Run này bắt đầu từ pilot, không tái tạo từ nguồn 3.101 JD.
-- CV/JD độc lập và nhãn được xác minh vẫn thuộc Mốc 1–2. Metric ở đây chỉ đo đồng thuận với nhãn thử nghiệm.
+- Ba CSV upstream (`job_descriptions.csv`, `jobs_clean.csv`, `jobs_matching.csv`) đã được bổ sung và kiểm chứng ở [Mốc 2](dataset_pipeline.md); run Mốc 0 bắt đầu từ pilot 50 JD × 6 CV.
+- Cần bổ sung thêm các nhóm CV mới theo hợp đồng Mốc 2 trước khi khóa split và đánh giá mở rộng.
 
 Docker Compose, migrations, CV/database VM và deployment không được chạy hoặc thay đổi trong công việc Mốc 0.
 

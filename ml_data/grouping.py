@@ -72,6 +72,13 @@ def group_records(records, anchors, threshold=0.85):
             for ids in buckets.values():
                 for rid in ids[1:]:
                     link(ids[0], rid, field)
+        related = defaultdict(list)
+        for row in rows:
+            for key in set(row.get("related_source_keys", [])):
+                related[key].append(row["record_id"])
+        for ids in related.values():
+            for rid in ids[1:]:
+                link(ids[0], rid, "related_source_key")
         pilot_ids = {r["external_id"]: r["record_id"] for r in anchors if r["kind"] == kind}
         pilot_hashes = {h: r["record_id"] for r in anchors if r["kind"] == kind
                         for h in (r["text_sha256"], r.get("upstream_text_sha256")) if h}

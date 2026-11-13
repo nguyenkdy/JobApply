@@ -1,0 +1,4387 @@
+{
+  "date": "2026-11-13",
+  "purpose": "development/parser only",
+  "rule_version": "upstream-observation-v1",
+  "seed": 20261113,
+  "selected_jds": [
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 15,
+          "field": "requirements_text",
+          "start": 10,
+          "text": "3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_f8dce3f43984efcd04e773a1",
+      "job_id": "job_1f4d50c44feadf37c8b6",
+      "must_mentions": [
+        {
+          "end": 9,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_8b88a4ecb66c6b80de169b84c5715291_f1d3a1777a4040923fac611f",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 34,
+            "field": "title_for_matching",
+            "start": 30,
+            "text": "Odoo"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 755,
+          "field": "match_text",
+          "start": 752,
+          "text": "AWS"
+        },
+        {
+          "end": 1326,
+          "field": "match_text",
+          "start": 1323,
+          "text": "AWS"
+        },
+        {
+          "end": 1518,
+          "field": "match_text",
+          "start": 1512,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 221,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_2a4171f5485f21a5a19f3ad9",
+      "job_id": "job_3725270bcea07a2ab201",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_d9078b45cebffaf076f59d3af12701ca_a35e389ef83c3447f9b6bcf9",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python",
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 31,
+            "field": "title_for_matching",
+            "start": 27,
+            "text": "Java"
+          }
+        ],
+        "Backend Python": [
+          {
+            "end": 39,
+            "field": "title_for_matching",
+            "start": 33,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 42,
+          "field": "match_text",
+          "start": 38,
+          "text": "Java"
+        },
+        {
+          "end": 50,
+          "field": "match_text",
+          "start": 44,
+          "text": "Python"
+        },
+        {
+          "end": 856,
+          "field": "match_text",
+          "start": 852,
+          "text": "Java"
+        },
+        {
+          "end": 864,
+          "field": "match_text",
+          "start": 858,
+          "text": "Python"
+        },
+        {
+          "end": 899,
+          "field": "match_text",
+          "start": 896,
+          "text": "SQL"
+        },
+        {
+          "end": 1094,
+          "field": "match_text",
+          "start": 1088,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 199,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "6 tháng",
+      "experience_mentions": [
+        {
+          "end": 125,
+          "field": "requirements_text",
+          "start": 118,
+          "text": "6 tháng"
+        },
+        {
+          "end": 210,
+          "field": "requirements_text",
+          "start": 203,
+          "text": "1-4 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_ebdd4b05af616f40be52e07a",
+      "job_id": "job_0812ba5ffde715aa2bfc",
+      "must_mentions": [
+        {
+          "end": 202,
+          "field": "requirements_text",
+          "start": 195,
+          "text": "ít nhất"
+        },
+        {
+          "end": 327,
+          "field": "requirements_text",
+          "start": 319,
+          "text": "bắt buộc"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_4bbaf1c4e3bc7397e17a401e186d95a6_196bcaaa68a25b7ccc836c8b",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 21,
+            "field": "title_for_matching",
+            "start": 15,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 32,
+          "field": "match_text",
+          "start": 26,
+          "text": "Python"
+        },
+        {
+          "end": 155,
+          "field": "match_text",
+          "start": 149,
+          "text": "Python"
+        },
+        {
+          "end": 353,
+          "field": "match_text",
+          "start": 347,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 93,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "03 năm",
+      "experience_mentions": [
+        {
+          "end": 69,
+          "field": "requirements_text",
+          "start": 63,
+          "text": "03 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_309e7610b243ec8c27f73844",
+      "job_id": "job_a83ef990cfeca0258865",
+      "must_mentions": [
+        {
+          "end": 62,
+          "field": "requirements_text",
+          "start": 53,
+          "text": "tối thiểu"
+        },
+        {
+          "end": 216,
+          "field": "requirements_text",
+          "start": 209,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_0b6058382d67a58e60c1811653566958_5e403a1112c8dfbbded38c71",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 46,
+            "field": "title_for_matching",
+            "start": 40,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 57,
+          "field": "match_text",
+          "start": 51,
+          "text": "Python"
+        },
+        {
+          "end": 116,
+          "field": "match_text",
+          "start": 110,
+          "text": "Python"
+        },
+        {
+          "end": 372,
+          "field": "match_text",
+          "start": 369,
+          "text": "AWS"
+        },
+        {
+          "end": 672,
+          "field": "match_text",
+          "start": 666,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 124,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 151,
+          "field": "requirements_text",
+          "start": 146,
+          "text": "2 năm"
+        },
+        {
+          "end": 220,
+          "field": "requirements_text",
+          "start": 215,
+          "text": "1 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b5effdf06b4419d87ec13550",
+      "job_id": "job_c340526b12be6b47a4d0",
+      "must_mentions": [
+        {
+          "end": 145,
+          "field": "requirements_text",
+          "start": 138,
+          "text": "ít nhất"
+        },
+        {
+          "end": 214,
+          "field": "requirements_text",
+          "start": 207,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_cf9ffcdb4a28b5c96bc85ac0d8e26143_28a9fbdc624f4495cbbb8869",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 6,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 17,
+          "field": "match_text",
+          "start": 11,
+          "text": "Python"
+        },
+        {
+          "end": 497,
+          "field": "match_text",
+          "start": 491,
+          "text": "Python"
+        },
+        {
+          "end": 550,
+          "field": "match_text",
+          "start": 544,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 150,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_a8b1a215ce20f770a5695b74",
+      "job_id": "job_d29aaa79ab9290aea974",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_6a961911001345485f7355f09dad4b0a_539f09c7960dbc1c9a2c7e29",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 42,
+            "field": "title_for_matching",
+            "start": 35,
+            "text": "FastAPI"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 159,
+          "field": "match_text",
+          "start": 153,
+          "text": "Python"
+        },
+        {
+          "end": 578,
+          "field": "match_text",
+          "start": 572,
+          "text": "Python"
+        },
+        {
+          "end": 834,
+          "field": "match_text",
+          "start": 828,
+          "text": "Docker"
+        },
+        {
+          "end": 964,
+          "field": "match_text",
+          "start": 961,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 118,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_c5d054679a8f5f6e0634d108",
+      "job_id": "job_fa1d826c0c7a2a9bdc87",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_1fcd8e1c40155cdb68c155c77ff5a08e_fefc2b52e7a292d117232958",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 30,
+            "field": "title_for_matching",
+            "start": 24,
+            "text": "python"
+          },
+          {
+            "end": 38,
+            "field": "title_for_matching",
+            "start": 32,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 41,
+          "field": "match_text",
+          "start": 35,
+          "text": "python"
+        },
+        {
+          "end": 49,
+          "field": "match_text",
+          "start": 43,
+          "text": "Python"
+        },
+        {
+          "end": 852,
+          "field": "match_text",
+          "start": 846,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 169,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 130,
+          "field": "requirements_text",
+          "start": 125,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_8cae00606e8261a6c9ce7b97",
+      "job_id": "job_b0ef912eb0af858b7c74",
+      "must_mentions": [
+        {
+          "end": 124,
+          "field": "requirements_text",
+          "start": 115,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 237,
+          "field": "requirements_text",
+          "start": 230,
+          "text": "ít nhất"
+        },
+        {
+          "end": 768,
+          "field": "requirements_text",
+          "start": 761,
+          "text": "ít nhất"
+        },
+        {
+          "end": 992,
+          "field": "requirements_text",
+          "start": 984,
+          "text": "bắt buộc"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_962d4d4f6b72d98ea23aac556789bc18_7c7292bb5170b4133d66eff4",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 33,
+            "field": "title_for_matching",
+            "start": 27,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 44,
+          "field": "match_text",
+          "start": 38,
+          "text": "Python"
+        },
+        {
+          "end": 923,
+          "field": "match_text",
+          "start": 917,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 223,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 13,
+          "field": "requirements_text",
+          "start": 8,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_19ec7a84bb73e3e18a87795f",
+      "job_id": "job_53547ccd20bde10f84c8",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_4eb3f674dc2a85c70cf55251f60eb4d9_0c15c4b956f0fcb5825c0fa0",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python"
+      ],
+      "role_evidence": {
+        "Backend Python": [
+          {
+            "end": 4,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Odoo"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 60,
+          "field": "match_text",
+          "start": 54,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 108,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "5+ years",
+      "experience_mentions": [
+        {
+          "end": 97,
+          "field": "requirements_text",
+          "start": 89,
+          "text": "5+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_90a39fadf7ea5e8d7aa9ab29",
+      "job_id": "job_0f8028b9bf41afd96fca",
+      "must_mentions": [
+        {
+          "end": 319,
+          "field": "requirements_text",
+          "start": 311,
+          "text": "at least"
+        },
+        {
+          "end": 630,
+          "field": "requirements_text",
+          "start": 622,
+          "text": "required"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_d28e541136fc87fe03e7b6c91cb5bdbd_b0a4563388edf098191ba577",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python",
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 30,
+            "field": "title_for_matching",
+            "start": 26,
+            "text": "Java"
+          }
+        ],
+        "Backend Python": [
+          {
+            "end": 37,
+            "field": "title_for_matching",
+            "start": 31,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 41,
+          "field": "match_text",
+          "start": 37,
+          "text": "Java"
+        },
+        {
+          "end": 48,
+          "field": "match_text",
+          "start": 42,
+          "text": "Python"
+        },
+        {
+          "end": 1054,
+          "field": "match_text",
+          "start": 1050,
+          "text": "Java"
+        },
+        {
+          "end": 1064,
+          "field": "match_text",
+          "start": 1058,
+          "text": "Python"
+        },
+        {
+          "end": 1583,
+          "field": "match_text",
+          "start": 1579,
+          "text": "Java"
+        },
+        {
+          "end": 1647,
+          "field": "match_text",
+          "start": 1644,
+          "text": "SQL"
+        },
+        {
+          "end": 1755,
+          "field": "match_text",
+          "start": 1751,
+          "text": "Java"
+        },
+        {
+          "end": 1764,
+          "field": "match_text",
+          "start": 1758,
+          "text": "Python"
+        },
+        {
+          "end": 1809,
+          "field": "match_text",
+          "start": 1806,
+          "text": "SQL"
+        },
+        {
+          "end": 1863,
+          "field": "match_text",
+          "start": 1860,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "4 years",
+      "experience_mentions": [
+        {
+          "end": 66,
+          "field": "requirements_text",
+          "start": 59,
+          "text": "4 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_eacf792145d4c25d3203f380",
+      "job_id": "job_dcf50bc3fb79182684aa",
+      "must_mentions": [
+        {
+          "end": 58,
+          "field": "requirements_text",
+          "start": 50,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_37b4637c96225834f9dd72a0596684af_96f4b92c7d9e46ab91f2da6b",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python",
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 24,
+            "field": "title_for_matching",
+            "start": 20,
+            "text": "Java"
+          }
+        ],
+        "Backend Python": [
+          {
+            "end": 33,
+            "field": "title_for_matching",
+            "start": 27,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 35,
+          "field": "match_text",
+          "start": 31,
+          "text": "Java"
+        },
+        {
+          "end": 44,
+          "field": "match_text",
+          "start": 38,
+          "text": "Python"
+        },
+        {
+          "end": 584,
+          "field": "match_text",
+          "start": 580,
+          "text": "Java"
+        },
+        {
+          "end": 593,
+          "field": "match_text",
+          "start": 587,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "3+ years",
+      "experience_mentions": [
+        {
+          "end": 46,
+          "field": "requirements_text",
+          "start": 38,
+          "text": "3+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b2413d966577491080aa2f37",
+      "job_id": "job_b878607674f28c749adb",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_dccb3fc077397a8a3d6c811e0889430a_a37a6f07808d9bdf30a90431",
+      "role": "Backend Python",
+      "role_candidates": [
+        "Backend Python",
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 24,
+            "field": "title_for_matching",
+            "start": 20,
+            "text": "Java"
+          }
+        ],
+        "Backend Python": [
+          {
+            "end": 36,
+            "field": "title_for_matching",
+            "start": 30,
+            "text": "Python"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 35,
+          "field": "match_text",
+          "start": 31,
+          "text": "Java"
+        },
+        {
+          "end": 47,
+          "field": "match_text",
+          "start": 41,
+          "text": "Python"
+        },
+        {
+          "end": 209,
+          "field": "match_text",
+          "start": 205,
+          "text": "Java"
+        },
+        {
+          "end": 217,
+          "field": "match_text",
+          "start": 211,
+          "text": "Python"
+        },
+        {
+          "end": 1639,
+          "field": "match_text",
+          "start": 1635,
+          "text": "Java"
+        },
+        {
+          "end": 1649,
+          "field": "match_text",
+          "start": 1643,
+          "text": "Python"
+        },
+        {
+          "end": 2184,
+          "field": "match_text",
+          "start": 2178,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 17,
+          "field": "requirements_text",
+          "start": 12,
+          "text": "3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_645731dc7a7fc33a0ee15e20",
+      "job_id": "job_79d0373427772838020b",
+      "must_mentions": [
+        {
+          "end": 11,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 212,
+          "field": "requirements_text",
+          "start": 205,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_ebee9a576b8e7995a354692140d19c84_4efabc919808b493e5a3c90b",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 19,
+            "field": "title_for_matching",
+            "start": 15,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 30,
+          "field": "match_text",
+          "start": 26,
+          "text": "Java"
+        },
+        {
+          "end": 377,
+          "field": "match_text",
+          "start": 373,
+          "text": "Java"
+        },
+        {
+          "end": 663,
+          "field": "match_text",
+          "start": 660,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 141,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3+ years",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "3+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b28dd1e5ad0a14adc1ee0719",
+      "job_id": "job_dd0ac6f6d1277b2ed4fd",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_e4cd082d57b813c1c1a8d5242293dacd_a82856acebbb154beb33051c",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 740,
+          "field": "match_text",
+          "start": 736,
+          "text": "Java"
+        },
+        {
+          "end": 958,
+          "field": "match_text",
+          "start": 955,
+          "text": "SQL"
+        },
+        {
+          "end": 974,
+          "field": "match_text",
+          "start": 970,
+          "text": "Java"
+        },
+        {
+          "end": 1101,
+          "field": "match_text",
+          "start": 1098,
+          "text": "AWS"
+        },
+        {
+          "end": 1165,
+          "field": "match_text",
+          "start": 1162,
+          "text": "SQL"
+        },
+        {
+          "end": 1273,
+          "field": "match_text",
+          "start": 1270,
+          "text": "SQL"
+        },
+        {
+          "end": 1308,
+          "field": "match_text",
+          "start": 1305,
+          "text": "SQL"
+        },
+        {
+          "end": 1455,
+          "field": "match_text",
+          "start": 1451,
+          "text": "Java"
+        },
+        {
+          "end": 1590,
+          "field": "match_text",
+          "start": 1587,
+          "text": "AWS"
+        },
+        {
+          "end": 1633,
+          "field": "match_text",
+          "start": 1628,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 27,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_80c502e35b21a2d561c1b082",
+      "job_id": "job_c30f2b9658aa2c3a30fd",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_538fad6d9748228b5ac183f65c661fc8_8c0cae124357448fac938213",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 4,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 15,
+          "field": "match_text",
+          "start": 11,
+          "text": "Java"
+        },
+        {
+          "end": 120,
+          "field": "match_text",
+          "start": 116,
+          "text": "Java"
+        },
+        {
+          "end": 175,
+          "field": "match_text",
+          "start": 169,
+          "text": "Docker"
+        },
+        {
+          "end": 301,
+          "field": "match_text",
+          "start": 297,
+          "text": "Java"
+        },
+        {
+          "end": 453,
+          "field": "match_text",
+          "start": 449,
+          "text": "Java"
+        },
+        {
+          "end": 788,
+          "field": "match_text",
+          "start": 782,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 92,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "4 năm",
+      "experience_mentions": [
+        {
+          "end": 108,
+          "field": "requirements_text",
+          "start": 103,
+          "text": "4 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_f4f736fb8438863498780303",
+      "job_id": "job_8b0cd4b3fb3f7b16d4fc",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_13afce7db54cff89aa8f3c7cac13fd1d_dd3221c695a1e327e3b65eda",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 4,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 15,
+          "field": "match_text",
+          "start": 11,
+          "text": "Java"
+        },
+        {
+          "end": 836,
+          "field": "match_text",
+          "start": 832,
+          "text": "Java"
+        },
+        {
+          "end": 896,
+          "field": "match_text",
+          "start": 892,
+          "text": "Java"
+        },
+        {
+          "end": 1289,
+          "field": "match_text",
+          "start": 1286,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 166,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 471,
+          "field": "requirements_text",
+          "start": 466,
+          "text": "1 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_f3a978f3741b7b383577b80a",
+      "job_id": "job_9546242adb66865060ff",
+      "must_mentions": [
+        {
+          "end": 465,
+          "field": "requirements_text",
+          "start": 456,
+          "text": "tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_53bf1786307b4a9352809e4d82958edc_cd60cad84480fd3412b54bfc",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 4,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 15,
+          "field": "match_text",
+          "start": 11,
+          "text": "Java"
+        },
+        {
+          "end": 338,
+          "field": "match_text",
+          "start": 334,
+          "text": "Java"
+        },
+        {
+          "end": 468,
+          "field": "match_text",
+          "start": 464,
+          "text": "Java"
+        },
+        {
+          "end": 591,
+          "field": "match_text",
+          "start": 588,
+          "text": "SQL"
+        },
+        {
+          "end": 722,
+          "field": "match_text",
+          "start": 716,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 96,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 95,
+          "field": "requirements_text",
+          "start": 90,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_288ef9b1ec6e532ba20bcf37",
+      "job_id": "job_3b2746c4545f0bd64c8b",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_ef304fd63c10b5baaadecd5498daed7b_933b0a23b9be998e34aa63ad",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 25,
+            "field": "title_for_matching",
+            "start": 21,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 36,
+          "field": "match_text",
+          "start": 32,
+          "text": "Java"
+        },
+        {
+          "end": 71,
+          "field": "match_text",
+          "start": 67,
+          "text": "Java"
+        },
+        {
+          "end": 117,
+          "field": "match_text",
+          "start": 113,
+          "text": "Java"
+        },
+        {
+          "end": 1100,
+          "field": "match_text",
+          "start": 1096,
+          "text": "Java"
+        },
+        {
+          "end": 1125,
+          "field": "match_text",
+          "start": 1121,
+          "text": "Java"
+        },
+        {
+          "end": 1783,
+          "field": "match_text",
+          "start": 1780,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 222,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 - 3 năm",
+      "experience_mentions": [
+        {
+          "end": 320,
+          "field": "requirements_text",
+          "start": 311,
+          "text": "1 - 3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b610ca4e19ba8c8b834ee66e",
+      "job_id": "job_cbe0539c242738d0780a",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_6fc47a4ea16c05981d682db811d9f46b_ec2e864b787a18d6d023f8e9",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          },
+          {
+            "end": 34,
+            "field": "title_for_matching",
+            "start": 28,
+            "text": "Spring"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 37,
+          "field": "match_text",
+          "start": 34,
+          "text": "SQL"
+        },
+        {
+          "end": 304,
+          "field": "match_text",
+          "start": 300,
+          "text": "Java"
+        },
+        {
+          "end": 398,
+          "field": "match_text",
+          "start": 395,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 87,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "4–5 năm",
+      "experience_mentions": [
+        {
+          "end": 19,
+          "field": "requirements_text",
+          "start": 12,
+          "text": "4–5 năm"
+        },
+        {
+          "end": 92,
+          "field": "requirements_text",
+          "start": 87,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b417771e6a833cdaca95600b",
+      "job_id": "job_4ba8d9d5e2307343fdd9",
+      "must_mentions": [
+        {
+          "end": 11,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 86,
+          "field": "requirements_text",
+          "start": 79,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_a829e3eed3830388382c3c616b566487_cf23dadd3f0fc62eb32ddde9",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 1192,
+          "field": "match_text",
+          "start": 1188,
+          "text": "Java"
+        },
+        {
+          "end": 1300,
+          "field": "match_text",
+          "start": 1296,
+          "text": "Java"
+        },
+        {
+          "end": 1907,
+          "field": "match_text",
+          "start": 1904,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 268,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "5 năm",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 5,
+          "text": "5 năm"
+        },
+        {
+          "end": 400,
+          "field": "requirements_text",
+          "start": 395,
+          "text": "5 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b02fb012b1f133975477b0ca",
+      "job_id": "job_656c1e7d3edaff4bacd6",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_2315bd8016aa06b30acdff1d2fa584b5_7b1120c2f516da5c4a145102",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 264,
+          "field": "match_text",
+          "start": 260,
+          "text": "java"
+        },
+        {
+          "end": 490,
+          "field": "match_text",
+          "start": 487,
+          "text": "AWS"
+        },
+        {
+          "end": 672,
+          "field": "match_text",
+          "start": 668,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 62,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "02 năm",
+      "experience_mentions": [
+        {
+          "end": 159,
+          "field": "requirements_text",
+          "start": 153,
+          "text": "02 năm"
+        },
+        {
+          "end": 242,
+          "field": "requirements_text",
+          "start": 233,
+          "text": "1 - 2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_14b9e3412f81d2fa76574c4b",
+      "job_id": "job_f0f5fbf79bbe637a1db0",
+      "must_mentions": [
+        {
+          "end": 152,
+          "field": "requirements_text",
+          "start": 143,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 232,
+          "field": "requirements_text",
+          "start": 223,
+          "text": "Tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_9a309bfd901f1c9e964de0a309f44596_a28dbeafaec6dd846b7bce63",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 21,
+            "field": "title_for_matching",
+            "start": 17,
+            "text": "Java"
+          },
+          {
+            "end": 47,
+            "field": "title_for_matching",
+            "start": 41,
+            "text": "Spring"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 32,
+          "field": "match_text",
+          "start": 28,
+          "text": "Java"
+        },
+        {
+          "end": 665,
+          "field": "match_text",
+          "start": 659,
+          "text": "Docker"
+        },
+        {
+          "end": 1420,
+          "field": "match_text",
+          "start": 1416,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 202,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "5+ năm",
+      "experience_mentions": [
+        {
+          "end": 24,
+          "field": "requirements_text",
+          "start": 18,
+          "text": "5+ năm"
+        },
+        {
+          "end": 1159,
+          "field": "requirements_text",
+          "start": 1154,
+          "text": "4 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_f627917c1dadb2815a593264",
+      "job_id": "job_daef87531b41623dd61f",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_7f34422aff2dc8515dd38634b5393994_c76c5b7b1ea7ce80ce0861a6",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 715,
+          "field": "match_text",
+          "start": 711,
+          "text": "Java"
+        },
+        {
+          "end": 974,
+          "field": "match_text",
+          "start": 970,
+          "text": "Java"
+        },
+        {
+          "end": 1105,
+          "field": "match_text",
+          "start": 1102,
+          "text": "AWS"
+        },
+        {
+          "end": 1228,
+          "field": "match_text",
+          "start": 1225,
+          "text": "SQL"
+        },
+        {
+          "end": 1369,
+          "field": "match_text",
+          "start": 1366,
+          "text": "SQL"
+        },
+        {
+          "end": 1624,
+          "field": "match_text",
+          "start": 1620,
+          "text": "Java"
+        },
+        {
+          "end": 1834,
+          "field": "match_text",
+          "start": 1830,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 205,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 239,
+          "field": "requirements_text",
+          "start": 234,
+          "text": "3 năm"
+        },
+        {
+          "end": 698,
+          "field": "requirements_text",
+          "start": 693,
+          "text": "3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_3dad067a8957e773aa8fc2fe",
+      "job_id": "job_0989ce24fb77aa88496f",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_021c488fc25c3f567f85311eee5e3247_300075269e519ce64acf3fad",
+      "role": "Backend Java",
+      "role_candidates": [
+        "Backend Java"
+      ],
+      "role_evidence": {
+        "Backend Java": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Java"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 22,
+          "field": "match_text",
+          "start": 18,
+          "text": "Java"
+        },
+        {
+          "end": 687,
+          "field": "match_text",
+          "start": 683,
+          "text": "Java"
+        },
+        {
+          "end": 1145,
+          "field": "match_text",
+          "start": 1141,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 147,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 136,
+          "field": "requirements_text",
+          "start": 131,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_c8452c13afcbef3df9347545",
+      "job_id": "job_37ef5708f142ce982e5f",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_e61f7b13d0d6b2cba51872129f0278df_97b3a592f93c839c2ecd55de",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 9,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Front-End"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1589,
+          "field": "match_text",
+          "start": 1584,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 217,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 17,
+          "field": "requirements_text",
+          "start": 12,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_5315ff9b568c8ae4087fc3f0",
+      "job_id": "job_2d12e2dfc254c9273cae",
+      "must_mentions": [
+        {
+          "end": 11,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_1c5556623a60ca56ab8a25a3c2a55512_d9746051d6a29b8a01d7c656",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 30,
+            "field": "title_for_matching",
+            "start": 22,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1089,
+          "field": "match_text",
+          "start": 1085,
+          "text": "Java"
+        },
+        {
+          "end": 1167,
+          "field": "match_text",
+          "start": 1162,
+          "text": "React"
+        },
+        {
+          "end": 1690,
+          "field": "match_text",
+          "start": 1685,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 183,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 32,
+          "field": "requirements_text",
+          "start": 27,
+          "text": "1 năm"
+        },
+        {
+          "end": 89,
+          "field": "requirements_text",
+          "start": 84,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_2012bce12b669269faabdab6",
+      "job_id": "job_2e65d890c41da1c78c1c",
+      "must_mentions": [
+        {
+          "end": 26,
+          "field": "requirements_text",
+          "start": 17,
+          "text": "tối thiểu"
+        },
+        {
+          "end": 83,
+          "field": "requirements_text",
+          "start": 74,
+          "text": "tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_8c7f02acbc4100ad7573bbf0d461b69b_60f9d275aabe7e9d4a8a15ec",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 37,
+            "field": "title_for_matching",
+            "start": 28,
+            "text": "Front-end"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 352,
+          "field": "match_text",
+          "start": 348,
+          "text": "Java"
+        },
+        {
+          "end": 876,
+          "field": "match_text",
+          "start": 872,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 134,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3-4 năm",
+      "experience_mentions": [
+        {
+          "end": 12,
+          "field": "requirements_text",
+          "start": 5,
+          "text": "3-4 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_67db2a46a728832944eb4c15",
+      "job_id": "job_981522ded75a6995770c",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_01ecb7308962840d4e861c47f235f9ce_a1ae42947882ecf39806d044",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 16,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Front-End"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 44,
+          "field": "match_text",
+          "start": 39,
+          "text": "React"
+        },
+        {
+          "end": 780,
+          "field": "match_text",
+          "start": 775,
+          "text": "React"
+        },
+        {
+          "end": 1678,
+          "field": "match_text",
+          "start": 1672,
+          "text": "Docker"
+        },
+        {
+          "end": 1686,
+          "field": "match_text",
+          "start": 1680,
+          "text": "docker"
+        }
+      ],
+      "vietnamese_character_hits": 149,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "4 năm",
+      "experience_mentions": [
+        {
+          "end": 127,
+          "field": "requirements_text",
+          "start": 122,
+          "text": "4 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_cf3b316a1c7fa97c947a39ad",
+      "job_id": "job_fb61d3854a1b32211df9",
+      "must_mentions": [
+        {
+          "end": 55,
+          "field": "requirements_text",
+          "start": 48,
+          "text": "ÍT NHẤT"
+        },
+        {
+          "end": 121,
+          "field": "requirements_text",
+          "start": 112,
+          "text": "Tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_886c13f399606e4dab1bcf12b6ed7b92_5ec821eb98dd1aa3cd95fec1",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 8,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 431,
+          "field": "match_text",
+          "start": 426,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 158,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_c0f68d70d2dafe7691f2686f",
+      "job_id": "job_8b62d8f27e1df73d823b",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_b12ec9fa60b20ce8a2d17111e55da5c7_40f18a894743d82c1997d09a",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 36,
+            "field": "title_for_matching",
+            "start": 28,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 224,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 17,
+          "field": "requirements_text",
+          "start": 12,
+          "text": "3 năm"
+        },
+        {
+          "end": 83,
+          "field": "requirements_text",
+          "start": 78,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_69cb0dec558268aa10593e3a",
+      "job_id": "job_8020938b2956b73450b6",
+      "must_mentions": [
+        {
+          "end": 11,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 77,
+          "field": "requirements_text",
+          "start": 70,
+          "text": "ít nhất"
+        },
+        {
+          "end": 449,
+          "field": "requirements_text",
+          "start": 442,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_b76d01db0f35cb13408134f9e0e2956a_4526dae057db3c7c6e07b253",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 9,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Front-End"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 162,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "4+ năm",
+      "experience_mentions": [
+        {
+          "end": 8,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "4+ năm"
+        },
+        {
+          "end": 640,
+          "field": "requirements_text",
+          "start": 634,
+          "text": "2+ năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_cc304fe88002eb4284f58598",
+      "job_id": "job_f903e5f87e2cc0318386",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_fc057f5dc2228d9a2fff5992447ec741_8e7706b73dc853ea4f23146a",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 8,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1064,
+          "field": "match_text",
+          "start": 1059,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 191,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3 – 5 năm",
+      "experience_mentions": [
+        {
+          "end": 119,
+          "field": "requirements_text",
+          "start": 110,
+          "text": "3 – 5 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_2673fdff684ac65913fff141",
+      "job_id": "job_383d49f0eca8555f1b97",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_28f0d6e7a880ac381c0f84193c0a23e1_0ac0f4fd5ad203ee35bedaff",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 8,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 201,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 18,
+          "field": "requirements_text",
+          "start": 13,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_af31a6cff9d1f7c81f35df79",
+      "job_id": "job_b25a4bffdd4a75d0ce4a",
+      "must_mentions": [
+        {
+          "end": 12,
+          "field": "requirements_text",
+          "start": 5,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_d88bada204d38cc4c368b6655dc1f5a8_a84c4596193ac337dac212ef",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 8,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 171,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 5,
+          "text": "2 năm"
+        },
+        {
+          "end": 185,
+          "field": "requirements_text",
+          "start": 178,
+          "text": "6 tháng"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_fd429a736a34040613ee9faa",
+      "job_id": "job_a1f647ad98a6dd8f71c3",
+      "must_mentions": [
+        {
+          "end": 177,
+          "field": "requirements_text",
+          "start": 170,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_133671854dce2c5a1152ad9e3f80dba6_dcf1fadef7c570aaf88c8ab5",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 45,
+            "field": "title_for_matching",
+            "start": 37,
+            "text": "Frontend"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 724,
+          "field": "match_text",
+          "start": 719,
+          "text": "React"
+        }
+      ],
+      "vietnamese_character_hits": 118,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 125,
+          "field": "requirements_text",
+          "start": 120,
+          "text": "1 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_eaf67c8701cf3107e26dde69",
+      "job_id": "job_b209e4e03eed26b3b6dd",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_ca958b0c4bfe147c992aecc8f98b35e0_2b38d3b443ff879e8cbc0605",
+      "role": "Frontend",
+      "role_candidates": [
+        "Frontend"
+      ],
+      "role_evidence": {
+        "Frontend": [
+          {
+            "end": 26,
+            "field": "title_for_matching",
+            "start": 17,
+            "text": "Front-end"
+          },
+          {
+            "end": 37,
+            "field": "title_for_matching",
+            "start": 28,
+            "text": "Front-end"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 149,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "02 năm",
+      "experience_mentions": [
+        {
+          "end": 120,
+          "field": "requirements_text",
+          "start": 114,
+          "text": "02 năm"
+        },
+        {
+          "end": 151,
+          "field": "requirements_text",
+          "start": 145,
+          "text": "01 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_17c2c8f9651c0f38486294f0",
+      "job_id": "job_cc7ee9133843f7a2d5eb",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_29979b7e176190570474c8620f553335_9c2002a7854abd9581d85c9a",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 6,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 133,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "2 năm",
+      "experience_mentions": [
+        {
+          "end": 179,
+          "field": "requirements_text",
+          "start": 174,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b99f5d0ad0e9d7de37165adc",
+      "job_id": "job_3f76bc73e1fa4469e62a",
+      "must_mentions": [
+        {
+          "end": 166,
+          "field": "requirements_text",
+          "start": 159,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_e54b223473522a9f6612e5a9f13aa2d3_bd5e8cc6eedbc4c5b50c5997",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 39,
+            "field": "title_for_matching",
+            "start": 33,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 220,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_086df23cc7ff1ac2b2eb8cde",
+      "job_id": "job_785446f88c4cd373f374",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_e700c9c321dbda9bda9d42ed156a1f43_aa05a93f5f2d596295f7c1e0",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 44,
+            "field": "title_for_matching",
+            "start": 38,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1389,
+          "field": "match_text",
+          "start": 1383,
+          "text": "Docker"
+        },
+        {
+          "end": 2430,
+          "field": "match_text",
+          "start": 2424,
+          "text": "Python"
+        },
+        {
+          "end": 2455,
+          "field": "match_text",
+          "start": 2452,
+          "text": "SQL"
+        },
+        {
+          "end": 2731,
+          "field": "match_text",
+          "start": 2728,
+          "text": "AWS"
+        },
+        {
+          "end": 2789,
+          "field": "match_text",
+          "start": 2783,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 7,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "5+ years",
+      "experience_mentions": [
+        {
+          "end": 84,
+          "field": "requirements_text",
+          "start": 76,
+          "text": "5+ years"
+        },
+        {
+          "end": 173,
+          "field": "requirements_text",
+          "start": 165,
+          "text": "2+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_8b891ca0b932e7d1c6053b63",
+      "job_id": "job_6ae3226f04d70af8fb35",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_8cdc246c2cbd9ed92b48efb4eeb7f92b_9be9d3d3bb5074337830eea6",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 13,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1844,
+          "field": "match_text",
+          "start": 1838,
+          "text": "Docker"
+        },
+        {
+          "end": 2249,
+          "field": "match_text",
+          "start": 2243,
+          "text": "Python"
+        },
+        {
+          "end": 2274,
+          "field": "match_text",
+          "start": 2271,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "1+ year",
+      "experience_mentions": [
+        {
+          "end": 9,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "1+ year"
+        },
+        {
+          "end": 294,
+          "field": "requirements_text",
+          "start": 286,
+          "text": "6 months"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_75bdea2f7908c63eac65b784",
+      "job_id": "job_9ced345632e08ba17714",
+      "must_mentions": [
+        {
+          "end": 285,
+          "field": "requirements_text",
+          "start": 277,
+          "text": "At least"
+        },
+        {
+          "end": 784,
+          "field": "requirements_text",
+          "start": 780,
+          "text": "must"
+        },
+        {
+          "end": 876,
+          "field": "requirements_text",
+          "start": 868,
+          "text": "at least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_c6de84388d6b072879c0b7ce00d11264_250ed5695dc503fa6910c582",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 17,
+            "field": "title_for_matching",
+            "start": 11,
+            "text": "Devops"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 21,
+          "field": "match_text",
+          "start": 18,
+          "text": "AWS"
+        },
+        {
+          "end": 212,
+          "field": "match_text",
+          "start": 206,
+          "text": "docker"
+        },
+        {
+          "end": 352,
+          "field": "match_text",
+          "start": 349,
+          "text": "AWS"
+        },
+        {
+          "end": 442,
+          "field": "match_text",
+          "start": 439,
+          "text": "AWS"
+        },
+        {
+          "end": 718,
+          "field": "match_text",
+          "start": 712,
+          "text": "Python"
+        },
+        {
+          "end": 733,
+          "field": "match_text",
+          "start": 729,
+          "text": "Java"
+        },
+        {
+          "end": 1123,
+          "field": "match_text",
+          "start": 1117,
+          "text": "docker"
+        },
+        {
+          "end": 1283,
+          "field": "match_text",
+          "start": 1280,
+          "text": "AWS"
+        },
+        {
+          "end": 1402,
+          "field": "match_text",
+          "start": 1399,
+          "text": "AWS"
+        },
+        {
+          "end": 1479,
+          "field": "match_text",
+          "start": 1476,
+          "text": "AWS"
+        },
+        {
+          "end": 1793,
+          "field": "match_text",
+          "start": 1787,
+          "text": "Python"
+        },
+        {
+          "end": 1808,
+          "field": "match_text",
+          "start": 1804,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "4 years",
+      "experience_mentions": [
+        {
+          "end": 1044,
+          "field": "requirements_text",
+          "start": 1037,
+          "text": "4 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_63d801814393b32a9dd476ac",
+      "job_id": "job_928602bf757be25afe08",
+      "must_mentions": [
+        {
+          "end": 1036,
+          "field": "requirements_text",
+          "start": 1028,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_339c82529031cc5a80279e01f27a892c_654c82928c2612b397ca10b3",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 20,
+            "field": "title_for_matching",
+            "start": 14,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 48,
+          "field": "match_text",
+          "start": 42,
+          "text": "Python"
+        },
+        {
+          "end": 53,
+          "field": "match_text",
+          "start": 50,
+          "text": "AWS"
+        },
+        {
+          "end": 169,
+          "field": "match_text",
+          "start": 166,
+          "text": "AWS"
+        },
+        {
+          "end": 303,
+          "field": "match_text",
+          "start": 297,
+          "text": "Docker"
+        },
+        {
+          "end": 1466,
+          "field": "match_text",
+          "start": 1460,
+          "text": "Python"
+        },
+        {
+          "end": 1568,
+          "field": "match_text",
+          "start": 1565,
+          "text": "AWS"
+        },
+        {
+          "end": 1782,
+          "field": "match_text",
+          "start": 1779,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "3 years",
+      "experience_mentions": [
+        {
+          "end": 93,
+          "field": "requirements_text",
+          "start": 86,
+          "text": "3 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_7fe006271857d0386a47dee3",
+      "job_id": "job_0fac282e675fcd8cf9c0",
+      "must_mentions": [
+        {
+          "end": 85,
+          "field": "requirements_text",
+          "start": 77,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_109fd6467c4b89cd41af1bffdeb93027_1ebbe0d6a029a37a8cc8db05",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 12,
+            "field": "title_for_matching",
+            "start": 6,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 146,
+          "field": "match_text",
+          "start": 143,
+          "text": "AWS"
+        },
+        {
+          "end": 1677,
+          "field": "match_text",
+          "start": 1674,
+          "text": "AWS"
+        },
+        {
+          "end": 1753,
+          "field": "match_text",
+          "start": 1747,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "7+ years",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "7+ years"
+        },
+        {
+          "end": 119,
+          "field": "requirements_text",
+          "start": 111,
+          "text": "2+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_5ed58ff4e0b19edad4865863",
+      "job_id": "job_bf3e8b064e45814ad886",
+      "must_mentions": [
+        {
+          "end": 110,
+          "field": "requirements_text",
+          "start": 102,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_5ba9ff9252006184d8e15cfa3212d201_8acefc89cf908386e6a72a9d",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 10,
+            "field": "title_for_matching",
+            "start": 4,
+            "text": "DevOps"
+          },
+          {
+            "end": 23,
+            "field": "title_for_matching",
+            "start": 17,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 14,
+          "field": "match_text",
+          "start": 11,
+          "text": "AWS"
+        },
+        {
+          "end": 39,
+          "field": "match_text",
+          "start": 36,
+          "text": "AWS"
+        },
+        {
+          "end": 889,
+          "field": "match_text",
+          "start": 883,
+          "text": "Python"
+        },
+        {
+          "end": 897,
+          "field": "match_text",
+          "start": 893,
+          "text": "Java"
+        },
+        {
+          "end": 1201,
+          "field": "match_text",
+          "start": 1198,
+          "text": "AWS"
+        },
+        {
+          "end": 1683,
+          "field": "match_text",
+          "start": 1680,
+          "text": "AWS"
+        },
+        {
+          "end": 2243,
+          "field": "match_text",
+          "start": 2240,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "8+ years",
+      "experience_mentions": [
+        {
+          "end": 130,
+          "field": "requirements_text",
+          "start": 122,
+          "text": "8+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_81b2f03601ad81a79c0f2d78",
+      "job_id": "job_a0298c0f1b2894aed2ae",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_15ebeb2dde57e5534200e527996bbb16_6011e1aa7c1a623a3845d64f",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 36,
+            "field": "title_for_matching",
+            "start": 30,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 2396,
+          "field": "match_text",
+          "start": 2393,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "5+ years",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "5+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_8a1bd534618da3edf78901bd",
+      "job_id": "job_6eadba2544012f381247",
+      "must_mentions": [
+        {
+          "end": 380,
+          "field": "requirements_text",
+          "start": 372,
+          "text": "required"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_c8461c6ce0b173e82891f35d83f8308b_86e5071b893162fe6f1ae753",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 6,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Devops"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 38,
+          "field": "match_text",
+          "start": 35,
+          "text": "AWS"
+        },
+        {
+          "end": 140,
+          "field": "match_text",
+          "start": 137,
+          "text": "AWS"
+        },
+        {
+          "end": 812,
+          "field": "match_text",
+          "start": 809,
+          "text": "AWS"
+        },
+        {
+          "end": 1119,
+          "field": "match_text",
+          "start": 1116,
+          "text": "AWS"
+        },
+        {
+          "end": 1245,
+          "field": "match_text",
+          "start": 1239,
+          "text": "Docker"
+        },
+        {
+          "end": 1362,
+          "field": "match_text",
+          "start": 1356,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "5+ years",
+      "experience_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "5+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_802a38f1717241c0f9671061",
+      "job_id": "job_f5b25a8c0f7b79b23f84",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_1a959b93286832914c9e3a32ccbcae0e_ee80def6f043646313660763",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 19,
+            "field": "title_for_matching",
+            "start": 13,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 2403,
+          "field": "match_text",
+          "start": 2400,
+          "text": "AWS"
+        },
+        {
+          "end": 2534,
+          "field": "match_text",
+          "start": 2528,
+          "text": "Docker"
+        },
+        {
+          "end": 2747,
+          "field": "match_text",
+          "start": 2744,
+          "text": "AWS"
+        },
+        {
+          "end": 2937,
+          "field": "match_text",
+          "start": 2931,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "4 years",
+      "experience_mentions": [
+        {
+          "end": 18,
+          "field": "requirements_text",
+          "start": 11,
+          "text": "4 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_a6edc203e6eb7024da91d923",
+      "job_id": "job_9fd96b6228e55cab2377",
+      "must_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_7960e37eca9856d04a580c73941c71eb_ba2baefe89e69a6555f192eb",
+      "role": "DevOps",
+      "role_candidates": [
+        "DevOps"
+      ],
+      "role_evidence": {
+        "DevOps": [
+          {
+            "end": 13,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "DevOps"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 510,
+          "field": "match_text",
+          "start": 507,
+          "text": "AWS"
+        },
+        {
+          "end": 551,
+          "field": "match_text",
+          "start": 545,
+          "text": "python"
+        },
+        {
+          "end": 592,
+          "field": "match_text",
+          "start": 586,
+          "text": "Docker"
+        }
+      ],
+      "vietnamese_character_hits": 7,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 16,
+          "field": "requirements_text",
+          "start": 11,
+          "text": "1 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_c9c1d1092bbe62532a9b6ece",
+      "job_id": "job_fa2edd80dab5b52f537b",
+      "must_mentions": [
+        {
+          "end": 10,
+          "field": "requirements_text",
+          "start": 3,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_87a7351ecd6dc9c2b8357c60ff6055fd_0dcb55321551ee5422fc386c",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 6,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 121,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "keep",
+      "group_id": "G_8798783eb2d5a1d8cd31503d",
+      "job_id": "job_f94c2edd9e0e043e18f7",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_ac62f7a7c008068e37dfbd23655d8615_d046af466e9958180827cd79",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 27,
+            "field": "title_for_matching",
+            "start": 21,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 113,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "5 năm",
+      "experience_mentions": [
+        {
+          "end": 198,
+          "field": "requirements_text",
+          "start": 193,
+          "text": "5 năm"
+        },
+        {
+          "end": 267,
+          "field": "requirements_text",
+          "start": 262,
+          "text": "2 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_b89254678628369ffb370aa9",
+      "job_id": "job_6597af5d3743192c436b",
+      "must_mentions": [
+        {
+          "end": 192,
+          "field": "requirements_text",
+          "start": 183,
+          "text": "Tối thiểu"
+        },
+        {
+          "end": 261,
+          "field": "requirements_text",
+          "start": 254,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_83585af4d4ea3241016a1463094a95f3_5af34db8f0827df7dc63b590",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 32,
+            "field": "title_for_matching",
+            "start": 26,
+            "text": "Tester"
+          },
+          {
+            "end": 36,
+            "field": "title_for_matching",
+            "start": 34,
+            "text": "QA"
+          },
+          {
+            "end": 39,
+            "field": "title_for_matching",
+            "start": 37,
+            "text": "QC"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 444,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 17,
+          "field": "requirements_text",
+          "start": 12,
+          "text": "3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_c378d03b708c5031756bb6e6",
+      "job_id": "job_a82f282047f415a4ed04",
+      "must_mentions": [
+        {
+          "end": 11,
+          "field": "requirements_text",
+          "start": 2,
+          "text": "Tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_495fa47f5813a3672c070394a035ff0d_80b87bf0a9b0cf623ec25a3b",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 13,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 701,
+          "field": "match_text",
+          "start": 698,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 130,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1-3 năm",
+      "experience_mentions": [
+        {
+          "end": 12,
+          "field": "requirements_text",
+          "start": 5,
+          "text": "1-3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_88218a7be403249cb8ee9cea",
+      "job_id": "job_af8fb182b88a63444c76",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_a7c59cb414eaabe8815e7b1ade706a06_16d7dde008666afe3abae894",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 2,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "QA"
+          },
+          {
+            "end": 9,
+            "field": "title_for_matching",
+            "start": 3,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 865,
+          "field": "match_text",
+          "start": 862,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 171,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "01 năm",
+      "experience_mentions": [
+        {
+          "end": 73,
+          "field": "requirements_text",
+          "start": 67,
+          "text": "01 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_a3f0a493288066b24bf3bc61",
+      "job_id": "job_b592b7dbf694b6180527",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_b1e42d5349822c9adef809391d3906b0_8eb7e911299b8c59f8022b3f",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 33,
+            "field": "title_for_matching",
+            "start": 27,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 72,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 147,
+          "field": "requirements_text",
+          "start": 142,
+          "text": "1 năm"
+        },
+        {
+          "end": 533,
+          "field": "requirements_text",
+          "start": 525,
+          "text": "06 tháng"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_f2cf6ede56be1e649b61a6f0",
+      "job_id": "job_8b889a856209bf359cf8",
+      "must_mentions": [
+        {
+          "end": 141,
+          "field": "requirements_text",
+          "start": 134,
+          "text": "ít nhất"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_c3306f97e6bdb054d2b2b804e1683bee_62631318a83e7a816fafc79b",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 9,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "QC"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 258,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "1 năm",
+      "experience_mentions": [
+        {
+          "end": 13,
+          "field": "requirements_text",
+          "start": 8,
+          "text": "1 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_83daf3ee179880b9dd58868b",
+      "job_id": "job_b932d8e05338d5a94f0f",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_e7d25c8be7bcd086e69c121498508381_4be8b9840a3d9e9b4443cc6a",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 17,
+            "field": "title_for_matching",
+            "start": 15,
+            "text": "QA"
+          },
+          {
+            "end": 25,
+            "field": "title_for_matching",
+            "start": 19,
+            "text": "Tester"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 163,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3 năm",
+      "experience_mentions": [
+        {
+          "end": 47,
+          "field": "requirements_text",
+          "start": 42,
+          "text": "3 năm"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_cfbc1ef834705e41f8e5946c",
+      "job_id": "job_10a9db7c49b8e49af30f",
+      "must_mentions": [
+        {
+          "end": 41,
+          "field": "requirements_text",
+          "start": 32,
+          "text": "Tối thiểu"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_17f4de50b7d3c8f64e58df2989852da4_fcac4811506f222b0b696e51",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 41,
+            "field": "title_for_matching",
+            "start": 39,
+            "text": "QA"
+          },
+          {
+            "end": 44,
+            "field": "title_for_matching",
+            "start": 42,
+            "text": "QC"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1435,
+          "field": "match_text",
+          "start": 1432,
+          "text": "SQL"
+        }
+      ],
+      "vietnamese_character_hits": 244,
+      "vietnamese_signal": true
+    },
+    {
+      "experience_bucket": "3-5 years",
+      "experience_mentions": [
+        {
+          "end": 120,
+          "field": "requirements_text",
+          "start": 111,
+          "text": "3-5 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_1a48c9cc9e3b8766c8e12772",
+      "job_id": "job_0f41ae0555c15b00918e",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_5bdcf87117d648271ebc05588947fdd9_287d2c0bfb9c2e57810a359a",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 2,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "QA"
+          },
+          {
+            "end": 26,
+            "field": "title_for_matching",
+            "start": 20,
+            "text": "Tester"
+          },
+          {
+            "end": 54,
+            "field": "title_for_matching",
+            "start": 39,
+            "text": "Automation Test"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1522,
+          "field": "match_text",
+          "start": 1516,
+          "text": "Python"
+        },
+        {
+          "end": 1615,
+          "field": "match_text",
+          "start": 1612,
+          "text": "AWS"
+        },
+        {
+          "end": 1925,
+          "field": "match_text",
+          "start": 1922,
+          "text": "AWS"
+        }
+      ],
+      "vietnamese_character_hits": 7,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "2 years",
+      "experience_mentions": [
+        {
+          "end": 16,
+          "field": "requirements_text",
+          "start": 9,
+          "text": "2 years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_02d02963a989eec908efec48",
+      "job_id": "job_af8dc0d631388de59bef",
+      "must_mentions": [
+        {
+          "end": 8,
+          "field": "requirements_text",
+          "start": 0,
+          "text": "At least"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_c0aee60e92f732255f157e259c966139_44169838ab0ff9b39e1ccd6e",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 2,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "QA"
+          },
+          {
+            "end": 5,
+            "field": "title_for_matching",
+            "start": 3,
+            "text": "QC"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "2+ years",
+      "experience_mentions": [
+        {
+          "end": 143,
+          "field": "requirements_text",
+          "start": 135,
+          "text": "2+ years"
+        },
+        {
+          "end": 231,
+          "field": "requirements_text",
+          "start": 223,
+          "text": "1+ years"
+        },
+        {
+          "end": 692,
+          "field": "requirements_text",
+          "start": 684,
+          "text": "1+ years"
+        }
+      ],
+      "gate_decision": "keep",
+      "group_id": "G_c8183c542c858628b85e0832",
+      "job_id": "job_62ca34a8ba9f48568d31",
+      "must_mentions": [
+        {
+          "end": 126,
+          "field": "requirements_text",
+          "start": 122,
+          "text": "MUST"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "retained; near/source/template relatives grouped, not deleted"
+      ],
+      "record_id": "jd_d2436707738929d0006e973f2d74321a_1dbcba09fcb9b2e94c08a8d9",
+      "role": "QA/Testing",
+      "role_candidates": [
+        "QA/Testing"
+      ],
+      "role_evidence": {
+        "QA/Testing": [
+          {
+            "end": 11,
+            "field": "title_for_matching",
+            "start": 9,
+            "text": "QC"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 1041,
+          "field": "match_text",
+          "start": 1037,
+          "text": "Java"
+        }
+      ],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "3 years",
+      "experience_mentions": [
+        {
+          "end": 177,
+          "field": "requirements_text",
+          "start": 170,
+          "text": "3 years"
+        }
+      ],
+      "gate_decision": "quarantine",
+      "group_id": "G_6fd075430cc9da2cdff69e5f",
+      "job_id": "job_ce9d4b53148ccab5609b",
+      "must_mentions": [
+        {
+          "end": 169,
+          "field": "requirements_text",
+          "start": 161,
+          "text": "At least"
+        },
+        {
+          "end": 1076,
+          "field": "requirements_text",
+          "start": 1068,
+          "text": "required"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": true,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "spreadsheet_error:unclassified_professional_text",
+        "missing_or_short_section:tasks_text",
+        "upstream_needs_review",
+        "upstream_extraction:sections_plus_fallback"
+      ],
+      "record_id": "jd_6f4ff5186f54e59b397ffd59d2c47a39_45dda9798c46aed8740f7535",
+      "role": "Data Analyst",
+      "role_candidates": [
+        "Data Analyst"
+      ],
+      "role_evidence": {
+        "Data Analyst": [
+          {
+            "end": 12,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Data Analyst"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 317,
+          "field": "match_text",
+          "start": 314,
+          "text": "SQL"
+        },
+        {
+          "end": 325,
+          "field": "match_text",
+          "start": 319,
+          "text": "Python"
+        },
+        {
+          "end": 1471,
+          "field": "match_text",
+          "start": 1465,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 8,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "quarantine",
+      "group_id": "G_5909c0a30d1d850b69d00810",
+      "job_id": "job_f276ea42265aab730cdf",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "missing_or_short_section:tasks_text",
+        "missing_or_short_section:requirements_text",
+        "upstream_needs_review",
+        "upstream_extraction:fallback_only"
+      ],
+      "record_id": "jd_8b7365630e5c52ccb4759b2b122b6240_e00dc5dadc1e4b72af205b08",
+      "role": "Data Analyst",
+      "role_candidates": [
+        "Data Analyst"
+      ],
+      "role_evidence": {
+        "Data Analyst": [
+          {
+            "end": 44,
+            "field": "title_for_matching",
+            "start": 32,
+            "text": "Data Analyst"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 4,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "5 years",
+      "experience_mentions": [
+        {
+          "end": 15,
+          "field": "requirements_text",
+          "start": 8,
+          "text": "5 years"
+        }
+      ],
+      "gate_decision": "quarantine",
+      "group_id": "G_066963e5185fb7ea2432dcee",
+      "job_id": "job_3d91bd66351c91e206c7",
+      "must_mentions": [
+        {
+          "end": 7,
+          "field": "requirements_text",
+          "start": 0,
+          "text": "Minimum"
+        }
+      ],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "spreadsheet_error:tasks_text",
+        "missing_or_short_section:tasks_text",
+        "upstream_needs_review"
+      ],
+      "record_id": "jd_6eb5e08d2154686e2c2dd9295b4e8fd4_9d4c19f8ba5f8631c8b5a744",
+      "role": "Data Analyst",
+      "role_candidates": [
+        "Data Analyst"
+      ],
+      "role_evidence": {
+        "Data Analyst": [
+          {
+            "end": 19,
+            "field": "title_for_matching",
+            "start": 7,
+            "text": "Data Analyst"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [],
+      "vietnamese_character_hits": 5,
+      "vietnamese_signal": false
+    },
+    {
+      "experience_bucket": "unknown",
+      "experience_mentions": [],
+      "gate_decision": "quarantine",
+      "group_id": "G_26a0ea78fb850b165c729178",
+      "job_id": "job_60e8ded349354f397062",
+      "must_mentions": [],
+      "note": "Literal cues for development sampling only; not skill proficiency, scoped months, mandatory truth or CV-JD labels",
+      "preferred_present": false,
+      "purpose": "development/parser; not final test",
+      "quality_reasons": [
+        "missing_or_short_section:tasks_text",
+        "missing_or_short_section:requirements_text",
+        "upstream_needs_review",
+        "upstream_extraction:fallback_only"
+      ],
+      "record_id": "jd_9ac5f2af3d2021039416e87534a5d1a0_128466a678e121256f8dfc35",
+      "role": "Data Analyst",
+      "role_candidates": [
+        "Data Analyst"
+      ],
+      "role_evidence": {
+        "Data Analyst": [
+          {
+            "end": 12,
+            "field": "title_for_matching",
+            "start": 0,
+            "text": "Data Analyst"
+          }
+        ]
+      },
+      "rule_version": "upstream-observation-v1",
+      "selection_reason": "one per non-pilot group; passing quality gate first, Vietnamese cue, diversity, seeded tie break",
+      "shared_keyword_mentions": [
+        {
+          "end": 28,
+          "field": "match_text",
+          "start": 25,
+          "text": "SQL"
+        },
+        {
+          "end": 36,
+          "field": "match_text",
+          "start": 30,
+          "text": "Python"
+        },
+        {
+          "end": 1697,
+          "field": "match_text",
+          "start": 1694,
+          "text": "SQL"
+        },
+        {
+          "end": 1823,
+          "field": "match_text",
+          "start": 1817,
+          "text": "Python"
+        }
+      ],
+      "vietnamese_character_hits": 4,
+      "vietnamese_signal": false
+    }
+  ],
+  "summary": {
+    "actual_by_role": {
+      "Backend Java": 12,
+      "Backend Python": 12,
+      "Data Analyst": 4,
+      "DevOps": 12,
+      "Frontend": 12,
+      "QA/Testing": 12
+    },
+    "available": {
+      "Backend Java": {
+        "gate_passing": 121,
+        "groups": 290,
+        "records": 348
+      },
+      "Backend Python": {
+        "gate_passing": 28,
+        "groups": 90,
+        "records": 101
+      },
+      "Data Analyst": {
+        "gate_passing": 0,
+        "groups": 4,
+        "records": 4
+      },
+      "DevOps": {
+        "gate_passing": 14,
+        "groups": 48,
+        "records": 48
+      },
+      "Frontend": {
+        "gate_passing": 55,
+        "groups": 190,
+        "records": 224
+      },
+      "QA/Testing": {
+        "gate_passing": 43,
+        "groups": 141,
+        "records": 150
+      }
+    },
+    "development_group_closure": 86,
+    "experience_mentions": 55,
+    "gate_decisions": {
+      "keep": 60,
+      "quarantine": 4
+    },
+    "must_mentions": 33,
+    "preferred_present": 10,
+    "purpose": "development/parser only",
+    "seed": 20261113,
+    "shortages": {
+      "Data Analyst": 8
+    },
+    "target_per_role": 12,
+    "total": 64,
+    "vietnamese_signal": 44
+  }
+}

@@ -28,5 +28,7 @@ pytest-cache-files-*/
 test-results/
 playwright-report/
 coverage/
-annotation_work/
 ml_data_runs/
+/job_descriptions.csv
+/jobs_clean.csv
+/jobs_matching.csv

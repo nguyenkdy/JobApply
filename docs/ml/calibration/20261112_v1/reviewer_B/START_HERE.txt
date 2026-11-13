@@ -1,6 +1,0 @@
-Reviewer B: read annotation_guidelines.md, then fill a COPY of review.csv.
-This is development calibration with a draft rubric, not final test or verified gold.
-Work independently. Do not read coordinator files, AI labels, scores or another reviewer file.
-Keep every row, text and version unchanged. Empty responses mean not yet reviewed.
-Use a stable personal annotator ID; A/B are distribution slots, not reviewer identities.
-Return only your completed CSV to the coordinator. Do not put it in the baseline run.

@@ -1,4 +1,4 @@
-"""TEST ONLY tiny fitted models/labels; encoder mocked, no network or real reviewer judgments."""
+"""TEST ONLY tiny fitted models/labels; encoder mocked, no network downloads."""
 import importlib.util
 import json
 import shutil
