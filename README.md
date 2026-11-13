@@ -12,6 +12,8 @@ README là tài liệu bàn giao cho người phát triển/Codex, đối chiế
 
 **Cập nhật demo/Mốc 1:** demo chọn run qua `--run-dir`, xác minh artifact trước suy luận. Đã có [rubric dự thảo](docs/ml/annotation_guidelines.md), 24 cặp calibration và [phiếu A/B + CLI đối chiếu/phân xử](docs/ml/annotation_workflow.md). **Mốc 1 mới hoàn thành phần công cụ; chưa có người duyệt rubric hoặc nhãn đã xác minh.**
 
+**Cập nhật Mốc 2 — 13/11/2026:** theo quyết định phạm vi hiện tại, **chưa triển khai calibration hai reviewer**. Đã có package `ml_data` nhập/chuẩn hóa có version, giữ nguồn/hash, gom trùng/gần trùng và lineage, chia split có seed/audit leakage, lấy mẫu cặp chưa có nhãn sau split. [Hướng dẫn và kế hoạch mở rộng](docs/ml/dataset_pipeline.md), [báo cáo thực chạy](docs/ml/reports/20261113-data-preparation.json). Ba CSV upstream vẫn thiếu; dữ liệu thực chạy chỉ có pilot, toàn bộ được giữ development, chưa có final test sẵn sàng. Chưa train lại/chọn model, chưa thay API/UI hay Docker/VM.
+
 ## 1. Đọc repo trước khi tiếp tục code
 
 Đọc toàn bộ file được Git theo dõi, đặc biệt các nhóm dưới. Đối chiếu code/CSV thực tế thay vì chỉ dựa vào tài liệu tiến độ cũ.
@@ -39,6 +41,8 @@ Quá trình trước pilot được ghi nhận:
 4. `jobs_pilot.csv`: 50 JD được chọn có chủ đích, có manifest và nhật ký sửa nội dung.
 
 **Ba CSV trước pilot và script tạo jobs_clean/jobs_matching không nằm trong snapshot repo này.** Số liệu upstream là thông tin trong báo cáo đã lưu, chưa phải pipeline có thể tái tạo đầy đủ chỉ bằng clone repo. Trước khi mở rộng, bổ sung bản nguồn được phép sử dụng, script làm sạch/chuẩn hóa, manifest và checksum. Không bịa dữ liệu thay file thiếu.
+
+Kiểm kê workspace ngày 13/11 vẫn chưa tìm thấy ba file đó. `prepare_pilot.py` chỉ tiêu thụ `--clean`/`--matching`, không tạo chúng. Pipeline `ml_data` mới nhận CSV qua mapping tường minh, không tự nhận đã khôi phục script/lịch sử làm sạch cũ. Đã nhập bản sao 56 tài liệu pilot vào output mới; nhãn và dữ liệu nguồn không đổi.
 
 Tin từ nền tảng uy tín không tự trở thành nhãn CV–JD đáng tin cậy. Các trường công nghệ do LLM trích xuất ở nguồn cũng cần kiểm chứng. Lưu URL, ngày thu thập, phiên bản nguồn và điều kiện sử dụng; không mặc định được thu thập lại/phân phối lại mọi CV/JD. Dữ liệu JD lịch sử có thể hết hạn và **không tự nhập thành tin đang tuyển trong database app**.
 
@@ -146,6 +150,8 @@ Không dùng “thiếu một tháng kinh nghiệm = 0” cho mọi JD. Rubric p
 Ví dụ hiệu chỉnh: CV Python/Django 24 tháng có REST API/PostgreSQL gặp JD Backend yêu cầu tương ứng có thể là 2 nếu các yêu cầu bắt buộc khác được đáp ứng. JD Data Analyst cùng có Python nhưng cần BI/phân tích kinh doanh phải xét bằng chứng riêng; không tự động gán 0 chỉ vì khác nhóm nghề.
 
 ### 5.2. Quy trình cụ thể
+
+**Quyết định ngày 13/11:** quy trình hai reviewer dưới đây được giữ làm phương án sau này, chưa triển khai trong Mốc 2. Mở rộng/chuẩn bị dữ liệu không xác minh nhãn và không hoàn tất Mốc 1 thay người đánh giá.
 
 1. Soạn `annotation_guidelines.md` có version; nhờ giảng viên/người có chuyên môn kỹ thuật hoặc tuyển dụng đúng nhóm nghề duyệt. Codex soạn tài liệu được, không tự xác nhận đã được con người duyệt.
 2. Chọn 20–30 cặp **development** để hiệu chỉnh: rõ phù hợp/không phù hợp, cùng skill khác nhiệm vụ, thiếu kinh nghiệm, thiếu dữ kiện. Không lấy final test làm ví dụ calibration.
@@ -287,9 +293,15 @@ Tạo guideline/form blind annotation/validator/báo cáo đồng thuận/phân 
 
 Đã triển khai phần công cụ bằng `jobapply_pilot_v1/annotation.py`. Hai bộ phiếu 24 cặp trong `docs/ml/calibration/20261112_v1/` còn trống; seed/manifest lý do chọn tách riêng cho điều phối. Cần người có chuyên môn duyệt rubric, hai người chấm độc lập và người thứ ba phân xử theo [quy trình](docs/ml/annotation_workflow.md).
 
+Hiện chưa triển khai vòng chấm hai reviewer theo quyết định ngày 13/11. Giữ nguyên rubric/phiếu/provenance đã lưu; không tạo nhãn người hoặc gold để chuyển mốc.
+
 ### Mốc 2 — Dataset và test độc lập
 
 Mở rộng/ẩn danh/deduplicate/phân tầng theo mục 6; chia nhóm trước mining, giữ test theo mục 7. Hoàn tất khi có manifest, phân bố, kiểm tra leakage và nhãn độc lập. Có thể code parser/API lúc chờ reviewer, nhưng chưa tuyên bố model được xác minh.
+
+**Đã làm phần công cụ dữ liệu:** `ml_data/` có `inventory`, `ingest`, `split`, `audit`, `sample`, `verify`. Mỗi output là thư mục mới; snapshot nguồn và code, ID/version/hash, missing/quarantine, quyết định exact duplicate và group near/source/template. Hai mode `known-jd` (CV mới, JD dùng chung) và `new-both` (CV/JD đều mới) có manifest riêng. Pilot và mọi nhóm liên quan bị giữ ngoài train/validation/test; lấy hard candidates chỉ trên train, nhãn trống không thành 0. Validation/test chuẩn bị census trên catalog đã khóa.
+
+**Còn thiếu:** upstream/script lịch sử, CV/JD mới có lineage/metadata phù hợp và nhãn đáp ứng protocol đánh giá. Hai split kiểm chứng trên pilot đều leakage-pass nhưng `partition_ready=false`; không gọi đây là final test. Kế hoạch 120 CV synthetic mới/360 JD và lệnh PowerShell nằm trong [hướng dẫn Mốc 2](docs/ml/dataset_pipeline.md); đây là mục tiêu đề xuất, chưa phải dữ liệu đã tạo.
 
 ### Mốc 3 — Extraction và benchmark
 

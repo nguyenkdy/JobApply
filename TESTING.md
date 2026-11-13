@@ -1,5 +1,11 @@
 # Biên bản kiểm tra JobApply
 
+## ML data preparation — 13/11/2026
+
+**44 test unittest đạt** trong môi trường Windows ML CPython 3.14.3: 28 regression baseline/demo/annotation và 16 test pipeline dữ liệu mới. Riêng 16 test mới cũng chạy bằng Python chuẩn, không cần package ML/mạng. Kiểm tra raw/hash/ID/version, duplicate/quarantine, near search so với brute force, nhóm nguồn/template bắc cầu, bảo vệ pilot, seed/protocol, leakage, sampled/census pairs, ô trống và thiếu metadata. Dữ liệu/nhãn giả chỉ ở fixture `TEST ONLY` tạm; không có vòng reviewer thật hoặc train lại model dữ liệu thật.
+
+Ruff cho `ml_data` và test mới đạt. CLI thật đã kiểm kê upstream, import pilot vào output mới, tạo/audit cả `known-jd` và `new-both`; 6 CV/50 JD đều development, chưa có partition mới đủ điều kiện. CLI sample từ pilot split từ chối đúng, không tạo cặp train/test. Chưa chạy app E2E/Docker/VM ở đợt này. Báo cáo và lệnh: [dataset pipeline](docs/ml/dataset_pipeline.md), [receipt](docs/ml/reports/20261113-data-preparation.json).
+
 ## ML baseline — 12/11/2026
 
 Mốc 0 chạy offline trên Windows bằng môi trường ML riêng: **11 test unittest đạt**, encode E5 revision/hash cố định và train lại đầy đủ. Hai run `_02`/`_03` có bảy bảng đầu ra giống byte; hash 33 artifact gốc giữ nguyên. **4 test cấu hình app đạt**; module ML skip trong môi trường backend không có dependencies ML, và đã chạy riêng đủ 11 test bằng `.venv-embedding`. Chi tiết số đo, lệnh, sai khác điểm với lịch sử và phần cần chuyên gia: [docs/ml/baseline.md](docs/ml/baseline.md). Không chạy lại Docker, workflow app hay E2E trong đợt này.

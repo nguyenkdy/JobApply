@@ -1,0 +1,376 @@
+{
+  "branch": "docs/ml-readme-handoff-20261112",
+  "date": "2026-11-13",
+  "environment": {
+    "data_tools_dependencies": "Python standard library only",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.3"
+  },
+  "git_base_commit": "226c83b9ea006cbb73aa150463174e215230dc0c",
+  "inventory": {
+    "excluded_directories": [
+      ".git",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".test-data",
+      ".tools",
+      ".venv",
+      "frontend/node_modules",
+      "jobapply_pilot_v1/.venv-embedding",
+      "jobapply_pilot_v1/__pycache__",
+      "jobapply_pilot_v1/jobapply_experience_v2/__pycache__",
+      "ml_data/__pycache__",
+      "pytest-cache-files-6ujd1l2z",
+      "pytest-cache-files-9c1fvixg",
+      "scripts/__pycache__",
+      "services/__pycache__",
+      "services/account/__pycache__",
+      "services/account/migrations/__pycache__",
+      "services/account/migrations/versions/__pycache__",
+      "services/application/__pycache__",
+      "services/application/migrations/__pycache__",
+      "services/application/migrations/versions/__pycache__",
+      "services/job/__pycache__",
+      "services/job/migrations/__pycache__",
+      "services/job/migrations/versions/__pycache__",
+      "shared/__pycache__",
+      "tests/__pycache__",
+      "tests/ml/__pycache__"
+    ],
+    "historical_counts_verified": false,
+    "missing": [
+      "job_descriptions.csv",
+      "jobs_clean.csv",
+      "jobs_matching.csv"
+    ],
+    "note": "No downloads or reconstruction of missing history. Source reports are not source files.",
+    "scan_errors": [],
+    "scope": "Local workspace, including ignored data; excluded dependency/cache directories listed explicitly",
+    "scripts_referencing_upstream": [
+      {
+        "mentions": [
+          "job_descriptions.csv",
+          "jobs_clean.csv",
+          "jobs_matching.csv"
+        ],
+        "note": "Text reference only; not proof this script created an upstream file",
+        "path": "ml_data_runs/20261113_inventory/tool_source/ingest.py",
+        "sha256": "3ad9af80e60898c900700f6aa37907d574ccbd0dea498c2dbcc26624c8d6dff6"
+      },
+      {
+        "mentions": [
+          "job_descriptions.csv",
+          "jobs_clean.csv",
+          "jobs_matching.csv"
+        ],
+        "note": "Text reference only; not proof this script created an upstream file",
+        "path": "ml_data_runs/20261113_pilot/tool_source/ingest.py",
+        "sha256": "3ad9af80e60898c900700f6aa37907d574ccbd0dea498c2dbcc26624c8d6dff6"
+      },
+      {
+        "mentions": [
+          "job_descriptions.csv",
+          "jobs_clean.csv",
+          "jobs_matching.csv"
+        ],
+        "note": "Text reference only; not proof this script created an upstream file",
+        "path": "ml_data_runs/20261113_split_known_jd/tool_source/ingest.py",
+        "sha256": "8d1a7443906f715f1ea050acc7e65b307b407a43f350a658e1eaaf2d1e824df4"
+      },
+      {
+        "mentions": [
+          "job_descriptions.csv",
+          "jobs_clean.csv",
+          "jobs_matching.csv"
+        ],
+        "note": "Text reference only; not proof this script created an upstream file",
+        "path": "ml_data_runs/20261113_split_new_both/tool_source/ingest.py",
+        "sha256": "8d1a7443906f715f1ea050acc7e65b307b407a43f350a658e1eaaf2d1e824df4"
+      }
+    ],
+    "tracked_pilot_processing_scripts": [
+      {
+        "path": "jobapply_pilot_v1/annotation.py",
+        "sha256": "b89ff130e82465820cabee106c57df4f90a3699f35f83d559e6065255cba3651"
+      },
+      {
+        "path": "jobapply_pilot_v1/audit_pilot.py",
+        "sha256": "6b17ffcd8a1c16711f6385708882aec8af3ac474cb722d30bcb15a9a68d197ca"
+      },
+      {
+        "path": "jobapply_pilot_v1/baseline_common.py",
+        "sha256": "ecfd4c27575a315aeea7f4cc777a400d119e3fd8e44d7be47e1654c9f38918fc"
+      },
+      {
+        "path": "jobapply_pilot_v1/compare_embeddings.py",
+        "sha256": "786ce9d47daa34389c9f152a168c9ce6796ba47cec15eae199fd2245288beaae"
+      },
+      {
+        "path": "jobapply_pilot_v1/evaluate_top5.py",
+        "sha256": "011fb350711c5ec048f01ac58d11eaccbb196bf02e781e23535e8c906fce1054"
+      },
+      {
+        "path": "jobapply_pilot_v1/evaluate_topk.py",
+        "sha256": "c41d13d3befbe8a1b6cbb4f868581c8799d4962dae9d2dacd0136f59fa7b1cff"
+      },
+      {
+        "path": "jobapply_pilot_v1/jobapply_experience_v2/recommend.py",
+        "sha256": "bb7d4659bd68bd536b2cd9511ef414cf76462c0fd8c7622fedd70e0f6a06b388"
+      },
+      {
+        "path": "jobapply_pilot_v1/jobapply_experience_v2/run_experiment.py",
+        "sha256": "dd867fadb0c767131961b40df3392ce199eff549160d90b19a334d8a3568d125"
+      },
+      {
+        "path": "jobapply_pilot_v1/jobapply_experience_v2/train_matcher.py",
+        "sha256": "298b4a61f80f448102327ec8b9f9b437e2890c3d24c373cd2ad24ead4a7e7ee3"
+      },
+      {
+        "path": "jobapply_pilot_v1/prepare_pilot.py",
+        "sha256": "4f76218387ba0a0f3a66cc949c2dae17dc6da01046c662cbfaf5fa373ace9263"
+      },
+      {
+        "path": "jobapply_pilot_v1/run_artifacts.py",
+        "sha256": "5fba3a86a5c721f00390fbbbe639c552bcc3a71433d9171eb5bab163fa8cdc6a"
+      },
+      {
+        "path": "jobapply_pilot_v1/run_baseline.py",
+        "sha256": "3201ba0de61e9e1e7214bd580d96774d22e376ba201658b2809b3726d87b92f9"
+      },
+      {
+        "path": "jobapply_pilot_v1/run_bm25.py",
+        "sha256": "96f51cd125b37f0b7f226e31f6a8135160d6118e9d4d7d5b7c68b0f8e69356f3"
+      },
+      {
+        "path": "jobapply_pilot_v1/train_matcher.py",
+        "sha256": "d86d88ec6404df219006a349ea8699abf61af8d8273a03355c492cb7f2fd669e"
+      }
+    ],
+    "tracked_upstream": [],
+    "upstream": {
+      "job_descriptions.csv": [],
+      "jobs_clean.csv": [],
+      "jobs_matching.csv": []
+    }
+  },
+  "labels": {
+    "calibration_two_reviewers": "not undertaken per scope decision",
+    "human_verified": 0,
+    "model_selected": false,
+    "new_pairs_created_outside_tests": 0,
+    "pilot": "ai_draft; unchanged; development/regression only",
+    "ranking_k": 5
+  },
+  "pilot_import": {
+    "dataset_version": "pilot-development-inventory-v1",
+    "development_groups": 51,
+    "distribution": {
+      "cv": {
+        "decisions": {
+          "keep": 6
+        },
+        "missing": {
+          "experience": 6,
+          "skills": 6,
+          "stack": 6
+        },
+        "roles": {
+          "backend java": 1,
+          "backend python": 1,
+          "data analyst": 1,
+          "devops / cloud": 1,
+          "frontend": 1,
+          "qa / testing": 1
+        },
+        "synthetic": {
+          "True": 6
+        },
+        "total": 6
+      },
+      "jd": {
+        "decisions": {
+          "keep": 50
+        },
+        "missing": {
+          "experience": 50,
+          "skills": 50,
+          "stack": 50,
+          "template_group": 50
+        },
+        "roles": {
+          "backend java": 10,
+          "backend python": 10,
+          "data analyst": 4,
+          "devops / cloud": 8,
+          "frontend": 10,
+          "qa / testing": 8
+        },
+        "synthetic": {
+          "False": 50
+        },
+        "total": 50
+      }
+    },
+    "duplicate_occurrences": 0,
+    "final_test_ready": false,
+    "groups": 51,
+    "labels_created": 0,
+    "limitations": [
+      "Lexical near-duplicate heuristic, not semantic paraphrase detection",
+      "Source metadata/lineage and professional-text claim need review; not a privacy certifier",
+      "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"
+    ],
+    "records": 56,
+    "source_rows": 56
+  },
+  "preservation": {
+    "all_original_hashes_match": true,
+    "baseline_manifests": {
+      "20261112_baseline_02": "61667d9537f8178c433d10e6aca6bbcc96db4923d32e0c7b337ba1305e784c8f",
+      "20261112_baseline_03": "7bae1dfa73e3456c2d96f0ef41f5881b34887c453aaa50770847df811c09356d"
+    },
+    "calibration_responses": {
+      "A": {
+        "counts": {
+          "completed": 0,
+          "insufficient_evidence": 0,
+          "needs_review": 0,
+          "unreviewed": 24
+        },
+        "eligible_completed": 0,
+        "note": "Structural validation does not verify human identity, expertise, independence or label correctness",
+        "origins": {
+          "unassigned": 24
+        },
+        "total": 24
+      },
+      "B": {
+        "counts": {
+          "completed": 0,
+          "insufficient_evidence": 0,
+          "needs_review": 0,
+          "unreviewed": 24
+        },
+        "eligible_completed": 0,
+        "note": "Structural validation does not verify human identity, expertise, independence or label correctness",
+        "origins": {
+          "unassigned": 24
+        },
+        "total": 24
+      }
+    },
+    "original_input_files_checked": 33,
+    "pilot_ai_labels_unchanged": true,
+    "vm_or_database_access": false
+  },
+  "repeated_import_same_bytes": {
+    "config.json": true,
+    "group_edges.jsonl": true,
+    "groups.json": true,
+    "records.jsonl": true,
+    "sources.json": true,
+    "summary.json": true
+  },
+  "required_next": [
+    "Restore authorized upstream CSVs with versions/hashes and original cleaning/section scripts if available",
+    "Supply new professional CV/JD text and source/template lineage; mark every generated CV synthetic",
+    "Review normalization, near-duplicate groups, source rights and scope metadata",
+    "Choose protocol, inspect distribution and freeze split before sampling",
+    "Prepare unlabeled training candidates and complete validation/test catalogues; define future labeling protocol before experiments"
+  ],
+  "run_artifacts": {
+    "20261113_inventory_02": {
+      "manifest_sha256": "f7b11f0e6a02cd6ea5b73bb170b576f860685ca7d774dc057b30c633cfd3a82a",
+      "path": "ml_data_runs/20261113_inventory_02"
+    },
+    "20261113_pilot": {
+      "manifest_sha256": "d5ee09da46780ba46661668e954a93f42cb37fa2433b5a84237568b264dd41cb",
+      "path": "ml_data_runs/20261113_pilot"
+    },
+    "20261113_pilot_repeat": {
+      "manifest_sha256": "3172d1f15efea164f378b6e490504829ee2e9ea51354eb5dd54727c408f06a03",
+      "path": "ml_data_runs/20261113_pilot_repeat"
+    },
+    "20261113_split_known_jd": {
+      "manifest_sha256": "f02c7be179dd137131e254244b678eeed9e1eeba6c1f4d54db11a96df6bbd610",
+      "path": "ml_data_runs/20261113_split_known_jd"
+    },
+    "20261113_split_new_both": {
+      "manifest_sha256": "a594c5e4f008c89eb050311e391cc0e7940b7eeeb73147386e4408a5c09c35db",
+      "path": "ml_data_runs/20261113_split_new_both"
+    }
+  },
+  "scope": "Milestone 2 tooling and pilot development inventory; no expansion data, independent labels, retraining or final test",
+  "splits": {
+    "known-jd": {
+      "counts": {
+        "cv": {
+          "development": 6
+        },
+        "jd": {
+          "development": 50
+        }
+      },
+      "errors": [],
+      "final_test_ready": false,
+      "labels_available": false,
+      "leakage_check_passed": true,
+      "note": "Structural partition checks only; no verified labels, identity verification or semantic dedup guarantee",
+      "partition_ready": false,
+      "readiness_blockers": [
+        "no_CV_in_train",
+        "fewer_than_5_JD_for_train",
+        "no_CV_in_validation",
+        "fewer_than_5_JD_for_validation",
+        "no_CV_in_test",
+        "fewer_than_5_JD_for_test"
+      ]
+    },
+    "new-both": {
+      "counts": {
+        "cv": {
+          "development": 6
+        },
+        "jd": {
+          "development": 50
+        }
+      },
+      "errors": [],
+      "final_test_ready": false,
+      "labels_available": false,
+      "leakage_check_passed": true,
+      "note": "Structural partition checks only; no verified labels, identity verification or semantic dedup guarantee",
+      "partition_ready": false,
+      "readiness_blockers": [
+        "no_CV_in_train",
+        "fewer_than_5_JD_for_train",
+        "no_CV_in_validation",
+        "fewer_than_5_JD_for_validation",
+        "no_CV_in_test",
+        "fewer_than_5_JD_for_test"
+      ]
+    }
+  },
+  "tests": {
+    "all_ml": {
+      "command": ".\\jobapply_pilot_v1\\.venv-embedding\\Scripts\\python.exe -m unittest discover -s tests/ml -v",
+      "passed": 44,
+      "seconds": 40.395
+    },
+    "lint": {
+      "command": ".\\.venv\\Scripts\\python.exe -m ruff check ml_data tests/ml/test_data_pipeline.py",
+      "passed": true
+    },
+    "new_data_pipeline": {
+      "command": "python -m unittest discover -s tests/ml -p test_data_pipeline.py -v",
+      "passed": 16,
+      "seconds": 7.219
+    },
+    "real_pilot_sample": {
+      "actual_exit_code": 1,
+      "expected_exit_code": 1,
+      "output_created": false,
+      "reason": "No eligible CV/JD for requested partition"
+    }
+  }
+}

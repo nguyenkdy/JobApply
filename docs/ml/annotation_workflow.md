@@ -2,6 +2,8 @@
 
 **Trạng thái: mới hoàn thành phần công cụ.** Rubric chưa được chuyên gia duyệt; hai bộ phiếu đều chưa có câu trả lời. Chưa có nhãn được xác minh, chưa tạo final-test labels, chưa train/chọn model bằng rubric này.
 
+**Quyết định ngày 13/11/2026:** chưa triển khai vòng calibration hai reviewer ở thời điểm này; tiếp tục [Mốc 2 — tổ chức dữ liệu](dataset_pipeline.md). Các lệnh dưới đây được giữ để dùng sau, không ghi nhận đã có chấm độc lập. Giữ nguyên các bộ phiếu/hash gốc.
+
 ## Tài liệu và bộ phiếu sẵn dùng
 
 - [Rubric dự thảo v0.1](annotation_guidelines.md): gửi người có chuyên môn đọc và phản hồi trước khi chấm calibration.
