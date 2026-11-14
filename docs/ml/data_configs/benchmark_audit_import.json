@@ -1,0 +1,117 @@
+{
+  "adapter_version": "upstream-observation-v2",
+  "context_files": [
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/job_descriptions.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_clean.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_matching.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/profiles.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/relations.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/lineage.jsonl",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection_features.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/jd_extraction/jd_extraction_evidence.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/evidence.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/design.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/scenarios.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/ancestors/design.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/ancestors/scenarios.json",
+      "role": "versioned_metadata_and_ancestry_evidence"
+    }
+  ],
+  "dataset_version": "benchmark-audit-20261114-5d4bccaf670c",
+  "near_threshold": 0.85,
+  "schema_version": 1,
+  "sources": [
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "extracted_experience_json",
+        "exposure": "import_exposure",
+        "external_id": "job_id",
+        "lineage": "import_lineage",
+        "quality_reasons": "import_quality_reasons",
+        "related_source_keys": "import_related_sources",
+        "role": "extracted_role",
+        "skills": "extracted_skills",
+        "source_group": "content_group_id",
+        "stack": "extracted_stack",
+        "text": "match_text"
+      },
+      "defaults": {
+        "is_synthetic": false,
+        "text_scope": "professional"
+      },
+      "kind": "jd",
+      "namespace": "it-job-posting-matching",
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/jd_extraction/canonical_jd_enriched.csv",
+      "source_attribution_status": "URL from repository historical report, not independently verified source revision",
+      "source_url": "https://github.com/SonPhatTranDeveloper/IT-Job-Posting",
+      "usage_terms": null,
+      "version": "sha256:776c1e67d02617ff7549abc96974dadbf2f268a0ec990e1d94188e313c2d6ae7"
+    },
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "jobapply-synthetic-careers-v2",
+      "path": "../../../ml_data_runs/20261114_benchmark_audit_02/cv_batch/cvs.csv",
+      "source_url": null,
+      "usage_terms": "Fictional task-authored scenarios; no real applicants",
+      "version": "sha256:d45ff3be1b940c3e08e71fc6360ec17175a035f5dc22eda8b03ed5462c88df8c"
+    }
+  ],
+  "usage_note": "Audit dataset has one historical CV group; not ready for training. Preserve ancestry."
+}

@@ -1,0 +1,1057 @@
+{
+  "audit_manifest_sha256": "96bef8fe76be095a59b14fc9fb29ce3deab02a93cb4916c281f5e6a481b48f42",
+  "cv_batch": {
+    "cv_count": 60,
+    "experience_kinds": {
+      "contract": 10,
+      "employment": 20,
+      "internship": 10,
+      "project": 10,
+      "unknown": 10
+    },
+    "exposure": "prospective",
+    "is_synthetic": true,
+    "labels_created": 0,
+    "limitation": "One AI author/cohort; template-disjoint is not independent real-applicant validation",
+    "roles": {
+      "Backend Java": 12,
+      "Backend Python": 12,
+      "DevOps/Cloud": 12,
+      "Frontend": 12,
+      "QA/Testing": 12
+    },
+    "source_groups": 60,
+    "template_groups": 6
+  },
+  "data_analyst": {
+    "interpretation": "Source tags and literal title cues are separate candidate counts, not verified occupational labels",
+    "nonpilot_gate_passing": 0,
+    "pilot_related": 4,
+    "rows": [
+      {
+        "decision": "quarantine",
+        "job_id": "job_e4c27b1bf363f62c9854",
+        "pilot_related": false,
+        "selected": false,
+        "source_tag": true,
+        "title": "Analytics Engineer",
+        "title_cue": false
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_06be4da301218aead0a4",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior Data Analyst (SQL,Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_3d91bd66351c91e206c7",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "[HN/ ] Data Analyst (English/ MS Office)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_ce9d4b53148ccab5609b",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst – StoreFront eCommerce | K/year",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_309fd6597950042f67d7",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior MIS Specialist (Data Analyst, SQL, Python, Java)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_f276ea42265aab730cdf",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Associate Reporting Specialist (Data Analyst)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_60e8ded349354f397062",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst (SQL, Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_fa1e4b0bb4029f07128c",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analyst",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_db7d95cf020eb5437f89",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analytics Specialist (SQL, Oracle, Python)",
+        "title_cue": true
+      }
+    ],
+    "selected": 4,
+    "source_only": 1,
+    "source_tagged": 9,
+    "title_cued": 8
+  },
+  "date": "2026-11-14",
+  "diagnostic_label_audits": {
+    "test": {
+      "by_strategy": {
+        "catalogue_census": 500
+      },
+      "complete": false,
+      "cv_count": 10,
+      "evaluation_scope": "Complete catalogue candidate grid, still unlabeled",
+      "human_verified": false,
+      "jd_count": 50,
+      "label_counts": {
+        "insufficient_evidence": 15,
+        "labeled": 485
+      },
+      "label_origin": "automatic_rule_proxy",
+      "labeler_version": "automatic-proxy-labeler-v2",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 500,
+      "partition": "test",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 400,
+        "1": 84,
+        "2": 1
+      },
+      "shortages": [],
+      "strategy": "census"
+    },
+    "train": {
+      "by_strategy": {
+        "same_role_and_stack": 55,
+        "scoped_experience_requirement_gap": 50,
+        "shared_skill_different_role": 60,
+        "shared_skill_different_stack": 53,
+        "uniform_random_without_replacement": 90
+      },
+      "complete": false,
+      "cv_count": 30,
+      "evaluation_scope": "Sampled training candidates; not the denominator for full-catalogue Recall@5",
+      "human_verified": false,
+      "jd_count": 788,
+      "label_counts": {
+        "insufficient_evidence": 62,
+        "labeled": 246
+      },
+      "label_origin": "automatic_rule_proxy",
+      "labeler_version": "automatic-proxy-labeler-v2",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 308,
+      "partition": "train",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 115,
+        "1": 131
+      },
+      "shortages": [
+        {
+          "cv_id": "cv_00a42e948f340b18d98863b8d98eda44_f269255c7610fe3f358c7768",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 1,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_0a50ae857a7f2ae7c612a3c8bea73297_8ab9f21a306fd12843433e25",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_0c1f300a8d50546457d96184c860c1c2_cc8e48af1a93ee770572b2ed",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_1820eac334c26874a0cbbc5aa8b50068_275c7c82f56292963ea13806",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 1,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_35f10e2e905c4e42fe80588cebe60763_e04d6033db4fcbfd5fb49977",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_5e18c2f3b5d5bbdda90d7b8848a34089_093080251f7edb3e67a802f9",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_712ab660d8347a5b56b4dc56053333a7_642224a006f9df2c38c680b1",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_712ab660d8347a5b56b4dc56053333a7_642224a006f9df2c38c680b1",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_80142e4702e3c949ff62ba188fbd76fc_072276e71209f036b3e1a1c3",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_80142e4702e3c949ff62ba188fbd76fc_072276e71209f036b3e1a1c3",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_89ec1249a5817ec9366131c7da5f00cd_39f093eb89ad8ce1fc824072",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_cd6cbe2ff9710cab07f9854be73d7a59_44452c78ce583156a18f1bb0",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        }
+      ],
+      "strategy": "mixed"
+    },
+    "validation": {
+      "by_strategy": {
+        "catalogue_census": 1000
+      },
+      "complete": false,
+      "cv_count": 20,
+      "evaluation_scope": "Complete catalogue candidate grid, still unlabeled",
+      "human_verified": false,
+      "jd_count": 50,
+      "label_counts": {
+        "insufficient_evidence": 23,
+        "labeled": 977
+      },
+      "label_origin": "automatic_rule_proxy",
+      "labeler_version": "automatic-proxy-labeler-v2",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 1000,
+      "partition": "validation",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 800,
+        "1": 176,
+        "2": 1
+      },
+      "shortages": [],
+      "strategy": "census"
+    }
+  },
+  "distributions": {
+    "test": {
+      "cv_count": 0,
+      "cv_ids": [],
+      "experience_kinds": {},
+      "group_count": 0,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [
+        "contract",
+        "employment",
+        "internship",
+        "project",
+        "unknown"
+      ],
+      "roles": {},
+      "scoped_months": {},
+      "source_groups": 0,
+      "template_families": {}
+    },
+    "train": {
+      "cv_count": 60,
+      "cv_ids": [
+        "CVX_DO_01",
+        "CVX_DO_02",
+        "CVX_DO_03",
+        "CVX_DO_04",
+        "CVX_DO_05",
+        "CVX_DO_06",
+        "CVX_DO_07",
+        "CVX_DO_08",
+        "CVX_DO_09",
+        "CVX_DO_10",
+        "CVX_DO_11",
+        "CVX_DO_12",
+        "CVX_FE_01",
+        "CVX_FE_02",
+        "CVX_FE_03",
+        "CVX_FE_04",
+        "CVX_FE_05",
+        "CVX_FE_06",
+        "CVX_FE_07",
+        "CVX_FE_08",
+        "CVX_FE_09",
+        "CVX_FE_10",
+        "CVX_FE_11",
+        "CVX_FE_12",
+        "CVX_JV_01",
+        "CVX_JV_02",
+        "CVX_JV_03",
+        "CVX_JV_04",
+        "CVX_JV_05",
+        "CVX_JV_06",
+        "CVX_JV_07",
+        "CVX_JV_08",
+        "CVX_JV_09",
+        "CVX_JV_10",
+        "CVX_JV_11",
+        "CVX_JV_12",
+        "CVX_PY_01",
+        "CVX_PY_02",
+        "CVX_PY_03",
+        "CVX_PY_04",
+        "CVX_PY_05",
+        "CVX_PY_06",
+        "CVX_PY_07",
+        "CVX_PY_08",
+        "CVX_PY_09",
+        "CVX_PY_10",
+        "CVX_PY_11",
+        "CVX_PY_12",
+        "CVX_QA_01",
+        "CVX_QA_02",
+        "CVX_QA_03",
+        "CVX_QA_04",
+        "CVX_QA_05",
+        "CVX_QA_06",
+        "CVX_QA_07",
+        "CVX_QA_08",
+        "CVX_QA_09",
+        "CVX_QA_10",
+        "CVX_QA_11",
+        "CVX_QA_12"
+      ],
+      "experience_kinds": {
+        "contract": 10,
+        "employment": 20,
+        "internship": 10,
+        "project": 10,
+        "unknown": 10
+      },
+      "group_count": 1,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 12,
+        "backend python": 12,
+        "devops/cloud": 12,
+        "frontend": 12,
+        "qa/testing": 12
+      },
+      "scoped_months": {
+        "contract:backend java:12": 1,
+        "contract:backend java:20": 1,
+        "contract:backend python:15": 1,
+        "contract:backend python:9": 1,
+        "contract:devops:10": 1,
+        "contract:devops:18": 1,
+        "contract:frontend:14": 1,
+        "contract:frontend:8": 1,
+        "contract:kiểm thử phần mềm:16": 1,
+        "contract:kiểm thử phần mềm:9": 1,
+        "employment:backend java:24": 1,
+        "employment:backend java:42": 1,
+        "employment:backend java:60": 1,
+        "employment:backend java:72": 1,
+        "employment:backend python:18": 1,
+        "employment:backend python:36": 1,
+        "employment:backend python:48": 1,
+        "employment:backend python:60": 1,
+        "employment:devops:30": 1,
+        "employment:devops:48": 1,
+        "employment:devops:72": 1,
+        "employment:devops:84": 1,
+        "employment:frontend:12": 1,
+        "employment:frontend:30": 1,
+        "employment:frontend:36": 1,
+        "employment:frontend:54": 1,
+        "employment:kiểm thử phần mềm:18": 1,
+        "employment:kiểm thử phần mềm:30": 1,
+        "employment:kiểm thử phần mềm:48": 1,
+        "employment:kiểm thử phần mềm:60": 1,
+        "internship:backend java:4": 1,
+        "internship:backend java:6": 1,
+        "internship:backend python:3": 1,
+        "internship:backend python:6": 1,
+        "internship:devops:4": 1,
+        "internship:devops:6": 1,
+        "internship:frontend:4": 1,
+        "internship:frontend:5": 1,
+        "internship:kiểm thử phần mềm:3": 1,
+        "internship:kiểm thử phần mềm:6": 1,
+        "project:backend java:5": 1,
+        "project:backend java:8": 1,
+        "project:backend python:4": 1,
+        "project:backend python:7": 1,
+        "project:devops:5": 1,
+        "project:devops:9": 1,
+        "project:frontend:3": 1,
+        "project:frontend:6": 1,
+        "project:kiểm thử phần mềm:4": 1,
+        "project:kiểm thử phần mềm:8": 1
+      },
+      "source_groups": 60,
+      "template_families": {
+        "contract_handover": 10,
+        "employment_history": 10,
+        "incident_case": 10,
+        "incomplete_account": 10,
+        "internship_log": 10,
+        "personal_portfolio": 10
+      }
+    },
+    "validation": {
+      "cv_count": 0,
+      "cv_ids": [],
+      "experience_kinds": {},
+      "group_count": 0,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [
+        "contract",
+        "employment",
+        "internship",
+        "project",
+        "unknown"
+      ],
+      "roles": {},
+      "scoped_months": {},
+      "source_groups": 0,
+      "template_families": {}
+    }
+  },
+  "final_test_ready": false,
+  "frozen_jd": {
+    "development_records": 154,
+    "enriched_metadata_fields": [
+      "role",
+      "skills",
+      "stack",
+      "experience"
+    ],
+    "identity_text_gate_exposure_identical": true,
+    "records": 3062
+  },
+  "historical_group_count": 1,
+  "historical_group_sizes": [
+    60
+  ],
+  "historical_lineage": {
+    "changed_template_assignments": 49,
+    "changes": [
+      {
+        "cv_id": "CVX_DO_02",
+        "old_partition": "validation",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_DO_04",
+        "old_partition": "validation",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_DO_05",
+        "old_partition": "train",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_DO_06",
+        "old_partition": "train",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_DO_07",
+        "old_partition": "train",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_DO_08",
+        "old_partition": "test",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_DO_09",
+        "old_partition": "train",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_DO_10",
+        "old_partition": "test",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_DO_11",
+        "old_partition": "validation",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": false,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_DO_12",
+        "old_partition": "train",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": false,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_FE_02",
+        "old_partition": "train",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_FE_03",
+        "old_partition": "train",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_FE_04",
+        "old_partition": "train",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_FE_06",
+        "old_partition": "test",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_FE_07",
+        "old_partition": "train",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_FE_08",
+        "old_partition": "test",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_FE_09",
+        "old_partition": "validation",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_FE_10",
+        "old_partition": "validation",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_FE_11",
+        "old_partition": "train",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_FE_12",
+        "old_partition": "validation",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_JV_02",
+        "old_partition": "train",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_JV_03",
+        "old_partition": "validation",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_JV_04",
+        "old_partition": "test",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_JV_05",
+        "old_partition": "validation",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_JV_06",
+        "old_partition": "validation",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_JV_07",
+        "old_partition": "train",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_JV_08",
+        "old_partition": "test",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_JV_09",
+        "old_partition": "train",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_JV_11",
+        "old_partition": "train",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_JV_12",
+        "old_partition": "train",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_PY_02",
+        "old_partition": "train",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_PY_03",
+        "old_partition": "validation",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_PY_04",
+        "old_partition": "train",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_PY_05",
+        "old_partition": "train",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_PY_06",
+        "old_partition": "train",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_PY_07",
+        "old_partition": "train",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_PY_09",
+        "old_partition": "train",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_PY_10",
+        "old_partition": "test",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_PY_11",
+        "old_partition": "validation",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_QA_01",
+        "old_partition": "train",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_QA_02",
+        "old_partition": "validation",
+        "original_family": "employment_history",
+        "text_blocks_unchanged": true,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_QA_03",
+        "old_partition": "validation",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": false,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_QA_04",
+        "old_partition": "train",
+        "original_family": "personal_portfolio",
+        "text_blocks_unchanged": false,
+        "v2_family": "internship_log"
+      },
+      {
+        "cv_id": "CVX_QA_05",
+        "old_partition": "validation",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": false,
+        "v2_family": "employment_history"
+      },
+      {
+        "cv_id": "CVX_QA_06",
+        "old_partition": "validation",
+        "original_family": "internship_log",
+        "text_blocks_unchanged": false,
+        "v2_family": "incident_case"
+      },
+      {
+        "cv_id": "CVX_QA_07",
+        "old_partition": "train",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "contract_handover"
+      },
+      {
+        "cv_id": "CVX_QA_08",
+        "old_partition": "test",
+        "original_family": "incident_case",
+        "text_blocks_unchanged": true,
+        "v2_family": "incomplete_account"
+      },
+      {
+        "cv_id": "CVX_QA_09",
+        "old_partition": "train",
+        "original_family": "contract_handover",
+        "text_blocks_unchanged": false,
+        "v2_family": "personal_portfolio"
+      },
+      {
+        "cv_id": "CVX_QA_11",
+        "old_partition": "train",
+        "original_family": "incomplete_account",
+        "text_blocks_unchanged": false,
+        "v2_family": "personal_portfolio"
+      }
+    ],
+    "original_families_crossing_partitions": {
+      "contract_handover": [
+        "test",
+        "train",
+        "validation"
+      ],
+      "employment_history": [
+        "train",
+        "validation"
+      ],
+      "incident_case": [
+        "test",
+        "train",
+        "validation"
+      ],
+      "incomplete_account": [
+        "test",
+        "train",
+        "validation"
+      ],
+      "internship_log": [
+        "test",
+        "train",
+        "validation"
+      ],
+      "personal_portfolio": [
+        "test",
+        "train",
+        "validation"
+      ]
+    },
+    "unchanged_text_with_changed_template": 41
+  },
+  "human_review_required": false,
+  "import_summary": {
+    "dataset_version": "benchmark-audit-20261114-5d4bccaf670c",
+    "development_groups": 114,
+    "distribution": {
+      "cv": {
+        "decisions": {
+          "keep": 60
+        },
+        "missing": {
+          "experience": 10
+        },
+        "roles": {
+          "backend java": 12,
+          "backend python": 12,
+          "devops/cloud": 12,
+          "frontend": 12,
+          "qa/testing": 12
+        },
+        "synthetic": {
+          "True": 60
+        },
+        "total": 60
+      },
+      "jd": {
+        "decisions": {
+          "exclude_exact_duplicate": 65,
+          "keep": 888,
+          "quarantine": 2109
+        },
+        "missing": {
+          "experience": 1468,
+          "role": 1246,
+          "skills": 589,
+          "stack": 949,
+          "template_group": 3062
+        },
+        "roles": {
+          "ai/ml engineer": 68,
+          "backend .net": 62,
+          "backend golang": 14,
+          "backend java": 372,
+          "backend node.js": 17,
+          "backend php": 37,
+          "backend python": 113,
+          "business analyst": 98,
+          "data analyst": 8,
+          "data engineer": 41,
+          "devops/cloud": 82,
+          "embedded engineer": 17,
+          "erp/is specialist": 21,
+          "frontend": 448,
+          "game developer": 45,
+          "mobile": 162,
+          "qa/testing": 178,
+          "security engineer": 14,
+          "ui/ux designer": 19,
+          "unknown": 1246
+        },
+        "synthetic": {
+          "False": 3062
+        },
+        "total": 3062
+      }
+    },
+    "duplicate_occurrences": 0,
+    "final_test_ready": false,
+    "groups": 2513,
+    "labels_created": 0,
+    "limitations": [
+      "Lexical near-duplicate heuristic, not semantic paraphrase detection",
+      "Source metadata/lineage and professional-text claim need review; not a privacy certifier",
+      "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"
+    ],
+    "records": 3122,
+    "source_rows": 3122
+  },
+  "jd_extraction": {
+    "extractor_version": "jd-rule-extractor-v2-conservative",
+    "note": "Rule-based literal extraction with character offsets; unknown fields remain empty/{} and are never filled with zero.",
+    "pilot_evaluation": {
+      "evaluation_scope": "50 protected pilot JDs (development only; never used as test)",
+      "experience_detection": {
+        "comparison_note": "Development internal annotations; presence and max-value agreement do not establish scoped extraction accuracy",
+        "fn": 4,
+        "fp": 0,
+        "max_threshold_value_match_count": 36,
+        "max_threshold_value_match_rate": 0.878,
+        "precision": 1.0,
+        "recall": 0.9024,
+        "tp": 37,
+        "unknown_preserved_tn": 9
+      },
+      "extractor_version": "jd-rule-extractor-v2-conservative",
+      "pilot_jd_count": 50,
+      "role_accuracy": 0.96,
+      "role_correct": 48
+    },
+    "prospective_keep_coverage": {
+      "missing_experience": 286,
+      "missing_role": 308,
+      "missing_skills": 95,
+      "missing_stack": 172,
+      "total": 788,
+      "with_experience": 502,
+      "with_role": 480,
+      "with_skills": 693,
+      "with_stack": 616
+    },
+    "prospective_keep_roles": {
+      "AI/ML Engineer": 31,
+      "Backend .NET": 21,
+      "Backend Golang": 5,
+      "Backend Java": 110,
+      "Backend Node.js": 2,
+      "Backend PHP": 6,
+      "Backend Python": 19,
+      "Business Analyst": 27,
+      "Data Engineer": 15,
+      "DevOps/Cloud": 14,
+      "ERP/IS Specialist": 9,
+      "Embedded Engineer": 7,
+      "Frontend": 96,
+      "Game Developer": 18,
+      "Mobile": 46,
+      "QA/Testing": 40,
+      "Security Engineer": 6,
+      "UI/UX Designer": 8,
+      "unknown": 308
+    },
+    "total_jds": 3062,
+    "upstream_manifest_sha256": "e8c0d2b8ec774526d6441912cf4e07a085111f88df2c81dd2a422d8dfb13c37b"
+  },
+  "label_interpretation": "automatic proxy; criteria-derived features and labels share assumptions; no independent suitability ground truth",
+  "labeler_version": "automatic-proxy-labeler-v2",
+  "model_plan": {
+    "fairness_scope": "personal-field invariance is a regression property, not proof of demographic fairness",
+    "leakage_control": "scaler/model fit train only; choose on validation; test only after frozen choice",
+    "requested_encoder": "intfloat/multilingual-e5-base",
+    "required_ablation": "text-only vs metadata, plus automatic-label rule baseline to expose circular supervision",
+    "status": "blocked_by_lineage_not_by_human_review",
+    "validation_selection": "NDCG@5, Recall@5 with explicit relevance threshold and no-positive-query counts"
+  },
+  "old_metric_interpretation": "96% role agreement on development; 100% detects presence, 40/41 (97.56%) at least one threshold value matches; not scoped duration accuracy",
+  "original_catalogue": {
+    "count": 50,
+    "scope": "50-JD selected subset, not the 788-JD production retrieval denominator",
+    "selection_unchanged": true
+  },
+  "preservation": {
+    "benchmark_verified": true,
+    "pilot_files_unchanged": 51,
+    "source_csv_unchanged": 3,
+    "upstream_verified": true
+  },
+  "source_benchmark": "ml_data_runs\\20261113_benchmark_v2\\run_08",
+  "source_benchmark_manifest_sha256": "5888164c7985d68265dc628022c83ac5bc971c776034166cdf7a023846e71b14",
+  "structural_preview": {
+    "counts": {
+      "cv": {
+        "train": 60
+      },
+      "jd": {
+        "development": 100,
+        "excluded": 2174,
+        "shared": 788
+      }
+    },
+    "errors": [],
+    "final_test_ready": false,
+    "labels_available": false,
+    "leakage_check_passed": true,
+    "note": "Structural partition checks only; no verified labels, identity verification or semantic dedup guarantee",
+    "partition_ready": false,
+    "readiness_blockers": [
+      "no_CV_in_validation",
+      "no_CV_in_test"
+    ]
+  },
+  "training_blockers": [
+    "no_CV_in_validation",
+    "no_CV_in_test",
+    "fewer_than_three_historical_lineage_groups",
+    "original_benchmark_split_crosses_historical_template_families",
+    "automatic_labels_contain_insufficient_evidence_not_zero",
+    "training_labels_do_not_cover_all_three_requested_classes"
+  ],
+  "training_performed": false,
+  "training_ready": false,
+  "version": "benchmark-audit-v1"
+}

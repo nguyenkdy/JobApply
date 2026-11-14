@@ -14,6 +14,8 @@ FIELDS = ("pair_id", "partition", "cv_id", "jd_id", "cv_version", "jd_version", 
 def candidate_reasons(cv, jd):
     shared = set(cv["skills"]) & set(jd["skills"])
     reasons = []
+    if cv["role"] and cv["role"] == jd["role"] and (set(cv["stack"]) & set(jd["stack"]) or len(shared) >= 2):
+        reasons.append("same_role_and_stack")
     if shared and cv["role"] and jd["role"] and cv["role"] != jd["role"]:
         reasons.append("shared_skill_different_role")
     if shared and cv["role"] and cv["role"] == jd["role"] and cv["stack"] and jd["stack"] and not set(cv["stack"]) & set(jd["stack"]):
@@ -23,7 +25,7 @@ def candidate_reasons(cv, jd):
     return reasons
 
 
-def choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type):
+def choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type, positive_per_cv=0):
     """Shared by sampling and workload preview; returns IDs, never labels."""
     jobs = sorted(jobs, key=lambda row: row["record_id"])
     rng = random.Random(digest(f"{seed}|{partition}|{cv['record_id']}"))
@@ -32,6 +34,13 @@ def choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type):
     shortages = []
     if count < random_per_cv:
         shortages.append(dict(cv_id=cv["record_id"], strategy="random", requested=random_per_cv, selected=count))
+    if positive_per_cv > 0:
+        pos_candidates = [jd for jd in jobs if jd["record_id"] not in chosen and "same_role_and_stack" in candidate_reasons(cv, jd)]
+        p_count = min(positive_per_cv, len(pos_candidates))
+        chosen.update({jd["record_id"]: "same_role_and_stack" for jd in rng.sample(pos_candidates, p_count)})
+        if p_count < positive_per_cv:
+            shortages.append(dict(cv_id=cv["record_id"], strategy="same_role_and_stack", requested=positive_per_cv, selected=p_count,
+                                  reason="not enough same-role/stack candidates; no label inferred"))
     for category in ("shared_skill_different_role", "shared_skill_different_stack", "scoped_experience_requirement_gap"):
         candidates = [jd for jd in jobs if jd["record_id"] not in chosen and category in candidate_reasons(cv, jd)]
         count = min(hard_per_type, len(candidates))
@@ -43,30 +52,35 @@ def choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type):
 
 
 def sample_pairs(dataset, split, output, partition="train", strategy="mixed", seed=20261113,
-                 random_per_cv=3, hard_per_type=2, max_pairs=100000):
+                 random_per_cv=3, hard_per_type=2, max_pairs=100000, positive_per_cv=0, evaluation_catalogue_only=False):
     dataset, split = Path(dataset).resolve(), Path(split).resolve()
     require(partition in PARTITIONS, "Choose train, validation or test")
     require(strategy in {"mixed", "census"}, "strategy must be mixed or census")
     require(partition == "train" or strategy == "census", "Validation/test require a fixed catalogue census; hard mining is train only")
-    require(type(random_per_cv) is int and random_per_cv >= 1 and type(hard_per_type) is int and hard_per_type >= 0,
-            "Require at least one random candidate and non-negative hard count")
+    require(type(random_per_cv) is int and random_per_cv >= 1 and type(hard_per_type) is int and hard_per_type >= 0
+            and type(positive_per_cv) is int and positive_per_cv >= 0,
+            "Require at least one random candidate and non-negative hard/positive counts")
     require(type(max_pairs) is int and max_pairs > 0, "max_pairs must be positive")
-    audit_split(dataset, split)
+    readiness = audit_split(dataset, split)
+    require(readiness["partition_ready"], "Dataset lacks independent CV/JD partitions; do not sample benchmark pairs yet")
     manifest = read_json(split / "manifest.json")
     records = {r["record_id"]: r for r in read_lines(dataset / "records.jsonl")}
     assignments = read_lines(split / "assignments.jsonl")
     cvs = sorted((records[r["record_id"]] for r in assignments if r["kind"] == "cv" and r["partition"] == partition), key=lambda r: r["record_id"])
     jd_partition = "shared" if manifest["mode"] == "known-jd" else partition
     jobs = sorted((records[r["record_id"]] for r in assignments if r["kind"] == "jd" and r["partition"] == jd_partition), key=lambda r: r["record_id"])
+    if (partition != "train" or evaluation_catalogue_only) and (split / "eval_catalogue.json").is_file():
+        eval_ids = set(read_json(split / "eval_catalogue.json")["record_ids"])
+        jobs = [j for j in jobs if j["record_id"] in eval_ids]
     require(cvs and jobs, "No eligible CV/JD for requested partition; supply new data, do not relabel pilot as test")
-    upper_bound = len(cvs) * (len(jobs) if strategy == "census" else min(len(jobs), random_per_cv + 3 * hard_per_type))
+    upper_bound = len(cvs) * (len(jobs) if strategy == "census" else min(len(jobs), random_per_cv + positive_per_cv + 3 * hard_per_type))
     require(upper_bound <= max_pairs, "Pair budget exceeded; census is not silently truncated")
     pairs, selection, shortages = [], [], []
     for cv in cvs:
         if strategy == "census":
             chosen = {jd["record_id"]: "catalogue_census" for jd in jobs}
         else:
-            chosen, missing = choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type)
+            chosen, missing = choose_mixed(cv, jobs, partition, seed, random_per_cv, hard_per_type, positive_per_cv)
             shortages.extend(missing)
         for jid, reason in sorted(chosen.items()):
             jd = records[jid]
@@ -83,6 +97,7 @@ def sample_pairs(dataset, split, output, partition="train", strategy="mixed", se
     write_csv(folder / "pairs.csv", pairs, FIELDS)
     write_json(folder / "coordinator/selection.json", selection)
     summary = dict(partition=partition, strategy=strategy, cv_count=len(cvs), jd_count=len(jobs), pairs=len(pairs),
+                   catalogue_scope="frozen_evaluation_catalogue" if evaluation_catalogue_only else "split_default",
                    by_strategy=dict(Counter(r["selection_reason"] for r in selection)), shortages=shortages,
                    label_counts={"unlabeled": len(pairs)}, ranking_k=5,
                    evaluation_scope="Complete catalogue candidate grid, still unlabeled" if strategy == "census"

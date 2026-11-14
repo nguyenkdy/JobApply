@@ -57,8 +57,9 @@ def render_scenario(scenario, design):
     lineage = dict(scenario_id=sid, generation_version=design["version"],
                    generation_cohort=design["generation_cohort"], author=design["author"],
                    method="individually authored career scenario; deterministic rendering; no target JD or ranking",
-                   template_family=family, parent_ids=[],
-                   variant_history=[dict(version=1, action="initial authored scenario", date=design["created_on"])],
+                   template_family=family, parent_ids=scenario.get("parent_ids", []),
+                   template_ancestors=scenario.get("template_ancestors", []),
+                   variant_history=scenario.get("variant_history", [dict(version=1, action="initial authored scenario", date=design["created_on"])]),
                    experience_kind=duration["kind"] if duration else "unknown",
                    evidence_status="synthetic_author_assertion; not independent professional verification")
     row = dict(cv_id=sid, cv_text=text, source_group="scenario:" + sid,
@@ -75,6 +76,21 @@ def render_scenario(scenario, design):
 def render_batch(assets, output):
     assets = Path(assets).resolve()
     design, scenarios = read_json(assets / "design.json"), read_json(assets / "scenarios.json")
+    ancestor_files = []
+    if any(s.get("parent_ids") for s in scenarios):
+        require(design.get("ancestor_assets"), "Variant CV batch requires original assets for lineage validation")
+        ancestor_path = (assets / design["ancestor_assets"]).resolve()
+        original_design = read_json(ancestor_path / "design.json")
+        originals = {s["id"]: s for s in read_json(ancestor_path / "scenarios.json")}
+        ancestor_files = [ancestor_path / name for name in ("design.json", "scenarios.json")]
+        for scenario in scenarios:
+            require(scenario.get("parent_ids"), "Every variant needs its original source IDs")
+            inherited = set(scenario.get("template_ancestors", []))
+            for parent in scenario["parent_ids"]:
+                require(parent in originals, "Unknown CV parent; cannot certify lineage")
+                inherited.add(original_design["version"] + ":" + originals[parent]["family"])
+                inherited.update(originals[parent].get("template_ancestors", []))
+            scenario["template_ancestors"] = sorted(inherited)
     require(len(scenarios) == design["expected_count"], "Scenario count differs from declared design")
     require(len({s["id"] for s in scenarios}) == len(scenarios), "Duplicate scenario IDs")
     require(Counter(s["role"] for s in scenarios) == {r: design["per_role"] for r in design["roles"]}, "Role quota mismatch")
@@ -84,6 +100,10 @@ def render_batch(assets, output):
     folder = fresh_folder(output, (assets,))
     for name in ("design.json", "scenarios.json"):
         shutil.copyfile(assets / name, folder / name)
+    if ancestor_files:
+        (folder / "ancestors").mkdir()
+        for path in ancestor_files:
+            shutil.copyfile(path, folder / "ancestors" / path.name)
     write_csv(folder / "cvs.csv", [row for row, _ in rendered], FIELDS)
     write_json(folder / "evidence.json", [item for _, item in rendered])
     summary = dict(cv_count=len(rendered), source_groups=len({row["source_group"] for row, _ in rendered}),

@@ -156,6 +156,10 @@ def record(raw, spec):
         field = value.get(name, default)
         field = json.loads(field) if isinstance(field, str) else field
         require(isinstance(field, expected_type), f"Invalid {name}")
+        if name == "lineage" and "template_ancestors" in field:
+            inherited = field["template_ancestors"]
+            require(isinstance(inherited, list) and all(isinstance(x, str) and x.strip() for x in inherited),
+                    "template_ancestors must be a list of nonempty historical group keys")
         if expected_type is list:
             require(all(isinstance(item, str) and item.strip() for item in field), f"Invalid {name} entries")
         if name == "quality_reasons" and field:
@@ -220,6 +224,17 @@ def ingest(config_path, output):
     require(rows_by_id, "All input tables are empty")
     records = sorted(rows_by_id.values(), key=lambda r: r["record_id"])
     anchors, pilot_files = pilot_anchors()
+    history_files = []
+    for index, spec in enumerate(config.get("historical_cv_sources", [])):
+        require(spec["kind"] == "cv", "Historical development anchors must be CV sources")
+        path = (config_path.parent / spec["path"]).resolve()
+        _, history = csv_rows(path)
+        for raw in history:
+            anchor = record(raw, spec)
+            anchor.update(record_id=f"HISTORY_{index}_" + anchor["record_id"], protected_pilot=True,
+                          exposure="development", protected_reference_type="historical_cv_development")
+            anchors.append(anchor)
+        history_files.append(path)
     groups, edges = group_records(records, anchors, threshold)
     contexts = []
     for index, item in enumerate(config.get("context_files", [])):
@@ -234,6 +249,10 @@ def ingest(config_path, output):
         require(file_hash(folder / receipt["snapshot"]) == receipt["sha256"], "Source changed during import")
     for path in pilot_files:
         shutil.copyfile(path, folder / "protected_pilot" / path.name)
+    if history_files:
+        (folder / "protected_history").mkdir()
+        for index, path in enumerate(history_files):
+            shutil.copyfile(path, folder / "protected_history" / f"{index:03d}.csv")
     if contexts:
         (folder / "context").mkdir()
         for path, receipt in contexts:

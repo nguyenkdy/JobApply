@@ -73,6 +73,17 @@ def group_records(records, anchors, threshold=0.85):
                 for rid in ids[1:]:
                     link(ids[0], rid, field)
         related = defaultdict(list)
+        # A layout revision never erases earlier shared template ancestry.
+        templates = defaultdict(list)
+        for row in rows:
+            for key in set(row.get("lineage", {}).get("template_ancestors", [])):
+                templates[key].append(row["record_id"])
+            if row.get("template_group"):
+                templates[row["template_group"]].append(row["record_id"])
+        for ids in templates.values():
+            ids = sorted(set(ids))
+            for rid in ids[1:]:
+                link(ids[0], rid, "historical_template_lineage")
         for row in rows:
             for key in set(row.get("related_source_keys", [])):
                 related[key].append(row["record_id"])

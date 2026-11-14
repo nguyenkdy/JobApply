@@ -1,5 +1,9 @@
 # Mốc 2 — Kết quả upstream sau sửa điều kiện v2
 
+**Cập nhật sau chuẩn bị:** Bước 4 đã chạy trên bộ dữ liệu v3 giữ nguyên. Kết quả/model được chọn và giới hạn ở [step4_results.md](step4_results.md). Những đoạn “chưa chạy Bước 4” bên dưới mô tả thời điểm bàn giao dữ liệu, không phải trạng thái hiện tại.
+
+**Trạng thái hiện hành 14/11/2026:** đã hoàn tất điều kiện kỹ thuật trước Bước 4 với lô **60 CV mới / 12 họ**, split **30/15/15** và **3.000 cặp có nhãn tự động** trên catalog 50 JD cố định. Lô 60 CV v2 cũ giữ development vì lỗi lineage. Hai run mới có 302 file giống byte; 64 test đạt. Xem [bàn giao hiện hành và lệnh PowerShell](pretraining_handoff.md). Các mục 1–7 bên dưới lưu quá trình upstream, CV v1 và kiểm toán v2; các số lượng split/nhãn lịch sử không thay thế kết quả hiện hành. **Chưa chạy Bước 4.**
+
 Ngày 13/11/2026. Báo cáo được sinh từ hai run đã kiểm checksum và so sánh **51 file giống byte**. Không lấy lại số liệu/ID từ bản báo cáo v1. [Receipt đầy đủ](reports/20261113-data-preparation.json), [danh sách JD](reports/20261113-upstream-jd-selection.json), [schema cột thực tế](schemas/upstream_columns.json).
 
 ## 1. Ba file thực tế và quan hệ
@@ -132,40 +136,63 @@ Preview split theo protocol **`known-jd`** (`seed=20261113`, Top `k=5`, tỷ l�
   - **Tổng cộng 3 partition:** **23.730 cặp** (`pair_files_created=0`, `labels_created=0`, `final_test_ready=false`).
 - **`Data Analyst` vẫn thuộc phạm vi nghiên cứu:** có `9` JD gắn tag nguồn, `8` JD có dấu hiệu chức danh, `4` JD nối với pilot và **`0` JD ngoài pilot qua gate**. Bốn JD đã chọn để rà parser (`job_3d91bd66351c91e206c7`, `job_ce9d4b53148ccab5609b`, `job_f276ea42265aab730cdf`, `job_60e8ded349354f397062`) vẫn giữ `development`/`quarantine`. Cần khôi phục/bổ sung JD `Data Analyst` hợp lệ trước khi thêm CV và mở rộng benchmark sang nghề thứ sáu.
 
-## 6. PowerShell tái tạo và sinh báo cáo
+## 6. Kiểm toán benchmark ngày 14/11/2026
 
-Các output lớn, nguồn và text đầy đủ nằm trong `ml_data_runs/` đã Git ignore; chỉ schema/config/receipt và kịch bản sinh CV được giữ trong repo. Ba nguồn CSV local cần đi kèm khi tái tạo. [Config upstream JD](data_configs/upstream_jd_import.json) và [config kết hợp CV + JD v2](data_configs/synthetic_cv_jd_v2_import.json) trỏ tới canonical/context của run local trong `ml_data_runs/`.
+**Thay thế kết luận “Bước 1–3 hoàn tất” trước đây.** Run `20261113_benchmark_v2/run_08` có 308/1.000/500 cặp và 30 cặp đối chứng đúng như báo cáo, nhưng hash và schema hợp lệ không chứng minh split/nhãn đúng. Có 49 CV đổi họ template giữa v1/v2, 41 giữ nguyên nội dung. Kiểm tra đầy đủ ancestry nối cả 60 CV thành một nhóm; không có validation/test tách biệt. [Báo cáo từ dữ liệu thực](benchmark_audit.md), [receipt](reports/20261114-benchmark-audit.json).
+
+`synthetic.py` hiện bắt buộc assets tổ tiên cho biến thể, snapshot tổ tiên và ghi `lineage.template_ancestors`. `grouping.py` nối mọi template lịch sử thay vì chỉ tên template mới. Không tự thay source group, đổi seed hoặc xóa lịch sử để ép 30/20/10.
+
+[Config import kiểm toán](data_configs/benchmark_audit_import.json) trỏ tới run có đầy đủ ancestry; config benchmark v2 thiếu ancestry đã được xóa khi dọn công cụ cũ. `audit`/`sample` từ chối biến thể thiếu ancestry hoặc dataset thiếu các partition độc lập.
+
+Metadata JD phiên bản mới giữ scope rõ ràng: tổng kinh nghiệm phần mềm không tự thành thời gian Python/React; thời lượng nhiều mệnh đề chưa rõ scope giữ unknown; mức tối đa/ưu tiên không thành tối thiểu. Thuật toán không khẳng định hiểu đầy đủ mọi yêu cầu. Con số 100% cũ chỉ đo phát hiện có ngưỡng trên tập development, không phải độ đúng toàn bộ scope/giá trị.
+
+Đã bỏ công cụ calibration và yêu cầu người review. Giữ validator kỹ thuật và nguồn gốc nhãn `automatic_rule_proxy`, không biến thành gold. Nhãn thiếu căn cứ giữ trống; `complete=false` khi còn `insufficient_evidence`. `label-pairs` bắt buộc `--output` mới, giữ bản cặp nguồn. [Quy tắc hiện hành](annotation_guidelines.md).
+
+**Kết luận kiểm toán lô v2 cũ:** cần các họ CV mới để có partition; lô cũ phải giữ development nguyên nhóm. Điều kiện này đã được xử lý bằng lô v3 ở mục 8; Bước 4 vẫn chưa chạy theo yêu cầu dừng. Khi thí nghiệm sau này, chỉ fit scaler/LR trên train, chọn trên validation rồi đánh giá test. So sánh cả baseline luật sinh nhãn và ablation text-only/metadata vì dùng cùng skill/stack/experience cho feature lẫn nhãn tạo sự phụ thuộc vòng tròn. Không bỏ cặp chưa có nhãn khi tính metric toàn catalog mà không báo độ phủ.
+
+Data Analyst vẫn là mục tiêu nghiên cứu; cần JD mới/khôi phục section có bằng chứng ngoài development. Bộ 50 JD hiện là subset cố định, không chứng minh khả năng trên cả catalog 788 JD hoặc người dùng thật.
+
+## 7. PowerShell kiểm toán và kiểm tra readiness
+
+Đã gỡ lệnh dựng benchmark v2 và assets của nó. Snapshot kiểm toán vẫn được giữ để đối chiếu; kiểm tra lô hiện hành bằng `check-pretraining` ở mục 8. Các run chứa dữ liệu đầy đủ tiếp tục Git ignore. [Biên bản dọn dẹp](retired_cv_cleanup.md).
 
 ```powershell
 Set-Location D:\JobApply
-$runId = Get-Date -Format 'yyyyMMdd_HHmmss_fffffff'
-$base = ".\ml_data_runs\$runId"
-python -m ml_data upstream --source-dir . --output "$base\first" --seed 20261113
-if ($LASTEXITCODE -ne 0) { throw 'First upstream run failed' }
-python -m ml_data upstream --source-dir . --output "$base\second" --seed 20261113
-if ($LASTEXITCODE -ne 0) { throw 'Second upstream run failed' }
-python .\scripts\report-upstream.py --first "$base\first" --second "$base\second" --output "$base\reports"
-if ($LASTEXITCODE -ne 0) { throw 'Reproducibility or original-file check failed' }
-python -m ml_data verify --artifact "$base\first\dataset"
+$auditRun = '.\ml_data_runs\20261114_benchmark_audit_02'
+python -m ml_data verify --artifact $auditRun
+if ($LASTEXITCODE -ne 0) { throw 'Artifact verification failed' }
+python -m ml_data audit --dataset "$auditRun\dataset" --split "$auditRun\preview_split"
+# partition_ready=false: kiểm toán lô cũ không tự biến thành split hợp lệ.
 ```
 
-Tạo 60 CV giả lập từ kịch bản và chạy preview kết hợp với run upstream v2 đã xác minh (không chạy lại upstream v2 khi đã có `ml_data_runs\20261113_upstream_v2_01`):
+Tạo/export CV v1 riêng để tái tạo preview lịch sử (không phải xử lý lỗi lineage v2):
 
 ```powershell
-$cvBase = ".\ml_data_runs\${runId}_cv_expansion"
-python -m ml_data synthetic-cvs --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$cvBase\synthetic_cvs"
-if ($LASTEXITCODE -ne 0) { throw 'Synthetic CV generation failed' }
-python -m ml_data expand-preview --upstream-run .\ml_data_runs\20261113_upstream_v2_01 --scenarios .\ml_data_assets\synthetic_cv_v1\scenarios.json --output "$cvBase\preview" --seed 20261113
-if ($LASTEXITCODE -ne 0) { throw 'Combined preview failed' }
-python -m ml_data verify --artifact "$cvBase\synthetic_cvs"
-python -m ml_data verify --artifact "$cvBase\preview"
-python -m ml_data verify --artifact "$cvBase\preview\dataset"
-python -m ml_data verify --artifact "$cvBase\preview\preview_split"
+$cvOut = '.\ml_data_runs\cv_render_' + (Get-Date -Format 'yyyyMMdd_HHmmss_fffffff')
+python -m ml_data synthetic-cvs --assets .\ml_data_assets\synthetic_cv_v1 --output $cvOut
 ```
 
-Chạy kiểm thử và linter:
+Kiểm thử:
 
 ```powershell
 & .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
-& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-upstream.py tests/ml/test_data_pipeline.py tests/ml/test_upstream.py tests/ml/test_synthetic_expansion.py
+& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-pretraining.py tests/ml/test_benchmark_prep.py tests/ml/test_automatic_labels.py tests/ml/test_pretraining.py
 ```
+
+## 8. Điều kiện trước Bước 4 đã hoàn tất — lô v3
+
+`prepare-experiment` kiểm checksum bốn run lịch sử, giữ catalog 50 ID, xuất 60 CV từ `ml_data_assets/independent_cv_v3/`, nhập cùng JD và ghi exposure development cho lô cũ trong bản dẫn xuất. V1 được thêm làm tham chiếu lịch sử chống trùng/lineage, không thêm vào train. Tất cả dữ liệu gốc và nhóm development được giữ nguyên.
+
+Schema CV vẫn gồm `cv_id`, `cv_text`, `source_group`, `template_group`, `is_synthetic`, `role`, `skills`, `stack`, `experience_json`, `exposure`, `text_scope`; exporter ghi thêm lineage và bằng chứng nguyên văn/offset trong artifact. Kịch bản mới không có parent từ lô cũ. 12 họ là 12 khung viết thực tế, mỗi họ năm hồ sơ; vẫn cùng một tác giả AI/cohort, không phải nguồn ứng viên thật độc lập. 12 CV thiếu thời lượng giữ `{}`.
+
+Known-jd: 30/15/15 CV thuộc 6/3/3 nhóm, mỗi tập đủ năm nghề và employment/project/internship/contract/unknown. Cả ba tập chỉ dùng catalog 50 JD; 788 JD đủ gate trong kho không đồng nghĩa 788 JD được dùng trong benchmark. Train census 1.500 cặp, validation/test mỗi tập 750; thêm 270 random/hard candidates làm chẩn đoán lấy mẫu, có thể tra nhãn theo pair ID trong train census. Không lấy mẫu lại để đạt lớp mong muốn.
+
+Nhãn dùng `automatic-proxy-labeler-v3-scoped-coverage`; extraction giữ clause AND/OR/ưu tiên và scope thời lượng. Nhãn 1 biểu thị tương thích một phần theo nghề, kể cả hai bộ công nghệ đã biết khác nhau; không nhầm trường hợp đó với thiếu metadata. 3.000 nhãn số đầy đủ là điều kiện kỹ thuật, không phải độ đúng 100%. Catalog vẫn có bảy JD thiếu ngưỡng kinh nghiệm dùng được. Chi tiết, phân bố nhãn, giới hạn Recall@5 và Data Analyst ở [bàn giao](pretraining_handoff.md); [config import](data_configs/pretraining_v3_import.json), [receipt từ hai run thực](reports/20261114-pretraining-ready.json).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_data check-pretraining --artifact .\ml_data_runs\20261114_pretraining_v3_01
+if ($LASTEXITCODE -ne 0) { throw 'Pretraining checks failed' }
+```
+
+22 gate đạt, hai run có 302/302 file giống byte. **Dừng trước Bước 4**: chưa tính BM25/E5, fit model, chọn model theo validation hay tính metric test mới. Không có vòng người review/calibration; chưa có bằng chứng chất lượng trên người dùng thật.

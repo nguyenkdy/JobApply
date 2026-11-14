@@ -3,18 +3,73 @@ from collections import Counter
 from copy import deepcopy
 import math
 from pathlib import Path
+import shutil
 
 from .common import (digest, file_hash, fresh_folder, read_json, read_lines, require,
                      seal, verify, write_json, write_lines)
 from .grouping import group_records
 
 PARTITIONS = ("train", "validation", "test")
+EVAL_ROLES = ("backend python", "backend java", "frontend", "devops/cloud", "qa/testing")
+
+
+def select_eval_catalogue(records, assignments, seed, per_role):
+    require(type(per_role) is int and per_role >= 1, "eval_jd_per_role must be a positive integer")
+    by_id = {r["record_id"]: r for r in records}
+    shared_jds = [by_id[a["record_id"]] for a in assignments if a["kind"] == "jd" and a["partition"] == "shared"]
+    used_groups = set()
+    selected = []
+    by_role_counts = {}
+    for role in EVAL_ROLES:
+        candidates = [j for j in shared_jds if j["role"] == role]
+        chosen_role = []
+        for _ in range(per_role):
+            available = [j for j in candidates if j["group_id"] not in used_groups]
+            if not available:
+                break
+            row = min(
+                available,
+                key=lambda j: (
+                    not (bool(j["stack"]) and bool(j["skills"])),
+                    not bool(j["experience"]),
+                    -len(j["stack"]),
+                    digest(f"eval_catalogue|{seed}|{role}|{j['record_id']}"),
+                ),
+            )
+            used_groups.add(row["group_id"])
+            chosen_role.append(dict(
+                record_id=row["record_id"],
+                external_id=row["external_id"],
+                group_id=row["group_id"],
+                role=row["role"],
+                skills_count=len(row["skills"]),
+                stack_count=len(row["stack"]),
+                has_experience=bool(row["experience"]),
+            ))
+        require(len(chosen_role) == per_role, f"Insufficient independent shared JD groups for eval catalogue role '{role}': {len(chosen_role)}/{per_role}")
+        by_role_counts[role] = len(chosen_role)
+        selected.extend(chosen_role)
+    selected.sort(key=lambda r: r["record_id"])
+    return dict(
+        seed=seed,
+        per_role=per_role,
+        total_eval_jds=len(selected),
+        by_role=by_role_counts,
+        record_ids=[r["record_id"] for r in selected],
+        external_ids=[r["external_id"] for r in selected],
+        items=selected,
+        note="Fixed stratified evaluation JD catalogue (one per independent JD group) for tractable validation/test census.",
+    )
 
 
 def load_dataset(folder):
     folder = Path(folder)
     manifest = verify(folder, "dataset")
     records = read_lines(folder / "records.jsonl")
+    for row in records:
+        lineage = row.get("lineage", {})
+        require(not (row["kind"] == "cv" and lineage.get("parent_ids") and not lineage.get("template_ancestors")),
+                "Variant CV lacks historical template ancestry; rebuild from original assets before splitting or sampling")
     groups = read_json(folder / "groups.json")
     # Recompute source/template and near links: a hash alone is not a leakage check.
     rebuilt, _ = group_records(deepcopy(records), read_lines(folder / "protected_anchors.jsonl"), manifest["near_threshold"])
@@ -100,7 +155,18 @@ def audit_assignments(records, groups, assignments, mode):
                 note="Structural partition checks only; no verified labels, identity verification or semantic dedup guarantee")
 
 
-def make_split(dataset, output, mode="known-jd", seed=20261113, ratios=(0.6, 0.2, 0.2)):
+def validate_frozen_catalogue(records, assignments, catalogue):
+    by_id = {r["record_id"]: r for r in records}
+    shared = {a["record_id"] for a in assignments if a["kind"] == "jd" and a["partition"] == "shared"}
+    ids = catalogue["record_ids"]
+    require(ids and len(ids) == len(set(ids)) and set(ids) <= shared, "Frozen catalogue includes duplicate/ineligible JD")
+    require(len({by_id[rid]["group_id"] for rid in ids}) == len(ids), "Frozen catalogue repeats a JD family")
+    require(catalogue["external_ids"] == [by_id[rid]["external_id"] for rid in ids], "Frozen catalogue external IDs changed")
+    return len(ids)
+
+
+def make_split(dataset, output, mode="known-jd", seed=20261113, ratios=(0.6, 0.2, 0.2), eval_jd_per_role=None,
+               frozen_catalogue=None):
     dataset = Path(dataset).resolve()
     manifest, records, groups = load_dataset(dataset)
     assignments = assignments_for(records, mode, seed, ratios)
@@ -114,13 +180,27 @@ def make_split(dataset, output, mode="known-jd", seed=20261113, ratios=(0.6, 0.2
         p: {kind: dict(Counter(by_id[r["record_id"]]["role"] or "unknown" for r in assignments
                               if r["partition"] == p and r["kind"] == kind)) for kind in ("cv", "jd")}
         for p in (*PARTITIONS, "shared", "development", "excluded")})
+    extra_meta = {}
+    if frozen_catalogue is not None:
+        require(mode == "known-jd" and eval_jd_per_role is None, "Frozen selection cannot be combined with reselection")
+        catalogue = read_json(frozen_catalogue)
+        extra_meta["eval_catalogue_count"] = validate_frozen_catalogue(records, assignments, catalogue)
+        shutil.copyfile(frozen_catalogue, folder / "eval_catalogue.json")
+        extra_meta["frozen_catalogue_sha256"] = file_hash(frozen_catalogue)
+    elif eval_jd_per_role is not None:
+        require(mode == "known-jd", "eval_jd_per_role requires mode='known-jd'")
+        catalogue = select_eval_catalogue(records, assignments, seed, eval_jd_per_role)
+        write_json(folder / "eval_catalogue.json", catalogue)
+        extra_meta["eval_jd_per_role"] = eval_jd_per_role
+        extra_meta["eval_catalogue_count"] = catalogue["total_eval_jds"]
     seal(folder, "split", dict(dataset_manifest_sha256=file_hash(dataset / "manifest.json"), dataset_version=manifest["dataset_version"],
                                 mode=mode, seed=seed, ratios=list(ratios), ranking_k=5,
                                 allocation="seeded whole groups; minimum one per partition if >=3; remaining groups by largest remainder",
                                 evaluation_scope="new CV on a shared known JD catalogue; no claim of new-JD generalization"
                                 if mode == "known-jd" else "both CV and JD groups disjoint across train/validation/test",
                                 pilot_policy="viewed pilot and connected families outside train/validation/test/shared",
-                                label_status="unlabeled; final test not ready"))
+                                label_status="unlabeled; final test not ready",
+                                **extra_meta))
     return audit
 
 
@@ -134,5 +214,12 @@ def audit_split(dataset, split):
     report = audit_assignments(records, groups, assignments, receipt["mode"])
     expected = assignments_for(records, receipt["mode"], receipt["seed"], receipt["ratios"])
     require(assignments == expected, "Split does not reproduce its seed/protocol or contains leakage")
+    if "eval_jd_per_role" in receipt:
+        expected_cat = select_eval_catalogue(records, assignments, receipt["seed"], receipt["eval_jd_per_role"])
+        actual_cat = read_json(split / "eval_catalogue.json")
+        require(actual_cat == expected_cat, "Evaluation JD catalogue does not reproduce its seed/protocol")
+    if "frozen_catalogue_sha256" in receipt:
+        require(file_hash(split / "eval_catalogue.json") == receipt["frozen_catalogue_sha256"], "Frozen catalogue changed")
+        validate_frozen_catalogue(records, assignments, read_json(split / "eval_catalogue.json"))
     require(report["leakage_check_passed"], str(report["errors"]))
     return report

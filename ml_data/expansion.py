@@ -177,5 +177,5 @@ Kiểm tra cấu trúc leakage: `{report['split_audit']['leakage_check_passed']}
 
 **Data Analyst vẫn thuộc mục tiêu nghiên cứu:** {report['data_analyst']['source_tagged']} tag nguồn, {report['data_analyst']['title_cued']} dấu hiệu chức danh, {report['data_analyst']['pilot_related']} nối pilot; {report['data_analyst']['nonpilot_gate_passing']} ngoài pilot qua gate. Bốn JD đã dành sửa parser vẫn development/quarantine. Cần rà lại nguồn/các section lỗi hoặc bổ sung JD mới có provenance trước khi thêm CV/benchmark Data Analyst; không thay đổi JD hiện tại để đủ quota.
 
-**Cần làm tiếp:** bổ sung metadata JD có evidence; có chuyên môn rà độ hợp lý của CV và quy tắc gán nhãn; bổ sung các họ CV mới đa dạng loại kinh nghiệm nếu cần đánh giá cân đối; sau đó quyết định split và khối lượng chấm. Nếu dùng CV hiện tại sửa parser/feature, chuyển cả họ sang development ở phiên bản sau. Chưa triển khai vòng hai reviewer. Dữ liệu synthetic và nhãn nội bộ sau này không tự chứng minh chất lượng trên người dùng thật.
+**Cần làm tiếp:** bổ sung metadata JD có evidence và các họ CV mới đa dạng loại kinh nghiệm; sau đó quyết định split và khối lượng chấm. Nếu dùng CV hiện tại sửa parser/feature, chuyển cả họ sang development ở phiên bản sau. Không yêu cầu quy trình người review. Dữ liệu synthetic và nhãn tự động không tự chứng minh chất lượng trên người dùng thật.
 """

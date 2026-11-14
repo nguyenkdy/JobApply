@@ -1,0 +1,957 @@
+{
+  "catalogue": {
+    "by_role": {
+      "backend java": 10,
+      "backend python": 10,
+      "devops/cloud": 10,
+      "frontend": 10,
+      "qa/testing": 10
+    },
+    "count": 50,
+    "missing_metadata": {
+      "experience": 7,
+      "role": 0,
+      "skills": 0,
+      "stack": 0
+    },
+    "original_50_ids_unchanged": true,
+    "requirement_operators": {
+      "all_of": 54,
+      "any_of": 31,
+      "list_unresolved": 82,
+      "mixed_unresolved": 9,
+      "single": 101
+    }
+  },
+  "cohort": {
+    "cv_count": 60,
+    "experience_kinds": {
+      "contract": 12,
+      "employment": 12,
+      "internship": 12,
+      "project": 12,
+      "unknown": 12
+    },
+    "is_synthetic": true,
+    "labels_created": 0,
+    "roles": {
+      "Backend Java": 12,
+      "Backend Python": 12,
+      "DevOps/Cloud": 12,
+      "Frontend": 12,
+      "QA/Testing": 12
+    },
+    "shared_author_cohort": true,
+    "source_groups": 60,
+    "template_groups": 12
+  },
+  "data_analyst": {
+    "interpretation": "Source tags and literal title cues are separate candidate counts, not verified occupational labels",
+    "nonpilot_gate_passing": 0,
+    "pilot_related": 4,
+    "rows": [
+      {
+        "decision": "quarantine",
+        "job_id": "job_e4c27b1bf363f62c9854",
+        "pilot_related": false,
+        "selected": false,
+        "source_tag": true,
+        "title": "Analytics Engineer",
+        "title_cue": false
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_06be4da301218aead0a4",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior Data Analyst (SQL,Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_3d91bd66351c91e206c7",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "[HN/ ] Data Analyst (English/ MS Office)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_ce9d4b53148ccab5609b",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst – StoreFront eCommerce | K/year",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_309fd6597950042f67d7",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior MIS Specialist (Data Analyst, SQL, Python, Java)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_f276ea42265aab730cdf",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Associate Reporting Specialist (Data Analyst)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_60e8ded349354f397062",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst (SQL, Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_fa1e4b0bb4029f07128c",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analyst",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_db7d95cf020eb5437f89",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analytics Specialist (SQL, Oracle, Python)",
+        "title_cue": true
+      }
+    ],
+    "selected": 4,
+    "source_only": 1,
+    "source_tagged": 9,
+    "title_cued": 8
+  },
+  "date": "2026-11-14",
+  "diagnostic_candidates_resolve_to_train_labels": 270,
+  "distributions": {
+    "test": {
+      "cv_count": 15,
+      "cv_ids": [
+        "CVN_MC_DO",
+        "CVN_MC_FE",
+        "CVN_MC_JV",
+        "CVN_MC_PY",
+        "CVN_MC_QA",
+        "CVN_MX_DO",
+        "CVN_MX_FE",
+        "CVN_MX_JV",
+        "CVN_MX_PY",
+        "CVN_MX_QA",
+        "CVN_SR_DO",
+        "CVN_SR_FE",
+        "CVN_SR_JV",
+        "CVN_SR_PY",
+        "CVN_SR_QA"
+      ],
+      "experience_kinds": {
+        "contract": 3,
+        "employment": 3,
+        "internship": 3,
+        "project": 3,
+        "unknown": 3
+      },
+      "group_count": 3,
+      "jd_available_shared": 788,
+      "jd_catalogue_count": 50,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 3,
+        "backend python": 3,
+        "devops/cloud": 3,
+        "frontend": 3,
+        "qa/testing": 3
+      },
+      "scoped_months": {
+        "contract:devops:48": 1,
+        "contract:java:36": 1,
+        "contract:professional experience:54": 1,
+        "contract:professional experience:60": 2,
+        "contract:software development:54": 1,
+        "contract:software development:60": 1,
+        "employment:aws:36": 1,
+        "employment:devops:72": 1,
+        "employment:kiểm thử phần mềm:60": 1,
+        "employment:professional experience:60": 1,
+        "employment:professional experience:84": 2,
+        "employment:python:60": 1,
+        "employment:software development:84": 1,
+        "internship:thực tập:3": 1,
+        "internship:thực tập:4": 1,
+        "internship:thực tập:6": 1,
+        "project:dự án cá nhân:6": 1,
+        "project:dự án tự học:9": 1,
+        "project:dự án:6": 1
+      },
+      "source_groups": 15,
+      "template_families": {
+        "evidence_matrix": 5,
+        "milestone_cards": 5,
+        "service_retrospective": 5
+      }
+    },
+    "train": {
+      "cv_count": 30,
+      "cv_ids": [
+        "CVN_CL_DO",
+        "CVN_CL_FE",
+        "CVN_CL_JV",
+        "CVN_CL_PY",
+        "CVN_CL_QA",
+        "CVN_DR_DO",
+        "CVN_DR_FE",
+        "CVN_DR_JV",
+        "CVN_DR_PY",
+        "CVN_DR_QA",
+        "CVN_HI_DO",
+        "CVN_HI_FE",
+        "CVN_HI_JV",
+        "CVN_HI_PY",
+        "CVN_HI_QA",
+        "CVN_IN_DO",
+        "CVN_IN_FE",
+        "CVN_IN_JV",
+        "CVN_IN_PY",
+        "CVN_IN_QA",
+        "CVN_PB_DO",
+        "CVN_PB_FE",
+        "CVN_PB_JV",
+        "CVN_PB_PY",
+        "CVN_PB_QA",
+        "CVN_WF_DO",
+        "CVN_WF_FE",
+        "CVN_WF_JV",
+        "CVN_WF_PY",
+        "CVN_WF_QA"
+      ],
+      "experience_kinds": {
+        "contract": 6,
+        "employment": 6,
+        "internship": 6,
+        "project": 6,
+        "unknown": 6
+      },
+      "group_count": 6,
+      "jd_available_shared": 788,
+      "jd_catalogue_count": 50,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 6,
+        "backend python": 6,
+        "devops/cloud": 6,
+        "frontend": 6,
+        "qa/testing": 6
+      },
+      "scoped_months": {
+        "contract:devops:36": 1,
+        "contract:kiểm thử phần mềm:36": 1,
+        "contract:professional experience:36": 2,
+        "contract:professional experience:42": 1,
+        "contract:professional experience:48": 3,
+        "contract:software development:36": 1,
+        "contract:software development:42": 1,
+        "contract:software development:48": 2,
+        "employment:devops:84": 1,
+        "employment:java:60": 1,
+        "employment:kiểm thử phần mềm:54": 1,
+        "employment:professional experience:48": 1,
+        "employment:professional experience:54": 1,
+        "employment:professional experience:60": 1,
+        "employment:professional experience:66": 1,
+        "employment:professional experience:90": 1,
+        "employment:professional experience:96": 1,
+        "employment:react:42": 1,
+        "employment:software development:48": 1,
+        "employment:software development:60": 1,
+        "employment:software development:66": 1,
+        "employment:software development:84": 1,
+        "internship:thực tập:3": 1,
+        "internship:thực tập:4": 1,
+        "internship:thực tập:5": 1,
+        "internship:thực tập:6": 3,
+        "project:dự án cá nhân:5": 1,
+        "project:dự án cá nhân:8": 1,
+        "project:dự án cá nhân:9": 1,
+        "project:dự án tự học:4": 1,
+        "project:dự án tự học:5": 1,
+        "project:dự án tự học:6": 1
+      },
+      "source_groups": 30,
+      "template_families": {
+        "contribution_ledger": 5,
+        "decision_record": 5,
+        "handover_inventory": 5,
+        "interview": 5,
+        "product_brief": 5,
+        "workflow_walkthrough": 5
+      }
+    },
+    "validation": {
+      "cv_count": 15,
+      "cv_ids": [
+        "CVN_CB_DO",
+        "CVN_CB_FE",
+        "CVN_CB_JV",
+        "CVN_CB_PY",
+        "CVN_CB_QA",
+        "CVN_EJ_DO",
+        "CVN_EJ_FE",
+        "CVN_EJ_JV",
+        "CVN_EJ_PY",
+        "CVN_EJ_QA",
+        "CVN_TL_DO",
+        "CVN_TL_FE",
+        "CVN_TL_JV",
+        "CVN_TL_PY",
+        "CVN_TL_QA"
+      ],
+      "experience_kinds": {
+        "contract": 3,
+        "employment": 3,
+        "internship": 3,
+        "project": 3,
+        "unknown": 3
+      },
+      "group_count": 3,
+      "jd_available_shared": 788,
+      "jd_catalogue_count": 50,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 3,
+        "backend python": 3,
+        "devops/cloud": 3,
+        "frontend": 3,
+        "qa/testing": 3
+      },
+      "scoped_months": {
+        "contract:kiểm thử phần mềm:48": 1,
+        "contract:professional experience:30": 1,
+        "contract:professional experience:36": 1,
+        "contract:professional experience:48": 1,
+        "contract:software development:30": 1,
+        "employment:java:48": 1,
+        "employment:kiểm thử phần mềm:72": 1,
+        "employment:professional experience:72": 3,
+        "employment:python:48": 1,
+        "employment:software development:60": 1,
+        "employment:software development:72": 1,
+        "internship:thực tập:4": 1,
+        "internship:thực tập:5": 2,
+        "project:dự án cá nhân:10": 1,
+        "project:dự án cá nhân:7": 1,
+        "project:dự án tự học:8": 1
+      },
+      "source_groups": 15,
+      "template_families": {
+        "capability_boundary": 5,
+        "engineering_journal": 5,
+        "timeline": 5
+      }
+    }
+  },
+  "extraction": {
+    "extractor_version": "jd-rule-extractor-v3-clause-evidence",
+    "note": "Rule-based literal extraction with character offsets; unknown fields remain empty/{} and are never filled with zero.",
+    "pilot_evaluation": {
+      "evaluation_scope": "50 protected pilot JDs (development only; never used as test)",
+      "experience_detection": {
+        "comparison_note": "Development internal annotations; presence and max-value agreement do not establish scoped extraction accuracy",
+        "fn": 4,
+        "fp": 0,
+        "max_threshold_value_match_count": 36,
+        "max_threshold_value_match_rate": 0.878,
+        "precision": 1.0,
+        "recall": 0.9024,
+        "tp": 37,
+        "unknown_preserved_tn": 9
+      },
+      "extractor_version": "jd-rule-extractor-v3-clause-evidence",
+      "pilot_jd_count": 50,
+      "role_accuracy": 0.96,
+      "role_correct": 48
+    },
+    "prospective_keep_coverage": {
+      "missing_experience": 286,
+      "missing_role": 308,
+      "missing_skills": 95,
+      "missing_stack": 172,
+      "total": 788,
+      "with_experience": 502,
+      "with_role": 480,
+      "with_skills": 693,
+      "with_stack": 616
+    },
+    "prospective_keep_roles": {
+      "AI/ML Engineer": 31,
+      "Backend .NET": 21,
+      "Backend Golang": 5,
+      "Backend Java": 110,
+      "Backend Node.js": 2,
+      "Backend PHP": 6,
+      "Backend Python": 19,
+      "Business Analyst": 27,
+      "Data Engineer": 15,
+      "DevOps/Cloud": 14,
+      "ERP/IS Specialist": 9,
+      "Embedded Engineer": 7,
+      "Frontend": 96,
+      "Game Developer": 18,
+      "Mobile": 46,
+      "QA/Testing": 40,
+      "Security Engineer": 6,
+      "UI/UX Designer": 8,
+      "unknown": 308
+    },
+    "total_jds": 3062,
+    "upstream_manifest_sha256": "e8c0d2b8ec774526d6441912cf4e07a085111f88df2c81dd2a422d8dfb13c37b"
+  },
+  "frozen_jd": {
+    "development_records": 154,
+    "enriched_metadata_fields": [
+      "role",
+      "skills",
+      "stack",
+      "experience"
+    ],
+    "identity_text_gate_exposure_identical": true,
+    "records": 3062
+  },
+  "import_summary": {
+    "dataset_version": "pretraining-independent-v3-d33e49f985ce",
+    "development_groups": 115,
+    "distribution": {
+      "cv": {
+        "decisions": {
+          "keep": 120
+        },
+        "missing": {
+          "experience": 22
+        },
+        "roles": {
+          "backend java": 24,
+          "backend python": 24,
+          "devops/cloud": 24,
+          "frontend": 24,
+          "qa/testing": 24
+        },
+        "synthetic": {
+          "True": 120
+        },
+        "total": 120
+      },
+      "jd": {
+        "decisions": {
+          "exclude_exact_duplicate": 65,
+          "keep": 888,
+          "quarantine": 2109
+        },
+        "missing": {
+          "experience": 1468,
+          "role": 1246,
+          "skills": 589,
+          "stack": 949,
+          "template_group": 3062
+        },
+        "roles": {
+          "ai/ml engineer": 68,
+          "backend .net": 62,
+          "backend golang": 14,
+          "backend java": 372,
+          "backend node.js": 17,
+          "backend php": 37,
+          "backend python": 113,
+          "business analyst": 98,
+          "data analyst": 8,
+          "data engineer": 41,
+          "devops/cloud": 82,
+          "embedded engineer": 17,
+          "erp/is specialist": 21,
+          "frontend": 448,
+          "game developer": 45,
+          "mobile": 162,
+          "qa/testing": 178,
+          "security engineer": 14,
+          "ui/ux designer": 19,
+          "unknown": 1246
+        },
+        "synthetic": {
+          "False": 3062
+        },
+        "total": 3062
+      }
+    },
+    "duplicate_occurrences": 0,
+    "final_test_ready": false,
+    "groups": 2525,
+    "labels_created": 0,
+    "limitations": [
+      "Lexical near-duplicate heuristic, not semantic paraphrase detection",
+      "Source metadata/lineage and professional-text claim need review; not a privacy certifier",
+      "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"
+    ],
+    "records": 3182,
+    "source_rows": 3182
+  },
+  "input_manifests": {
+    "D:\\JobApply\\ml_data_runs\\20261113_benchmark_v2\\run_08": "5888164c7985d68265dc628022c83ac5bc971c776034166cdf7a023846e71b14",
+    "D:\\JobApply\\ml_data_runs\\20261113_cv_expansion_v1\\synthetic_cvs": "7b8e0ff00e651cc9e26cfaa69e2bb4e0423c2abe1e2d26f43cddcb5ed0896130",
+    "D:\\JobApply\\ml_data_runs\\20261113_upstream_v2_01": "e8c0d2b8ec774526d6441912cf4e07a085111f88df2c81dd2a422d8dfb13c37b",
+    "D:\\JobApply\\ml_data_runs\\20261114_benchmark_audit_02": "96bef8fe76be095a59b14fc9fb29ce3deab02a93cb4916c281f5e6a481b48f42"
+  },
+  "label_two_query_coverage": {
+    "test": {
+      "cv_count": 15,
+      "cv_with_label_two": 6,
+      "cv_without_label_two": 9
+    },
+    "train": {
+      "cv_count": 30,
+      "cv_with_label_two": 11,
+      "cv_without_label_two": 19
+    },
+    "validation": {
+      "cv_count": 15,
+      "cv_with_label_two": 6,
+      "cv_without_label_two": 9
+    }
+  },
+  "limitations": [
+    "One synthetic AI author cohort; disjoint framework groups are not independent real applicants",
+    "Automatic proxy labels measure consistency with a declared rubric, not true job suitability",
+    "Level 2 is strong role/stack/scoped-duration signal; not proof all mandatory clauses are met",
+    "AND/OR/mixed-clause evidence is retained; unresolved logic is not silently converted to AND",
+    "50 selected JD subset only; no claim for 788-JD retrieval or unseen JD generalization",
+    "Metadata-derived labels and features share assumptions; compare rule baseline and ablations in Step 4"
+  ],
+  "lineage": {
+    "historical_v1_reference_count": 60,
+    "new_cv_edge_reasons": {
+      "historical_template_lineage": 48,
+      "template_group": 48
+    },
+    "new_group_sizes": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "new_groups": 12,
+    "old_v2_development_count": 60
+  },
+  "positives_per_cv_at_relevance_one": {
+    "test": {
+      "cv_01609a7ba98506d4bb4b4628b42292de_d08f9dd6840181542207fe9e": 10,
+      "cv_21833fc6ca78ebedff3b8969ebfa9b3d_4548a3cb3bfe95c00f6d6913": 10,
+      "cv_23402601f83dc2c879ac86c6d61a2f76_d2126cde10e539d42623b929": 10,
+      "cv_33564eba0bf289fb0b145f07a2761a6d_78c65aa9d8f366d005b2fbdb": 10,
+      "cv_340d36b98adee18619095eae3a31dd11_956c117e538434a47500df80": 10,
+      "cv_44b068c8d56d3096cd0edb76b4d4c734_33cb602e21d66807dc3ad7e2": 10,
+      "cv_4d310a04e5ac07d3229a05bffa3370cb_50f712f1d8ec80a41e6a9ac4": 10,
+      "cv_6d8d4f10b965b6bd4d012b6280bba94f_32be072bf8dcf6eae0493659": 10,
+      "cv_7efc25abe949644333c04b8723b271d0_a294eca3076cbce84fe17be1": 10,
+      "cv_aaaae697f71a4eccb8be70a1e2aeed05_4ddcf8bff3dc70442670b085": 10,
+      "cv_b972830aee6eeb19cdc1155dd9f43176_4a557057ab33bb6fce8e3a34": 10,
+      "cv_c00c496f01fa8f62edb2b3cbb38a6a94_2a0d02c53251fccef1a67367": 10,
+      "cv_d2e5378e9fd8261501553c2f674c9be4_f28a8c75828f057df0b9ba82": 10,
+      "cv_e42203a8ccc9ebb6f76ffd1f3bba3b41_c883a1afaf999b5279fecc74": 10,
+      "cv_fdc0a5fa389becdd9dc64c495e51a699_4163b83ffdb41a839fb5ff11": 10
+    },
+    "train": {
+      "cv_032ec4b8b07158080de8e773ed2af012_c65360d3bfc46a37692935be": 10,
+      "cv_08920d111c55738fb1997d688894c3bb_7a5e58e79b8cc2babda008c6": 10,
+      "cv_0d9ad2884e8a0a1432e8f789b5e51e94_597e4d180c915c44fb345466": 10,
+      "cv_12f096b1ec5c74101e5894cb4e830f3e_525bb9d04a41fe6eb489f197": 10,
+      "cv_1af3f35c583ab66507cd1d30d1079a1d_b4c827df655653829d1f7818": 10,
+      "cv_1c3a593fad3a7989a0c42507c955bab5_d98ca14e4f241c1e8ae5e750": 10,
+      "cv_321003e908f9133e84d3f4bf5fdf1f6c_47da8362b316c7863fe67bd3": 10,
+      "cv_3c52adb11f6d5df56c7db8d250f2e9a9_2099a1da3a1224f19e04725f": 10,
+      "cv_3f57c0d49907594ac0e95c34d7407c16_3190e21f26675063a4ad5a07": 10,
+      "cv_3fe100f7e2a7a42fbb9778c0f68a1faa_afd96ce1cdc0c0edb2eb4337": 10,
+      "cv_445079bfbba4a76ef846a6773d381b70_6e6c5f093a38c117d5c369fc": 10,
+      "cv_48cf56c46978495547e6b84752ddb651_1898c798638796280ea40797": 10,
+      "cv_60383337225a2e29a70ece46d1ff1a1b_bb685f43e61e804d660099a8": 10,
+      "cv_6b0120061887e544d34e4cf9d357c842_e8644829ad6837361ef4d93d": 10,
+      "cv_6c54eb235ab69b86c06d13ed2e9e55fd_cba653b1f9bd49a03c248323": 10,
+      "cv_73872ab65778853f3e5f30d7fd4aee33_b2c0ce34d52e6af31a7ca553": 10,
+      "cv_8dab9c1a28f93c5f79c8620e38eacf03_c6c20c6475e1167f2308e21b": 10,
+      "cv_917c6b88cefbb6cc5be714a3e2fa94d6_a7192d143eb6f420ddfb98e8": 10,
+      "cv_921cf7675ec8127eefe50964ea1d5b94_0a83759062180f6da9807636": 10,
+      "cv_9a060b54ba427f07977696a067c35851_a3252feb4c0138bbf14f8721": 10,
+      "cv_b001bed2351dc2a2c651cbf0776b8313_b8bd3bc83cf5ec886b848451": 10,
+      "cv_b700220518f2007c4e9a96250d125d74_2ff28f464bf49a65d84ea3da": 10,
+      "cv_b95aa1187a715e0cea96511b83f9321c_7ae1e4153e5935bd22fce06b": 10,
+      "cv_c88b5169716f9eb1b527bd73381b89b8_cc25e28f6e133e15e6dfdd59": 10,
+      "cv_cf26f3e0c1d3e15e8c20623fd4ab3769_30119134bbf64ae0ea6fc54f": 10,
+      "cv_d0cdd037b426fd13a26b07dfe93ba202_73b9800d38652acbb5afa4f5": 10,
+      "cv_d209d6dd12a9e5e71d7b9703b017b7fa_d2e6509cdfc84eff02453508": 10,
+      "cv_dde4cbdbdc5da83cacdbcd7967e7c2c9_4d950768c802c8bd7b4391d9": 10,
+      "cv_dffcc070c852fa039116464c986de970_98b33844518599c6d8b2087f": 10,
+      "cv_f01d581b09e77c920e3056e3c1ca6d31_9b14d4a81cb270d00b7389a4": 10
+    },
+    "validation": {
+      "cv_02ce0e3372e9f590bfe4f0b7fdbab78d_e0f60dea8337b9eb8b15dc37": 10,
+      "cv_0f4dd9edea2d26de4eb1b39e005e9e44_854b84f6bb1ed35f0b412e20": 10,
+      "cv_258501ee16b51ce918de2a4b1eb3bcc6_825a31d2fc77315169fb77fc": 10,
+      "cv_2e0e64dc5eabd60f36c1ef1001fb4a38_c7a28828e787a1362a7bab04": 10,
+      "cv_4706c4d1e79fad81c054b98ae353c40d_7c6b89caf3b9a5c6809d2bbe": 10,
+      "cv_5a46f1c5b81b92f2192ecf123e756f89_620d967ccd1d9672ca22fef3": 10,
+      "cv_5c5a45fe00d5c56b1bf4716b68b9758f_38c49139aa77ab5841f9cdd2": 10,
+      "cv_6458e7e1ffd206e56b44627fd7148cec_299817524081b88919140947": 10,
+      "cv_8bc8cafcc065c57fb71e9c01c0e5f586_7ed95e8c95912acb9f54b516": 10,
+      "cv_a65c74b2ee20703082627383b7ef3740_72b2d3683b51e4373b461226": 10,
+      "cv_bd22994181ffe40b20a70ca9cecd90fe_25cde567ef7cf727237efd66": 10,
+      "cv_d4d3bc0b3c2ae1342d3b9aa5079239c2_ae84e395fa022ad13700917e": 10,
+      "cv_d9dd7b164fdc0f94c037014c4808f79a_5dea39d85e2e228ac738a8d7": 10,
+      "cv_ec98da21f90fcb532288746d708b694f_ef06b4add5febbcbac6c862d": 10,
+      "cv_f3ec307846d841686bd0b178cb1df8ee_ce5bbaf9356fc8d6e50b45d4": 10
+    }
+  },
+  "preservation": {
+    "historical_runs_unchanged": 4,
+    "pilot_files_unchanged": 51,
+    "source_csv_unchanged": 3
+  },
+  "readiness": {
+    "blockers": [],
+    "checks": {
+      "catalogue_fifty": true,
+      "leakage": true,
+      "old_sixty_all_development": true,
+      "sixty_new_kept": true,
+      "structural_partition_ready": true,
+      "test_five_experience_kinds": true,
+      "test_five_roles": true,
+      "test_full_catalogue_grid": true,
+      "test_multiple_families": true,
+      "test_numeric_label_coverage": true,
+      "train_five_experience_kinds": true,
+      "train_five_roles": true,
+      "train_full_catalogue_grid": true,
+      "train_has_three_classes": true,
+      "train_multiple_families": true,
+      "train_numeric_label_coverage": true,
+      "twelve_new_groups": true,
+      "validation_five_experience_kinds": true,
+      "validation_five_roles": true,
+      "validation_full_catalogue_grid": true,
+      "validation_multiple_families": true,
+      "validation_numeric_label_coverage": true
+    },
+    "class_counts": {
+      "test": {
+        "0": 600,
+        "1": 125,
+        "2": 25
+      },
+      "train": {
+        "0": 1200,
+        "1": 262,
+        "2": 38
+      },
+      "validation": {
+        "0": 600,
+        "1": 130,
+        "2": 20
+      }
+    },
+    "final_test_evaluated": false,
+    "human_review_required": false,
+    "interpretation": "Technical prerequisites for a synthetic automatic-proxy-label experiment only",
+    "model_training_performed": false,
+    "pair_counts": {
+      "test": 750,
+      "train": 1500,
+      "validation": 750
+    },
+    "production_quality_established": false,
+    "ready_for_automatic_label_experiment": true
+  },
+  "reproducibility": {
+    "all_bytes_identical": true,
+    "files_identical": 302,
+    "manifest_sha256": "937e48cce8bccf7b185f29671efd1a2cf2cd2481f299dcb131473ac329ce5154",
+    "run_paths": [
+      "ml_data_runs/20261114_pretraining_v3_01",
+      "ml_data_runs/20261114_pretraining_v3_02"
+    ]
+  },
+  "sampling_diagnostic": {
+    "by_strategy": {
+      "same_role_and_stack": 60,
+      "scoped_experience_requirement_gap": 20,
+      "shared_skill_different_role": 60,
+      "shared_skill_different_stack": 40,
+      "uniform_random_without_replacement": 90
+    },
+    "catalogue_scope": "frozen_evaluation_catalogue",
+    "cv_count": 30,
+    "evaluation_scope": "Sampled training candidates; not the denominator for full-catalogue Recall@5",
+    "jd_count": 50,
+    "label_counts": {
+      "unlabeled": 270
+    },
+    "no_hard_candidate_is_a_negative": true,
+    "pairs": 270,
+    "partition": "train",
+    "ranking_k": 5,
+    "shortages": [
+      {
+        "cv_id": "cv_032ec4b8b07158080de8e773ed2af012_c65360d3bfc46a37692935be",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_032ec4b8b07158080de8e773ed2af012_c65360d3bfc46a37692935be",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_08920d111c55738fb1997d688894c3bb_7a5e58e79b8cc2babda008c6",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_0d9ad2884e8a0a1432e8f789b5e51e94_597e4d180c915c44fb345466",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_12f096b1ec5c74101e5894cb4e830f3e_525bb9d04a41fe6eb489f197",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_1c3a593fad3a7989a0c42507c955bab5_d98ca14e4f241c1e8ae5e750",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_321003e908f9133e84d3f4bf5fdf1f6c_47da8362b316c7863fe67bd3",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_3f57c0d49907594ac0e95c34d7407c16_3190e21f26675063a4ad5a07",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_3fe100f7e2a7a42fbb9778c0f68a1faa_afd96ce1cdc0c0edb2eb4337",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_3fe100f7e2a7a42fbb9778c0f68a1faa_afd96ce1cdc0c0edb2eb4337",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_445079bfbba4a76ef846a6773d381b70_6e6c5f093a38c117d5c369fc",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_48cf56c46978495547e6b84752ddb651_1898c798638796280ea40797",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_48cf56c46978495547e6b84752ddb651_1898c798638796280ea40797",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_60383337225a2e29a70ece46d1ff1a1b_bb685f43e61e804d660099a8",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_6b0120061887e544d34e4cf9d357c842_e8644829ad6837361ef4d93d",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_73872ab65778853f3e5f30d7fd4aee33_b2c0ce34d52e6af31a7ca553",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_73872ab65778853f3e5f30d7fd4aee33_b2c0ce34d52e6af31a7ca553",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_921cf7675ec8127eefe50964ea1d5b94_0a83759062180f6da9807636",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_9a060b54ba427f07977696a067c35851_a3252feb4c0138bbf14f8721",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_b001bed2351dc2a2c651cbf0776b8313_b8bd3bc83cf5ec886b848451",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_b700220518f2007c4e9a96250d125d74_2ff28f464bf49a65d84ea3da",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_b95aa1187a715e0cea96511b83f9321c_7ae1e4153e5935bd22fce06b",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_c88b5169716f9eb1b527bd73381b89b8_cc25e28f6e133e15e6dfdd59",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_c88b5169716f9eb1b527bd73381b89b8_cc25e28f6e133e15e6dfdd59",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_cf26f3e0c1d3e15e8c20623fd4ab3769_30119134bbf64ae0ea6fc54f",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_cf26f3e0c1d3e15e8c20623fd4ab3769_30119134bbf64ae0ea6fc54f",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_d0cdd037b426fd13a26b07dfe93ba202_73b9800d38652acbb5afa4f5",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_d209d6dd12a9e5e71d7b9703b017b7fa_d2e6509cdfc84eff02453508",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_d209d6dd12a9e5e71d7b9703b017b7fa_d2e6509cdfc84eff02453508",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_dde4cbdbdc5da83cacdbcd7967e7c2c9_4d950768c802c8bd7b4391d9",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_dffcc070c852fa039116464c986de970_98b33844518599c6d8b2087f",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      },
+      {
+        "cv_id": "cv_f01d581b09e77c920e3056e3c1ca6d31_9b14d4a81cb270d00b7389a4",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 1,
+        "strategy": "shared_skill_different_stack"
+      },
+      {
+        "cv_id": "cv_f01d581b09e77c920e3056e3c1ca6d31_9b14d4a81cb270d00b7389a4",
+        "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+        "requested": 2,
+        "selected": 0,
+        "strategy": "scoped_experience_requirement_gap"
+      }
+    ],
+    "strategy": "mixed"
+  },
+  "stop_boundary": "Before Step 4: no BM25/embedding scores, model training, model selection or test metrics",
+  "version": "pretraining-handoff-v1"
+}

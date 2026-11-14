@@ -1,0 +1,165 @@
+{
+  "adapter_version": "upstream-observation-v2",
+  "context_files": [
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/job_descriptions.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_clean.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_matching.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/profiles.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/relations.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/lineage.jsonl",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection_features.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/jd_extraction/jd_extraction_evidence.json",
+      "role": "jd_metadata_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/new_cv_batch/evidence.json",
+      "role": "synthetic_cv_assertion_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/new_cv_batch/design.json",
+      "role": "prospective_authoring_design"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/new_cv_batch/profiles.json",
+      "role": "new_career_sources"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/old_cv_original_snapshot.csv",
+      "role": "unmodified_legacy_cv_source"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/exposure_registry.json",
+      "role": "development_exposure_registry"
+    },
+    {
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/protocol.json",
+      "role": "frozen_pretraining_protocol"
+    }
+  ],
+  "dataset_version": "pretraining-independent-v3-d33e49f985ce",
+  "historical_cv_sources": [
+    {
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "protected-original-v1",
+      "path": "../../../ml_data_runs/20261113_cv_expansion_v1/synthetic_cvs/cvs.csv",
+      "version": "sha256:7b8e0ff00e651cc9e26cfaa69e2bb4e0423c2abe1e2d26f43cddcb5ed0896130"
+    }
+  ],
+  "near_threshold": 0.85,
+  "schema_version": 1,
+  "sources": [
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "extracted_experience_json",
+        "exposure": "import_exposure",
+        "external_id": "job_id",
+        "lineage": "import_lineage",
+        "quality_reasons": "import_quality_reasons",
+        "related_source_keys": "import_related_sources",
+        "role": "extracted_role",
+        "skills": "extracted_skills",
+        "source_group": "content_group_id",
+        "stack": "extracted_stack",
+        "text": "match_text"
+      },
+      "defaults": {
+        "is_synthetic": false,
+        "text_scope": "professional"
+      },
+      "kind": "jd",
+      "namespace": "it-job-posting-matching",
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/jd_extraction/canonical_jd_enriched.csv",
+      "source_attribution_status": "URL from repository historical report, not independently verified source revision",
+      "source_url": "https://github.com/SonPhatTranDeveloper/IT-Job-Posting",
+      "usage_terms": null,
+      "version": "sha256:c2c551729a837220e7f1c6df472862edb9f17d874e048c936ccc123b1cdedd19"
+    },
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "jobapply-synthetic-careers-v2",
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/old_cv_development.csv",
+      "source_url": null,
+      "usage_terms": "Fictional task-authored profiles; never real applicant data",
+      "version": "sha256:1a62360fdbb2e7f0029429fa88cc7a800f0abdcb57bb2bbfcbaa712994801fb9"
+    },
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "independent-careers-v3",
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/new_cv_batch/cvs.csv",
+      "source_url": null,
+      "usage_terms": "Fictional task-authored profiles; never real applicant data",
+      "version": "sha256:dcefb994be8ca7d068adfb1d38e9ecf4a4cd25423d2f626f6df191aa6b3df32d"
+    }
+  ]
+}

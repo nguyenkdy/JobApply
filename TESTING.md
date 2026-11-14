@@ -1,12 +1,54 @@
-# Biên bản kiểm tra JobApply
+# Kiểm thử
 
-## ML data preparation, upstream v2 & synthetic CV preview — 13/11/2026
+## Bước 4 — 14/11/2026
 
-**50 test unittest đạt trong 29,726 giây** trên Windows ML CPython 3.14.3: 11 baseline, 7 recommendation, 16 data pipeline, 10 upstream và 6 synthetic expansion (32 test chỉ dùng thư viện chuẩn chạy trong ~12 giây không cần gói ML). Test upstream và synthetic expansion bao phủ schema 11/25/23 cột thực tế, trạng thái `sections_found/FALSE/FALSE`, cờ mâu thuẫn/JSON sai/trạng thái lạ, ranh giới 79/80 ký tự sau chuẩn hóa, lỗi UTF-8/`#NAME?`, lineage rỗng hoặc sai URL/hash, tách tag nguồn Data Analyst với dấu hiệu chức danh, kiểm tra bằng chứng nguyên văn + offset của 60 CV giả lập, giữ `experience_json={}` cho 10 CV thiếu thời lượng, cấm thông tin nhạy cảm/PII, bất biến toàn bộ 3.062 JD khi import kết hợp, chống rò rỉ nhóm `template_group` trong preview split `known-jd` và từ chối chạy trên upstream run bị sửa.
+**74/74 test đạt**, 55,301 giây. Mười test mới ở `tests/ml/test_step4.py` kiểm metric có mẫu số undefined, tie theo ID, scaler chỉ fit train, lựa chọn không dùng baseline sinh nhãn, scope/cận kinh nghiệm, đủ lưới cặp, allowlist thông tin cá nhân, suy luận gói và từ chối artifact bị sửa trước deserialize. `pip check` đạt; Ruff đạt cho phạm vi ML mới và sửa đổi.
 
-Hai CLI run `upstream-observation-v2` hoàn tất ở `ml_data_runs/20261113_upstream_v2_01` và `_02` (**51/51 file giống byte**). Hai lần chạy `python -m ml_data synthetic-cvs` (`16/16` file giống byte) và hai lần chạy `python -m ml_data expand-preview` (`65/65` file giống byte) trên `20261113_upstream_v2_01` tạo 60 CV giả lập (12 CV × 5 nghề, 6 họ `template_group`), kết hợp với 3.062 JD v2 (giữ nguyên 888 keep / 65 duplicate / 2.109 quarantine và 154 record trong closure development) và xuất preview split `known-jd` (`30` train / `20` validation / `10` test CV trên `788` JD dùng chung; `90` cặp train ngẫu nhiên + `180` slot hard thiếu metadata JD, `15.760` cặp validation, `7.880` cặp test; `pair_files_created=0`, `labels_created=0`, `final_test_ready=false`). Kiểm tra giữ nguyên byte đạt cho 3 CSV nguồn và toàn bộ 51 file theo dõi trong `jobapply_pilot_v1/`. Chưa tạo nhãn gold, chưa train lại model hay chạy API/UI/Docker/VM.
+Đã chạy thực tế E5-base trên CPU, fit chín LR (ba nhóm feature × ba C), chọn trên validation rồi chấm test theo protocol đã ghi trước. Gói release suy luận trên hai CV validation giữ nguyên Top 5 và điểm (max delta 0); encode lặp hai CV train lệch tối đa 2,645e-7 ≤ 1e-6. Probe metadata cá nhân đạt trong phạm vi cấu trúc, không phải kiểm chứng fairness/PDF đầu cuối. Run chuẩn bị, ba CSV gốc, 51 file pilot không đổi; không chạy API/UI/Docker/VM. [Báo cáo từ run](docs/ml/step4_results.md).
 
-Ruff cho `ml_data`, `scripts/report-upstream.py`, `tests/ml/` và `git diff --check` đạt. Chi tiết/lệnh/giới hạn: [dataset pipeline](docs/ml/dataset_pipeline.md), [receipt upstream](docs/ml/reports/20261113-data-preparation.json), [danh sách lô JD](docs/ml/reports/20261113-upstream-jd-selection.json), [receipt preview CV + JD](docs/ml/reports/20261113-cv-jd-preview.json).
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data ml_experiment scripts/report-pretraining.py scripts/fetch-step4-encoder.py scripts/release-step4-model.py scripts/report-step4.py tests/ml/test_benchmark_prep.py tests/ml/test_automatic_labels.py tests/ml/test_pretraining.py tests/ml/test_step4.py
+if ($LASTEXITCODE -ne 0) { throw 'ML lint failed' }
+```
+
+## Sau dọn công cụ CV v2 — 14/11/2026
+
+**64/64 test đạt**, 34,589 giây. Ruff đạt trong phạm vi lệnh dưới; `git diff --check` sạch. Test lineage dùng fixture sáu hồ sơ thay bộ 60 CV v2; các kiểm tra chống trùng, ancestry, unknown và bảo toàn JD vẫn chạy. `check-pretraining` với run v3 hiện hành đạt **22/22 điều kiện**, đủ 1.500/750/750 cặp như trước.
+
+Đã xác minh manifest của bốn run đầu vào và hai run v3, cùng hash ba CSV nguồn/51 file pilot; không thay đổi dữ liệu. Đã kiểm tra CLI không còn lệnh dựng benchmark v2 và không còn import tới module/assets đã xóa. Không chạy lại chuẩn bị dữ liệu hoặc Bước 4. [Chi tiết dọn dẹp](docs/ml/retired_cv_cleanup.md).
+
+## Điều kiện trước Bước 4 — 14/11/2026
+
+**64/64 test unittest đạt**, 71,875 giây, trên môi trường ML Windows Python 3.14.3. Năm test mới kiểm tra CV/evidence tái tạo, mọi ngưỡng kinh nghiệm đúng scope và cận nghiêm ngặt, kỹ năng đã biết khác nhau so với metadata thiếu, AND/OR/ưu tiên và luồng chuẩn bị đầy đủ. Test cuối từ chối lưới CV×JD thiếu cặp dù đã cập nhật checksum nhất quán; không chỉ kiểm tổng số hàng.
+
+Hai lần `prepare-experiment` trên dữ liệu thật có **302/302 file giống byte**; `check-pretraining` đạt đủ 22 gate. Ba CSV nguồn, 51 file pilot và bốn run đầu vào lịch sử không đổi. Kết quả hiện hành: 60 CV mới, 12 nhóm, split 30/15/15, đủ 3.000 nhãn số tự động. Lô v2 cũ vẫn development. [Báo cáo từ run](docs/ml/pretraining_handoff.md).
+
+Ruff đạt với phạm vi dưới. Không chạy scoring/training/metric benchmark mới; unittest dùng fixture tạm. Không chạy API/UI/Docker/VM.
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-pretraining.py tests/ml/test_benchmark_prep.py tests/ml/test_automatic_labels.py tests/ml/test_pretraining.py
+if ($LASTEXITCODE -ne 0) { throw 'ML lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_data check-pretraining --artifact .\ml_data_runs\20261114_pretraining_v3_01
+if ($LASTEXITCODE -ne 0) { throw 'Pretraining checks failed' }
+```
+
+## Lịch sử kiểm toán benchmark v2 — 14/11/2026
+
+Các tên công cụ ở phần lịch sử bên dưới mô tả lượt kiểm toán trước dọn dẹp; `prepare-benchmark`, `training-readiness` và `report-benchmark-audit.py` đã được gỡ. Dùng `check-pretraining` cho lô hiện hành.
+
+**59/59 test unittest đạt** trên Windows ML Python 3.14.3. Bao phủ lineage v1→v2 nối thành một nhóm, giữ nguồn/pilot, scope kinh nghiệm, cận nghiêm ngặt, unknown không thành 0, không coi thực tập/dự án là thời gian nghề, ID trùng và evidence không đúng nguồn. Không còn test yêu cầu calibration/người review hoặc ép CV v2 đủ ba partition bằng cách đổi họ.
+
+Ruff đạt cho `ml_data`, `scripts/report-benchmark-audit.py`, `tests/ml/test_benchmark_prep.py` và `tests/ml/test_automatic_labels.py`. Quét rộng `tests/ml` còn 20 lỗi style có sẵn ở `test_baseline.py`/`test_recommend_run.py` (E402/E702); không sửa các phần baseline ngoài phạm vi.
+
+Đã chạy kiểm toán dữ liệu thật vào thư mục run mới, giữ nguyên nguồn và benchmark cũ. Cổng `training-readiness` phải trả exit 1 với **lô v2 cũ** vì chỉ có một nhóm CV sau khi giữ đủ ancestry, thiếu validation/test và còn nhãn thiếu bằng chứng. Đây là lỗi điều kiện dữ liệu, không phải chờ người chấm. Không train, không đóng gói model hoặc chạy API/UI/Docker/VM. [Báo cáo](docs/ml/benchmark_audit.md).
+
+Kết quả 55 test và các run chuẩn bị cũ là lịch sử; “tái tạo giống byte” không chứng minh split độc lập hoặc nhãn đúng ngữ nghĩa. Kiểm toán mới thay thế kết luận sẵn sàng huấn luyện của các bản chuẩn bị cũ.
 
 ## ML baseline — 12/11/2026
 
