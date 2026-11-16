@@ -1,0 +1,39 @@
+{
+  "version": "independent-careers-v3",
+  "created_on": "2026-11-14",
+  "generation_cohort": "single-ai-author-new-career-cohort-20261114",
+  "is_synthetic": true,
+  "expected_count": 60,
+  "roles": ["Backend Python", "Backend Java", "Frontend", "DevOps/Cloud", "QA/Testing"],
+  "families": {
+    "timeline": "Chronological career notes with distinct phases and a separate current remit.",
+    "interview": "Question and first-person answer profile; work, concrete decision and uncertainty are separate answers.",
+    "evidence_matrix": "Capability/evidence/limit rows, with career duration stated outside the matrix.",
+    "product_brief": "Product problem, delivery context, implementation and acceptance narrative.",
+    "contribution_ledger": "Numbered contribution ledger, separating own contribution from team ownership.",
+    "handover_inventory": "Inventory of delivered artifacts, operational instructions and exclusions.",
+    "engineering_journal": "Short journal entries about successive investigation and implementation episodes.",
+    "decision_record": "Decision record: options, choice, consequence, evidence and duration statement.",
+    "workflow_walkthrough": "End-to-end workflow walkthrough: input, processing, failure branch and output.",
+    "capability_boundary": "Can do / done in practice / still unknown profile, written as a capability boundary.",
+    "milestone_cards": "Milestone cards with acceptance evidence and remaining follow-up, not a work chronology.",
+    "service_retrospective": "Retrospective structured around users, constraints, service changes and lessons."
+  },
+  "authoring_policy": [
+    "New source scenarios and professional situations, not variants of the prior sixty CVs or six pilot CVs.",
+    "Five profiles per family, one per role; employment/project/internship/contract/unknown planned before text authoring.",
+    "Family identity denotes the actual shared writing framework; all five siblings stay together.",
+    "No target JD, ranking or desired relevance label is an authoring input. Renderer accepts these assets only.",
+    "Each factual skill and duration points to literal authored evidence. Unknown is omitted; role time does not imply technology time.",
+    "All families share one AI author/cohort. Disjoint template groups are an operational leakage control, not independent real applicants."
+  ],
+  "protocol": {
+    "seed": 20261113,
+    "ratios": [0.6, 0.2, 0.2],
+    "catalogue": "unchanged 50 IDs from 20261113_benchmark_v2/run_08/split/eval_catalogue.json",
+    "training": "full 50-JD census per train CV; also save random/hard candidate subset for sampling diagnostics",
+    "validation_test": "full 50-JD census, fixed before any model scores",
+    "label_target": "automatic role/stack/scoped-duration compatibility proxy v3; not verified suitability",
+    "stop": "before text scoring, model fitting, validation model selection or test metrics"
+  }
+}

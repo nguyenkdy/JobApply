@@ -1,5 +1,7 @@
 # Thử CV–JD: 50 JD và 6 CV giả lập
 
+> Tài liệu lịch sử giai đoạn BM25. Hiện đã có embedding/classifier; xem [README chính](../README.md) và [Mốc 0](../docs/ml/baseline.md). CLI baseline/audit hiện tạo thư mục run mới và từ chối output đã tồn tại; lệnh `--output-dir results` bên dưới không dùng để chạy lại đè lịch sử.
+
 Đã chạy keyword overlap và BM25 trên 50 JD chọn từ jobs_matching.csv. Đây là thử nghiệm offline;
 chưa gắn vào chức năng upload CV của web, chưa import JD vào database, chưa train classifier/LTR.
 Chưa có nhãn phù hợp do người đánh giá cung cấp, nên chưa tính Recall@k/NDCG@k.

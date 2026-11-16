@@ -1,0 +1,121 @@
+{
+  "reason": "User requested deletion of rejected 200-CV shared-template cohort and unused dedicated tooling",
+  "cv_count": 200,
+  "actual_template_groups": 1,
+  "retired_directories": [
+    {
+      "path": "ml_data_assets/expanded_cv_v5",
+      "files": 2,
+      "bytes": 369770,
+      "manifest_sha256": null
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_reports_v5",
+      "files": 2,
+      "bytes": 10549,
+      "manifest_sha256": null
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_01",
+      "files": 106,
+      "bytes": 41963744,
+      "manifest_sha256": "3ac8d2613fb3ab5be0938ede1aba6a103e675cfc46e970c6f3d867eeda86e0c0"
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_02",
+      "files": 106,
+      "bytes": 41963744,
+      "manifest_sha256": "3ac8d2613fb3ab5be0938ede1aba6a103e675cfc46e970c6f3d867eeda86e0c0"
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_03",
+      "files": 106,
+      "bytes": 34945485,
+      "manifest_sha256": "0eb27eaa71c7be933d0b84b5ce8fe66c7e2487a5a1960205b2e5bb45fa2a26d4"
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_04",
+      "files": 106,
+      "bytes": 34947051,
+      "manifest_sha256": "8ba912d76a692b88b41a94ee85220545259aa6e3765a9fcd1764eb09863be1bf"
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_05",
+      "files": 106,
+      "bytes": 34947051,
+      "manifest_sha256": "8ba912d76a692b88b41a94ee85220545259aa6e3765a9fcd1764eb09863be1bf"
+    },
+    {
+      "path": "ml_data_runs/20261116_expanded_cv_v5_corrected_assets",
+      "files": 2,
+      "bytes": 369770,
+      "manifest_sha256": null
+    }
+  ],
+  "protected_input_hashes": {
+    "job_descriptions.csv": "52801f88a4f4273a519936823cd74c98d8313e59034b60c42108465df87fd852",
+    "jobapply_pilot_v1/JobApply_TienDo_2026-11-10.md": "445e99a136441f23d1b6b4de5b99a60cb16a47e9b44c73b2f7789c13463b40ae",
+    "jobapply_pilot_v1/README_pilot.md": "73a82fcf335966c75a1398ae0cd6bae9fe101228bafb25baae0937e140bd146e",
+    "jobapply_pilot_v1/audit_pilot.py": "6b17ffcd8a1c16711f6385708882aec8af3ac474cb722d30bcb15a9a68d197ca",
+    "jobapply_pilot_v1/baseline_common.py": "ecfd4c27575a315aeea7f4cc777a400d119e3fd8e44d7be47e1654c9f38918fc",
+    "jobapply_pilot_v1/compare_embeddings.py": "786ce9d47daa34389c9f152a168c9ce6796ba47cec15eae199fd2245288beaae",
+    "jobapply_pilot_v1/cvs_synthetic.csv": "194719035230f844f940db698c996c518178cf729341804061cd20b09e15fbfd",
+    "jobapply_pilot_v1/encoder.lock.json": "88d75f2570fc95db50d089da6c90494e2f719c30282375a3b07d5a06cb90c66b",
+    "jobapply_pilot_v1/evaluate_top5.py": "011fb350711c5ec048f01ac58d11eaccbb196bf02e781e23535e8c906fce1054",
+    "jobapply_pilot_v1/evaluate_topk.py": "c41d13d3befbe8a1b6cbb4f868581c8799d4962dae9d2dacd0136f59fa7b1cff",
+    "jobapply_pilot_v1/jobapply_experience_v2/HUONG_DAN.md": "0f7a66ccf981aec5e2d5a450b04fd7e49296880ac34df6d4767fdda2287661aa",
+    "jobapply_pilot_v1/jobapply_experience_v2/cv_experience.csv": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+    "jobapply_pilot_v1/jobapply_experience_v2/jd_experience.csv": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+    "jobapply_pilot_v1/jobapply_experience_v2/lexical_control_metrics.csv": "a56fd48da0222e8e054fa526e739666b1e65031a06f382923f17e961ccf63bf4",
+    "jobapply_pilot_v1/jobapply_experience_v2/recommend.py": "bb7d4659bd68bd536b2cd9511ef414cf76462c0fd8c7622fedd70e0f6a06b388",
+    "jobapply_pilot_v1/jobapply_experience_v2/run_experiment.py": "dd867fadb0c767131961b40df3392ce199eff549160d90b19a334d8a3568d125",
+    "jobapply_pilot_v1/jobapply_experience_v2/train_matcher.py": "298b4a61f80f448102327ec8b9f9b437e2890c3d24c373cd2ad24ead4a7e7ee3",
+    "jobapply_pilot_v1/jobs_pilot.csv": "82b6949d841a8cf9685bcd9313fd0041a5e45d01a80039b51369c91ee162fa1b",
+    "jobapply_pilot_v1/judgments_ai_draft.csv": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+    "jobapply_pilot_v1/pilot_edits.csv": "08944389cea6fed9acc1b62746c2cf949a8469b77b01becac42140f295ff1ad5",
+    "jobapply_pilot_v1/prepare_pilot.py": "4f76218387ba0a0f3a66cc949c2dae17dc6da01046c662cbfaf5fa373ace9263",
+    "jobapply_pilot_v1/requirements-ml-win-py314.lock.txt": "c223fb7aace377755b382ab95464b9c44f893e75a2106a4598608ce5404f7faa",
+    "jobapply_pilot_v1/results/audit_report.json": "dae8eda890859705b8824c17c99488f17728810e036eddcdf1bf52bdf0371031",
+    "jobapply_pilot_v1/results/embedding_vs_bm25.csv": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+    "jobapply_pilot_v1/results/embedding_vs_bm25_backup_20261110_163750.csv": "54af57ddff2ee391fbba46c41886518ff6627e350c3533de35bb52b41d13ae20",
+    "jobapply_pilot_v1/results/experience_v2/experience_classifier.joblib": "f6e22fb1d63da32f025bf06c32ff15ba7287c9c0f93ca62062e3dbe3259ce43c",
+    "jobapply_pilot_v1/results/experience_v2/experience_pairs.csv": "c3adba788625dd06b3a907a1ef20e329448ec2b1e00a31858e350324e3334b2c",
+    "jobapply_pilot_v1/results/experience_v2/held_out_predictions.csv": "1f5dbbe031804b3a2da2faf913516e4d03d860381303d977f560c577f2084588",
+    "jobapply_pilot_v1/results/experience_v2/macro_metrics.csv": "84b8d8ae60ee58b4fc04c82ab49ad5c19e819074b9d23213d5f50317cbe5a28f",
+    "jobapply_pilot_v1/results/experience_v2/metrics_by_cv.csv": "9c916b40b5a85e006b6690321e77cc8efdc84afc4bb2f9ce4cf55c90b83842c9",
+    "jobapply_pilot_v1/results/experience_v2/run_info.json": "1601c01d8d996beabc2b2d86953268535112686a8abe9a75294ae728adfc20b4",
+    "jobapply_pilot_v1/results/fairness_probe.csv": "e65f0e60c166da165aa338d28f263622e6ca289dc445228d8b4038e96a702a67",
+    "jobapply_pilot_v1/results/hard_pair_candidates.csv": "598d74fb4f8fe088cf879837b5fa49f07bca46362b33f5abf419ebc1d0979407",
+    "jobapply_pilot_v1/results/judgments_template.csv": "5dbdcbca1c58aefdb4d58583c4c6cf432dcb10246d9b181ff52abc38830007d0",
+    "jobapply_pilot_v1/results/rankings_all.csv": "82e179a4bf0d6d341e0f95fcc55a940002f2661b7b346fd356ae7a6cc45eb740",
+    "jobapply_pilot_v1/results/run_report.json": "e0aae7e2283183f5100b5b4b9602e44f0a68cbf166014f7bc400371ad5bc5973",
+    "jobapply_pilot_v1/results/supervised/held_out_predictions.csv": "b407e56fe746c457fd9c00a34b49e29892f2d8a40ebf707b5ad5be4918c99946",
+    "jobapply_pilot_v1/results/supervised/match_classifier.joblib": "4df8f4f3294150a75969d67779321cf49867e8eb971c5fed24f762b548e761a0",
+    "jobapply_pilot_v1/results/supervised/metrics_by_cv.csv": "c0d15b383e4f43fd57129b13aa05f90e4415e68834b6ca5923e90e5250bccf9d",
+    "jobapply_pilot_v1/results/supervised/training_pairs.csv": "5c75ed7a7d49a743a79faa586fab3a1928aff8c58613c03ad4950e6e9cd0bced",
+    "jobapply_pilot_v1/results/top_matches.csv": "24a8ef548b7998c977aa66e9cfcbe041bc2811d96cb2d55fe783b1093855e8b3",
+    "jobapply_pilot_v1/run_artifacts.py": "5fba3a86a5c721f00390fbbbe639c552bcc3a71433d9171eb5bab163fa8cdc6a",
+    "jobapply_pilot_v1/run_baseline.py": "3201ba0de61e9e1e7214bd580d96774d22e376ba201658b2809b3726d87b92f9",
+    "jobapply_pilot_v1/run_bm25.py": "96f51cd125b37f0b7f226e31f6a8135160d6118e9d4d7d5b7c68b0f8e69356f3",
+    "jobapply_pilot_v1/selection_manifest.csv": "2f0ec0b6c5bf98adfd30df2ed9ce44eb2e96ec690ebb36947713d3cfe0d7ecf9",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_01.txt": "09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_02.txt": "e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_03.txt": "0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_04.txt": "ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_05.txt": "c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7",
+    "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_06.txt": "82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b",
+    "jobapply_pilot_v1/train_matcher.py": "d86d88ec6404df219006a349ea8699abf61af8d8273a03355c492cb7f2fd669e",
+    "jobs_clean.csv": "a9308c6eb4a59b7acf6b8a0996158b0e396e4e27040d9bc0ac5d81e1234638d3",
+    "jobs_matching.csv": "2f77164049d1e29788c3b68bdc017836ffdbc3d96b8def723c1f5dc4d32fb4ab"
+  },
+  "preserved_manifests": {
+    "20261116_jd_catalogue_v1_01": "a48e8cc03d494fc9bb0c62aeab9cfe7bc112e033a17e97bec70d9cb7c8390808",
+    "20261116_jd_catalogue_v1_02": "a48e8cc03d494fc9bb0c62aeab9cfe7bc112e033a17e97bec70d9cb7c8390808",
+    "20261116_jd_metadata_v4_03": "a02bb174619e3edb3680b75e1fb96e7ba7c2052ff5e9e7bac710544b61927ab3",
+    "20261116_jd_metadata_v4_04": "a02bb174619e3edb3680b75e1fb96e7ba7c2052ff5e9e7bac710544b61927ab3",
+    "20261114_pretraining_v3_01": "937e48cce8bccf7b185f29671efd1a2cf2cd2481f299dcb131473ac329ce5154",
+    "20261114_step4_v1_01": "f9d6c2f84f457c6fe643093f12ebb4e3098834925bf440e527d91025d155f0c9"
+  },
+  "content_retained": false,
+  "labels_or_models_from_this_cohort": false
+}

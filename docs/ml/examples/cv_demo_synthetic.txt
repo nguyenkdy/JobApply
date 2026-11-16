@@ -1,0 +1,6 @@
+Hồ sơ chuyên môn giả lập dành riêng cho demo, không phải CV của người thật.
+Backend Developer với 18 tháng phát triển dịch vụ Python và FastAPI.
+Xây dựng REST API, xử lý xác thực và phân quyền, tối ưu truy vấn PostgreSQL.
+Viết unit test bằng pytest, review code qua Git, đóng gói ứng dụng bằng Docker.
+Dự án giả lập: API quản lý kho, theo dõi tồn kho và lịch sử giao dịch.
+Đọc hiểu tài liệu kỹ thuật tiếng Anh. Chưa cung cấp thời lượng riêng theo từng công nghệ.

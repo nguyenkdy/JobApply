@@ -1,0 +1,758 @@
+{
+  "data_analyst": {
+    "interpretation": "Source tags and literal title cues are separate candidate counts, not verified occupational labels",
+    "nonpilot_gate_passing": 0,
+    "pilot_related": 4,
+    "rows": [
+      {
+        "decision": "quarantine",
+        "job_id": "job_e4c27b1bf363f62c9854",
+        "pilot_related": false,
+        "selected": false,
+        "source_tag": true,
+        "title": "Analytics Engineer",
+        "title_cue": false
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_06be4da301218aead0a4",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior Data Analyst (SQL,Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_3d91bd66351c91e206c7",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "[HN/ ] Data Analyst (English/ MS Office)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_ce9d4b53148ccab5609b",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst – StoreFront eCommerce | K/year",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_309fd6597950042f67d7",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior MIS Specialist (Data Analyst, SQL, Python, Java)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_f276ea42265aab730cdf",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Associate Reporting Specialist (Data Analyst)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_60e8ded349354f397062",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst (SQL, Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_fa1e4b0bb4029f07128c",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analyst",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_db7d95cf020eb5437f89",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analytics Specialist (SQL, Oracle, Python)",
+        "title_cue": true
+      }
+    ],
+    "selected": 4,
+    "source_only": 1,
+    "source_tagged": 9,
+    "title_cued": 8
+  },
+  "dataset_version": "synthetic-careers-v2-jd-v2-extracted-d40807a4-500671da",
+  "extractor_version": "jd-rule-extractor-v1",
+  "final_test_ready": true,
+  "labeler_version": "evidence-criteria-labeler-v1",
+  "labels_created": 1808,
+  "labels_created_with_calibration": 1838,
+  "protocol": "known-jd",
+  "ranking_k": 5,
+  "seed": 20261113,
+  "step1_jd_extraction": {
+    "extractor_version": "jd-rule-extractor-v1",
+    "note": "Rule-based literal extraction with character offsets; unknown fields remain empty/{} and are never filled with zero.",
+    "pilot_evaluation": {
+      "evaluation_scope": "50 protected pilot JDs (development only; never used as test)",
+      "experience_detection": {
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "threshold_value_match_count": 40,
+        "threshold_value_match_rate": 0.9756,
+        "tp": 41,
+        "unknown_preserved_tn": 9
+      },
+      "extractor_version": "jd-rule-extractor-v1",
+      "pilot_jd_count": 50,
+      "role_accuracy": 0.96,
+      "role_correct": 48
+    },
+    "prospective_keep_coverage": {
+      "missing_experience": 212,
+      "missing_role": 308,
+      "missing_skills": 92,
+      "missing_stack": 166,
+      "total": 788,
+      "with_experience": 576,
+      "with_role": 480,
+      "with_skills": 696,
+      "with_stack": 622
+    },
+    "prospective_keep_roles": {
+      "AI/ML Engineer": 31,
+      "Backend .NET": 21,
+      "Backend Golang": 5,
+      "Backend Java": 110,
+      "Backend Node.js": 2,
+      "Backend PHP": 6,
+      "Backend Python": 19,
+      "Business Analyst": 27,
+      "Data Engineer": 15,
+      "DevOps/Cloud": 14,
+      "ERP/IS Specialist": 9,
+      "Embedded Engineer": 7,
+      "Frontend": 96,
+      "Game Developer": 18,
+      "Mobile": 46,
+      "QA/Testing": 40,
+      "Security Engineer": 6,
+      "UI/UX Designer": 8,
+      "unknown": 308
+    },
+    "total_jds": 3062,
+    "upstream_manifest_sha256": "e8c0d2b8ec774526d6441912cf4e07a085111f88df2c81dd2a422d8dfb13c37b"
+  },
+  "step2_cv_batch": {
+    "cv_count": 60,
+    "experience_kinds": {
+      "contract": 10,
+      "employment": 20,
+      "internship": 10,
+      "project": 10,
+      "unknown": 10
+    },
+    "exposure": "prospective",
+    "is_synthetic": true,
+    "labels_created": 0,
+    "limitation": "One AI author/cohort; template-disjoint is not independent real-applicant validation",
+    "roles": {
+      "Backend Java": 12,
+      "Backend Python": 12,
+      "DevOps/Cloud": 12,
+      "Frontend": 12,
+      "QA/Testing": 12
+    },
+    "source_groups": 60,
+    "template_groups": 6
+  },
+  "step2_cv_grouping": {
+    "development_groups": 0,
+    "groups": 6,
+    "pilot_connected_groups": 0,
+    "source_groups": 60,
+    "template_groups": 6
+  },
+  "step2_distributions": {
+    "test": {
+      "cv_count": 10,
+      "cv_ids": [
+        "CVX_DO_08",
+        "CVX_DO_10",
+        "CVX_FE_06",
+        "CVX_FE_08",
+        "CVX_JV_04",
+        "CVX_JV_08",
+        "CVX_PY_10",
+        "CVX_PY_12",
+        "CVX_QA_08",
+        "CVX_QA_12"
+      ],
+      "experience_kinds": {
+        "contract": 2,
+        "employment": 4,
+        "internship": 1,
+        "project": 1,
+        "unknown": 2
+      },
+      "group_count": 1,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 2,
+        "backend python": 2,
+        "devops/cloud": 2,
+        "frontend": 2,
+        "qa/testing": 2
+      },
+      "scoped_months": {
+        "contract:backend python:15": 1,
+        "contract:devops:18": 1,
+        "employment:backend java:72": 1,
+        "employment:devops:84": 1,
+        "employment:frontend:54": 1,
+        "employment:kiểm thử phần mềm:60": 1,
+        "internship:frontend:5": 1,
+        "project:backend java:8": 1
+      },
+      "source_groups": 10,
+      "template_families": {
+        "incomplete_account": 10
+      }
+    },
+    "train": {
+      "cv_count": 30,
+      "cv_ids": [
+        "CVX_DO_03",
+        "CVX_DO_05",
+        "CVX_DO_06",
+        "CVX_DO_07",
+        "CVX_DO_09",
+        "CVX_DO_12",
+        "CVX_FE_02",
+        "CVX_FE_03",
+        "CVX_FE_04",
+        "CVX_FE_05",
+        "CVX_FE_07",
+        "CVX_FE_11",
+        "CVX_JV_02",
+        "CVX_JV_07",
+        "CVX_JV_09",
+        "CVX_JV_10",
+        "CVX_JV_11",
+        "CVX_JV_12",
+        "CVX_PY_02",
+        "CVX_PY_04",
+        "CVX_PY_05",
+        "CVX_PY_06",
+        "CVX_PY_07",
+        "CVX_PY_09",
+        "CVX_QA_01",
+        "CVX_QA_04",
+        "CVX_QA_07",
+        "CVX_QA_09",
+        "CVX_QA_10",
+        "CVX_QA_11"
+      ],
+      "experience_kinds": {
+        "contract": 6,
+        "employment": 9,
+        "internship": 5,
+        "project": 5,
+        "unknown": 5
+      },
+      "group_count": 3,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 6,
+        "backend python": 6,
+        "devops/cloud": 6,
+        "frontend": 6,
+        "qa/testing": 6
+      },
+      "scoped_months": {
+        "contract:backend java:12": 1,
+        "contract:backend java:20": 1,
+        "contract:backend python:9": 1,
+        "contract:devops:10": 1,
+        "contract:kiểm thử phần mềm:16": 1,
+        "contract:kiểm thử phần mềm:9": 1,
+        "employment:backend java:42": 1,
+        "employment:backend java:60": 1,
+        "employment:backend python:36": 1,
+        "employment:backend python:48": 1,
+        "employment:devops:48": 1,
+        "employment:frontend:30": 1,
+        "employment:frontend:36": 1,
+        "employment:kiểm thử phần mềm:18": 1,
+        "employment:kiểm thử phần mềm:30": 1,
+        "internship:backend python:3": 1,
+        "internship:backend python:6": 1,
+        "internship:devops:4": 1,
+        "internship:devops:6": 1,
+        "internship:frontend:4": 1,
+        "project:backend python:7": 1,
+        "project:devops:5": 1,
+        "project:frontend:3": 1,
+        "project:frontend:6": 1,
+        "project:kiểm thử phần mềm:8": 1
+      },
+      "source_groups": 30,
+      "template_families": {
+        "contract_handover": 10,
+        "internship_log": 10,
+        "personal_portfolio": 10
+      }
+    },
+    "validation": {
+      "cv_count": 20,
+      "cv_ids": [
+        "CVX_DO_01",
+        "CVX_DO_02",
+        "CVX_DO_04",
+        "CVX_DO_11",
+        "CVX_FE_01",
+        "CVX_FE_09",
+        "CVX_FE_10",
+        "CVX_FE_12",
+        "CVX_JV_01",
+        "CVX_JV_03",
+        "CVX_JV_05",
+        "CVX_JV_06",
+        "CVX_PY_01",
+        "CVX_PY_03",
+        "CVX_PY_08",
+        "CVX_PY_11",
+        "CVX_QA_02",
+        "CVX_QA_03",
+        "CVX_QA_05",
+        "CVX_QA_06"
+      ],
+      "experience_kinds": {
+        "contract": 2,
+        "employment": 7,
+        "internship": 4,
+        "project": 4,
+        "unknown": 3
+      },
+      "group_count": 2,
+      "jd_catalogue_count": 788,
+      "missing_experience_kinds": [],
+      "roles": {
+        "backend java": 4,
+        "backend python": 4,
+        "devops/cloud": 4,
+        "frontend": 4,
+        "qa/testing": 4
+      },
+      "scoped_months": {
+        "contract:frontend:14": 1,
+        "contract:frontend:8": 1,
+        "employment:backend java:24": 1,
+        "employment:backend python:18": 1,
+        "employment:backend python:60": 1,
+        "employment:devops:30": 1,
+        "employment:devops:72": 1,
+        "employment:frontend:12": 1,
+        "employment:kiểm thử phần mềm:48": 1,
+        "internship:backend java:4": 1,
+        "internship:backend java:6": 1,
+        "internship:kiểm thử phần mềm:3": 1,
+        "internship:kiểm thử phần mềm:6": 1,
+        "project:backend java:5": 1,
+        "project:backend python:4": 1,
+        "project:devops:9": 1,
+        "project:kiểm thử phần mềm:4": 1
+      },
+      "source_groups": 20,
+      "template_families": {
+        "employment_history": 10,
+        "incident_case": 10
+      }
+    }
+  },
+  "step2_eval_catalogue": {
+    "by_role": {
+      "backend java": 10,
+      "backend python": 10,
+      "devops/cloud": 10,
+      "frontend": 10,
+      "qa/testing": 10
+    },
+    "external_ids": [
+      "job_4d8b875a42fa262dfb85",
+      "job_850f30645aeee45b2eb9",
+      "job_1dc92b422badcd6f370b",
+      "job_c6a8da82ede154684622",
+      "job_1ca8bd42a47192599986",
+      "job_e4c6891f785acaba218a",
+      "job_1b2701352a5f7643eb47",
+      "job_fabe43df78ab4c25efa6",
+      "job_75eb83cc04917f75a578",
+      "job_3c2866bdec86271cad10",
+      "job_c1ec107f51d344e808ab",
+      "job_077c9d8c8713ed7eb225",
+      "job_a3aaa5a31d3d79201ab3",
+      "job_1e963e83a6b4af0cebb8",
+      "job_bb562af5383eafee85a0",
+      "job_42ef7f0636a1205da778",
+      "job_0609aa4edc0aea28b065",
+      "job_948ca475295bf2bcecf3",
+      "job_d8fa1304d8d597050bdb",
+      "job_309de0439e14ddf3e706",
+      "job_078fe540350e8d2208b2",
+      "job_31d62f7acc6ed451b96c",
+      "job_94f1373cf5e1bfa57d27",
+      "job_378aff10652967b649bc",
+      "job_25d68bcb0e471296fcc1",
+      "job_278bc9bdcfe07f7bf2d4",
+      "job_16920af8f47d69720e1c",
+      "job_7ab21c90997d0941a25c",
+      "job_8b1b6296f60176972cbd",
+      "job_ebacf2b30e3c03578771",
+      "job_e4b63a6e0fae723d42e0",
+      "job_98ac4413fc2dd3678843",
+      "job_f33651cbb5c1aa9eb50f",
+      "job_85822e4f81e2088948c9",
+      "job_2dfd3e6ea1bc0d477358",
+      "job_0d458c786c8838c54e88",
+      "job_0c11cb4cc132b3fcb7c0",
+      "job_8acee6433b4647bdc70a",
+      "job_cea3ecaec5064df9d655",
+      "job_2303076d89774a6e12be",
+      "job_f9beaf964a68c36325f1",
+      "job_62de6e53ac9e826aed81",
+      "job_b5d96d17e6f73e2b6384",
+      "job_f4daa4f963e358d99574",
+      "job_54dd1a1478620e63bb01",
+      "job_3232304785f586358886",
+      "job_52705c4539b6c1e0f075",
+      "job_38587e975ce1d659b804",
+      "job_c6b77c0534f648ee9e0a",
+      "job_5663e4079daf9f9c59df"
+    ],
+    "per_role": 10,
+    "total_eval_jds": 50
+  },
+  "step2_import_summary": {
+    "dataset_version": "synthetic-careers-v2-jd-v2-extracted-d40807a4-500671da",
+    "development_groups": 114,
+    "distribution": {
+      "cv": {
+        "decisions": {
+          "keep": 60
+        },
+        "missing": {
+          "experience": 10
+        },
+        "roles": {
+          "backend java": 12,
+          "backend python": 12,
+          "devops/cloud": 12,
+          "frontend": 12,
+          "qa/testing": 12
+        },
+        "synthetic": {
+          "True": 60
+        },
+        "total": 60
+      },
+      "jd": {
+        "decisions": {
+          "exclude_exact_duplicate": 65,
+          "keep": 888,
+          "quarantine": 2109
+        },
+        "missing": {
+          "experience": 1220,
+          "role": 1246,
+          "skills": 564,
+          "stack": 914,
+          "template_group": 3062
+        },
+        "roles": {
+          "ai/ml engineer": 68,
+          "backend .net": 62,
+          "backend golang": 14,
+          "backend java": 372,
+          "backend node.js": 17,
+          "backend php": 37,
+          "backend python": 113,
+          "business analyst": 98,
+          "data analyst": 8,
+          "data engineer": 41,
+          "devops/cloud": 82,
+          "embedded engineer": 17,
+          "erp/is specialist": 21,
+          "frontend": 448,
+          "game developer": 45,
+          "mobile": 162,
+          "qa/testing": 178,
+          "security engineer": 14,
+          "ui/ux designer": 19,
+          "unknown": 1246
+        },
+        "synthetic": {
+          "False": 3062
+        },
+        "total": 3062
+      }
+    },
+    "duplicate_occurrences": 0,
+    "final_test_ready": false,
+    "groups": 2518,
+    "labels_created": 0,
+    "limitations": [
+      "Lexical near-duplicate heuristic, not semantic paraphrase detection",
+      "Source metadata/lineage and professional-text claim need review; not a privacy certifier",
+      "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"
+    ],
+    "records": 3122,
+    "source_rows": 3122
+  },
+  "step3_sampled_pairs": {
+    "calibration": {
+      "by_strategy": {
+        "development_random_fill": 2,
+        "same_role_candidate": 6,
+        "scoped_experience_requirement_gap": 6,
+        "shared_skill_different_role": 6,
+        "shared_skill_different_stack": 4,
+        "unknown_jd_experience": 6
+      },
+      "cv_count": 6,
+      "dev_jd_pool": 100,
+      "label_counts": {
+        "labeled": 30
+      },
+      "labeler_version": "evidence-criteria-labeler-v1",
+      "pairs": 30,
+      "partition": "development_calibration",
+      "purpose": "Evidence-based rubric calibration on development data only; not train/validation/test",
+      "relevance_counts": {
+        "0": 17,
+        "1": 9,
+        "2": 4
+      }
+    },
+    "test": {
+      "by_strategy": {
+        "catalogue_census": 500
+      },
+      "cv_count": 10,
+      "evaluation_scope": "Complete catalogue candidate grid, still unlabeled",
+      "jd_count": 50,
+      "label_counts": {
+        "labeled": 500
+      },
+      "labeler_version": "evidence-criteria-labeler-v1",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 500,
+      "partition": "test",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 421,
+        "1": 67,
+        "2": 12
+      },
+      "shortages": [],
+      "strategy": "census"
+    },
+    "total_benchmark_pairs": 1808,
+    "total_with_calibration": 1838,
+    "train": {
+      "by_strategy": {
+        "same_role_and_stack": 55,
+        "scoped_experience_requirement_gap": 50,
+        "shared_skill_different_role": 60,
+        "shared_skill_different_stack": 53,
+        "uniform_random_without_replacement": 90
+      },
+      "cv_count": 30,
+      "evaluation_scope": "Sampled training candidates; not the denominator for full-catalogue Recall@5",
+      "jd_count": 788,
+      "label_counts": {
+        "labeled": 308
+      },
+      "labeler_version": "evidence-criteria-labeler-v1",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 308,
+      "partition": "train",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 224,
+        "1": 68,
+        "2": 16
+      },
+      "shortages": [
+        {
+          "cv_id": "cv_00a42e948f340b18d98863b8d98eda44_f269255c7610fe3f358c7768",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 1,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_0a50ae857a7f2ae7c612a3c8bea73297_8ab9f21a306fd12843433e25",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_0c1f300a8d50546457d96184c860c1c2_cc8e48af1a93ee770572b2ed",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_1820eac334c26874a0cbbc5aa8b50068_275c7c82f56292963ea13806",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 1,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_35f10e2e905c4e42fe80588cebe60763_e04d6033db4fcbfd5fb49977",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_5e18c2f3b5d5bbdda90d7b8848a34089_093080251f7edb3e67a802f9",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_712ab660d8347a5b56b4dc56053333a7_642224a006f9df2c38c680b1",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_712ab660d8347a5b56b4dc56053333a7_642224a006f9df2c38c680b1",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_80142e4702e3c949ff62ba188fbd76fc_072276e71209f036b3e1a1c3",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "shared_skill_different_stack"
+        },
+        {
+          "cv_id": "cv_80142e4702e3c949ff62ba188fbd76fc_072276e71209f036b3e1a1c3",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        },
+        {
+          "cv_id": "cv_89ec1249a5817ec9366131c7da5f00cd_39f093eb89ad8ce1fc824072",
+          "reason": "not enough same-role/stack candidates; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "same_role_and_stack"
+        },
+        {
+          "cv_id": "cv_cd6cbe2ff9710cab07f9854be73d7a59_44452c78ce583156a18f1bb0",
+          "reason": "not enough distinct candidates with explicit metadata; no label inferred",
+          "requested": 2,
+          "selected": 0,
+          "strategy": "scoped_experience_requirement_gap"
+        }
+      ],
+      "strategy": "mixed"
+    },
+    "validation": {
+      "by_strategy": {
+        "catalogue_census": 1000
+      },
+      "cv_count": 20,
+      "evaluation_scope": "Complete catalogue candidate grid, still unlabeled",
+      "jd_count": 50,
+      "label_counts": {
+        "labeled": 1000
+      },
+      "labeler_version": "evidence-criteria-labeler-v1",
+      "no_hard_candidate_is_a_negative": true,
+      "pairs": 1000,
+      "partition": "validation",
+      "ranking_k": 5,
+      "relevance_counts": {
+        "0": 909,
+        "1": 71,
+        "2": 20
+      },
+      "shortages": [],
+      "strategy": "census"
+    }
+  },
+  "step3_split_audit": {
+    "counts": {
+      "cv": {
+        "test": 10,
+        "train": 30,
+        "validation": 20
+      },
+      "jd": {
+        "development": 100,
+        "excluded": 2174,
+        "shared": 788
+      }
+    },
+    "errors": [],
+    "final_test_ready": false,
+    "labels_available": false,
+    "leakage_check_passed": true,
+    "note": "Structural partition checks only; no verified labels, identity verification or semantic dedup guarantee",
+    "partition_ready": true,
+    "readiness_blockers": []
+  },
+  "verification": {
+    "calibration_pairs_manifest_sha256": "24646639440ea8c6ac981c0702ff9c95b6737995f1ad77eaa6b856a7518f07a1",
+    "cv_batch_manifest_sha256": "44d71ade47cb41e1ea6a9a0aaf188d4bb89c0ecf4a467f1d5a649b931050a063",
+    "dataset_manifest_sha256": "226e178317c23138d0553e3d61045fedac29cdeb4eed6e3d60dd1f155057b1e0",
+    "frozen_jd": {
+      "development_records": 154,
+      "enriched_metadata_fields": [
+        "role",
+        "skills",
+        "stack",
+        "experience"
+      ],
+      "identity_text_gate_exposure_identical": true,
+      "records": 3062
+    },
+    "jd_extraction_manifest_sha256": "8fed1cf64f62f13caa5120dc623cc3439287bdfdfc8636023e0199f80cbec4d2",
+    "pilot_tracked_files_unchanged": 51,
+    "source_csv_unchanged": 3,
+    "split_manifest_sha256": "269f26ee15be3f63d29e2aabd3223ce5433cee58f8d8f6e3fed367923a8515b4",
+    "test_pairs_manifest_sha256": "d5b168a3196ad5828ebfe949e4b348446a29b15077cf60416191260f153829f6",
+    "train_pairs_manifest_sha256": "1acfb1871dd8eb7fb520fff76683dc0df98f9253e9e5fe8c4d4ab716ba9d157f",
+    "upstream_manifest_sha256": "e8c0d2b8ec774526d6441912cf4e07a085111f88df2c81dd2a422d8dfb13c37b",
+    "validation_pairs_manifest_sha256": "f030a88dc661dcef51f8a1acf34ac86da85d4d17e3ee6e0c7195bc4e1395ef86"
+  },
+  "version": "benchmark-prep-steps-1-to-3-v2"
+}

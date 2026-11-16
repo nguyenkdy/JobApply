@@ -1,0 +1,2531 @@
+{
+  "distributions": {
+    "development": {
+      "banks": {},
+      "count": 0,
+      "experience_kinds": {},
+      "groups": 0,
+      "roles": {}
+    },
+    "excluded": {
+      "banks": {},
+      "count": 0,
+      "experience_kinds": {},
+      "groups": 0,
+      "roles": {}
+    },
+    "test": {
+      "banks": {
+        "education": 10,
+        "research_operations": 10,
+        "sports": 10
+      },
+      "count": 30,
+      "experience_kinds": {
+        "contract": 6,
+        "employment": 6,
+        "internship": 6,
+        "project": 6,
+        "unknown": 6
+      },
+      "groups": 3,
+      "roles": {
+        "ai/ml engineer": 3,
+        "backend .net": 3,
+        "backend java": 3,
+        "backend python": 3,
+        "data engineer": 3,
+        "devops/cloud": 3,
+        "frontend": 3,
+        "fullstack": 3,
+        "mobile": 3,
+        "qa/testing": 3
+      }
+    },
+    "train": {
+      "banks": {
+        "agriculture": 10,
+        "commerce": 10,
+        "energy": 10,
+        "hospitality": 10,
+        "nonprofit": 10,
+        "public_services": 10
+      },
+      "count": 60,
+      "experience_kinds": {
+        "contract": 12,
+        "employment": 12,
+        "internship": 12,
+        "project": 12,
+        "unknown": 12
+      },
+      "groups": 6,
+      "roles": {
+        "ai/ml engineer": 6,
+        "backend .net": 6,
+        "backend java": 6,
+        "backend python": 6,
+        "data engineer": 6,
+        "devops/cloud": 6,
+        "frontend": 6,
+        "fullstack": 6,
+        "mobile": 6,
+        "qa/testing": 6
+      }
+    },
+    "validation": {
+      "banks": {
+        "creative_production": 10,
+        "manufacturing": 10,
+        "transport": 10
+      },
+      "count": 30,
+      "experience_kinds": {
+        "contract": 6,
+        "employment": 6,
+        "internship": 6,
+        "project": 6,
+        "unknown": 6
+      },
+      "groups": 3,
+      "roles": {
+        "ai/ml engineer": 3,
+        "backend .net": 3,
+        "backend java": 3,
+        "backend python": 3,
+        "data engineer": 3,
+        "devops/cloud": 3,
+        "frontend": 3,
+        "fullstack": 3,
+        "mobile": 3,
+        "qa/testing": 3
+      }
+    }
+  },
+  "evidence": {
+    "duration_assertions": 106,
+    "skill_assertions": 451
+  },
+  "intake": {
+    "candidate_selection": {
+      "scoped_experience_requirement_gap": 72,
+      "shared_skill_different_role": 180,
+      "shared_skill_different_stack": 152,
+      "uniform_random_without_replacement": 600
+    },
+    "cv_count": 120,
+    "cv_development": 0,
+    "cv_excluded": 0,
+    "cv_groups": 12,
+    "declared_banks": 12,
+    "evaluation_pair_workload": {
+      "test": 23640,
+      "validation": 23640
+    },
+    "evaluation_pairs_materialized": false,
+    "final_test_ready": false,
+    "jd_groups": 698,
+    "labels_created": 0,
+    "lexical": {
+      "cross_bank_pairs": 6600,
+      "deleted_v5_text_comparison_performed": false,
+      "historical_cv_count": 186,
+      "historical_pairs": 22320,
+      "interpretation": "Word-trigram/whole-sentence diagnostics only; shared author and domain-bank confounding remain",
+      "maximum_cross_bank_jaccard": 0.0738255033557047,
+      "maximum_historical_jaccard": 0.03468208092485549,
+      "repeated_long_sentences_across_banks": 0,
+      "semantic_independence_established": false
+    },
+    "limitations": [
+      "Individually authored synthetic cohort; one AI author, not independently collected real CVs",
+      "Scenario-bank separation does not establish semantic independence; domain confounding remains",
+      "No comparison against erased v5 text; historical near checks only cover retained cohorts",
+      "Expanded taxonomy label guard remains: same/different title is not a 0/1/2 rubric",
+      "Data Analyst remains a research target; no eligible new positive JD coverage has been added"
+    ],
+    "models_trained": 0,
+    "new_cv_count": 90,
+    "pilot_files_unchanged": 51,
+    "preserved_cv_count": 30,
+    "prior_partitions_preserved": true,
+    "production_quality_established": false,
+    "sampling_shortages": 48,
+    "shared_jd_count": 788,
+    "source_csv_unchanged": 3,
+    "split": {
+      "test": 30,
+      "train": 60,
+      "validation": 30
+    },
+    "structural_partition_ready": true,
+    "train_candidate_pairs": 1004,
+    "version": "authored-cv-intake-v1"
+  },
+  "labeling": {
+    "by_cv": {
+      "cv_0187db245dff5ddee50fbfa5bdce2c4f_51248b9ec3f854503535957b": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 8,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "backend .net",
+        "total": 16
+      },
+      "cv_035e68fdf5472abb71b0da26f4ed9f6c_7ec0378b099536e6dc6c2fc6": {
+        "labels": {
+          "1": 22,
+          "unlabeled": 766
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 22,
+          "insufficient_affirmative_compatibility": 581,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_0459aced109321a859df0ea3dafbc32d_48a966d88784bb90787148d8": {
+        "labels": {
+          "1": 39,
+          "unlabeled": 749
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 39,
+          "insufficient_affirmative_compatibility": 564,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      },
+      "cv_0606abd3d11b4fb1cc6344d4b11ac03f_2b40621f698e63e34ba02b67": {
+        "labels": {
+          "1": 44,
+          "unlabeled": 744
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 44,
+          "insufficient_affirmative_compatibility": 559,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_0834d583a62104e6a728c948b0ab6c37_cfc614803cbaaafaabb20181": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 10,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "qa/testing",
+        "total": 16
+      },
+      "cv_08487aa4806ea20c2b4daa4540116375_bfc3b010d6efea3be5b90568": {
+        "labels": {
+          "1": 1,
+          "unlabeled": 15
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 1,
+          "insufficient_affirmative_compatibility": 14,
+          "outside_software_scope": 1
+        },
+        "role": "mobile",
+        "total": 16
+      },
+      "cv_0899a24bab7b4d74027732c89e13d85a_8d0a8899984261f89568a6f6": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 10
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 6,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "backend python",
+        "total": 16
+      },
+      "cv_0b0e86dceef1bc195bb2551eab18e3d3_04279f66f16f661a935ba93b": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_0c8b0906d07e991bf44c9cb966ec80ab_3e4462b54b38485699fdc888": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 10,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "ai/ml engineer",
+        "total": 16
+      },
+      "cv_0d28af0ee7050d3e7a03d1e0a8c6a13e_b6c24d61912e46e140438d73": {
+        "labels": {
+          "1": 8,
+          "unlabeled": 8
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 8,
+          "insufficient_affirmative_compatibility": 4,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "backend .net",
+        "total": 16
+      },
+      "cv_0e39d5cd6e196d1a69435197fc702541_0ca04cb844a1efda8950268c": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 10,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "qa/testing",
+        "total": 16
+      },
+      "cv_130a0f177c0c92defeca1269593e7f49_0af40ec15cfbbced7600de05": {
+        "labels": {
+          "1": 43,
+          "unlabeled": 745
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 43,
+          "insufficient_affirmative_compatibility": 560,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_17c405c8faebbe6e895ecaf6c5cf6762_7332ad76fce5032018faae45": {
+        "labels": {
+          "1": 110,
+          "unlabeled": 678
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 110,
+          "insufficient_affirmative_compatibility": 493,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_17ce97bede27c7dd7e314e6c004b95c5_3dee7c3d6bfab32ccfcaf169": {
+        "labels": {
+          "1": 79,
+          "unlabeled": 709
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 79,
+          "insufficient_affirmative_compatibility": 524,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_202794515828da68a94b6fb172dffa22_947e46e6e00b834732b30a56": {
+        "labels": {
+          "1": 43,
+          "unlabeled": 745
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 43,
+          "insufficient_affirmative_compatibility": 560,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_20d512cb39fd44072d26264a120a23b7_0b6a8abcd40905d71d27b75c": {
+        "labels": {
+          "1": 14,
+          "unlabeled": 774
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 14,
+          "insufficient_affirmative_compatibility": 589,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_21ca6aec6fab982dd5bc6ea3a582022b_5bbfe37d400eb82902ebac9b": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 9
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 6,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "backend java",
+        "total": 16
+      },
+      "cv_2571dc092c78fc2076b24ba45fba34d6_3919e52be74d2ee492aa4eda": {
+        "labels": {
+          "1": 111,
+          "unlabeled": 677
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 111,
+          "insufficient_affirmative_compatibility": 492,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_27a2acf9304f2624231a045dc182ba24_f3f459de9c169d4ea414ff70": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "devops/cloud",
+        "total": 16
+      },
+      "cv_2c28f1a8921115f4a76ae421d5f286da_6de8490d4c6f414e42a95cf0": {
+        "labels": {
+          "1": 8,
+          "unlabeled": 8
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 8,
+          "insufficient_affirmative_compatibility": 7,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "frontend",
+        "total": 16
+      },
+      "cv_2f9518b4730f1b0d0d56dd8dc7259b47_7a753b2ac928a1292bec7a27": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 10
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 9,
+          "outside_software_scope": 1
+        },
+        "role": "backend .net",
+        "total": 16
+      },
+      "cv_33c25f85e99798e02f334a6faf7c3269_b4e054d48ff949e0c2da46e1": {
+        "labels": {
+          "1": 10,
+          "unlabeled": 9
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 10,
+          "insufficient_affirmative_compatibility": 6,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "backend java",
+        "total": 19
+      },
+      "cv_38c0d1e45fd4c00ed7a864fef98cb70a_cda7c64bc794a19237f7680e": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 13
+        },
+        "role": "data engineer",
+        "total": 16
+      },
+      "cv_3919bf2e03913d4222e95b6c8da460da_40a20a0e45fc5909ca33ea6a": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 10,
+          "outside_software_scope": 2,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "backend python",
+        "total": 19
+      },
+      "cv_399ef9d31bd4f13a32d8a7b2149dea48_9b8b9b64f45875bfa836dfa1": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 15
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 10,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "data engineer",
+        "total": 19
+      },
+      "cv_3c5caa35fbb58c6a423a5b8a91684c97_060368f39a053a2870522106": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "frontend",
+        "total": 19
+      },
+      "cv_40097f20e4d2a14c45b6ef51c71e40e1_820c3884a53ef291807e816e": {
+        "labels": {
+          "1": 165,
+          "unlabeled": 623
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 165,
+          "insufficient_affirmative_compatibility": 438,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_45867ca402024d1a16a4428c757b7ecf_c3bc0bf18533c4caf54c30fd": {
+        "labels": {
+          "1": 39,
+          "unlabeled": 749
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 39,
+          "insufficient_affirmative_compatibility": 564,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      },
+      "cv_474df3e8ae3a4fe2f94502d9ef0c0502_ebf61198356779bc8e2910c8": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 10,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "backend java",
+        "total": 19
+      },
+      "cv_4a0a4095cd788cacaa890affb4e66736_f2e9fe795dffc645e25684a1": {
+        "labels": {
+          "1": 39,
+          "unlabeled": 749
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 39,
+          "insufficient_affirmative_compatibility": 564,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      },
+      "cv_4a3e3e816d942550ba94727d2acb9ef5_60efcaeabdf5ac79522d1c3d": {
+        "labels": {
+          "1": 44,
+          "unlabeled": 744
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 44,
+          "insufficient_affirmative_compatibility": 559,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_4aa722457a3328c6c67efbd2b1a07ef0_e915b2531dddb4cc10123ebe": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_4b1971728649ba8ee5b949f729db8aa6_84aed22318cc9d63747ba1ea": {
+        "labels": {
+          "unlabeled": 16
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 14,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "qa/testing",
+        "total": 16
+      },
+      "cv_4e392abc0b2f9e2c5461e4364acd0e42_09df8e8b051b6e9f9679b542": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 16
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 11,
+          "unknown_generic_or_conflicting_occupation": 5
+        },
+        "role": "ai/ml engineer",
+        "total": 19
+      },
+      "cv_4ea50c02102f132c77ae06997402c5dd_bd9924ca90d62ab3743b152b": {
+        "labels": {
+          "1": 10,
+          "unlabeled": 778
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 10,
+          "insufficient_affirmative_compatibility": 593,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_4fa2fe2345a203fc1447eb7a8bc0069d_9c0360caa1b18df6067c49d9": {
+        "labels": {
+          "1": 143,
+          "unlabeled": 645
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 143,
+          "insufficient_affirmative_compatibility": 460,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_5150f39e5fd3674e1d5e963c5e34d8b9_e267dd8eccd7799b4cfbc1be": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 16
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 16
+        },
+        "role": "data engineer",
+        "total": 19
+      },
+      "cv_51edd3bcf4b37ef271e58eeeb4e9188e_0a033224590aeddaf05a7504": {
+        "labels": {
+          "1": 20,
+          "unlabeled": 768
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 20,
+          "insufficient_affirmative_compatibility": 583,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_60860524362b7ce61286a0624bafcef3_3830d0f9ba4d61281b908a10": {
+        "labels": {
+          "1": 5,
+          "unlabeled": 14
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 5,
+          "insufficient_affirmative_compatibility": 11,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "backend .net",
+        "total": 19
+      },
+      "cv_617e8f2e0091deaea3cea675111590d4_56722cd3ddab3e29ef1668eb": {
+        "labels": {
+          "1": 193,
+          "unlabeled": 595
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 193,
+          "insufficient_affirmative_compatibility": 410,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_64340ecde1ed522a1c54b6900ab230aa_bd5a80f3dd6768a8ca2b67b0": {
+        "labels": {
+          "1": 193,
+          "unlabeled": 595
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 193,
+          "insufficient_affirmative_compatibility": 410,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_67b909f121fa20a83eafeaa489f31097_d754cb9a09fbe57fde588493": {
+        "labels": {
+          "1": 128,
+          "unlabeled": 660
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 128,
+          "insufficient_affirmative_compatibility": 475,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_6f805eae8b70f9db48a38a9a14b22eb3_0dd8d19f6fce080503ebe13f": {
+        "labels": {
+          "1": 28,
+          "unlabeled": 760
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 28,
+          "insufficient_affirmative_compatibility": 575,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_70608aa40099dad43526f95c81575f7d_48673f183b440e84d75938df": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 16
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "devops/cloud",
+        "total": 19
+      },
+      "cv_716be7f83fd9d27cff86e4a9e01305eb_2fcd7980d8fff4fcc2fc6132": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 7,
+          "unknown_generic_or_conflicting_occupation": 6
+        },
+        "role": "data engineer",
+        "total": 16
+      },
+      "cv_71b9dffc7edaae361f7a38d2c8b35e93_9edca350e385fe97345c175f": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_7322c5c34854963210fd4860c364fe29_acc1359114541bb6d4f1d2a5": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_748967ad0e29519729e81317ef6e2479_7a6a9e70279039ff20ceb91a": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 10
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 3,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 6
+        },
+        "role": "fullstack",
+        "total": 16
+      },
+      "cv_76131c47a153d3e9c31421e27a4cc1ff_7cf79f50d4e0b717fd26a600": {
+        "labels": {
+          "1": 140,
+          "unlabeled": 648
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 140,
+          "insufficient_affirmative_compatibility": 463,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_765216170feb9a1902a2c1f417d53e01_d27456eb5b04442421d6792b": {
+        "labels": {
+          "0": 1,
+          "1": 183,
+          "unlabeled": 604
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 183,
+          "explicit_mandatory_contradiction": 1,
+          "insufficient_affirmative_compatibility": 419,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_7723f25585705a7ea31fa5190e5534b5_032488e050f6c15392af87f5": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "ai/ml engineer",
+        "total": 16
+      },
+      "cv_7b0a291cb7016ed02e7ac0cab27a2cb7_ebfd4dc2b5ebe8147847ee28": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "fullstack",
+        "total": 19
+      },
+      "cv_7c8a093ee87440bf6bc7de8231242e0c_8ab84af82bb3514966eb55c3": {
+        "labels": {
+          "1": 5,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 5,
+          "insufficient_affirmative_compatibility": 6,
+          "unknown_generic_or_conflicting_occupation": 5
+        },
+        "role": "backend python",
+        "total": 16
+      },
+      "cv_7e9da0e52b64168fec719482c12bc1f5_698601550868665319949c86": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 15
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 12,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "backend .net",
+        "total": 19
+      },
+      "cv_7eedfa71d9339d836d5fa3f803fa7028_89f5563348337c736c3643ea": {
+        "labels": {
+          "1": 42,
+          "unlabeled": 746
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 42,
+          "insufficient_affirmative_compatibility": 561,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_81473077e37bb7c011c0dc9e49673ccc_54d1345a91ff4e9838889c7b": {
+        "labels": {
+          "1": 21,
+          "unlabeled": 767
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 21,
+          "insufficient_affirmative_compatibility": 582,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_81ab90250e27fd1c59e3ee0a2f575684_ccb21f977eac073f1af2e484": {
+        "labels": {
+          "1": 170,
+          "unlabeled": 618
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 170,
+          "insufficient_affirmative_compatibility": 433,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_852a911f06ac3f2e276b24b901260d93_89c012413961b901070b7301": {
+        "labels": {
+          "1": 34,
+          "unlabeled": 754
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 34,
+          "insufficient_affirmative_compatibility": 569,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_8700741fba3a12d119b4d86f6ff17958_b8542846341752328fd5e167": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 14
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 5
+        },
+        "role": "backend python",
+        "total": 18
+      },
+      "cv_8bb26800fb29e1621b9fba1ea7394294_2245ae5df8eddd6650039974": {
+        "labels": {
+          "1": 165,
+          "unlabeled": 623
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 165,
+          "insufficient_affirmative_compatibility": 438,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_8eab0b621c732c1b6745f055bf369a73_296746717a034e6be3ceae43": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 16
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "devops/cloud",
+        "total": 19
+      },
+      "cv_94ddb3807b927bebb1d2eacfa56cdb6a_0089dadeab556677e85e3a23": {
+        "labels": {
+          "1": 2,
+          "unlabeled": 15
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 2,
+          "insufficient_affirmative_compatibility": 11,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "qa/testing",
+        "total": 17
+      },
+      "cv_9503f4a53dd1e0534678e19afa7dc5b0_f24c2f6981b83a4ad97fbbea": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_97b0fef7ed7c8cb31b997c3545a8bd68_6a4230d89dee39f39e8952b7": {
+        "labels": {
+          "1": 179,
+          "unlabeled": 609
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 179,
+          "insufficient_affirmative_compatibility": 424,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_9e2e328b204f493bf451fa9b1023c669_3dcefa406f2cd8b949b3c3df": {
+        "labels": {
+          "1": 5,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 5,
+          "insufficient_affirmative_compatibility": 9,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "frontend",
+        "total": 16
+      },
+      "cv_9f60814fd4a5f37d6e79ba423632e95a_c013b85153cc6b5cb5c7e5e5": {
+        "labels": {
+          "1": 51,
+          "unlabeled": 737
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 51,
+          "insufficient_affirmative_compatibility": 552,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      },
+      "cv_a03a45c3ff8e21046cae956249c307af_d1d33be9f8ccf683565fb3fb": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "devops/cloud",
+        "total": 16
+      },
+      "cv_a07cf983ac73788ac552764625300970_9aae4c9f8726e65037ffe21b": {
+        "labels": {
+          "1": 28,
+          "unlabeled": 760
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 28,
+          "insufficient_affirmative_compatibility": 575,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_a25f508465697f7cc963aa3543ac475d_a4ab351404475d77d09ca079": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 8,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "fullstack",
+        "total": 19
+      },
+      "cv_a33c0509e60f262e1640affa2dc609c7_f2342d195e7b73f37a46f410": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 11,
+          "outside_software_scope": 1
+        },
+        "role": "fullstack",
+        "total": 19
+      },
+      "cv_a49683d7e41871cceb57f6eca773a17e_e52ef3698ee2e72bca2ef223": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_a67ea1b7c922066b9a385df4e1a29bb4_b8932a6f0dd0af53dbbe0534": {
+        "labels": {
+          "1": 154,
+          "unlabeled": 634
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 154,
+          "insufficient_affirmative_compatibility": 449,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_a69c5ea9f0ee0ddc79b114b7a8d74de1_cd18a698855a3b20efe0033a": {
+        "labels": {
+          "1": 18,
+          "unlabeled": 770
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 18,
+          "insufficient_affirmative_compatibility": 585,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_a6af85fad35876c918110f3dba8937d8_2890ac7b654d57fa65daab42": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 11,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "ai/ml engineer",
+        "total": 16
+      },
+      "cv_a830994ac6840ab3ee4bedbd54d5ef8d_a04a8cce7eb5511bf915cec8": {
+        "labels": {
+          "1": 198,
+          "unlabeled": 590
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 198,
+          "insufficient_affirmative_compatibility": 405,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_aa35eaea2ed102de4072aaf49ca97c1e_af22b7ecab1960dc838a45c1": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 9
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 6,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "frontend",
+        "total": 16
+      },
+      "cv_aa655a5f391125961f236c06b060bdac_d05c67e0f202c2dd0d8c50cf": {
+        "labels": {
+          "1": 14,
+          "unlabeled": 774
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 14,
+          "insufficient_affirmative_compatibility": 589,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_ab06cc58311f9e27427b9f425a0a067a_1fd8c978ea8c64887b80bf67": {
+        "labels": {
+          "1": 110,
+          "unlabeled": 678
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 110,
+          "insufficient_affirmative_compatibility": 493,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_ae1eba816f7e2b32bccb1714074cd006_64f3a196587bc0f5d3eac0a3": {
+        "labels": {
+          "1": 8,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 8,
+          "insufficient_affirmative_compatibility": 10,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "frontend",
+        "total": 19
+      },
+      "cv_b1ed6ef427a0500b7c5ddd10b8d9ffbb_26f61500997a54a69ffaaa7b": {
+        "labels": {
+          "unlabeled": 13
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 9,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "mobile",
+        "total": 13
+      },
+      "cv_b26311e33d5e954b7b18ffc7c60e4072_5d92c89dd5ca41bdd2a9db6f": {
+        "labels": {
+          "1": 22,
+          "unlabeled": 766
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 22,
+          "insufficient_affirmative_compatibility": 581,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_b3344f30fb9264d12f1da28e8a8b359e_3c567194525e06ddb0f9768e": {
+        "labels": {
+          "1": 5,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 5,
+          "insufficient_affirmative_compatibility": 7,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "backend python",
+        "total": 16
+      },
+      "cv_b5da61ebee104f02457eeeff37447421_6daf2cd85b501372b8b27c9b": {
+        "labels": {
+          "1": 44,
+          "unlabeled": 744
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 44,
+          "insufficient_affirmative_compatibility": 559,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "mobile",
+        "total": 788
+      },
+      "cv_b839b8c19884fc356fff34cc5c9413f2_588547eaf758047e402b1cfc": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "data engineer",
+        "total": 16
+      },
+      "cv_c01aaa7ca3a5a627a8e1fda6dd4173a6_be6a1920d9c99e6056ea220c": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 10
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 10
+        },
+        "role": "fullstack",
+        "total": 16
+      },
+      "cv_c1a9cc05c7a53f54654c6373c3359d8a_cb9164fe3965d0f43fa9ca7a": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 9
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 7,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "backend java",
+        "total": 16
+      },
+      "cv_c2321ccd9b9727bcbc25c244c36ad510_839747c8b054846741c7a11c": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 11,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "data engineer",
+        "total": 16
+      },
+      "cv_c6079fd32bd9f5b7eab366a7d1f09bef_7cb543aba6ef4805f84ca119": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 9,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "devops/cloud",
+        "total": 16
+      },
+      "cv_c73f7682f93f60657b98058b93c8a6a8_8b5e7780a233986e3e2a8eca": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_cca35aec0c2c1022c06c8c64dfd6cb9d_5b70915233dd27c721013576": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 7,
+          "outside_software_scope": 2,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "fullstack",
+        "total": 16
+      },
+      "cv_d3e97b8fe638fb39f10efd9df398c7b5_0b9d4fad6a9a090ad7c1a3ab": {
+        "labels": {
+          "1": 23,
+          "unlabeled": 765
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 23,
+          "insufficient_affirmative_compatibility": 580,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "qa/testing",
+        "total": 788
+      },
+      "cv_d53ae370c9c736a3d7bbcafb541a89d8_987323b029759c6fa04926d4": {
+        "labels": {
+          "1": 133,
+          "unlabeled": 655
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 133,
+          "insufficient_affirmative_compatibility": 470,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_d601dd5f79c64278d3792053725a6b6e_4931b4498dc1970eb9549a38": {
+        "labels": {
+          "1": 24,
+          "unlabeled": 764
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 24,
+          "insufficient_affirmative_compatibility": 579,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "data engineer",
+        "total": 788
+      },
+      "cv_d679b9fdd3c49b0e56aabde69d1f1bca_b0e081fe9404d1bb893af9ad": {
+        "labels": {
+          "1": 39,
+          "unlabeled": 749
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 39,
+          "insufficient_affirmative_compatibility": 564,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      },
+      "cv_d813dd62057f4b85493419fa3642357e_710497a30b03cddd09446d5a": {
+        "labels": {
+          "1": 68,
+          "unlabeled": 720
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 68,
+          "insufficient_affirmative_compatibility": 535,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "fullstack",
+        "total": 788
+      },
+      "cv_d92584718ab59b85a179704d62d74057_d90d24e4eb34558c2ec4da0d": {
+        "labels": {
+          "1": 43,
+          "unlabeled": 745
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 43,
+          "insufficient_affirmative_compatibility": 560,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend python",
+        "total": 788
+      },
+      "cv_db050067a77dfe63279abc5fc605eb04_1fd074207b2bceeda72384ed": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_dba237f76efe9ba08ee16cceb1e5500c_228d27e5de242123d513f9ce": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 8,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "mobile",
+        "total": 14
+      },
+      "cv_dbea2bdbe6ed8bf5a1550f869ea47380_ec8aa544abb88a841c356f2c": {
+        "labels": {
+          "unlabeled": 16
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "mobile",
+        "total": 16
+      },
+      "cv_dd77db46672460ecaf2005f11d449f8f_98822cd2bc35768ad4eb7319": {
+        "labels": {
+          "1": 8,
+          "unlabeled": 10
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 8,
+          "insufficient_affirmative_compatibility": 8,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "backend python",
+        "total": 18
+      },
+      "cv_e02f99d1c813f664f3780f749c95427e_20d13ff904c03591d3d013a3": {
+        "labels": {
+          "1": 165,
+          "unlabeled": 623
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 165,
+          "insufficient_affirmative_compatibility": 438,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "frontend",
+        "total": 788
+      },
+      "cv_e1cde257d5a4c1248f34210792950b08_012026d8fcf2d9040e627c3a": {
+        "labels": {
+          "1": 5,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 5,
+          "insufficient_affirmative_compatibility": 9,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "backend java",
+        "total": 16
+      },
+      "cv_e2d89a0f45c14d2f983f651d1b62c201_b720cfb72972fc15d3f92947": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 9
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 6,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "frontend",
+        "total": 16
+      },
+      "cv_e3bc8ce9deb5437674b8936a3062b6d9_48d4153ec8a84978042b2780": {
+        "labels": {
+          "1": 4,
+          "unlabeled": 15
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 4,
+          "insufficient_affirmative_compatibility": 11,
+          "outside_software_scope": 2,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "backend .net",
+        "total": 19
+      },
+      "cv_e3fcb8e3fc592631a7925f888303c737_05d253d42a55f079639db640": {
+        "labels": {
+          "1": 14,
+          "unlabeled": 774
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 14,
+          "insufficient_affirmative_compatibility": 589,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_e6519345b1c4e9fc31bb84a138008d8e_7ccf3dfdc2c24b098b1ba787": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_e785582f3da019deb84ba9bab61878ce_65736406d13d7a5a841869d6": {
+        "labels": {
+          "1": 128,
+          "unlabeled": 660
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 128,
+          "insufficient_affirmative_compatibility": 475,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend java",
+        "total": 788
+      },
+      "cv_e96f7a07e635b6643c2a57cb9a6ef7d1_bee03b3045cad22ab543b326": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_ec55c8439447bcecc5db2223f5d3c04d_e26835713dede2b4d13c85e3": {
+        "labels": {
+          "unlabeled": 13
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 13
+        },
+        "role": "qa/testing",
+        "total": 13
+      },
+      "cv_eda4c4bd1385d154a7617e25a0884d4a_97a2042485c8eec07bddc812": {
+        "labels": {
+          "1": 1,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 1,
+          "insufficient_affirmative_compatibility": 10,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "devops/cloud",
+        "total": 14
+      },
+      "cv_edef221070d5e25075997fac9c1b0c4b_e71135098cb00530b7a0f1fb": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 9,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 3
+        },
+        "role": "ai/ml engineer",
+        "total": 16
+      },
+      "cv_f00a70418c0c154037a6403067c7133a_e06fafa31e568df0b34460a0": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 11,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "qa/testing",
+        "total": 16
+      },
+      "cv_f0ee1078de3077f492877a90480b3df4_253d95a537db2a3ac3d9adc8": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 761
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 576,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "ai/ml engineer",
+        "total": 788
+      },
+      "cv_f5053ad7e53ec71e8ad1cc3a58318f4f_9a84d493d4b724a60de71ba7": {
+        "labels": {
+          "1": 7,
+          "unlabeled": 12
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 7,
+          "insufficient_affirmative_compatibility": 7,
+          "outside_software_scope": 1,
+          "unknown_generic_or_conflicting_occupation": 4
+        },
+        "role": "backend java",
+        "total": 19
+      },
+      "cv_f5c87e7688babfce898990755557f0d6_06029b66a190a9927e50c324": {
+        "labels": {
+          "1": 14,
+          "unlabeled": 774
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 14,
+          "insufficient_affirmative_compatibility": 589,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_f7ee46d5f7f68c6fd8113fc16e9a45ac_032df567ed87a157a2df2b68": {
+        "labels": {
+          "1": 15,
+          "unlabeled": 773
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 15,
+          "insufficient_affirmative_compatibility": 588,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "devops/cloud",
+        "total": 788
+      },
+      "cv_f86cd3c840e6cc9d39f98cd84b3adc85_94c60ba8af75ecde251cf1e1": {
+        "labels": {
+          "1": 3,
+          "unlabeled": 16
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 3,
+          "insufficient_affirmative_compatibility": 14,
+          "unknown_generic_or_conflicting_occupation": 2
+        },
+        "role": "ai/ml engineer",
+        "total": 19
+      },
+      "cv_fa38426d3666a05c28597d368bd005f5_4eead33291999009a7e1f898": {
+        "labels": {
+          "1": 2,
+          "unlabeled": 11
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 2,
+          "insufficient_affirmative_compatibility": 11
+        },
+        "role": "mobile",
+        "total": 13
+      },
+      "cv_fcedbd55666ba1fa978aaead6c944394_3f83f0f7a52bc3fcbb2c2663": {
+        "labels": {
+          "1": 1,
+          "unlabeled": 13
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 1,
+          "insufficient_affirmative_compatibility": 12,
+          "unknown_generic_or_conflicting_occupation": 1
+        },
+        "role": "mobile",
+        "total": 14
+      },
+      "cv_ffc4b0cebcafd9ca3d35c9533d429b72_d1cffbf644fde8e3969b96df": {
+        "labels": {
+          "1": 39,
+          "unlabeled": 749
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 39,
+          "insufficient_affirmative_compatibility": 564,
+          "outside_software_scope": 28,
+          "unknown_generic_or_conflicting_occupation": 157
+        },
+        "role": "backend .net",
+        "total": 788
+      }
+    },
+    "by_cv_role": {
+      "ai/ml engineer": {
+        "labels": {
+          "1": 181,
+          "unlabeled": 4649
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 181,
+          "insufficient_affirmative_compatibility": 3520,
+          "outside_software_scope": 170,
+          "unknown_generic_or_conflicting_occupation": 959
+        },
+        "total": 4830
+      },
+      "backend .net": {
+        "labels": {
+          "1": 277,
+          "unlabeled": 4556
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 277,
+          "insufficient_affirmative_compatibility": 3427,
+          "outside_software_scope": 172,
+          "unknown_generic_or_conflicting_occupation": 957
+        },
+        "total": 4833
+      },
+      "backend java": {
+        "labels": {
+          "0": 1,
+          "1": 984,
+          "unlabeled": 3848
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 984,
+          "explicit_mandatory_contradiction": 1,
+          "insufficient_affirmative_compatibility": 2720,
+          "outside_software_scope": 169,
+          "unknown_generic_or_conflicting_occupation": 959
+        },
+        "total": 4833
+      },
+      "backend python": {
+        "labels": {
+          "1": 425,
+          "unlabeled": 4406
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 425,
+          "insufficient_affirmative_compatibility": 3273,
+          "outside_software_scope": 172,
+          "unknown_generic_or_conflicting_occupation": 961
+        },
+        "total": 4831
+      },
+      "data engineer": {
+        "labels": {
+          "1": 156,
+          "unlabeled": 4674
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 156,
+          "insufficient_affirmative_compatibility": 3547,
+          "outside_software_scope": 169,
+          "unknown_generic_or_conflicting_occupation": 958
+        },
+        "total": 4830
+      },
+      "devops/cloud": {
+        "labels": {
+          "1": 98,
+          "unlabeled": 4730
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 98,
+          "insufficient_affirmative_compatibility": 3604,
+          "outside_software_scope": 169,
+          "unknown_generic_or_conflicting_occupation": 957
+        },
+        "total": 4828
+      },
+      "frontend": {
+        "labels": {
+          "1": 866,
+          "unlabeled": 3964
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 866,
+          "insufficient_affirmative_compatibility": 2840,
+          "outside_software_scope": 170,
+          "unknown_generic_or_conflicting_occupation": 954
+        },
+        "total": 4830
+      },
+      "fullstack": {
+        "labels": {
+          "1": 964,
+          "unlabeled": 3869
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 964,
+          "insufficient_affirmative_compatibility": 2738,
+          "outside_software_scope": 173,
+          "unknown_generic_or_conflicting_occupation": 958
+        },
+        "total": 4833
+      },
+      "mobile": {
+        "labels": {
+          "1": 229,
+          "unlabeled": 4585
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 229,
+          "insufficient_affirmative_compatibility": 3462,
+          "outside_software_scope": 170,
+          "unknown_generic_or_conflicting_occupation": 953
+        },
+        "total": 4814
+      },
+      "qa/testing": {
+        "labels": {
+          "1": 139,
+          "unlabeled": 4683
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 139,
+          "insufficient_affirmative_compatibility": 3559,
+          "outside_software_scope": 170,
+          "unknown_generic_or_conflicting_occupation": 954
+        },
+        "total": 4822
+      }
+    },
+    "by_jd_role": {
+      "ai/ml engineer": {
+        "labels": {
+          "1": 175,
+          "unlabeled": 2104
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 175,
+          "insufficient_affirmative_compatibility": 2104
+        },
+        "total": 2279
+      },
+      "backend (unspecified stack)": {
+        "labels": {
+          "unlabeled": 1290
+        },
+        "reasons": {
+          "unknown_generic_or_conflicting_occupation": 1290
+        },
+        "total": 1290
+      },
+      "backend .net": {
+        "labels": {
+          "1": 339,
+          "unlabeled": 1571
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 339,
+          "insufficient_affirmative_compatibility": 1571
+        },
+        "total": 1910
+      },
+      "backend golang": {
+        "labels": {
+          "1": 71,
+          "unlabeled": 358
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 71,
+          "insufficient_affirmative_compatibility": 358
+        },
+        "total": 429
+      },
+      "backend java": {
+        "labels": {
+          "0": 1,
+          "1": 963,
+          "unlabeled": 4427
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 963,
+          "explicit_mandatory_contradiction": 1,
+          "insufficient_affirmative_compatibility": 4427
+        },
+        "total": 5391
+      },
+      "backend node.js": {
+        "labels": {
+          "1": 90,
+          "unlabeled": 337
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 90,
+          "insufficient_affirmative_compatibility": 337
+        },
+        "total": 427
+      },
+      "backend php": {
+        "labels": {
+          "1": 70,
+          "unlabeled": 610
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 70,
+          "insufficient_affirmative_compatibility": 610
+        },
+        "total": 680
+      },
+      "backend python": {
+        "labels": {
+          "1": 187,
+          "unlabeled": 507
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 187,
+          "insufficient_affirmative_compatibility": 507
+        },
+        "total": 694
+      },
+      "backend ruby": {
+        "labels": {
+          "1": 27,
+          "unlabeled": 98
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 27,
+          "insufficient_affirmative_compatibility": 98
+        },
+        "total": 125
+      },
+      "blockchain": {
+        "labels": {
+          "unlabeled": 244
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 244
+        },
+        "total": 244
+      },
+      "bridge engineer": {
+        "labels": {
+          "unlabeled": 550
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 550
+        },
+        "total": 550
+      },
+      "business analyst": {
+        "labels": {
+          "unlabeled": 728
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 728
+        },
+        "total": 728
+      },
+      "c/c++ software": {
+        "labels": {
+          "unlabeled": 428
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 428
+        },
+        "total": 428
+      },
+      "cnc/cam manufacturing": {
+        "labels": {
+          "unlabeled": 852
+        },
+        "reasons": {
+          "outside_software_scope": 852
+        },
+        "total": 852
+      },
+      "cobol software": {
+        "labels": {
+          "unlabeled": 62
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 62
+        },
+        "total": 62
+      },
+      "data engineer": {
+        "labels": {
+          "1": 102,
+          "unlabeled": 897
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 102,
+          "insufficient_affirmative_compatibility": 897
+        },
+        "total": 999
+      },
+      "data governance": {
+        "labels": {
+          "unlabeled": 62
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 62
+        },
+        "total": 62
+      },
+      "data scientist": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 56
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 56
+        },
+        "total": 62
+      },
+      "database/sql": {
+        "labels": {
+          "1": 54,
+          "unlabeled": 493
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 54,
+          "insufficient_affirmative_compatibility": 493
+        },
+        "total": 547
+      },
+      "desktop application": {
+        "labels": {
+          "1": 8,
+          "unlabeled": 540
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 8,
+          "insufficient_affirmative_compatibility": 540
+        },
+        "total": 548
+      },
+      "devops/cloud": {
+        "labels": {
+          "1": 76,
+          "unlabeled": 792
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 76,
+          "insufficient_affirmative_compatibility": 792
+        },
+        "total": 868
+      },
+      "education/training": {
+        "labels": {
+          "unlabeled": 242
+        },
+        "reasons": {
+          "outside_software_scope": 242
+        },
+        "total": 242
+      },
+      "embedded engineer": {
+        "labels": {
+          "unlabeled": 857
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 857
+        },
+        "total": 857
+      },
+      "engineering management": {
+        "labels": {
+          "unlabeled": 368
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 368
+        },
+        "total": 368
+      },
+      "erp/is specialist": {
+        "labels": {
+          "unlabeled": 487
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 487
+        },
+        "total": 487
+      },
+      "frontend": {
+        "labels": {
+          "1": 507,
+          "unlabeled": 2919
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 507,
+          "insufficient_affirmative_compatibility": 2919
+        },
+        "total": 3426
+      },
+      "fullstack": {
+        "labels": {
+          "1": 1230,
+          "unlabeled": 4304
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 1230,
+          "insufficient_affirmative_compatibility": 4304
+        },
+        "total": 5534
+      },
+      "game design": {
+        "labels": {
+          "unlabeled": 124
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 124
+        },
+        "total": 124
+      },
+      "game developer": {
+        "labels": {
+          "unlabeled": 1099
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 1099
+        },
+        "total": 1099
+      },
+      "industrial automation": {
+        "labels": {
+          "unlabeled": 121
+        },
+        "reasons": {
+          "outside_software_scope": 121
+        },
+        "total": 121
+      },
+      "it management": {
+        "labels": {
+          "unlabeled": 124
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 124
+        },
+        "total": 124
+      },
+      "marketing": {
+        "labels": {
+          "unlabeled": 124
+        },
+        "reasons": {
+          "outside_software_scope": 124
+        },
+        "total": 124
+      },
+      "material development": {
+        "labels": {
+          "unlabeled": 120
+        },
+        "reasons": {
+          "outside_software_scope": 120
+        },
+        "total": 120
+      },
+      "mobile": {
+        "labels": {
+          "1": 253,
+          "unlabeled": 2799
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 253,
+          "insufficient_affirmative_compatibility": 2799
+        },
+        "total": 3052
+      },
+      "network engineering": {
+        "labels": {
+          "1": 6,
+          "unlabeled": 119
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 6,
+          "insufficient_affirmative_compatibility": 119
+        },
+        "total": 125
+      },
+      "product management": {
+        "labels": {
+          "unlabeled": 120
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 120
+        },
+        "total": 120
+      },
+      "project management": {
+        "labels": {
+          "unlabeled": 552
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 552
+        },
+        "total": 552
+      },
+      "qa/testing": {
+        "labels": {
+          "1": 139,
+          "unlabeled": 2249
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 139,
+          "insufficient_affirmative_compatibility": 2249
+        },
+        "total": 2388
+      },
+      "sales/business development": {
+        "labels": {
+          "unlabeled": 245
+        },
+        "reasons": {
+          "outside_software_scope": 245
+        },
+        "total": 245
+      },
+      "scrum master": {
+        "labels": {
+          "unlabeled": 123
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 123
+        },
+        "total": 123
+      },
+      "security engineer": {
+        "labels": {
+          "1": 16,
+          "unlabeled": 535
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 16,
+          "insufficient_affirmative_compatibility": 535
+        },
+        "total": 551
+      },
+      "technical architecture": {
+        "labels": {
+          "unlabeled": 497
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 497
+        },
+        "total": 497
+      },
+      "technical art": {
+        "labels": {
+          "unlabeled": 60
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 60
+        },
+        "total": 60
+      },
+      "ui/ux designer": {
+        "labels": {
+          "unlabeled": 490
+        },
+        "reasons": {
+          "insufficient_affirmative_compatibility": 490
+        },
+        "total": 490
+      },
+      "unknown": {
+        "labels": {
+          "unlabeled": 8280
+        },
+        "reasons": {
+          "unknown_generic_or_conflicting_occupation": 8280
+        },
+        "total": 8280
+      }
+    },
+    "cv_without_label_2": 120,
+    "final_test_ready": false,
+    "full_catalogue_judgments_complete": false,
+    "full_catalogue_ranking_metrics_allowed": false,
+    "independent_gold": false,
+    "labels": {
+      "0": 1,
+      "1": 4319,
+      "unlabeled": 43964
+    },
+    "missing_train_classes": [
+      "0",
+      "2"
+    ],
+    "models_trained": 0,
+    "pair_count": 48284,
+    "partitions": {
+      "test": {
+        "labels": {
+          "1": 1962,
+          "unlabeled": 21678
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 1962,
+          "insufficient_affirmative_compatibility": 16128,
+          "outside_software_scope": 840,
+          "unknown_generic_or_conflicting_occupation": 4710
+        },
+        "total": 23640
+      },
+      "train": {
+        "labels": {
+          "1": 257,
+          "unlabeled": 747
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 257,
+          "insufficient_affirmative_compatibility": 573,
+          "outside_software_scope": 24,
+          "unknown_generic_or_conflicting_occupation": 150
+        },
+        "total": 1004
+      },
+      "validation": {
+        "labels": {
+          "0": 1,
+          "1": 2100,
+          "unlabeled": 21539
+        },
+        "reasons": {
+          "affirmative_partial_technical_overlap": 2100,
+          "explicit_mandatory_contradiction": 1,
+          "insufficient_affirmative_compatibility": 15989,
+          "outside_software_scope": 840,
+          "unknown_generic_or_conflicting_occupation": 4710
+        },
+        "total": 23640
+      }
+    },
+    "readiness_reason": "Preparation only. Missing labels cannot be treated as zero; full-catalogue Recall/NDCG blocked when coverage is incomplete.",
+    "ready_for_training": false,
+    "reasons": {
+      "affirmative_partial_technical_overlap": 4319,
+      "explicit_mandatory_contradiction": 1,
+      "insufficient_affirmative_compatibility": 32690,
+      "outside_software_scope": 1704,
+      "unknown_generic_or_conflicting_occupation": 9570
+    },
+    "total": 48284,
+    "version": "expanded-technical-proxy-v1"
+  },
+  "parsing": {
+    "clause_states": {
+      "duration_condition": 1,
+      "mandatory": 5,
+      "preferred": 409,
+      "unresolved": 2293
+    },
+    "cv_with_explicit_nonuse": 8,
+    "interpretation": "Small complete-clause grammar; coverage is not semantic accuracy",
+    "jd_count": 788,
+    "jd_with_mandatory_technology": 5,
+    "jd_with_parsed_duration": 1,
+    "jd_with_unresolved_duration": 428
+  },
+  "reproducibility": {
+    "intake": {
+      "files_identical": 99,
+      "manifest_sha256": "68544a80cedf516a720e895381caac8a4793209ba691103f534bba0db29f49a4"
+    },
+    "labels": {
+      "files_identical": 32,
+      "manifest_sha256": "c80bb85cb66f7dfb57edbdc97d0ee818e6aa3f3529a0fe0ab9716f8d9021be42"
+    }
+  },
+  "runs": {
+    "intake": "ml_data_runs/20261116_authored_cv_v7_01",
+    "intake_repeat": "ml_data_runs/20261116_authored_cv_v7_02",
+    "labels": "ml_data_runs/20261116_expanded_labels_v1_01",
+    "labels_repeat": "ml_data_runs/20261116_expanded_labels_v1_02"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests/ml -v",
+    "log_sha256": "ad024b133ccd8aa73d16dfcd83c8ec3b09363ca9ca5309a9e8bbb83b7c540dbc",
+    "passed": 110,
+    "real_dataset_trained": false,
+    "seconds": 69.22
+  },
+  "verification": {
+    "intakes": [
+      {
+        "cv_count": 120,
+        "final_test_ready": false,
+        "jd_count": 788,
+        "structural_partition_ready": true,
+        "train_candidates": 1004,
+        "verified": true
+      },
+      {
+        "cv_count": 120,
+        "final_test_ready": false,
+        "jd_count": 788,
+        "structural_partition_ready": true,
+        "train_candidates": 1004,
+        "verified": true
+      }
+    ],
+    "labels": [
+      {
+        "final_test_ready": false,
+        "labels": {
+          "0": 1,
+          "1": 4319,
+          "unlabeled": 43964
+        },
+        "pairs": 48284,
+        "ready_for_training": false,
+        "verified": true
+      },
+      {
+        "final_test_ready": false,
+        "labels": {
+          "0": 1,
+          "1": 4319,
+          "unlabeled": 43964
+        },
+        "pairs": 48284,
+        "ready_for_training": false,
+        "verified": true
+      }
+    ],
+    "preserved_manifests": 6,
+    "protected_files": 54,
+    "retired_v5_still_absent": true
+  }
+}

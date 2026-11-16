@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "dataset_version": "REPLACE_WITH_NEW_DATASET_VERSION",
+  "near_threshold": 0.85,
+  "sources": [
+    {
+      "path": "REPLACE_WITH_AUTHORIZED_JD_CSV.csv",
+      "kind": "jd",
+      "namespace": "REPLACE_WITH_STABLE_JD_SOURCE_NAMESPACE",
+      "version": "REPLACE_WITH_ACTUAL_SOURCE_VERSION",
+      "source_url": null,
+      "collected_at": null,
+      "usage_terms": null,
+      "columns": {
+        "external_id": "source_id",
+        "text": "professional_text",
+        "source_group": "source_group",
+        "role": "role",
+        "skills": "skills",
+        "stack": "stack",
+        "experience": "experience_json",
+        "exposure": "exposure"
+      },
+      "defaults": {"text_scope": "unreviewed", "is_synthetic": false}
+    },
+    {
+      "path": "REPLACE_WITH_AUTHORIZED_CV_CSV.csv",
+      "kind": "cv",
+      "namespace": "REPLACE_WITH_STABLE_CV_SOURCE_NAMESPACE",
+      "version": "REPLACE_WITH_ACTUAL_SOURCE_VERSION",
+      "source_url": null,
+      "collected_at": null,
+      "usage_terms": null,
+      "columns": {
+        "external_id": "source_id",
+        "text": "professional_text",
+        "source_group": "source_group",
+        "template_group": "template_group",
+        "role": "role",
+        "skills": "skills",
+        "stack": "stack",
+        "experience": "experience_json",
+        "is_synthetic": "is_synthetic",
+        "exposure": "exposure"
+      },
+      "defaults": {"text_scope": "unreviewed"}
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "synthetic-career-scenarios-v1",
+  "created_on": "2026-11-13",
+  "author": "Codex; AI-authored fictional professional profiles, not real applicants",
+  "generation_cohort": "jobapply-synthetic-60-v1",
+  "expected_count": 60,
+  "roles": ["Backend Python", "Backend Java", "Frontend", "DevOps/Cloud", "QA/Testing"],
+  "per_role": 12,
+  "families": {
+    "employment_history": "Two-paragraph work narrative: sustained role, responsibilities and limits; employment duration is explicit.",
+    "personal_portfolio": "Portfolio of a personal or learning project: goal, implementation, verification; project time is not employment.",
+    "internship_log": "Supervised internship: assigned work, mentor boundary and learning evidence; not full-time professional equivalence.",
+    "incident_case": "Operational problem/case: symptom, investigation, correction, retrospective; role duration is separate from incident duration.",
+    "contract_handover": "Bounded delivery/maintenance contract: scope, artifacts, acceptance, handover; contract months are not skill months.",
+    "incomplete_account": "Professional notes with missing chronology: concrete actions and limitations; no duration inferred."
+  },
+  "lineage_policy": "Each scenario has its own fictional source. All ten profiles using one framework share template_group across occupations. Same-cohort authorship remains a limitation; six template groups are not six independent human data sources.",
+  "authoring_protocol": [
+    "Write career scenarios from role/task knowledge without a target JD, ranking, relevance label or copying pilot text.",
+    "Use Vietnamese professional prose and technology names, without real identity, contacts or employer names.",
+    "Manually attach skills and scoped durations to exact sentences in the fictional text; unknown remains empty.",
+    "Version initial scenarios as v1 with no parent/variant; later rewrites must preserve source_group and template_group.",
+    "The renderer receives only these authored assets, never JD/ranking files. It does not generate random CV text.",
+    "Prospective means unused for feature/model tuning. Structural evidence validation is not professional verification."
+  ],
+  "labels_created": false,
+  "data_analyst": "Still in research scope; new benchmark entry waits for usable non-pilot JD. No Data Analyst CV included in this five-role batch."
+}

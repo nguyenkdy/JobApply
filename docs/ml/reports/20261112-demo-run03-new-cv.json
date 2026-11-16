@@ -1,0 +1,76 @@
+{
+  "run_dir": "D:\\JobApply\\jobapply_pilot_v1\\results\\reruns\\20261112_baseline_03",
+  "run_manifest_sha256": "7bae1dfa73e3456c2d96f0ef41f5881b34887c453aaa50770847df811c09356d",
+  "model_sha256": "56d5a92be005584ad3a61ee48872042b14bc1b94b0e067291b393e9c22e25a8e",
+  "cv_id": "NEW_CV",
+  "scope": "pilot demo, refit model; not held-out evaluation or live jobs",
+  "score_type": "expected AI-draft relevance on 0..2; not a probability of hiring",
+  "top_k": 5,
+  "items": [
+    {
+      "rank": 1,
+      "job_id": "job_82df663e7bcac4e82cab",
+      "title": "Python Developer",
+      "score": 0.8409310339125666,
+      "bm25_score": 54.697596,
+      "cosine": 0.913364,
+      "known_constraints": 0,
+      "numeric_constraints": 1,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 2,
+      "job_id": "job_3916eaf809684572fced",
+      "title": "Python Developer",
+      "score": 0.8230744250554134,
+      "bm25_score": 50.419196,
+      "cosine": 0.912383,
+      "known_constraints": 0,
+      "numeric_constraints": 1,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 3,
+      "job_id": "job_27615f263663521ccf7b",
+      "title": "Backend (Python, NodeJS)",
+      "score": 0.7863453379338723,
+      "bm25_score": 41.583691,
+      "cosine": 0.910388,
+      "known_constraints": 0,
+      "numeric_constraints": 1,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 4,
+      "job_id": "job_8a31539554089ba6c499",
+      "title": "Python Developer",
+      "score": 0.6721337627396989,
+      "bm25_score": 50.302197,
+      "cosine": 0.906935,
+      "known_constraints": 0,
+      "numeric_constraints": 2,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    },
+    {
+      "rank": 5,
+      "job_id": "job_f12956a6aa8c97969416",
+      "title": "Senior Backend Developer (C#, Java, Python)",
+      "score": 0.57584430000195,
+      "bm25_score": 47.827828,
+      "cosine": 0.902821,
+      "known_constraints": 0,
+      "numeric_constraints": 1,
+      "gap_months_observed": null,
+      "coverage": 0.0,
+      "gap_years_input": 0.0
+    }
+  ]
+}

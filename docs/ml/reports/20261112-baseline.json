@@ -1,0 +1,1017 @@
+{
+  "run": "jobapply_pilot_v1/results/reruns/20261112_baseline_03",
+  "reference_run": "jobapply_pilot_v1/results/reruns/20261112_baseline_02",
+  "run_manifest_sha256": "7bae1dfa73e3456c2d96f0ef41f5881b34887c453aaa50770847df811c09356d",
+  "reference_manifest_sha256": "61667d9537f8178c433d10e6aca6bbcc96db4923d32e0c7b337ba1305e784c8f",
+  "scope": "development/regression only; AI draft labels; shared JD catalogue; no human gold or model selection",
+  "git_commit": "18387566bebc2fd13b1bc10b97948524b838faca",
+  "git_branch": "docs/ml-readme-handoff-20261112",
+  "config": {
+    "k": 5,
+    "scope": "development/regression only; AI draft labels; shared JD catalogue; no human gold or model selection",
+    "cv_count": 6,
+    "job_count": 50,
+    "pair_count": 300,
+    "split": "leave-one-CV-out; sorted cv_id/job_id; shared JD catalogue",
+    "split_manifest": {
+      "CV_SYN_01": {
+        "held_out_cv": "CV_SYN_01",
+        "train_cvs": [
+          "CV_SYN_02",
+          "CV_SYN_03",
+          "CV_SYN_04",
+          "CV_SYN_05",
+          "CV_SYN_06"
+        ]
+      },
+      "CV_SYN_02": {
+        "held_out_cv": "CV_SYN_02",
+        "train_cvs": [
+          "CV_SYN_01",
+          "CV_SYN_03",
+          "CV_SYN_04",
+          "CV_SYN_05",
+          "CV_SYN_06"
+        ]
+      },
+      "CV_SYN_03": {
+        "held_out_cv": "CV_SYN_03",
+        "train_cvs": [
+          "CV_SYN_01",
+          "CV_SYN_02",
+          "CV_SYN_04",
+          "CV_SYN_05",
+          "CV_SYN_06"
+        ]
+      },
+      "CV_SYN_04": {
+        "held_out_cv": "CV_SYN_04",
+        "train_cvs": [
+          "CV_SYN_01",
+          "CV_SYN_02",
+          "CV_SYN_03",
+          "CV_SYN_05",
+          "CV_SYN_06"
+        ]
+      },
+      "CV_SYN_05": {
+        "held_out_cv": "CV_SYN_05",
+        "train_cvs": [
+          "CV_SYN_01",
+          "CV_SYN_02",
+          "CV_SYN_03",
+          "CV_SYN_04",
+          "CV_SYN_06"
+        ]
+      },
+      "CV_SYN_06": {
+        "held_out_cv": "CV_SYN_06",
+        "train_cvs": [
+          "CV_SYN_01",
+          "CV_SYN_02",
+          "CV_SYN_03",
+          "CV_SYN_04",
+          "CV_SYN_05"
+        ]
+      }
+    },
+    "gain": "2**label - 1",
+    "relevant_label": 2,
+    "undefined_metric": "null; excluded from macro with counts",
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75,
+      "query_terms": "unique",
+      "tie_break": "job_id ascending"
+    },
+    "classifier": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "scaler": "train fold only",
+      "threads": 1
+    },
+    "features": {
+      "base_classifier": [
+        "bm25_score",
+        "cosine"
+      ],
+      "coverage_control": [
+        "bm25_score",
+        "cosine",
+        "coverage"
+      ],
+      "experience_classifier": [
+        "bm25_score",
+        "cosine",
+        "coverage",
+        "gap_years_input"
+      ]
+    },
+    "input_allowlist": [
+      "inputs/jobs_pilot.csv",
+      "inputs/cvs_synthetic.csv",
+      "labels_ai_draft.normalized.csv",
+      "inputs/jobapply_experience_v2/cv_experience.csv",
+      "inputs/jobapply_experience_v2/jd_experience.csv"
+    ],
+    "historical_scores_use": "comparison only; fresh scores generated from text",
+    "original_artifacts_unchanged": true,
+    "output_encoding": "UTF-8 without BOM, LF; input snapshot byte-preserved"
+  },
+  "audit": {
+    "historical_checksums": {
+      "results/embedding_vs_bm25.csv": {
+        "recorded_sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+        "working_copy": {
+          "sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+          "bytes": 29604,
+          "utf8_bom": true,
+          "crlf": 301,
+          "lf_without_cr": 0
+        },
+        "byte_match": true,
+        "newline_variant_matches": {
+          "no_BOM_LF": false,
+          "no_BOM_CRLF": false,
+          "BOM_LF": false,
+          "BOM_CRLF": true
+        },
+        "git_blob_sha256": "345b64fac944f5fac9343027b0c2388c9e06c0a976534e36f387272a51668285",
+        "git_blob_matches": false
+      },
+      "judgments_ai_draft.csv": {
+        "recorded_sha256": "3964d5a4430ad04279c968e026a7c1dfa53b399f4c1721cc7c86616067a52832",
+        "working_copy": {
+          "sha256": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+          "bytes": 78237,
+          "utf8_bom": true,
+          "crlf": 301,
+          "lf_without_cr": 0
+        },
+        "byte_match": false,
+        "newline_variant_matches": {
+          "no_BOM_LF": false,
+          "no_BOM_CRLF": false,
+          "BOM_LF": false,
+          "BOM_CRLF": false
+        },
+        "git_blob_sha256": "56c0c7d9e6da2b814bd9cfee0dbed4b52a093f87aaf221eb472af3eecf1b47c8",
+        "git_blob_matches": false
+      },
+      "jobapply_experience_v2/jd_experience.csv": {
+        "recorded_sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+        "working_copy": {
+          "sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+          "bytes": 8782,
+          "utf8_bom": true,
+          "crlf": 55,
+          "lf_without_cr": 0
+        },
+        "byte_match": true,
+        "newline_variant_matches": {
+          "no_BOM_LF": false,
+          "no_BOM_CRLF": false,
+          "BOM_LF": false,
+          "BOM_CRLF": true
+        },
+        "git_blob_sha256": "9502bdbba770e861c689022b7f81a7243d55a26b9486daa00dd2d8af372c8464",
+        "git_blob_matches": false
+      },
+      "jobapply_experience_v2/cv_experience.csv": {
+        "recorded_sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+        "working_copy": {
+          "sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+          "bytes": 1649,
+          "utf8_bom": true,
+          "crlf": 15,
+          "lf_without_cr": 0
+        },
+        "byte_match": true,
+        "newline_variant_matches": {
+          "no_BOM_LF": false,
+          "no_BOM_CRLF": false,
+          "BOM_LF": false,
+          "BOM_CRLF": true
+        },
+        "git_blob_sha256": "a2fc832fae77be27385df7d0b6866c985b5d03785253aecdfb94156872a3109d",
+        "git_blob_matches": false
+      }
+    },
+    "excluded_from_model_inputs": [
+      "results/embedding_vs_bm25_backup_20261110_163750.csv"
+    ],
+    "backup_invalid_bm25_count": 277,
+    "backup_invalid_examples": [
+      {
+        "cv_id": "CV_SYN_01",
+        "job_id": "job_82df663e7bcac4e82cab",
+        "value": "64.431.045"
+      },
+      {
+        "cv_id": "CV_SYN_01",
+        "job_id": "job_3916eaf809684572fced",
+        "value": "62.897.121"
+      },
+      {
+        "cv_id": "CV_SYN_01",
+        "job_id": "job_a637579a3cb80dc602d5",
+        "value": "14.757.717"
+      }
+    ],
+    "unresolved": [
+      "Historical label checksum cannot be recovered by BOM/newline changes",
+      "Upstream source/clean/matching CSVs and cleaning scripts are absent",
+      "AI relevance and experience annotations require independent specialist review"
+    ],
+    "historical_label_and_feature_values_match": true,
+    "catalog_checks": "selection IDs/metadata, unique content groups, JD section assembly, CV CSV/TXT text all match",
+    "data_counts": {
+      "cvs": 6,
+      "jobs": 50,
+      "pairs": 300,
+      "job_groups": {
+        "Backend Python": 10,
+        "Backend Java": 10,
+        "Frontend": 10,
+        "DevOps / Cloud": 8,
+        "QA / Testing": 8,
+        "Data Analyst": 4
+      },
+      "sites": {
+        "ITViec": 22,
+        "TopCV": 12,
+        "LinkedIn": 16
+      }
+    }
+  },
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\JobApply\\jobapply_pilot_v1\\.venv-embedding\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "installed": {
+      "annotated-doc": "0.0.5",
+      "anyio": "4.16.0",
+      "click": "8.5.0",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "filelock": "4.2.9",
+      "fsspec": "2026.9.0",
+      "h11": "0.16.0",
+      "hf-xet": "1.8.0",
+      "httpcore2": "2.16.0",
+      "httpx2": "2.16.0",
+      "huggingface-hub": "2.4.0",
+      "idna": "3.20",
+      "jinja2": "3.1.6",
+      "joblib": "1.6.0",
+      "markdown-it-py": "4.2.0",
+      "markupsafe": "3.0.4",
+      "mdurl": "0.1.2",
+      "mpmath": "1.3.0",
+      "narwhals": "2.28.0",
+      "networkx": "3.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pip": "25.3",
+      "pygments": "2.21.0",
+      "pyyaml": "6.0.3",
+      "regex": "2026.9.29",
+      "rich": "15.0.0",
+      "safetensors": "0.8.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "sentence-transformers": "6.2.0",
+      "setuptools": "84.2.1",
+      "shellingham": "1.5.4",
+      "sympy": "1.14.0",
+      "threadpoolctl": "3.8.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "tqdm": "4.70.1",
+      "transformers": "5.22.1",
+      "truststore": "0.10.5",
+      "typer": "0.27.3",
+      "typing-extensions": "4.16.0"
+    },
+    "pip_check": "No broken requirements found.",
+    "lock_sha256": "c223fb7aace377755b382ab95464b9c44f893e75a2106a4598608ce5404f7faa"
+  },
+  "encoder": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "device": "cpu",
+    "max_seq_length": 512,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: ",
+    "batch_size": 4,
+    "pooling": "normalized chunks; token-weighted mean; L2 normalization",
+    "torch_threads": 1,
+    "seed": 0,
+    "deterministic_algorithms": true,
+    "score_decimals": 6,
+    "local_files_only": true,
+    "files": {
+      "1_Pooling/config.json": {
+        "sha256": "987f7a67a38fa564c849bb5d277c52ab9088a84368fc0be31a354125aebb12a0",
+        "bytes": 200,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 6
+      },
+      "config.json": {
+        "sha256": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+        "bytes": 655,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 26
+      },
+      "model.safetensors": {
+        "sha256": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+        "bytes": 470641600
+      },
+      "modules.json": {
+        "sha256": "c6e29747481e8b5dd2b58401966aeac910de39092f90cda9a704b1545f902b04",
+        "bytes": 387,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 19
+      },
+      "README.md": {
+        "sha256": "0038de97aee16258cecbad7ffda4b4febd6953e747a00e0ddbc8e6ed241e9c1c",
+        "bytes": 497538,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 18484
+      },
+      "sentence_bert_config.json": {
+        "sha256": "948201d8329907aae938fa62f9ceeed53f5694dacc2b87b9f3b78b37ee986529",
+        "bytes": 57,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 3
+      },
+      "sentencepiece.bpe.model": {
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      "special_tokens_map.json": {
+        "sha256": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+        "bytes": 167,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 9
+      },
+      "tokenizer.json": {
+        "sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+        "bytes": 17082730,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 1000172
+      },
+      "tokenizer_config.json": {
+        "sha256": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+        "bytes": 443,
+        "utf8_bom": false,
+        "crlf": 0,
+        "lf_without_cr": 20
+      }
+    }
+  },
+  "regression": {
+    "historical_scores": {
+      "bm25_score": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 1e-06,
+        "mismatches": 0
+      },
+      "cosine": {
+        "max_absolute_delta": 1.0000000000287557e-06,
+        "tolerance": 1e-06,
+        "mismatches": 0
+      },
+      "rank_bm25": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      },
+      "rank_embedding": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      }
+    },
+    "historical_bm25": {
+      "bm25_score": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 1e-06,
+        "mismatches": 0
+      },
+      "rank_bm25": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      },
+      "rank_keyword": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      }
+    },
+    "historical_supervised": {
+      "match_score": {
+        "max_absolute_delta": 2.5280036918484683e-05,
+        "tolerance": 1e-06,
+        "mismatches": 11
+      },
+      "rank_classifier": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      }
+    },
+    "historical_experience": {
+      "score_base_classifier": {
+        "max_absolute_delta": 2.5280036918484683e-05,
+        "tolerance": 1e-06,
+        "mismatches": 11
+      },
+      "score_coverage_control": {
+        "max_absolute_delta": 1.9615418174134813e-05,
+        "tolerance": 1e-06,
+        "mismatches": 14
+      },
+      "score_experience_classifier": {
+        "max_absolute_delta": 2.0815837165122364e-05,
+        "tolerance": 1e-06,
+        "mismatches": 19
+      },
+      "rank_base_classifier": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      },
+      "rank_coverage_control": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      },
+      "rank_experience_classifier": {
+        "max_absolute_delta": 0.0,
+        "tolerance": 0,
+        "mismatches": 0
+      }
+    },
+    "historical_metrics": {
+      "supervised": {
+        "values_compared": 36,
+        "mismatches": 0,
+        "absolute_tolerance": 1e-12
+      },
+      "experience_v2": {
+        "values_compared": 60,
+        "mismatches": 0,
+        "absolute_tolerance": 1e-12
+      }
+    },
+    "historical_ranks_unchanged": true,
+    "repeat_run": {
+      "reference": "D:\\JobApply\\jobapply_pilot_v1\\results\\reruns\\20261112_baseline_02",
+      "equal_bytes": {
+        "labels_ai_draft.normalized.csv": true,
+        "embedding_vs_bm25.csv": true,
+        "rankings_all.csv": true,
+        "metrics_by_cv.csv": true,
+        "macro_metrics.csv": true,
+        "supervised/held_out_predictions.csv": true,
+        "experience_v2/held_out_predictions.csv": true
+      }
+    }
+  },
+  "schema_migration": {
+    "source_sha256": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+    "derived_sha256": "487c2ccb53629277ffc63fb29ee764d559e77c01964bc39956aecf562e46f97b",
+    "action": "Reconstruct empty reviewer field using template and run_bm25.py schema; preserve every ID, grade and rationale",
+    "original_header": [
+      "cv_id",
+      "job_id",
+      "relevance_0_1_2",
+      "",
+      "rationale"
+    ],
+    "derived_header": [
+      "cv_id",
+      "job_id",
+      "relevance_0_1_2",
+      "reviewer",
+      "rationale",
+      "annotation_origin",
+      "label_status",
+      "cv_version",
+      "job_version"
+    ],
+    "evidence": "results/judgments_template.csv and run_bm25.py; README documents AI origin",
+    "unknown": "Original missing header identity and historical label checksum remain unproven",
+    "review": "All reviewer values remain empty; specialist review of labels AND experience scopes is required",
+    "version_hash_rule": "SHA256 of UTF-8 professional text after CSV universal-newline decoding",
+    "label_counts": {
+      "0": 211,
+      "1": 71,
+      "2": 18
+    }
+  },
+  "artifacts": {
+    "audit.json": {
+      "sha256": "8c2caa5bf101570cf032726b1faa8f0279aeb810f3b3a7bae45cd8504bd25ef4",
+      "bytes": 3952,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 126
+    },
+    "config.json": {
+      "sha256": "d50fd6d7bab705fa1fa116ced988b05b9d8a518932d791769739901e7bd7163f",
+      "bytes": 2519,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 113
+    },
+    "embedding_vs_bm25.csv": {
+      "sha256": "c7fe9991a5cf00b4a4ed67cfcdbdcc391afd7eeebfc7ebf5958a336f60e1ca3a",
+      "bytes": 29299,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "encoder.json": {
+      "sha256": "11df5e5af7b3e53342a860ccd2c5802af98487f2bcf4090964458b7fc6a09e73",
+      "bytes": 2393,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 81
+    },
+    "environment.json": {
+      "sha256": "7b62fdbedfa4d97291520aeeb0a61de95bde895718498b877d13998a32aac532",
+      "bytes": 1488,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 52
+    },
+    "experience_v2/experience_classifier.joblib": {
+      "sha256": "56d5a92be005584ad3a61ee48872042b14bc1b94b0e067291b393e9c22e25a8e",
+      "bytes": 3678
+    },
+    "experience_v2/experience_pairs.csv": {
+      "sha256": "1ce458051a3f7701669fa633abc2b9dd6abfecf433084abccc6428bff115e114",
+      "bytes": 22506,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "experience_v2/held_out_predictions.csv": {
+      "sha256": "e4d1a3cb5a1e4ff7e5cf774ecf190bebcb8366f661f8b0a5ced99160dee51f0a",
+      "bytes": 42751,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "experience_v2/macro_metrics.csv": {
+      "sha256": "c2887bfbfc176ba7b593eafc81bc315ec5afe5c8f6b53682c22268aa62304067",
+      "bytes": 424,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 6
+    },
+    "experience_v2/metrics_by_cv.csv": {
+      "sha256": "1913b36281d441cc6d93ae4238c82e611e6961ff4a8db96188cdf976c8776b71",
+      "bytes": 1674,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 31
+    },
+    "experience_v2/run_info.json": {
+      "sha256": "5467730293823d20930bf4eaf0e113a72b95d206298b9d4f402aec7bd8260453",
+      "bytes": 661,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 18
+    },
+    "inputs/cvs_synthetic.csv": {
+      "sha256": "194719035230f844f940db698c996c518178cf729341804061cd20b09e15fbfd",
+      "bytes": 8964,
+      "utf8_bom": true,
+      "crlf": 7,
+      "lf_without_cr": 24
+    },
+    "inputs/jobapply_experience_v2/cv_experience.csv": {
+      "sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+      "bytes": 1649,
+      "utf8_bom": true,
+      "crlf": 15,
+      "lf_without_cr": 0
+    },
+    "inputs/jobapply_experience_v2/jd_experience.csv": {
+      "sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+      "bytes": 8782,
+      "utf8_bom": true,
+      "crlf": 55,
+      "lf_without_cr": 0
+    },
+    "inputs/jobapply_experience_v2/lexical_control_metrics.csv": {
+      "sha256": "a56fd48da0222e8e054fa526e739666b1e65031a06f382923f17e961ccf63bf4",
+      "bytes": 250,
+      "utf8_bom": true,
+      "crlf": 5,
+      "lf_without_cr": 0
+    },
+    "inputs/jobs_pilot.csv": {
+      "sha256": "82b6949d841a8cf9685bcd9313fd0041a5e45d01a80039b51369c91ee162fa1b",
+      "bytes": 184847,
+      "utf8_bom": true,
+      "crlf": 51,
+      "lf_without_cr": 2035
+    },
+    "inputs/judgments_ai_draft.csv": {
+      "sha256": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+      "bytes": 78237,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/pilot_edits.csv": {
+      "sha256": "08944389cea6fed9acc1b62746c2cf949a8469b77b01becac42140f295ff1ad5",
+      "bytes": 6239,
+      "utf8_bom": true,
+      "crlf": 22,
+      "lf_without_cr": 10
+    },
+    "inputs/results/audit_report.json": {
+      "sha256": "dae8eda890859705b8824c17c99488f17728810e036eddcdf1bf52bdf0371031",
+      "bytes": 1018,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 35
+    },
+    "inputs/results/embedding_vs_bm25.csv": {
+      "sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+      "bytes": 29604,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/embedding_vs_bm25_backup_20261110_163750.csv": {
+      "sha256": "54af57ddff2ee391fbba46c41886518ff6627e350c3533de35bb52b41d13ae20",
+      "bytes": 29855,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/experience_v2/experience_classifier.joblib": {
+      "sha256": "f6e22fb1d63da32f025bf06c32ff15ba7287c9c0f93ca62062e3dbe3259ce43c",
+      "bytes": 1713
+    },
+    "inputs/results/experience_v2/experience_pairs.csv": {
+      "sha256": "c3adba788625dd06b3a907a1ef20e329448ec2b1e00a31858e350324e3334b2c",
+      "bytes": 22811,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/experience_v2/held_out_predictions.csv": {
+      "sha256": "1f5dbbe031804b3a2da2faf913516e4d03d860381303d977f560c577f2084588",
+      "bytes": 43051,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/experience_v2/macro_metrics.csv": {
+      "sha256": "84b8d8ae60ee58b4fc04c82ab49ad5c19e819074b9d23213d5f50317cbe5a28f",
+      "bytes": 299,
+      "utf8_bom": true,
+      "crlf": 6,
+      "lf_without_cr": 0
+    },
+    "inputs/results/experience_v2/metrics_by_cv.csv": {
+      "sha256": "9c916b40b5a85e006b6690321e77cc8efdc84afc4bb2f9ce4cf55c90b83842c9",
+      "bytes": 1708,
+      "utf8_bom": true,
+      "crlf": 31,
+      "lf_without_cr": 0
+    },
+    "inputs/results/experience_v2/run_info.json": {
+      "sha256": "1601c01d8d996beabc2b2d86953268535112686a8abe9a75294ae728adfc20b4",
+      "bytes": 666,
+      "utf8_bom": false,
+      "crlf": 16,
+      "lf_without_cr": 0
+    },
+    "inputs/results/fairness_probe.csv": {
+      "sha256": "e65f0e60c166da165aa338d28f263622e6ca289dc445228d8b4038e96a702a67",
+      "bytes": 3798,
+      "utf8_bom": true,
+      "crlf": 31,
+      "lf_without_cr": 0
+    },
+    "inputs/results/hard_pair_candidates.csv": {
+      "sha256": "598d74fb4f8fe088cf879837b5fa49f07bca46362b33f5abf419ebc1d0979407",
+      "bytes": 2792,
+      "utf8_bom": true,
+      "crlf": 22,
+      "lf_without_cr": 0
+    },
+    "inputs/results/judgments_template.csv": {
+      "sha256": "5dbdcbca1c58aefdb4d58583c4c6cf432dcb10246d9b181ff52abc38830007d0",
+      "bytes": 11752,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/rankings_all.csv": {
+      "sha256": "82e179a4bf0d6d341e0f95fcc55a940002f2661b7b346fd356ae7a6cc45eb740",
+      "bytes": 137801,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/run_report.json": {
+      "sha256": "e0aae7e2283183f5100b5b4b9602e44f0a68cbf166014f7bc400371ad5bc5973",
+      "bytes": 736,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 32
+    },
+    "inputs/results/supervised/held_out_predictions.csv": {
+      "sha256": "b407e56fe746c457fd9c00a34b49e29892f2d8a40ebf707b5ad5be4918c99946",
+      "bytes": 25337,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/supervised/match_classifier.joblib": {
+      "sha256": "4df8f4f3294150a75969d67779321cf49867e8eb971c5fed24f762b548e761a0",
+      "bytes": 1589
+    },
+    "inputs/results/supervised/metrics_by_cv.csv": {
+      "sha256": "c0d15b383e4f43fd57129b13aa05f90e4415e68834b6ca5923e90e5250bccf9d",
+      "bytes": 945,
+      "utf8_bom": true,
+      "crlf": 19,
+      "lf_without_cr": 0
+    },
+    "inputs/results/supervised/training_pairs.csv": {
+      "sha256": "5c75ed7a7d49a743a79faa586fab3a1928aff8c58613c03ad4950e6e9cd0bced",
+      "bytes": 18620,
+      "utf8_bom": true,
+      "crlf": 301,
+      "lf_without_cr": 0
+    },
+    "inputs/results/top_matches.csv": {
+      "sha256": "24a8ef548b7998c977aa66e9cfcbe041bc2811d96cb2d55fe783b1093855e8b3",
+      "bytes": 16849,
+      "utf8_bom": true,
+      "crlf": 31,
+      "lf_without_cr": 0
+    },
+    "inputs/selection_manifest.csv": {
+      "sha256": "2f0ec0b6c5bf98adfd30df2ed9ce44eb2e96ec690ebb36947713d3cfe0d7ecf9",
+      "bytes": 3738,
+      "utf8_bom": true,
+      "crlf": 51,
+      "lf_without_cr": 0
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_01.txt": {
+      "sha256": "09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35",
+      "bytes": 743,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_02.txt": {
+      "sha256": "e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d",
+      "bytes": 747,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_03.txt": {
+      "sha256": "0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4",
+      "bytes": 642,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_04.txt": {
+      "sha256": "ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b",
+      "bytes": 692,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_05.txt": {
+      "sha256": "c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7",
+      "bytes": 748,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "inputs/synthetic_cv_texts/CV_SYN_06.txt": {
+      "sha256": "82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b",
+      "bytes": 705,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "label_schema_migration.json": {
+      "sha256": "e62aae1121cd1d396e4650d7ad34166d1fc531a60835b43d112b5e1447dfd402",
+      "bytes": 1056,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 32
+    },
+    "labels_ai_draft.normalized.csv": {
+      "sha256": "487c2ccb53629277ffc63fb29ee764d559e77c01964bc39956aecf562e46f97b",
+      "bytes": 123595,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "macro_metrics.csv": {
+      "sha256": "93be90dcd28fe150c3f40d6cc6fc659be607f8e59c6dfc09644ce5a3b2a54494",
+      "bytes": 479,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 7
+    },
+    "metrics_by_cv.csv": {
+      "sha256": "5f31fb44129a48f9e6601f07ac9757297ef7ca7dbc71c75d0b3ac306385ed2b1",
+      "bytes": 1954,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 37
+    },
+    "rankings_all.csv": {
+      "sha256": "aacce53bb0a4365bcbe27b244a6223a6347a805c5e203a868a6bb053c8d2e51f",
+      "bytes": 137497,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "regression.json": {
+      "sha256": "dca5be6c6d4d5d534fc53667ec991ccc8504a33a83523899bf45878a9df63854",
+      "bytes": 2618,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 110
+    },
+    "repository_inventory.json": {
+      "sha256": "05ebdaf7d968ee2083463cca9f315222f441f674976d7331e2f63b6c9915c57c",
+      "bytes": 23346,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 760
+    },
+    "source/audit_pilot.py": {
+      "sha256": "6b17ffcd8a1c16711f6385708882aec8af3ac474cb722d30bcb15a9a68d197ca",
+      "bytes": 3914,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 68
+    },
+    "source/baseline_common.py": {
+      "sha256": "ecfd4c27575a315aeea7f4cc777a400d119e3fd8e44d7be47e1654c9f38918fc",
+      "bytes": 5352,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 136
+    },
+    "source/compare_embeddings.py": {
+      "sha256": "a5645e277609846c86abe0cddfed0c56485d9a4712fe29510230ebadd14955ac",
+      "bytes": 6456,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 153
+    },
+    "source/encoder.lock.json": {
+      "sha256": "88d75f2570fc95db50d089da6c90494e2f719c30282375a3b07d5a06cb90c66b",
+      "bytes": 1663,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 48
+    },
+    "source/evaluate_top5.py": {
+      "sha256": "011fb350711c5ec048f01ac58d11eaccbb196bf02e781e23535e8c906fce1054",
+      "bytes": 175,
+      "utf8_bom": false,
+      "crlf": 5,
+      "lf_without_cr": 0
+    },
+    "source/evaluate_topk.py": {
+      "sha256": "c41d13d3befbe8a1b6cbb4f868581c8799d4962dae9d2dacd0136f59fa7b1cff",
+      "bytes": 2117,
+      "utf8_bom": false,
+      "crlf": 46,
+      "lf_without_cr": 0
+    },
+    "source/jobapply_experience_v2/recommend.py": {
+      "sha256": "f2a9c07054af2ab99af94c1dacdf27aa9fda4b1f94073d7f170b37b02f67b877",
+      "bytes": 3581,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 79
+    },
+    "source/jobapply_experience_v2/run_experiment.py": {
+      "sha256": "9566c3b9efc9ae789fe342e9b81edfb4c961d6c827a0964077089b8dc41b72cb",
+      "bytes": 9321,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 177
+    },
+    "source/jobapply_experience_v2/train_matcher.py": {
+      "sha256": "298b4a61f80f448102327ec8b9f9b437e2890c3d24c373cd2ad24ead4a7e7ee3",
+      "bytes": 261,
+      "utf8_bom": false,
+      "crlf": 9,
+      "lf_without_cr": 0
+    },
+    "source/prepare_pilot.py": {
+      "sha256": "4f76218387ba0a0f3a66cc949c2dae17dc6da01046c662cbfaf5fa373ace9263",
+      "bytes": 11954,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 150
+    },
+    "source/requirements-ml-win-py314.lock.txt": {
+      "sha256": "c223fb7aace377755b382ab95464b9c44f893e75a2106a4598608ce5404f7faa",
+      "bytes": 907,
+      "utf8_bom": false,
+      "crlf": 45,
+      "lf_without_cr": 0
+    },
+    "source/run_baseline.py": {
+      "sha256": "3201ba0de61e9e1e7214bd580d96774d22e376ba201658b2809b3726d87b92f9",
+      "bytes": 23521,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 366
+    },
+    "source/run_bm25.py": {
+      "sha256": "96f51cd125b37f0b7f226e31f6a8135160d6118e9d4d7d5b7c68b0f8e69356f3",
+      "bytes": 7680,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 146
+    },
+    "source/test_baseline.py": {
+      "sha256": "099e72f059f9175f0019da097dca07243d66d725e9c3615e485bdf9db5d12846",
+      "bytes": 7591,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 156
+    },
+    "source/train_matcher.py": {
+      "sha256": "d86d88ec6404df219006a349ea8699abf61af8d8273a03355c492cb7f2fd669e",
+      "bytes": 5027,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 111
+    },
+    "supervised/held_out_predictions.csv": {
+      "sha256": "7fe1f62680804d5061330abc42ac19f2ba77279996651e8c45f33688e0df7b30",
+      "bytes": 25036,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "supervised/macro_metrics.csv": {
+      "sha256": "af604ddcdce4af0fcba76063050b31093957937d720125d6b229fb581c2a097d",
+      "bytes": 289,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 4
+    },
+    "supervised/match_classifier.joblib": {
+      "sha256": "1b8fc79008c2ad8d4af1398f77cb22b490a465a2be83280593ec2df32c7da090",
+      "bytes": 3554
+    },
+    "supervised/metrics_by_cv.csv": {
+      "sha256": "a66f95cda248b2807eb0cbcff13681aa6e36958ffb6cc197ec747aa68b15a91b",
+      "bytes": 923,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 19
+    },
+    "supervised/training_pairs.csv": {
+      "sha256": "a2d55248afbf158419b1458091e4ae4f4eceba9bdd582a7631f171629d56377b",
+      "bytes": 18315,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 301
+    },
+    "top_matches.csv": {
+      "sha256": "72b26f735aeaa52e534a17d744fb1569ad5c7cc7cda890e9f1e03d85fce15202",
+      "bytes": 16815,
+      "utf8_bom": false,
+      "crlf": 0,
+      "lf_without_cr": 31
+    }
+  }
+}

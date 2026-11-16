@@ -1,0 +1,31 @@
+{
+  "version": "authored-careers-v6",
+  "created_on": "2026-11-16",
+  "generation_cohort": "single-ai-author-individual-prose-20261116",
+  "is_synthetic": true,
+  "expected_count": 30,
+  "roles": ["Backend Python", "Backend Java", "Frontend", "DevOps/Cloud", "QA/Testing", "Backend .NET", "Fullstack", "Mobile", "Data Engineer", "AI/ML Engineer"],
+  "families": {
+    "research_operations": "Ten separately authored fictional careers around research/laboratory work. Conservative scenario-bank grouping, not a reusable text template.",
+    "creative_production": "Ten separately authored fictional careers around media/creative production; no source career or prose blocks reused from the research bank.",
+    "public_services": "Ten separately authored fictional careers around public utilities/service coordination; no source career or prose blocks reused from the other banks."
+  },
+  "construction": {
+    "method": "individually_written_full_text",
+    "text_assembler": null,
+    "shared_template": null,
+    "grouping_unit": "scenario_source_bank",
+    "shared_author_is_not_independent_collection": true,
+    "minimum_source_banks": 3
+  },
+  "protocol": {
+    "mode": "known-jd",
+    "seed": 20261116,
+    "seed_retries": 0,
+    "ratios": [0.6, 0.2, 0.2],
+    "grouping": "Keep the entire scenario bank together, plus source/template/ancestor/near-duplicate links to historical CVs.",
+    "catalogue": "All 788 source-eligible JD from metadata v4, retaining parser-development exposure and label guard.",
+    "label_status": "unlabeled; no model fitting/scoring or final-test claim",
+    "acceptance": "A small intake validation cohort, not enough evidence for production ML quality. Do not inflate count to obtain split ratios."
+  }
+}

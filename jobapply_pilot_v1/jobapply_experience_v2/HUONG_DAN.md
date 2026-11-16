@@ -1,5 +1,13 @@
 # JobApply — Huấn luyện, đánh giá và chạy Top 5 với kinh nghiệm
 
+> Cập nhật ngày 12/11/2026: dùng [hướng dẫn baseline/demo](../../docs/ml/baseline.md) từ root `D:\JobApply`. Trainer yêu cầu nhãn dẫn xuất `--labels`, nhận `--k`, từ chối output đã tồn tại. Demo hiện **bắt buộc `--run-dir`**, dùng model/catalogue/chú thích của run được xác minh; không fallback về `results/experience_v2`. Các lệnh cũ bên dưới chỉ là lịch sử, không còn hiện hành. Demo model refit không phải metric held-out.
+
+Lệnh demo hiện hành từ root repo:
+
+```powershell
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe .\jobapply_pilot_v1\jobapply_experience_v2\recommend.py --run-dir .\jobapply_pilot_v1\results\reruns\20261112_baseline_03 --cv-id CV_SYN_05
+```
+
 Giải nén gói vào D:\jobapply_pilot_v1. Chạy các lệnh dưới đây bằng PowerShell từ thư mục này. Gói bổ sung cho pilot đã có, sử dụng jobs_pilot.csv, cvs_synthetic.csv, judgments_ai_draft.csv và results/embedding_vs_bm25.csv trên máy bạn. File nhãn có tên khác có thể chỉ định bằng --labels. Demo E5 sử dụng compare_embeddings.py và run_bm25.py trong thư mục pilot.
 
 ~~~powershell

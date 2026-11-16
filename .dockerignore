@@ -3,6 +3,8 @@
 .env.*
 !.env.example
 .venv
+**/.venv-*
+jobapply_pilot_v1/results/reruns
 .tools
 **/node_modules
 **/dist

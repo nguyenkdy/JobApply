@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-14",
+  "purpose": "Retire v2 authoring assets and obsolete benchmark commands; retain referenced immutable evidence",
+  "removed_active_files": [
+    {
+      "path": "ml_data_assets/synthetic_cv_v2/design.json",
+      "sha256": "6c609ca96e893a81cae2745370b794f5490ea4b03fb8e24fac8c93a1d67d517a",
+      "bytes": 2471
+    },
+    {
+      "path": "ml_data_assets/synthetic_cv_v2/scenarios.json",
+      "sha256": "08dd73037aebb8abfa09db4273ccaa10586502683f87569dd9f590ab049ef89a",
+      "bytes": 90282
+    },
+    {
+      "path": "ml_data/benchmark_prep.py",
+      "sha256": "451d3de93f9943348daa82cee840b79e842d8292e8734fc783a38aa537788688",
+      "bytes": 10562
+    },
+    {
+      "path": "scripts/report-benchmark-audit.py",
+      "sha256": "f5b3c53423ee97304a11f797318d775dd8d1cbb696d2b2bbba9f02a19859073e",
+      "bytes": 8525
+    },
+    {
+      "path": "docs/ml/data_configs/benchmark_v2_import.json",
+      "sha256": "d153f2ffe7309f1f1692b8062c5267821b271b88cc1cccb5042998c676cf81b5",
+      "bytes": 3974
+    }
+  ],
+  "preserved_snapshots": [
+    "ml_data_runs/20261114_benchmark_audit_02",
+    "ml_data_runs/20261114_pretraining_v3_01",
+    "ml_data_runs/20261114_pretraining_v3_02",
+    "ml_data_runs/20261113_benchmark_v2/run_08",
+    "ml_data_runs/20261113_cv_expansion_v1/synthetic_cvs"
+  ],
+  "new_cv_data_unchanged": true,
+  "step4_started": false,
+  "validation": {
+    "unittest_passed": 64,
+    "unittest_seconds": 34.589,
+    "scoped_ruff_passed": true,
+    "pretraining_checks_passed": 22,
+    "input_runs_verified": 4,
+    "output_runs_verified": 2,
+    "source_csv_unchanged": 3,
+    "pilot_files_unchanged": 51,
+    "step4_started": false
+  }
+}

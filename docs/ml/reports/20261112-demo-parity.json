@@ -1,0 +1,10 @@
+{
+  "run_manifest_sha256": "7bae1dfa73e3456c2d96f0ef41f5881b34887c453aaa50770847df811c09356d",
+  "model_sha256": "56d5a92be005584ad3a61ee48872042b14bc1b94b0e067291b393e9c22e25a8e",
+  "cv_id": "CV_SYN_05",
+  "top_k": 5,
+  "top5_ids_match": true,
+  "max_feature_delta": 0.0,
+  "max_refit_prediction_delta": 0.0,
+  "scope": "Inference parity with refit model from frozen baseline features; not held-out quality evaluation"
+}

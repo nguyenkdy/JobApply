@@ -1,0 +1,63 @@
+{
+  "version": "authored-careers-v7",
+  "created_on": "2026-11-16",
+  "generation_cohort": "single-ai-author-individual-prose-20261116",
+  "is_synthetic": true,
+  "expected_count": 90,
+  "roles": [
+    "Backend Python",
+    "Backend Java",
+    "Frontend",
+    "DevOps/Cloud",
+    "QA/Testing",
+    "Backend .NET",
+    "Fullstack",
+    "Mobile",
+    "Data Engineer",
+    "AI/ML Engineer"
+  ],
+  "families": {
+    "commerce": "Individually authored fictional scenario bank; same AI author",
+    "transport": "Individually authored fictional scenario bank; same AI author",
+    "manufacturing": "Individually authored fictional scenario bank; same AI author",
+    "energy": "Individually authored fictional scenario bank; same AI author",
+    "hospitality": "Individually authored fictional scenario bank; same AI author",
+    "education": "Individually authored fictional scenario bank; same AI author",
+    "sports": "Individually authored fictional scenario bank; same AI author",
+    "agriculture": "Individually authored fictional scenario bank; same AI author",
+    "nonprofit": "Individually authored fictional scenario bank; same AI author"
+  },
+  "construction": {
+    "method": "individually_written_full_text",
+    "text_assembler": null,
+    "shared_template": null,
+    "grouping_unit": "scenario_source_bank",
+    "shared_author_is_not_independent_collection": true,
+    "minimum_source_banks": 9
+  },
+  "protocol": {
+    "mode": "known-jd",
+    "seed": 20261116,
+    "seed_retries": 0,
+    "ratios": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "grouping": "Keep the entire scenario bank together, plus source/template/ancestor/near-duplicate links to historical CVs.",
+    "catalogue": "All 788 source-eligible JD from metadata v4, retaining parser-development exposure and label guard.",
+    "label_status": "Frozen intake, subsequent versioned proxy rubric; stop before training",
+    "acceptance": "Preserve prior CV identity and partitions; allocate new whole banks once. Synthetic proxy preparation, not production quality."
+  },
+  "source_files": [
+    "commerce.json",
+    "transport.json",
+    "manufacturing.json",
+    "energy.json",
+    "hospitality.json",
+    "education.json",
+    "sports.json",
+    "agriculture.json",
+    "nonprofit.json"
+  ]
+}

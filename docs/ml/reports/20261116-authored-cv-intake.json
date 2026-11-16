@@ -1,0 +1,157 @@
+{
+  "distributions": {
+    "development": {
+      "banks": {},
+      "count": 0,
+      "experience_kinds": {},
+      "groups": 0,
+      "roles": {}
+    },
+    "excluded": {
+      "banks": {},
+      "count": 0,
+      "experience_kinds": {},
+      "groups": 0,
+      "roles": {}
+    },
+    "test": {
+      "banks": {
+        "research_operations": 10
+      },
+      "count": 10,
+      "experience_kinds": {
+        "contract": 2,
+        "employment": 2,
+        "internship": 2,
+        "project": 2,
+        "unknown": 2
+      },
+      "groups": 1,
+      "roles": {
+        "ai/ml engineer": 1,
+        "backend .net": 1,
+        "backend java": 1,
+        "backend python": 1,
+        "data engineer": 1,
+        "devops/cloud": 1,
+        "frontend": 1,
+        "fullstack": 1,
+        "mobile": 1,
+        "qa/testing": 1
+      }
+    },
+    "train": {
+      "banks": {
+        "public_services": 10
+      },
+      "count": 10,
+      "experience_kinds": {
+        "contract": 2,
+        "employment": 2,
+        "internship": 2,
+        "project": 2,
+        "unknown": 2
+      },
+      "groups": 1,
+      "roles": {
+        "ai/ml engineer": 1,
+        "backend .net": 1,
+        "backend java": 1,
+        "backend python": 1,
+        "data engineer": 1,
+        "devops/cloud": 1,
+        "frontend": 1,
+        "fullstack": 1,
+        "mobile": 1,
+        "qa/testing": 1
+      }
+    },
+    "validation": {
+      "banks": {
+        "creative_production": 10
+      },
+      "count": 10,
+      "experience_kinds": {
+        "contract": 2,
+        "employment": 2,
+        "internship": 2,
+        "project": 2,
+        "unknown": 2
+      },
+      "groups": 1,
+      "roles": {
+        "ai/ml engineer": 1,
+        "backend .net": 1,
+        "backend java": 1,
+        "backend python": 1,
+        "data engineer": 1,
+        "devops/cloud": 1,
+        "frontend": 1,
+        "fullstack": 1,
+        "mobile": 1,
+        "qa/testing": 1
+      }
+    }
+  },
+  "evidence": {
+    "duration_assertions": 30,
+    "skill_assertions": 117
+  },
+  "reproducibility": {
+    "files_identical": 80,
+    "manifest_sha256": "64c7802732322a47660b3026189a6d5ef2a10fba0fdf27494190bb889c7ba76b"
+  },
+  "summary": {
+    "candidate_selection": {
+      "scoped_experience_requirement_gap": 12,
+      "shared_skill_different_role": 30,
+      "shared_skill_different_stack": 23,
+      "uniform_random_without_replacement": 100
+    },
+    "cv_count": 30,
+    "cv_development": 0,
+    "cv_excluded": 0,
+    "cv_groups": 3,
+    "declared_banks": 3,
+    "evaluation_pair_workload": {
+      "test": 7880,
+      "validation": 7880
+    },
+    "evaluation_pairs_materialized": false,
+    "final_test_ready": false,
+    "jd_groups": 698,
+    "labels_created": 0,
+    "lexical": {
+      "cross_bank_pairs": 300,
+      "deleted_v5_text_comparison_performed": false,
+      "historical_cv_count": 186,
+      "historical_pairs": 5580,
+      "interpretation": "Word-trigram/whole-sentence diagnostics only; shared author and domain-bank confounding remain",
+      "maximum_cross_bank_jaccard": 0.030303030303030304,
+      "maximum_historical_jaccard": 0.026200873362445413,
+      "repeated_long_sentences_across_banks": 0,
+      "semantic_independence_established": false
+    },
+    "limitations": [
+      "Small individually authored synthetic cohort; one AI author, three domain banks, not independently collected real CVs",
+      "One bank per partition confounds domain shift with holdout; not enough for model selection or production quality claims",
+      "No comparison against erased v5 text; historical near checks only cover retained cohorts",
+      "Expanded taxonomy label guard remains: same/different title is not a 0/1/2 rubric",
+      "Data Analyst remains a research target; no eligible new positive JD coverage has been added"
+    ],
+    "models_trained": 0,
+    "pilot_files_unchanged": 51,
+    "production_quality_established": false,
+    "sampling_shortages": 9,
+    "shared_jd_count": 788,
+    "source_csv_unchanged": 3,
+    "split": {
+      "test": 10,
+      "train": 10,
+      "validation": 10
+    },
+    "structural_partition_ready": true,
+    "train_candidate_pairs": 165,
+    "version": "authored-cv-intake-v1"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "adapter_version": "upstream-observation-v2",
+  "context_files": [
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/job_descriptions.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_clean.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/snapshots/jobs_matching.csv",
+      "role": "upstream_stage_not_additional_records"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/profiles.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/relations.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/lineage.jsonl",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection_features.json",
+      "role": "lineage_quality_selection_evidence"
+    },
+    {
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/selection.json",
+      "role": "lineage_quality_selection_evidence"
+    }
+  ],
+  "dataset_version": "upstream-observation-v2-2f77164049d1",
+  "near_threshold": 0.85,
+  "schema_version": 1,
+  "sources": [
+    {
+      "collected_at": null,
+      "columns": {
+        "exposure": "import_exposure",
+        "external_id": "job_id",
+        "lineage": "import_lineage",
+        "quality_reasons": "import_quality_reasons",
+        "related_source_keys": "import_related_sources",
+        "role": "import_role",
+        "source_group": "content_group_id",
+        "text": "match_text"
+      },
+      "defaults": {
+        "is_synthetic": false,
+        "text_scope": "professional"
+      },
+      "kind": "jd",
+      "namespace": "it-job-posting-matching",
+      "path": "../../../ml_data_runs/20261113_upstream_v2_01/canonical_jd.csv",
+      "source_attribution_status": "URL from repository historical report, not independently verified source revision",
+      "source_url": "https://github.com/SonPhatTranDeveloper/IT-Job-Posting",
+      "usage_terms": null,
+      "version": "sha256:2f77164049d1e29788c3b68bdc017836ffdbc3d96b8def723c1f5dc4d32fb4ab"
+    }
+  ]
+}
