@@ -1,5 +1,65 @@
 # Kiểm thử
 
+## Chuẩn bị 120 CV và luật nhãn mở rộng — 16/11/2026
+
+**110/110 test đạt**, 69,220 giây. Bổ sung 2 test giữ ID/lineage và partition cũ, 13 test ngữ nghĩa luật nhãn: thiếu skill không phải phủ định; khác nghề không tự nhãn 0; unknown/outside scope; ưu tiên và AND/OR; scope tháng và ngưỡng nghiêm ngặt; câu điều kiện; offset theo schema JD thực; census toàn catalog và chặn metric khi thiếu nhãn. Dùng fixture riêng, không dùng CV holdout để sửa cách chấm.
+
+Hai run intake v7 có **99/99 file giống byte**, hai run nhãn v1 có **32/32 file giống byte**. `check-expanded-labels` dựng lại facts từ văn bản/receipt, tái tính quyết định cho 48.284 cặp, kiểm lưới train/census, partition, version/hash, evidence và tổng hợp. Xác minh 54 file nguồn/pilot, sáu run lịch sử và việc lô v5 vẫn bị xóa. Ruff đạt; `git diff --check` sạch. Test đạt chỉ chứng minh các hợp đồng kỹ thuật, không chứng nhận nhãn đúng hoặc dataset sẵn sàng train. [Báo cáo và giới hạn thực tế](docs/ml/expanded_preparation.md).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data scripts/report-expanded-preparation.py tests/ml/test_intake.py tests/ml/test_expanded_labels.py
+if ($LASTEXITCODE -ne 0) { throw 'Expanded preparation lint failed' }
+```
+
+## Tiếp nhận CV viết riêng v6 — 16/11/2026
+
+**95/95 test đạt**, 71,911 giây. Tám test mới trong `tests/ml/test_intake.py` dùng fixture riêng: từ chối slot/shared-template, giữ nguyên text và evidence, không xóa ancestry khi đổi ngân hàng, từ chối parent thiếu ancestry/JD đích, nguồn trùng/skill không có bằng chứng, giữ cờ JD và protocol known-JD, không suy nhãn từ tên nghề và không coi lexical similarity là chứng nhận độc lập.
+
+Hai run `_02`/`_03` có **80/80 file giống byte**. `check-cv-intake` dựng lại metadata/evidence, nhóm, assignment theo seed và các cặp lấy mẫu; kiểm nguyên văn/hash và nhãn trống. Cả 30 CV qua gate khai báo, 788 JD được giữ; preview 10/10/10 và 165 cặp train. Kiểm thử đạt không chứng minh độ chính xác nhãn hoặc chất lượng ML. Ruff đạt cho module/CLI, script báo cáo và test mới; nguồn/pilot giữ nguyên. [Báo cáo từ run](docs/ml/authored_cv_intake.md).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data/intake.py ml_data/__main__.py scripts/report-cv-intake.py tests/ml/test_intake.py
+if ($LASTEXITCODE -ne 0) { throw 'CV intake lint failed' }
+```
+
+## Sau xóa lô 200 CV v5 — 16/11/2026
+
+**87/87 test còn dùng đạt**, 35,238 giây. Đã gỡ tám test và công cụ riêng của lô bị loại; kết quả 95 test trước đây thuộc phiên bản trước dọn dẹp. Ruff đạt cho `ml_data`, hai script báo cáo JD và test catalog/refinement; `git diff --check` sạch. Đã xác minh 54 hash nguồn/pilot và manifest đầy đủ của sáu run được giữ nguyên; tám thư mục đã xóa không còn tồn tại. Giữ các test metadata, lineage và chốt chặn nhãn của pipeline còn dùng. [Phạm vi xóa và kiểm chứng](docs/ml/retired_expanded_cv_cleanup.md).
+
+## Metadata catalog v4 — 16/11/2026
+
+**87/87 test đạt**, 74,565 giây; tám test mới ở `tests/ml/test_refinement.py` kiểm các dạng chức danh thực tế, bảo toàn xung đột/generic, không suy nghề từ một công nghệ, tách optional/core, evidence theo schema canonical, bảo toàn duration/unknown và chặn bộ luật nhãn cũ trên taxonomy mới. Sau chỉnh chẩn đoán `3+ years`, chạy lại đủ tám test mới đạt (0,097 giây). Ruff đạt cho module/CLI/label guard, script báo cáo và test mới. Không chạy lại model hoặc benchmark pilot.
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data/refinement.py ml_data/label_rules.py ml_data/__main__.py scripts/report-jd-refinement.py tests/ml/test_refinement.py
+if ($LASTEXITCODE -ne 0) { throw 'Metadata lint failed' }
+```
+
+Hai run hiện hành là `20261116_jd_metadata_v4_03` và `_04`; báo cáo được sinh sau kiểm manifest và so sánh toàn bộ file. `_01`/`_02` là snapshot trung gian trước sửa quy tắc và kế hoạch, giữ nguyên để truy vết, không dùng làm đầu vào tiếp theo. [Báo cáo kiểm chứng](docs/ml/jd_metadata_refinement.md).
+
+## Mở rộng toàn bộ catalog JD — 16/11/2026
+
+**79/79 test đạt**, 70,415 giây. Năm test mới ở `tests/ml/test_catalogue.py` kiểm giữ mọi nghề/unknown, không sửa đầu vào, giữ nhóm gần trùng và lịch sử benchmark, từ chối ID trùng/JD không hợp lệ/leakage development, tính khối lượng thiếu metadata mà không tạo nhãn, kiểm evidence theo offset và nội dung nguồn. Ruff đạt cho module/CLI, script báo cáo và test mới.
+
+Hai lần `expand-jd-catalogue` trên dữ liệu thật có **73/73 file giống byte**: 3.062 record nguồn, 788 JD catalog, 698 nhóm. Đã xác minh manifest, hash ba CSV nguồn, 51 file pilot và hai run chuẩn bị/Bước 4 không đổi. Không chạy training/scoring mới hoặc API/UI/Docker/VM. [Báo cáo sinh từ run](docs/ml/jd_catalogue_expansion.md).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data/catalogue.py ml_data/__main__.py scripts/report-jd-catalogue.py tests/ml/test_catalogue.py
+if ($LASTEXITCODE -ne 0) { throw 'Catalogue lint failed' }
+```
+
 ## Bước 4 — 14/11/2026
 
 **74/74 test đạt**, 55,301 giây. Mười test mới ở `tests/ml/test_step4.py` kiểm metric có mẫu số undefined, tie theo ID, scaler chỉ fit train, lựa chọn không dùng baseline sinh nhãn, scope/cận kinh nghiệm, đủ lưới cặp, allowlist thông tin cá nhân, suy luận gói và từ chối artifact bị sửa trước deserialize. `pip check` đạt; Ruff đạt cho phạm vi ML mới và sửa đổi.

@@ -1,0 +1,19 @@
+role,jd_count,jd_groups,existing_cv_count,missing_experience,missing_skills,missing_stack
+ai/ml engineer,31,22,0,9,2,14
+backend .net,21,17,0,8,0,0
+backend golang,5,5,0,2,0,0
+backend java,110,93,12,37,1,6
+backend node.js,2,2,0,0,0,0
+backend php,6,5,0,1,0,0
+backend python,19,18,12,6,0,0
+business analyst,27,26,0,8,10,12
+data engineer,15,14,0,4,0,0
+devops/cloud,14,14,12,6,0,1
+embedded engineer,7,6,0,1,2,2
+erp/is specialist,9,9,0,1,2,4
+frontend,96,90,12,33,0,3
+game developer,18,15,0,8,0,1
+mobile,46,43,0,15,10,27
+qa/testing,40,40,12,11,7,9
+security engineer,6,6,0,3,1,5
+ui/ux designer,8,8,0,1,6,8

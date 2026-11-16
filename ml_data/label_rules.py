@@ -44,7 +44,9 @@ def label_pair_row(pair_row, cv_rec, jd_rec, jd_receipt=None):
     stack = set(cv_rec.get("stack", [])) & set(jd_rec.get("stack", []))
     duration_state = experience_coverage(cv_rec, jd_rec, jd_receipt)
     status, label = "labeled", ""
-    if not role or not target:
+    if cv_rec.get("label_policy_status") or jd_rec.get("label_policy_status"):
+        status, reason = "insufficient_evidence", "Expanded metadata taxonomy requires a compatible label policy; role-string inequality is not evidence of irrelevance."
+    elif not role or not target:
         status, reason = "insufficient_evidence", "Role is unknown or ambiguous; not evidence of irrelevance."
     elif role != target:
         label, reason = "0", "Different explicit primary roles under this proxy rubric; shared keywords alone are insufficient."

@@ -1,8 +1,20 @@
 # Mốc 2 — Kết quả upstream sau sửa điều kiện v2
 
+**Hiện hành — CV v7 và nhãn mở rộng, 16/11/2026:** đã giữ 30 CV v6, thêm 90 CV viết riêng thành **120 CV / 12 ngân hàng**, known-JD split **60/30/30**, giữ partition v6 và chia nhóm mới một lần. Toàn **788 JD** vẫn dùng chung với exposure phát triển parser. Train 1.004 cặp, validation/test 23.640 cặp mỗi tập; luật proxy v1 gán được 4.320 nhãn, còn 43.964 ô trống. Train thiếu lớp 0/2; chưa train hoặc đo metric toàn catalog. 110 test đạt, hai run intake/nhãn lần lượt 99/32 file giống byte. [Bàn giao hiện hành và các điều kiện chưa đạt](expanded_preparation.md).
+
+Schema CV tiếp tục dùng `new_cvs.template.json`, thêm lineage qua `lineage_json`. [Config v7](data_configs/authored_cv_v7_import.json) chỉ nhập phần CV, có **hai namespace giữ nguyên** cho v7/v6; lệnh `prepare-cv-intake --prior-intake ...` mới ghép đúng catalog JD đã niêm phong và pin partition cũ. Không nhập generic config rồi tự ghép ba CSV nguồn thành các nguồn JD độc lập. `prepare-expanded-labels` tạo artifact riêng, không sửa `records.jsonl` hay nhãn/run lịch sử; `check-expanded-labels` kiểm lại bằng chứng và census. Chi tiết quy tắc, unknown và PowerShell ở báo cáo hiện hành.
+
+**Lịch sử CV v6, 16/11/2026:** sau xóa v5, đã tiếp nhận 30 CV viết riêng, 10 nghề, ba ngân hàng kịch bản nguồn. Preview 10/10/10 chỉ xác nhận chia nhóm theo nguồn khai báo; chưa chứng nhận độc lập ngữ nghĩa hoặc dữ liệu ứng viên thật. Giữ toàn catalog 788 JD cùng exposure/label guard; 165 cặp train chưa nhãn. [Bàn giao tại thời điểm v6](authored_cv_intake.md).
+
+**Đã xóa lô CV mở rộng v5, 16/11/2026:** 200 CV dùng chung khung sinh, không đủ nhóm độc lập; đã xóa assets/run/công cụ riêng theo yêu cầu. Không còn dataset kết hợp 988 record hoặc split của lô này. [Biên bản xóa; dữ liệu JD được giữ](retired_expanded_cv_cleanup.md).
+
+**Metadata catalog v4, 16/11/2026:** lượt tiếp theo bổ sung metadata trên toàn 788 JD, giữ 136 unknown role và 286 unknown scoped duration. Catalog được đánh dấu đã dùng phát triển parser, chỉ dùng như kho JD đã biết cho đánh giá CV mới; không phải holdout JD mới. Thiết kế CV trong báo cáo là lịch sử; lô tiếp nhận nhỏ v6 được ghi riêng phía trên. [Báo cáo metadata](jd_metadata_refinement.md).
+
+**Mở rộng ngày 16/11/2026:** đã tạo dataset JD riêng giữ đủ 3.062 record và catalog 788 JD qua gate ngoài development, có 698 nhóm; không chọn lại seed hoặc lọc nghề/metadata. Lưu riêng lịch sử 50 JD benchmark và 5 JD cùng nhóm, giữ CV đã đánh giá cho hồi quy ở vòng sau. Chưa tạo nhãn/split hoặc train lại. [Kết quả hai run thực, metadata còn thiếu và PowerShell](jd_catalogue_expansion.md). Các trạng thái “prospective” dưới đây là lịch sử upstream; khi dùng tiếp phải đọc thêm exposure của benchmark đã hoàn tất.
+
 **Cập nhật sau chuẩn bị:** Bước 4 đã chạy trên bộ dữ liệu v3 giữ nguyên. Kết quả/model được chọn và giới hạn ở [step4_results.md](step4_results.md). Những đoạn “chưa chạy Bước 4” bên dưới mô tả thời điểm bàn giao dữ liệu, không phải trạng thái hiện tại.
 
-**Trạng thái hiện hành 14/11/2026:** đã hoàn tất điều kiện kỹ thuật trước Bước 4 với lô **60 CV mới / 12 họ**, split **30/15/15** và **3.000 cặp có nhãn tự động** trên catalog 50 JD cố định. Lô 60 CV v2 cũ giữ development vì lỗi lineage. Hai run mới có 302 file giống byte; 64 test đạt. Xem [bàn giao hiện hành và lệnh PowerShell](pretraining_handoff.md). Các mục 1–7 bên dưới lưu quá trình upstream, CV v1 và kiểm toán v2; các số lượng split/nhãn lịch sử không thay thế kết quả hiện hành. **Chưa chạy Bước 4.**
+**Lịch sử bàn giao trước Bước 4, 14/11/2026:** đã hoàn tất điều kiện kỹ thuật với lô **60 CV mới / 12 họ**, split **30/15/15** và **3.000 cặp có nhãn tự động** trên catalog 50 JD cố định. Lô 60 CV v2 cũ giữ development vì lỗi lineage. Hai run có 302 file giống byte; 64 test đạt. Xem [bàn giao tại thời điểm đó và lệnh PowerShell](pretraining_handoff.md). Các mục 1–7 bên dưới lưu quá trình upstream, CV v1 và kiểm toán v2; các số lượng split/nhãn lịch sử không thay thế kết quả hiện hành.
 
 Ngày 13/11/2026. Báo cáo được sinh từ hai run đã kiểm checksum và so sánh **51 file giống byte**. Không lấy lại số liệu/ID từ bản báo cáo v1. [Receipt đầy đủ](reports/20261113-data-preparation.json), [danh sách JD](reports/20261113-upstream-jd-selection.json), [schema cột thực tế](schemas/upstream_columns.json).
 

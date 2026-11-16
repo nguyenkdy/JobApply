@@ -1,0 +1,238 @@
+{
+  "cv_plan": {
+    "authoring_constraints": [
+      "No target JD, ranking, relevance label or copied JD sentences in authoring inputs",
+      "Synthetic fictional identities only; literal skill and scoped-duration evidence in a sidecar",
+      "Unknown duration remains {}; internship/project time is not professional time",
+      "Same source/framework/near-duplicate family stays in one partition; record prior ancestors",
+      "Old 60 CVs remain regression only; new CVs used for parser tuning become development",
+      "One AI author is shared provenance, not independent real applicant evidence"
+    ],
+    "catalogue_jd_count": 788,
+    "data_analyst": "Still a research target; zero eligible JD previously observed. Resolve JD source before positive benchmark coverage.",
+    "experience_kinds": [
+      "employment",
+      "contract",
+      "internship",
+      "project",
+      "unknown"
+    ],
+    "families": {
+      "cvs_per_role_per_family": 2,
+      "rule": "Actual shared authoring frameworks; ancestry cannot be reset to obtain a split",
+      "target": 10
+    },
+    "planned_cv_partitions": {
+      "test": 40,
+      "train": 120,
+      "validation": 40
+    },
+    "proposed_cv_count": 200,
+    "protocol": "known-jd; shared full catalogue, new untouched CV source/template groups; preview until grouping checks",
+    "readiness_blockers": [
+      "Author and validate genuinely new source scenarios before splitting",
+      "Expanded occupation taxonomy needs compatibility policy; different strings alone cannot imply label 0",
+      "Unknown metadata must retain unlabeled status; no full-catalogue metrics from a silently filtered grid"
+    ],
+    "roles": [
+      {
+        "jd_count": 11,
+        "jd_groups": 10,
+        "proposed_cvs": 20,
+        "reason": "original target",
+        "role": "backend python"
+      },
+      {
+        "jd_count": 88,
+        "jd_groups": 75,
+        "proposed_cvs": 20,
+        "reason": "original target",
+        "role": "backend java"
+      },
+      {
+        "jd_count": 56,
+        "jd_groups": 52,
+        "proposed_cvs": 20,
+        "reason": "original target",
+        "role": "frontend"
+      },
+      {
+        "jd_count": 14,
+        "jd_groups": 14,
+        "proposed_cvs": 20,
+        "reason": "original target",
+        "role": "devops/cloud"
+      },
+      {
+        "jd_count": 39,
+        "jd_groups": 39,
+        "proposed_cvs": 20,
+        "reason": "original target",
+        "role": "qa/testing"
+      },
+      {
+        "jd_count": 31,
+        "jd_groups": 25,
+        "proposed_cvs": 20,
+        "reason": "broaden stack/domain coverage",
+        "role": "backend .net"
+      },
+      {
+        "jd_count": 90,
+        "jd_groups": 80,
+        "proposed_cvs": 20,
+        "reason": "broaden stack/domain coverage",
+        "role": "fullstack"
+      },
+      {
+        "jd_count": 50,
+        "jd_groups": 47,
+        "proposed_cvs": 20,
+        "reason": "broaden stack/domain coverage",
+        "role": "mobile"
+      },
+      {
+        "jd_count": 16,
+        "jd_groups": 15,
+        "proposed_cvs": 20,
+        "reason": "broaden stack/domain coverage",
+        "role": "data engineer"
+      },
+      {
+        "jd_count": 37,
+        "jd_groups": 26,
+        "proposed_cvs": 20,
+        "reason": "broaden stack/domain coverage",
+        "role": "ai/ml engineer"
+      }
+    ],
+    "schema_required": [
+      "cv_id",
+      "cv_text",
+      "source_group",
+      "template_group",
+      "is_synthetic",
+      "role",
+      "skills",
+      "stack",
+      "experience_json",
+      "exposure",
+      "text_scope",
+      "lineage_json"
+    ],
+    "status": "design_only_no_cvs_generated",
+    "test_pairs": 31520,
+    "training_sampling": {
+      "hard_per_type": 3,
+      "hard_types": [
+        "role",
+        "stack",
+        "experience"
+      ],
+      "maximum_pairs": 2280,
+      "note": "Upper bound before dedup/availability; candidates are not labels",
+      "random_per_cv": 10
+    },
+    "uncovered_roles": {
+      "": 136,
+      "backend (unspecified stack)": 21,
+      "backend golang": 7,
+      "backend node.js": 7,
+      "backend php": 11,
+      "backend ruby": 2,
+      "blockchain": 4,
+      "bridge engineer": 9,
+      "business analyst": 12,
+      "c/c++ software": 7,
+      "cnc/cam manufacturing": 14,
+      "cobol software": 1,
+      "data governance": 1,
+      "data scientist": 1,
+      "database/sql": 9,
+      "desktop application": 9,
+      "education/training": 4,
+      "embedded engineer": 14,
+      "engineering management": 6,
+      "erp/is specialist": 8,
+      "game design": 2,
+      "game developer": 18,
+      "industrial automation": 2,
+      "it management": 2,
+      "marketing": 2,
+      "material development": 2,
+      "network engineering": 2,
+      "product management": 2,
+      "project management": 9,
+      "sales/business development": 4,
+      "scrum master": 2,
+      "security engineer": 9,
+      "technical architecture": 8,
+      "technical art": 1,
+      "ui/ux designer": 8
+    },
+    "validation_pairs": 31520
+  },
+  "reproducibility": {
+    "identical_files": 34,
+    "manifest_sha256": "a02bb174619e3edb3680b75e1fb96e7ba7c2052ff5e9e7bac710544b61927ab3"
+  },
+  "summary": {
+    "benchmark_scope": {
+      "outside_software_benchmark": 28,
+      "requires_protocol_mapping": 760
+    },
+    "changed_records": 459,
+    "evidence_audit": {
+      "duration_extraction_rerun": false,
+      "extraction_rerun": true,
+      "extractor_versions": [
+        "catalogue-metadata-v4-title-taxonomy"
+      ],
+      "jd_count": 788,
+      "literal_spans_verified": 12681,
+      "semantic_accuracy_established": false
+    },
+    "fields_changed": {
+      "experience": 0,
+      "role": 278,
+      "skills": 278,
+      "stack": 249
+    },
+    "final_test_ready": false,
+    "groups": 698,
+    "jd_count": 788,
+    "labels_created": 0,
+    "limitation": "Coverage, not accuracy. New taxonomy not compatible with role-string inequality as negative labels.",
+    "missing_after": {
+      "experience": 286,
+      "role": 136,
+      "skills": 65,
+      "stack": 110
+    },
+    "missing_before": {
+      "experience": 286,
+      "role": 308,
+      "skills": 95,
+      "stack": 172
+    },
+    "missing_reasons": {
+      "conflicting_role_cues": 20,
+      "no_core_stack_term_in_versioned_vocabulary": 110,
+      "no_core_term_in_versioned_vocabulary": 65,
+      "no_numeric_duration_in_requirements": 193,
+      "no_supported_occupation_cue": 116,
+      "numeric_duration_without_supported_scope_or_minimum": 93
+    },
+    "models_trained": 0,
+    "new_cvs_created": 0,
+    "pilot_files_unchanged": 51,
+    "role_precision": {
+      "generic": 21,
+      "occupation_rule": 631,
+      "unknown_or_conflicting": 136
+    },
+    "source_csv_unchanged": 3,
+    "source_manifest_sha256": "a48e8cc03d494fc9bb0c62aeab9cfe7bc112e033a17e97bec70d9cb7c8390808",
+    "version": "catalogue-metadata-v4-title-taxonomy"
+  }
+}

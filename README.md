@@ -6,6 +6,8 @@ Ví dụ cần kiểm chứng: CV Backend Python/Django 2 năm nên được ưu
 
 **Trạng thái:** đã có ứng dụng tuyển dụng, baseline pilot **50 JD × 6 CV** và thí nghiệm offline mới **50 JD × 60 CV synthetic**. Đã chọn **LR metadata C=0,1 trên validation** cho benchmark nhãn tự động; chưa chốt model sản phẩm, chưa chứng minh chất lượng trên ứng viên thật và chưa tích hợp matching vào upload CV. Chức năng này đề xuất việc làm cho ứng viên, không tự quyết định tuyển dụng hay từ chối ứng viên.
 
+**Chuẩn bị mở rộng mới nhất — 16/11/2026:** đã ghép **120 CV synthetic / 12 ngân hàng kịch bản**, giữ nguyên 30 CV v6 và thêm 90 CV viết riêng; split **60/30/30**, giữ nguyên partition cũ, toàn **788 JD** dùng chung. Đã xử lý **48.284 cặp** bằng luật proxy có bằng chứng: **4.320 có nhãn, 43.964 còn trống**; train chỉ có nhãn 1, chưa có nhãn 2 trong lô. **Chưa đủ điều kiện huấn luyện LR hoặc đo Recall@5/NDCG@5 toàn catalog.** Parser yêu cầu còn hẹp, không đổi thiếu thông tin thành nhãn 0 để lấp chỗ trống. 110 test đạt; hai lần chạy có 99 file intake và 32 file nhãn giống byte. [Báo cáo hiện hành, dữ liệu thực, thiếu sót và lệnh PowerShell](docs/ml/expanded_preparation.md). Không có model mới từ lô mở rộng.
+
 README là tài liệu bàn giao cho người phát triển/Codex, đối chiếu với code và dữ liệu tại commit [2008a38d](https://github.com/nguyenkdy/JobApply/commit/2008a38d4d01455d3519048f6b48534156a556d1), ngày 12/11/2026. Các phần ghi **đề xuất/cần làm** chưa được triển khai chỉ vì xuất hiện trong tài liệu.
 
 **Cập nhật Mốc 0 & Demo:** đã chạy lại baseline offline với môi trường/encoder khóa phiên bản, bảo toàn dữ liệu gốc và kiểm chứng hai run lặp; demo `recommend.py` chọn run qua `--run-dir` và xác minh toàn vẹn artifact trước khi suy luận. Xem [báo cáo và lệnh tái tạo Mốc 0](docs/ml/baseline.md).
@@ -15,6 +17,16 @@ README là tài liệu bàn giao cho người phát triển/Codex, đối chiế
 Giai đoạn chuẩn bị trước đó đã kiểm hai run giống byte, giữ CV cũ ở development, kho JD có **788 keep ngoài development**. [Bàn giao trước Bước 4](docs/ml/pretraining_handoff.md), [kiểm toán lô cũ](docs/ml/benchmark_audit.md), [quy tắc nhãn](docs/ml/annotation_guidelines.md). Không yêu cầu người review/calibration; nhãn vẫn `automatic_rule_proxy`.
 
 **Dọn lô CV cũ:** đã xóa assets tạo CV v2 và công cụ dựng benchmark v2 khỏi mã nguồn hiện hành. Snapshot cũ vẫn cần để kiểm lineage/chống trùng và tái tạo lô mới; không xóa chúng khỏi run đã niêm phong. Không có CV cũ trong train/validation/test mới. [Phạm vi xóa và phần còn dùng](docs/ml/retired_cv_cleanup.md).
+
+**Xem kết quả trực tiếp:** đã có trang offline chọn từng CV test/phương pháp, xem Top 5 hoặc toàn bộ 50 JD, đọc CV/JD và nhãn. [Cách mở trang và đối chiếu kết quả](docs/ml/step4_review.md).
+
+**Mở rộng catalog JD (16/11/2026):** đã nhập toàn bộ **3.062 JD** vào dataset riêng và xuất **788 JD qua gate ngoài development** (tăng 738 ID so với catalog cũ), thuộc **698 nhóm nguồn/trùng/gần trùng**. Giữ riêng 100 JD development, 65 bản trùng bị loại và 2.109 bản cách ly. Catalog giữ cả nghề ngoài năm nhóm CV hiện có; **308 JD còn unknown role**. Hai run có 73/73 file giống byte, 79 test đạt. Chưa tạo nhãn/train trên catalog mở rộng; điểm Bước 4 phía trên vẫn chỉ áp dụng cho 50 JD. [Báo cáo, dữ liệu và lệnh PowerShell](docs/ml/jd_catalogue_expansion.md).
+
+**Bổ sung metadata catalog (16/11/2026):** giữ đủ 788 JD; số JD thiếu nghề giảm **308 → 136**, thiếu kỹ năng **95 → 65**, thiếu stack **172 → 110**; 286 JD thiếu thời lượng theo scope vẫn để unknown. Phân biệt Fullstack/DBA/nhúng/quản lý và đánh dấu 28 JD ngoài phạm vi benchmark phần mềm, không xóa chúng khỏi kho. Bộ luật cũ bị chặn khi gặp taxonomy mới chưa có chính sách tương thích; không tự coi khác tên nghề là nhãn 0. Thiết kế CV trong báo cáo là lịch sử; lô 200 CV sinh sau đó đã bị loại và xóa. [Kết quả metadata và giới hạn](docs/ml/jd_metadata_refinement.md).
+
+**Đã xóa lô 200 CV v5 (16/11/2026):** lô dùng chung một khung sinh nên không đáp ứng mục tiêu chia nhóm độc lập. Đã xóa assets, toàn bộ run phát sinh, công cụ/CLI/test riêng và báo cáo preview. Giữ nguyên catalog 788 JD, metadata v4, pilot và kết quả Bước 4. Không tái sử dụng lô đã xóa. [Biên bản dọn dẹp](docs/ml/retired_expanded_cv_cleanup.md).
+
+**Lô tiếp nhận CV v6 (16/11/2026):** đã viết riêng **30 CV synthetic / 10 nghề**, không có renderer ghép nội dung; gom bảo thủ theo ba ngân hàng kịch bản nguồn, preview **10/10/10** với toàn **788 JD**. Đã tạo 165 cặp ứng viên train chưa nhãn; validation/test dự kiến 7.880 cặp mỗi tập, chưa sinh lưới. Cùng tác giả AI và một ngân hàng/tập vẫn là giới hạn lớn; đây là lô kiểm tra quy trình, chưa đủ chọn model hoặc chứng minh chất lượng. 95 test đạt, hai run có 80 file giống byte. [Dữ liệu, kiểm chứng, lệnh PowerShell và phần còn thiếu](docs/ml/authored_cv_intake.md).
 
 ## 1. Đọc repo trước khi tiếp tục code
 

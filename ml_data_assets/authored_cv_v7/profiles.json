@@ -1,0 +1,2036 @@
+[
+  {
+    "id": "CVA7_CO_PY",
+    "family": "commerce",
+    "role": "Backend Python",
+    "kind": "employment",
+    "text": "Backend Python\nTôi có 36 tháng kinh nghiệm nghề nghiệp với hệ thống đổi trả hàng giả lập. Dùng Python trong 24 tháng để viết API FastAPI và truy vấn PostgreSQL. Tôi xử lý trường hợp khách đổi một phần đơn đã giảm giá, giữ giá gốc để đối soát thay vì áp giá hiện tại. pytest kiểm các lần gửi lại phiếu. Tôi chưa làm phần quyết toán với ngân hàng và không có số liệu tải production.",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pytest"
+    ],
+    "stack": [
+      "FastAPI",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 36,
+        "quote": "Tôi có 36 tháng kinh nghiệm nghề nghiệp với hệ thống đổi trả hàng giả lập."
+      },
+      {
+        "scope": "python",
+        "months": 24,
+        "quote": "Dùng Python trong 24 tháng"
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_JV",
+    "family": "commerce",
+    "role": "Backend Java",
+    "kind": "project",
+    "text": "Backend Java\nBài học của tôi là sổ hạn dùng phiếu quà tặng. Trong 6 tháng dự án cá nhân, tôi làm Java với Spring Boot, dùng H2 để thử quy tắc và JUnit cho ngày hết hạn. Tôi giữ một sự kiện riêng khi phiếu bị thu hồi để giải thích số dư. Chưa kết nối hệ thống thanh toán; mọi mã phiếu là dữ liệu tự đặt. Kết quả chỉ chạy trên máy cá nhân, không phải kinh nghiệm vận hành cửa hàng thật.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "H2",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "H2"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 6,
+        "quote": "Trong 6 tháng dự án cá nhân, tôi làm Java với Spring Boot, dùng H2 để thử quy tắc và JUnit cho ngày hết hạn."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_FE",
+    "family": "commerce",
+    "role": "Frontend",
+    "kind": "internship",
+    "text": "Frontend\nTrong 4 tháng thực tập, tôi sửa trang so sánh kích thước sản phẩm. React và TypeScript giúp giữ lựa chọn khi đổi màu; CSS xử lý bảng quá rộng trên điện thoại. Tôi thêm Vitest cho việc bỏ một món khỏi danh sách so sánh. Có lỗi focus quay về đầu trang sau khi đóng ảnh, tôi sửa theo góp ý của người hướng dẫn. Tôi chưa tự viết API hay chịu trách nhiệm bản phát hành.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Vitest"
+    ],
+    "stack": [
+      "React",
+      "TypeScript"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Trong 4 tháng thực tập, tôi sửa trang so sánh kích thước sản phẩm."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_DO",
+    "family": "commerce",
+    "role": "DevOps/Cloud",
+    "kind": "contract",
+    "text": "DevOps/Cloud\nHợp đồng trong hồ sơ giả lập gồm dựng môi trường thử khuyến mại, tổng 24 tháng kinh nghiệm nghề nghiệp. Tôi dùng Linux, Docker và Ansible; Prometheus theo dõi dung lượng hàng đợi. Tôi tách bí mật khỏi ảnh container và thử khôi phục cấu hình cũ trước khi bàn giao. Chưa quản trị Kubernetes, chưa có thời lượng riêng cho cloud công cộng. Các bài diễn tập không được coi là cam kết thời gian phục hồi thực tế.",
+    "skills": [
+      "Linux",
+      "Docker",
+      "Ansible",
+      "Prometheus"
+    ],
+    "stack": [
+      "Docker",
+      "Ansible"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 24,
+        "quote": "Hợp đồng trong hồ sơ giả lập gồm dựng môi trường thử khuyến mại, tổng 24 tháng kinh nghiệm nghề nghiệp."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_QA",
+    "family": "commerce",
+    "role": "QA/Testing",
+    "kind": "unknown",
+    "text": "QA/Testing\nTôi có ghi chú kiểm tra mã giảm giá dùng chung với phí giao hàng. Postman gửi các biến thể request, SQL giúp đối chiếu số tiền lưu, Jira lưu lỗi và dữ liệu tái hiện. Một lỗi xuất hiện khi người dùng quay lại sửa giỏ sau bước xác nhận. Tôi chủ yếu kiểm thủ công; chưa sử dụng Selenium. Không đủ nhật ký để khai tháng kinh nghiệm hoặc loại hợp đồng, nên thông tin thời lượng để trống.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Jira"
+    ],
+    "stack": [
+      "Postman"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_CO_DN",
+    "family": "commerce",
+    "role": "Backend .NET",
+    "kind": "employment",
+    "text": "Backend .NET\nTôi có 60 tháng kinh nghiệm nghề nghiệp trong hồ sơ hệ thống đại lý mô phỏng. Tôi viết C# với ASP.NET Core, dùng SQL Server giữ hạn mức từng đại lý và xUnit thử điều chỉnh sau khi đơn bị hủy. Việc giữ chỗ tín dụng và ghi nhận giao dịch được tách thành hai bước. Tôi hỗ trợ đọc log sự cố nhưng không thiết kế chính sách tín dụng, cũng không suy thời gian từng thư viện từ tổng thời gian làm việc.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQL Server"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 60,
+        "quote": "Tôi có 60 tháng kinh nghiệm nghề nghiệp trong hồ sơ hệ thống đại lý mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_FS",
+    "family": "commerce",
+    "role": "Fullstack",
+    "kind": "project",
+    "text": "Fullstack\nTôi tự xây công cụ định giá đồ ký gửi giả lập bằng Vue, Django và SQLite. Có 8 tháng dự án cá nhân cho việc nhập tình trạng món đồ, duyệt mức giá và lưu phiên bản sau mỗi lần sửa. Python xử lý kiểm tra dữ liệu ở server. Tôi nhận ra việc chỉ kiểm tra quyền ở giao diện là chưa đủ nên bổ sung kiểm tra endpoint. Chưa có người mua thật, chưa tích hợp thu tiền hoặc đánh giá an toàn giao dịch.",
+    "skills": [
+      "Vue",
+      "Django",
+      "SQLite",
+      "Python"
+    ],
+    "stack": [
+      "Vue",
+      "Django"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 8,
+        "quote": "Có 8 tháng dự án cá nhân cho việc nhập tình trạng món đồ, duyệt mức giá và lưu phiên bản sau mỗi lần sửa."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_MO",
+    "family": "commerce",
+    "role": "Mobile",
+    "kind": "internship",
+    "text": "Mobile\nTôi có 5 tháng thực tập trên ứng dụng kiểm giá tại quầy mô phỏng. Kotlin chạy trên Android, Room lưu những mã đã quét khi Wi-Fi yếu. Tôi sửa lỗi đưa kết quả tìm kiếm cũ vào màn hình sau khi đã quét mã mới và thêm JUnit cho chuyển trạng thái. Người hướng dẫn làm phần kết nối máy quét chuyên dụng. Tôi chưa phát hành app ra cửa hàng hoặc có kinh nghiệm iOS.",
+    "skills": [
+      "Kotlin",
+      "Android",
+      "Room",
+      "JUnit"
+    ],
+    "stack": [
+      "Android",
+      "Room"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 5,
+        "quote": "Tôi có 5 tháng thực tập trên ứng dụng kiểm giá tại quầy mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_DE",
+    "family": "commerce",
+    "role": "Data Engineer",
+    "kind": "contract",
+    "text": "Data Engineer\nTôi bàn giao luồng hợp nhất danh mục từ các nhà bán giả lập sau các hợp đồng tổng cộng 40 tháng kinh nghiệm nghề nghiệp. Airflow điều phối tác vụ Python; PostgreSQL giữ mã nguồn và mã chuẩn. Tôi lưu các trường hợp hai sản phẩm cùng tên nhưng khác dung tích vào hàng chờ, không tự gộp. Có SQL kiểm khóa ngoại và số dòng từng lô. Chưa dùng Spark; số tháng của mỗi công nghệ không được ghi riêng.",
+    "skills": [
+      "Airflow",
+      "Python",
+      "PostgreSQL",
+      "SQL"
+    ],
+    "stack": [
+      "Airflow",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 40,
+        "quote": "Tôi bàn giao luồng hợp nhất danh mục từ các nhà bán giả lập sau các hợp đồng tổng cộng 40 tháng kinh nghiệm nghề nghiệp."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_CO_AI",
+    "family": "commerce",
+    "role": "AI/ML Engineer",
+    "kind": "unknown",
+    "text": "AI/ML Engineer\nTôi từng thử phân loại ảnh bao bì tự tạo có nếp gấp. Python và PyTorch dùng cho mô hình nhỏ, OpenCV tạo các phép biến đổi ảnh. Tôi giữ biến thể của cùng ảnh trong một nhóm và xem riêng lỗi do nền có màu gần sản phẩm. Không còn bảng thời gian đủ rõ để khai tổng tháng. Chưa có dữ liệu khách hàng, chưa triển khai kiểm hàng thực tế và không công bố một con số accuracy không có run đối chiếu.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV"
+    ],
+    "stack": [
+      "PyTorch",
+      "OpenCV"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_TR_PY",
+    "family": "transport",
+    "role": "Backend Python",
+    "kind": "project",
+    "text": "Backend Python\nTrong 7 tháng dự án cá nhân, tôi làm bảng điều phối điểm trung chuyển hàng giả lập. Python với Flask nhận phiếu, SQLite giữ các lần chuyển tuyến. Tôi thêm pytest để kiểm kiện hàng bị quét ở điểm chưa được chỉ định, thay vì tự sửa tuyến cho khớp dữ liệu. Bài làm chưa nối với thiết bị thật. Tôi hiểu phần CRUD và kiểm tra dữ liệu nhưng chưa có kinh nghiệm chạy dịch vụ nhiều tiến trình.",
+    "skills": [
+      "Python",
+      "Flask",
+      "SQLite",
+      "pytest"
+    ],
+    "stack": [
+      "Flask",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 7,
+        "quote": "Trong 7 tháng dự án cá nhân, tôi làm bảng điều phối điểm trung chuyển hàng giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_JV",
+    "family": "transport",
+    "role": "Backend Java",
+    "kind": "internship",
+    "text": "Backend Java\nTôi có 3 tháng thực tập với chức năng xếp lệnh bốc hàng mô phỏng. Tôi dùng Java, Spring Boot và MySQL để thêm trạng thái chờ xác nhận; JUnit kiểm phiếu hủy khi đã được ghép xe. Thiết kế giao dịch do người hướng dẫn cung cấp, tôi chỉ sửa phần được giao và ghi lại ví dụ lỗi. Tôi chưa làm thuật toán tối ưu tuyến, không khai thời gian học đại học thành kinh nghiệm Java làm việc chính thức.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "MySQL"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 3,
+        "quote": "Tôi có 3 tháng thực tập với chức năng xếp lệnh bốc hàng mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_FE",
+    "family": "transport",
+    "role": "Frontend",
+    "kind": "contract",
+    "text": "Frontend\nTôi nhận phần giao diện theo dõi container giả lập qua các hợp đồng, có 32 tháng kinh nghiệm nghề nghiệp. Angular và TypeScript được dùng để lọc theo trạng thái, RxJS xử lý luồng cập nhật. Tôi giữ riêng thời gian dữ liệu được nhận để người điều phối thấy thông tin đã cũ. Có ca Cypress cho thay bộ lọc nhanh liên tiếp. Tôi không viết phần định vị hoặc khẳng định vị trí hiển thị là dữ liệu thời gian thực.",
+    "skills": [
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      "Cypress"
+    ],
+    "stack": [
+      "Angular",
+      "RxJS"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 32,
+        "quote": "Tôi nhận phần giao diện theo dõi container giả lập qua các hợp đồng, có 32 tháng kinh nghiệm nghề nghiệp."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_DO",
+    "family": "transport",
+    "role": "DevOps/Cloud",
+    "kind": "unknown",
+    "text": "DevOps/Cloud\nTài liệu còn lại của tôi ghi việc dựng giám sát cho một bộ gateway vận tải mô phỏng. Tôi dùng Linux và Bash để kiểm tra dịch vụ, Prometheus thu chỉ số, Grafana hiển thị lỗi liên lạc. Tôi đã xử lý một dashboard đếm lại cùng gateway khi đổi tên máy. Các đợt tham gia thiếu mốc thời gian nên tôi để trống số tháng. Chưa sử dụng Terraform và không nhận có kinh nghiệm thiết kế mạng diện rộng.",
+    "skills": [
+      "Linux",
+      "Bash",
+      "Prometheus",
+      "Grafana"
+    ],
+    "stack": [
+      "Prometheus",
+      "Grafana"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_TR_QA",
+    "family": "transport",
+    "role": "QA/Testing",
+    "kind": "employment",
+    "text": "QA/Testing\nTôi có 48 tháng kinh nghiệm nghề nghiệp; 30 tháng kiểm thử phần mềm được ghi riêng. Tôi kiểm phần chuyển trách nhiệm giao kiện hàng, dùng Postman cho API và SQL tìm trạng thái trước sau chuyển. Selenium bằng Java hỗ trợ vài ca trình duyệt lặp. Tôi phát hiện người nhận cũ vẫn cập nhật được phiếu sau bàn giao và lưu ca đó để hồi quy. Tôi chưa kiểm chứng cơ chế định vị xe hoặc các thiết bị nhúng.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Selenium",
+      "Java"
+    ],
+    "stack": [
+      "Postman",
+      "Selenium"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 48,
+        "quote": "Tôi có 48 tháng kinh nghiệm nghề nghiệp; 30 tháng kiểm thử phần mềm được ghi riêng."
+      },
+      {
+        "scope": "kiểm thử phần mềm",
+        "months": 30,
+        "quote": "30 tháng kiểm thử phần mềm"
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_DN",
+    "family": "transport",
+    "role": "Backend .NET",
+    "kind": "project",
+    "text": "Backend .NET\nBài tự học của tôi lưu sơ đồ xếp pallet trong kho mô phỏng. Có 5 tháng dự án cá nhân sử dụng C#, .NET và SQLite. Tôi viết API lưu thứ tự pallet, rồi thử từ chối hai lần xác nhận trên cùng vị trí. xUnit giúp kiểm quy tắc khoảng trống. Chưa có thuật toán tính tải trọng hoặc dữ liệu thiết bị thật; tôi không coi bài toán lưu trạng thái này là kinh nghiệm thiết kế hệ thống kho tự động.",
+    "skills": [
+      "C#",
+      ".NET",
+      "SQLite",
+      "xUnit"
+    ],
+    "stack": [
+      ".NET",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 5,
+        "quote": "Có 5 tháng dự án cá nhân sử dụng C#, .NET và SQLite."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_FS",
+    "family": "transport",
+    "role": "Fullstack",
+    "kind": "internship",
+    "text": "Fullstack\nTrong 6 tháng thực tập, tôi sửa trang khai báo trọng lượng kiện mẫu. React dùng cho form, Node.js kiểm dữ liệu, PostgreSQL lưu phiên bản phiếu. Tôi đã bổ sung lỗi cho đơn vị đo không được hỗ trợ và giữ dữ liệu nhập khi API trả lỗi. TypeScript được dùng ở cả hai phía. Tôi làm theo thiết kế có sẵn, chưa tự vận hành cơ sở dữ liệu hoặc quyết định quy tắc nghiệp vụ giao nhận.",
+    "skills": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "TypeScript"
+    ],
+    "stack": [
+      "React",
+      "Node.js"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 6,
+        "quote": "Trong 6 tháng thực tập, tôi sửa trang khai báo trọng lượng kiện mẫu."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_MO",
+    "family": "transport",
+    "role": "Mobile",
+    "kind": "contract",
+    "text": "Mobile\nTôi làm màn hình kiểm tra niêm phong thùng hàng mô phỏng bằng Flutter và Dart. SQLite giữ ảnh và mã xác nhận chờ gửi, không lưu lại một phiếu mới mỗi lần mạng bị ngắt. Các hợp đồng tạo thành 29 tháng kinh nghiệm nghề nghiệp. Tôi đã sửa cơ chế thử lại để giữ nguyên khóa yêu cầu. Tôi chưa có bằng chứng điều khiển Bluetooth hoặc quản lý thiết bị chuyên dụng, cũng chưa ghi thời gian Flutter riêng.",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "SQLite"
+    ],
+    "stack": [
+      "Flutter",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 29,
+        "quote": "Các hợp đồng tạo thành 29 tháng kinh nghiệm nghề nghiệp."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_TR_DE",
+    "family": "transport",
+    "role": "Data Engineer",
+    "kind": "unknown",
+    "text": "Data Engineer\nTôi có notebook đối chiếu thời điểm đến dự kiến với các lần điều chỉnh lịch xe giả lập. SQL trên ClickHouse tạo bảng tổng hợp, Python kiểm các dòng thiếu mốc giờ, Kafka mang sự kiện thử. Tôi giữ nguyên mỗi phiên bản dự kiến để không dùng thông tin đến sau khi tính sai số. Thiếu lịch sử thời lượng nên không khai tổng tháng. Tôi chưa xây mô hình dự báo và không suy kinh nghiệm streaming production từ bài thử Kafka này.",
+    "skills": [
+      "SQL",
+      "ClickHouse",
+      "Python",
+      "Kafka"
+    ],
+    "stack": [
+      "ClickHouse",
+      "Kafka"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_TR_AI",
+    "family": "transport",
+    "role": "AI/ML Engineer",
+    "kind": "employment",
+    "text": "AI/ML Engineer\nHồ sơ có 39 tháng kinh nghiệm nghề nghiệp về dự báo thời gian xử lý kiện giả lập. Python, pandas và scikit-learn dùng cho baseline; MLflow lưu phiên bản thử. Tôi tách dữ liệu theo thời gian và bỏ biến chỉ xuất hiện sau khi đóng phiếu. Tôi so sai số theo loại kiện để nhận ra nhóm ít mẫu, không chỉ nhìn số trung bình. Chưa xác nhận hiệu quả trên tuyến vận tải thật và chưa làm hệ thống tự điều phối xe.",
+    "skills": [
+      "Python",
+      "pandas",
+      "scikit-learn",
+      "MLflow"
+    ],
+    "stack": [
+      "scikit-learn",
+      "MLflow"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 39,
+        "quote": "Hồ sơ có 39 tháng kinh nghiệm nghề nghiệp về dự báo thời gian xử lý kiện giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_PY",
+    "family": "manufacturing",
+    "role": "Backend Python",
+    "kind": "internship",
+    "text": "Backend Python\nTôi có 4 tháng thực tập sửa bộ nhập danh mục khuôn đúc giả lập. Python đọc tệp, Django kiểm mã và PostgreSQL lưu những dòng chưa hợp lệ vào bảng chờ. Tôi dùng pytest cho tên khuôn chứa dấu cách và việc gửi lại cùng tệp. Người hướng dẫn làm phần liên kết với hệ thống nhà máy. Tôi không biết điều khiển máy CNC và không khai công việc nhập dữ liệu thành kinh nghiệm sản xuất cơ khí.",
+    "skills": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "pytest"
+    ],
+    "stack": [
+      "Django",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Tôi có 4 tháng thực tập sửa bộ nhập danh mục khuôn đúc giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_JV",
+    "family": "manufacturing",
+    "role": "Backend Java",
+    "kind": "contract",
+    "text": "Backend Java\nHợp đồng của tôi xử lý lệnh thay nguyên liệu trong công thức sản xuất mô phỏng. Có 56 tháng kinh nghiệm nghề nghiệp; tôi sử dụng Java trong 40 tháng. Spring Boot và Oracle giữ phiên bản công thức, Kafka thông báo thay đổi tới dịch vụ thử. Tôi không sửa công thức đã được gắn với lô hoàn tất. Việc phê chuẩn nguyên liệu do người phụ trách nghiệp vụ làm; tôi chỉ nhận phần mềm và chưa có kiến thức chứng nhận chất lượng sản phẩm.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "Oracle",
+      "Kafka"
+    ],
+    "stack": [
+      "Spring Boot",
+      "Oracle"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 56,
+        "quote": "Có 56 tháng kinh nghiệm nghề nghiệp; tôi sử dụng Java trong 40 tháng."
+      },
+      {
+        "scope": "java",
+        "months": 40,
+        "quote": "tôi sử dụng Java trong 40 tháng"
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_FE",
+    "family": "manufacturing",
+    "role": "Frontend",
+    "kind": "unknown",
+    "text": "Frontend\nTôi từng làm màn hình xem lỗi bề mặt của các tấm mẫu giả lập. Vue và JavaScript giữ vùng được chọn; CSS định vị ghi chú lên ảnh theo tọa độ tương đối. Tôi đã sửa lỗi ghi chú bị lệch khi người dùng zoom và kiểm lại bằng Playwright. Không đủ mốc thời gian để khai số tháng. Tôi không viết mô hình nhận dạng ảnh hay thuật toán đo kích thước, nên không đưa các năng lực đó vào danh sách kỹ năng.",
+    "skills": [
+      "Vue",
+      "JavaScript",
+      "CSS",
+      "Playwright"
+    ],
+    "stack": [
+      "Vue",
+      "Playwright"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_MF_DO",
+    "family": "manufacturing",
+    "role": "DevOps/Cloud",
+    "kind": "employment",
+    "text": "DevOps/Cloud\nTôi có 64 tháng kinh nghiệm nghề nghiệp trong hồ sơ vận hành môi trường phần mềm nhà máy giả lập. Linux, Ansible và Docker dùng để quản lý các máy dịch vụ; GitLab CI dựng và kiểm ảnh trước triển khai. Tôi tách tài khoản dịch vụ khỏi tài khoản hỗ trợ, ghi lại thao tác đổi cấu hình để có thể quay lui. Chưa làm phần mạng điều khiển công nghiệp hoặc lập trình PLC; thời gian từng công cụ chưa được thống kê riêng.",
+    "skills": [
+      "Linux",
+      "Ansible",
+      "Docker",
+      "GitLab CI"
+    ],
+    "stack": [
+      "Ansible",
+      "Docker",
+      "GitLab CI"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 64,
+        "quote": "Tôi có 64 tháng kinh nghiệm nghề nghiệp trong hồ sơ vận hành môi trường phần mềm nhà máy giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_QA",
+    "family": "manufacturing",
+    "role": "QA/Testing",
+    "kind": "project",
+    "text": "QA/Testing\nTrong 5 tháng dự án cá nhân, tôi thử phần mềm ghi nhận dừng máy do nhóm học tập viết. Postman kiểm API, SQL kiểm thời gian bắt đầu và kết thúc, Python chạy các yêu cầu lặp. Tôi tạo ca khoảng dừng đi qua ngày và ca chỉ có giờ bắt đầu. Tôi chưa sử dụng Selenium. Đây là kiểm thử phần mềm bằng dữ liệu mô phỏng, không phải kiểm định máy hoặc bảo đảm an toàn dây chuyền ngoài thực tế.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Python"
+    ],
+    "stack": [
+      "Postman"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 5,
+        "quote": "Trong 5 tháng dự án cá nhân, tôi thử phần mềm ghi nhận dừng máy do nhóm học tập viết."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_DN",
+    "family": "manufacturing",
+    "role": "Backend .NET",
+    "kind": "internship",
+    "text": "Backend .NET\nTôi có 6 tháng thực tập thêm chức năng truy vết phiên bản bản vẽ thử. C# và ASP.NET Core phục vụ API; Entity Framework ghi liên kết giữa phiên bản và phiếu công việc trong SQL Server. Tôi sửa ca xUnit cho việc dùng phiên bản đã thu hồi. Việc phân tích file bản vẽ và chọn dung sai do nhóm khác phụ trách. Tôi chưa chạy phần mềm trên dây chuyền hoặc tự quản trị hệ thống production.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "Entity Framework",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "Entity Framework"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 6,
+        "quote": "Tôi có 6 tháng thực tập thêm chức năng truy vết phiên bản bản vẽ thử."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_FS",
+    "family": "manufacturing",
+    "role": "Fullstack",
+    "kind": "contract",
+    "text": "Fullstack\nTôi nhận làm cổng xác nhận công đoạn mẫu. Angular hiển thị danh sách bước; Java với Spring Boot kiểm quyền xác nhận và giữ người thực hiện trong PostgreSQL. Các hợp đồng trong hồ sơ có tổng 34 tháng kinh nghiệm nghề nghiệp. Tôi xử lý tình huống mở lại một bước để sửa nhưng không xóa xác nhận cũ. Không có kết nối máy hoặc dữ liệu công nhân thật; tôi không coi chức năng checklist là hệ thống điều khiển nhà máy.",
+    "skills": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL"
+    ],
+    "stack": [
+      "Angular",
+      "Spring Boot"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 34,
+        "quote": "Các hợp đồng trong hồ sơ có tổng 34 tháng kinh nghiệm nghề nghiệp."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_MO",
+    "family": "manufacturing",
+    "role": "Mobile",
+    "kind": "unknown",
+    "text": "Mobile\nTôi còn lưu một bản app Android nhận ảnh các điểm kiểm tra trên sản phẩm mẫu. Kotlin xử lý màn hình, Room giữ bản nháp, JUnit kiểm trạng thái khi chọn lại điểm kiểm tra. Tôi phân biệt ảnh đã chụp với ảnh đã gửi để người dùng không nghĩ thao tác đã hoàn tất. Thời lượng và loại hợp đồng chưa được ghi đủ. Tôi chưa có kinh nghiệm iOS hoặc đọc dữ liệu từ thiết bị đo chuyên dụng.",
+    "skills": [
+      "Android",
+      "Kotlin",
+      "Room",
+      "JUnit"
+    ],
+    "stack": [
+      "Android",
+      "Room"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_MF_DE",
+    "family": "manufacturing",
+    "role": "Data Engineer",
+    "kind": "employment",
+    "text": "Data Engineer\nTôi có 47 tháng kinh nghiệm nghề nghiệp về dữ liệu lô hàng mô phỏng. Python và Spark chuyển tệp sự kiện sang Parquet, SQL kiểm số lượng sản phẩm qua các công đoạn. Tôi lưu lại dữ liệu đến muộn và chạy lại đúng phần bị ảnh hưởng thay vì thay toàn bộ bảng. Có lần mã máy được dùng lại cho máy mới, tôi bổ sung khoảng hiệu lực vào ánh xạ. Tôi chưa chịu trách nhiệm phân tích nguyên nhân lỗi cơ khí.",
+    "skills": [
+      "Python",
+      "Spark",
+      "Parquet",
+      "SQL"
+    ],
+    "stack": [
+      "Spark",
+      "Parquet"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 47,
+        "quote": "Tôi có 47 tháng kinh nghiệm nghề nghiệp về dữ liệu lô hàng mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_MF_AI",
+    "family": "manufacturing",
+    "role": "AI/ML Engineer",
+    "kind": "project",
+    "text": "AI/ML Engineer\nBài tự học của tôi phân loại vết xước vẽ trên ảnh tấm kim loại tổng hợp. Trong 11 tháng dự án cá nhân, tôi dùng Python, OpenCV và TensorFlow. Tôi chia theo ảnh gốc để các bản đổi sáng không lọt sang tập khác, rồi ghi riêng lỗi ở vết quá nhỏ. Chưa có ảnh dây chuyền thật; mô hình không được mô tả là công cụ quyết định đạt chất lượng. Tôi cũng chưa làm dịch vụ suy luận liên tục.",
+    "skills": [
+      "Python",
+      "OpenCV",
+      "TensorFlow"
+    ],
+    "stack": [
+      "OpenCV",
+      "TensorFlow"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 11,
+        "quote": "Trong 11 tháng dự án cá nhân, tôi dùng Python, OpenCV và TensorFlow."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_PY",
+    "family": "energy",
+    "role": "Backend Python",
+    "kind": "contract",
+    "text": "Backend Python\nHồ sơ hợp đồng của tôi ghi 18 tháng kinh nghiệm nghề nghiệp về cổng tiếp nhận chỉ số điện mô phỏng. Python và Flask xử lý bản đọc gửi chậm, Redis giữ khóa chống gửi lặp. Tôi lưu thời điểm đo khác thời điểm nhận, thêm pytest cho đồng hồ bị chỉnh giờ. Chưa tham gia điều khiển thiết bị hay hệ thống thanh toán; các số đo chỉ do tôi tạo để diễn tập.",
+    "skills": [
+      "Python",
+      "Flask",
+      "Redis",
+      "pytest"
+    ],
+    "stack": [
+      "Flask",
+      "Redis"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 18,
+        "quote": "Hồ sơ hợp đồng của tôi ghi 18 tháng kinh nghiệm nghề nghiệp về cổng tiếp nhận chỉ số điện mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_JV",
+    "family": "energy",
+    "role": "Backend Java",
+    "kind": "unknown",
+    "text": "Backend Java\nTôi làm thử dịch vụ đăng ký lịch bảo dưỡng pin. Java, Spring Boot và PostgreSQL lưu yêu cầu cùng lịch sử phê duyệt. Một yêu cầu bị hoãn không được làm mất lý do đặt lịch ban đầu; tôi bổ sung phiên bản và viết JUnit cho thao tác khôi phục. Hồ sơ thiếu mốc bắt đầu và loại hợp đồng, vì vậy không khai tháng làm việc. Chưa sử dụng Kafka; không có dữ liệu vận hành trạm thật.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "PostgreSQL"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_EN_FE",
+    "family": "energy",
+    "role": "Frontend",
+    "kind": "employment",
+    "text": "Frontend\nTôi có 48 tháng kinh nghiệm nghề nghiệp trong kịch bản trang theo dõi tiêu thụ năng lượng. Vue và TypeScript dựng bảng so sánh theo tuần; CSS hỗ trợ màn hình có độ tương phản cao. Tôi xử lý khoảng thời gian thiếu số đo bằng ô trống có giải thích, không nối biểu đồ như thể đã có dữ liệu. Vitest kiểm bộ lọc. Tôi chưa làm dự báo sản lượng và không khai thời gian riêng cho Vue.",
+    "skills": [
+      "Vue",
+      "TypeScript",
+      "CSS",
+      "Vitest"
+    ],
+    "stack": [
+      "Vue",
+      "TypeScript"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 48,
+        "quote": "Tôi có 48 tháng kinh nghiệm nghề nghiệp trong kịch bản trang theo dõi tiêu thụ năng lượng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_DO",
+    "family": "energy",
+    "role": "DevOps/Cloud",
+    "kind": "project",
+    "text": "DevOps/Cloud\nMột cụm máy thử cảnh báo là dự án cá nhân trong 9 tháng của tôi. Linux, Docker và Grafana dùng để quan sát dịch vụ nhận telemetry giả lập. Tôi ngắt kết nối một tiến trình, ghi thời gian phát hiện và kiểm tra cảnh báo trùng khi dịch vụ trở lại. Prometheus lưu số liệu thử nghiệm. Chưa dùng Terraform hoặc trực vận hành thương mại; kết quả không đại diện độ tin cậy lưới điện.",
+    "skills": [
+      "Linux",
+      "Docker",
+      "Grafana",
+      "Prometheus"
+    ],
+    "stack": [
+      "Docker",
+      "Grafana"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 9,
+        "quote": "Một cụm máy thử cảnh báo là dự án cá nhân trong 9 tháng của tôi."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_QA",
+    "family": "energy",
+    "role": "QA/Testing",
+    "kind": "internship",
+    "text": "QA/Testing\nTrong 3 tháng thực tập, tôi kiểm chức năng đổi biểu giá trên dữ liệu tự tạo. Postman gửi các thời điểm sát ranh giới ngày, SQL xác nhận bản ghi đã chọn, Jira giữ ảnh và bước tái hiện. Tôi phát hiện bảng xem trước dùng múi giờ trình duyệt còn hóa đơn dùng giờ máy chủ. Tôi chưa sử dụng Selenium; bộ kiểm tra chủ yếu thủ công dưới hướng dẫn, chưa được tự duyệt phát hành.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Jira"
+    ],
+    "stack": [
+      "Postman"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 3,
+        "quote": "Trong 3 tháng thực tập, tôi kiểm chức năng đổi biểu giá trên dữ liệu tự tạo."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_DN",
+    "family": "energy",
+    "role": "Backend .NET",
+    "kind": "contract",
+    "text": "Backend .NET\nSau các hợp đồng giả lập tổng 32 tháng kinh nghiệm nghề nghiệp, tôi phụ trách sổ vật tư thay thế cho bộ biến tần. C# và ASP.NET Core cung cấp API; SQL Server lưu số lô, xUnit thử trường hợp hoàn kho một phần. Tôi thêm trạng thái chờ kiểm tra thay vì cho phép đưa vật tư hỏng về tồn khả dụng. Không có thông tin tháng dùng từng công nghệ, cũng chưa kết nối hệ thống điều khiển công nghiệp.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQL Server"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 32,
+        "quote": "Sau các hợp đồng giả lập tổng 32 tháng kinh nghiệm nghề nghiệp, tôi phụ trách sổ vật tư thay thế cho bộ biến tần."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_FS",
+    "family": "energy",
+    "role": "Fullstack",
+    "kind": "unknown",
+    "text": "Fullstack\nTôi có bản demo tiếp nhận ảnh mái nhà để lập lịch khảo sát, dùng React, Express và SQLite. Node.js phục vụ endpoint lưu ghi chú; tôi giới hạn loại tệp và hiển thị trạng thái tải thất bại để người dùng gửi lại. Chưa xây thuật toán tính công suất hay xử lý hồ sơ nhà thật. Nhật ký không đủ xác nhận thời gian hoặc quan hệ lao động nên tôi để phần thời lượng trống.",
+    "skills": [
+      "React",
+      "Express",
+      "SQLite",
+      "Node.js"
+    ],
+    "stack": [
+      "React",
+      "Express"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_EN_MO",
+    "family": "energy",
+    "role": "Mobile",
+    "kind": "employment",
+    "text": "Mobile\nTôi có 26 tháng kinh nghiệm nghề nghiệp trong hồ sơ đội ghi chỉ số nước giả lập. Flutter và Dart xây màn nhập ngoại tuyến, SQLite giữ lần ghi chưa đồng bộ. Tôi thêm xác nhận khi chỉ số giảm so với lần trước và tránh gửi lại ảnh khi mạng chập chờn. Tôi không thiết kế thiết bị đo, chưa làm thanh toán trên điện thoại; thời gian Flutter riêng chưa được ghi lại.",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "SQLite"
+    ],
+    "stack": [
+      "Flutter",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 26,
+        "quote": "Tôi có 26 tháng kinh nghiệm nghề nghiệp trong hồ sơ đội ghi chỉ số nước giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_DE",
+    "family": "energy",
+    "role": "Data Engineer",
+    "kind": "project",
+    "text": "Data Engineer\nTôi dành 11 tháng dự án cá nhân để gom bản đọc cảm biến nhiệt tự tạo. Python đọc CSV, DuckDB tính các cửa sổ thời gian và SQL tìm cảm biến đứng giá trị quá lâu. Tôi giữ file nguồn và bảng lỗi riêng để không che mất bản đọc thiếu đơn vị. Airflow được dùng cho lịch nạp thử trên máy nhà. Chưa dùng Spark; không coi bài mô phỏng là kinh nghiệm làm việc tại nhà máy.",
+    "skills": [
+      "Python",
+      "DuckDB",
+      "SQL",
+      "Airflow"
+    ],
+    "stack": [
+      "DuckDB",
+      "Airflow"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 11,
+        "quote": "Tôi dành 11 tháng dự án cá nhân để gom bản đọc cảm biến nhiệt tự tạo."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_EN_AI",
+    "family": "energy",
+    "role": "AI/ML Engineer",
+    "kind": "internship",
+    "text": "AI/ML Engineer\nTôi có 6 tháng thực tập với bài dự báo tải giả lập. Python, pandas và scikit-learn dùng để tạo baseline theo giờ. Tôi chia dữ liệu theo thời gian, kiểm tra riêng ngày bị thiếu số đo và so sai số với dự báo lặp tuần trước. Báo cáo ghi rõ dữ liệu không phải của khách hàng thật. Tôi chưa triển khai mô hình lên thiết bị hoặc chịu trách nhiệm dự báo cho điều độ điện.",
+    "skills": [
+      "Python",
+      "pandas",
+      "scikit-learn"
+    ],
+    "stack": [
+      "scikit-learn"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 6,
+        "quote": "Tôi có 6 tháng thực tập với bài dự báo tải giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_PY",
+    "family": "hospitality",
+    "role": "Backend Python",
+    "kind": "unknown",
+    "text": "Backend Python\nCông việc mô phỏng của tôi là quản lý đồ thất lạc trong khu lưu trú. Python với Django lưu lần bàn giao, PostgreSQL giữ trạng thái và ảnh mô tả tự tạo. Tôi cho phép sửa mô tả nhưng giữ dấu vết người sửa giả định; pytest kiểm việc đóng hồ sơ rồi mở lại. Không còn mốc thời gian đáng tin trong ghi chú nên không khai số tháng. Chưa xây nhận dạng ảnh hoặc dùng thông tin khách thật.",
+    "skills": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "pytest"
+    ],
+    "stack": [
+      "Django",
+      "PostgreSQL"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_HO_JV",
+    "family": "hospitality",
+    "role": "Backend Java",
+    "kind": "employment",
+    "text": "Backend Java\nTôi có 72 tháng kinh nghiệm nghề nghiệp trong kịch bản đặt bàn nhiều khu vực. Có 30 tháng dùng Java để xử lý giới hạn số khách, Spring Boot cho API và MySQL cho lịch bàn. JUnit kiểm đổi giờ khi hai yêu cầu đến cùng lúc. Tôi ghi lại quyết định khóa hàng thay vì chỉ dựa vào trạng thái giao diện. Chưa phụ trách thiết kế giá bán; đây là hồ sơ hư cấu không có tên cơ sở thật.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "MySQL"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 72,
+        "quote": "Tôi có 72 tháng kinh nghiệm nghề nghiệp trong kịch bản đặt bàn nhiều khu vực."
+      },
+      {
+        "scope": "java",
+        "months": 30,
+        "quote": "Có 30 tháng dùng Java để xử lý giới hạn số khách"
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_FE",
+    "family": "hospitality",
+    "role": "Frontend",
+    "kind": "project",
+    "text": "Frontend\nTrong 5 tháng dự án cá nhân, tôi viết trang thực đơn có bộ lọc dị ứng giả lập. Svelte, JavaScript và CSS giúp giữ trạng thái bộ lọc trong đường dẫn. Tôi thêm điều hướng bàn phím, kiểm trường hợp món thiếu thông tin thành phần và hiển thị chưa biết thay vì khẳng định an toàn. Chưa xử lý đơn hàng thật hoặc kết nối bếp; phần nội dung món ăn chỉ là dữ liệu bài tập.",
+    "skills": [
+      "Svelte",
+      "JavaScript",
+      "CSS"
+    ],
+    "stack": [
+      "Svelte"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 5,
+        "quote": "Trong 5 tháng dự án cá nhân, tôi viết trang thực đơn có bộ lọc dị ứng giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_DO",
+    "family": "hospitality",
+    "role": "DevOps/Cloud",
+    "kind": "internship",
+    "text": "DevOps/Cloud\nTôi có 4 tháng thực tập trên môi trường demo đặt phòng. Linux và Docker chạy ứng dụng; GitHub Actions kiểm ảnh trước khi đưa vào máy thử. Tôi bổ sung bước kiểm dung lượng ổ đĩa và ghi hướng dẫn quay lại phiên bản cũ khi migration thất bại. Chưa sử dụng Kubernetes, chưa có quyền quản trị hệ thống nhận đặt phòng thật. Công việc được người hướng dẫn kiểm trước mỗi thay đổi.",
+    "skills": [
+      "Linux",
+      "Docker",
+      "GitHub Actions"
+    ],
+    "stack": [
+      "Docker",
+      "GitHub Actions"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Tôi có 4 tháng thực tập trên môi trường demo đặt phòng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_QA",
+    "family": "hospitality",
+    "role": "QA/Testing",
+    "kind": "contract",
+    "text": "QA/Testing\nHồ sơ của tôi ghi 28 tháng kinh nghiệm nghề nghiệp theo hợp đồng kiểm thử đặt dịch vụ spa giả định. Playwright chạy luồng chọn kỹ thuật viên; Postman thử hủy lịch và SQL đối chiếu lịch đã hoàn tiền mô phỏng. Tôi tách lỗi hết chỗ khỏi lỗi mạng, đính kèm request có thể chạy lại. Chưa kiểm thiết bị thanh toán trực tiếp; tổng thời gian hợp đồng không được dùng làm thời gian từng công cụ.",
+    "skills": [
+      "Playwright",
+      "Postman",
+      "SQL"
+    ],
+    "stack": [
+      "Playwright",
+      "Postman"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 28,
+        "quote": "Hồ sơ của tôi ghi 28 tháng kinh nghiệm nghề nghiệp theo hợp đồng kiểm thử đặt dịch vụ spa giả định."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_DN",
+    "family": "hospitality",
+    "role": "Backend .NET",
+    "kind": "unknown",
+    "text": "Backend .NET\nTôi thử làm cổng phân ca buồng phòng bằng C#, ASP.NET Core và SQLite. Một ca đổi người cần giữ ghi chú bàn giao cũ nên tôi thêm sự kiện chuyển ca và kiểm lại bằng xUnit. Hồ sơ này chỉ còn mã nguồn cùng vài ghi chú, không đủ xác nhận số tháng hoặc loại kinh nghiệm. Tôi chưa làm chấm công hay tính lương; lịch và tên người trong bài đều là mã giả lập.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQLite",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQLite"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_HO_FS",
+    "family": "hospitality",
+    "role": "Fullstack",
+    "kind": "employment",
+    "text": "Fullstack\nTôi có 34 tháng kinh nghiệm nghề nghiệp trong kịch bản đặt thiết bị hội nghị. Angular dựng lịch, Java với Spring Boot kiểm xung đột, PostgreSQL lưu các bộ thiết bị dùng chung. Tôi bổ sung thời gian vận chuyển giữa phòng để tránh lịch nhìn hợp lệ nhưng không thể phục vụ. Tôi chưa viết hệ thống âm thanh; không có thời lượng riêng cho Angular hoặc Java trong hồ sơ này.",
+    "skills": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL"
+    ],
+    "stack": [
+      "Angular",
+      "Spring Boot"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 34,
+        "quote": "Tôi có 34 tháng kinh nghiệm nghề nghiệp trong kịch bản đặt thiết bị hội nghị."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_MO",
+    "family": "hospitality",
+    "role": "Mobile",
+    "kind": "project",
+    "text": "Mobile\nỨng dụng hướng dẫn tham quan ngoại tuyến là dự án cá nhân trong 7 tháng. Tôi dùng Swift trên iOS và SQLite lưu bản đồ địa điểm tự vẽ. Tôi xử lý nội dung âm thanh chưa tải xong, giữ vị trí đang nghe khi chuyển màn hình và thử khi mất mạng. Không thu vị trí người thật, chưa đưa lên App Store. Công việc này không được ghi thành kinh nghiệm nghề nghiệp tại công ty du lịch.",
+    "skills": [
+      "Swift",
+      "iOS",
+      "SQLite"
+    ],
+    "stack": [
+      "iOS",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 7,
+        "quote": "Ứng dụng hướng dẫn tham quan ngoại tuyến là dự án cá nhân trong 7 tháng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_DE",
+    "family": "hospitality",
+    "role": "Data Engineer",
+    "kind": "internship",
+    "text": "Data Engineer\nTrong 5 tháng thực tập, tôi hỗ trợ bảng công suất phòng giả lập. SQL và PostgreSQL nối đặt phòng với lần đổi phòng; Python kiểm ngày trả trước ngày nhận. Tôi ghi các bản sửa muộn thành phiên bản mới và đối chiếu tổng đêm trước khi xuất. Chưa dùng Spark hoặc tự thiết kế kho dữ liệu doanh nghiệp. Người hướng dẫn xác nhận quy tắc tính đêm; không có hồ sơ khách lưu trú thật.",
+    "skills": [
+      "SQL",
+      "PostgreSQL",
+      "Python"
+    ],
+    "stack": [
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 5,
+        "quote": "Trong 5 tháng thực tập, tôi hỗ trợ bảng công suất phòng giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_HO_AI",
+    "family": "hospitality",
+    "role": "AI/ML Engineer",
+    "kind": "contract",
+    "text": "AI/ML Engineer\nTôi ghi 20 tháng kinh nghiệm nghề nghiệp qua hợp đồng mô phỏng phân loại phản hồi dịch vụ. Python và scikit-learn tạo baseline; pandas giúp kiểm nhãn thiếu và cụm văn bản trùng. Tôi giữ phản hồi từ cùng tình huống ở một tập để giảm rò rỉ, báo riêng lỗi với câu phủ định. Không có phản hồi khách hàng thật; chưa vận hành chatbot hoặc khẳng định mô hình hiểu tất cả tiếng lóng.",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "pandas"
+    ],
+    "stack": [
+      "scikit-learn"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 20,
+        "quote": "Tôi ghi 20 tháng kinh nghiệm nghề nghiệp qua hợp đồng mô phỏng phân loại phản hồi dịch vụ."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_PY",
+    "family": "education",
+    "role": "Backend Python",
+    "kind": "employment",
+    "text": "Backend Python\nTôi có 15 tháng kinh nghiệm nghề nghiệp trong kịch bản mượn học cụ. Python, FastAPI và SQLite phục vụ yêu cầu nhận trả theo lớp; pytest thử trả thiếu một bộ phận. Tôi giữ số lượng đang sửa riêng khỏi số lượng có thể mượn, bổ sung thông báo khi giáo viên đổi ngày. Chưa kết nối sổ điểm hoặc xử lý dữ liệu học sinh thật; tổng thời gian làm việc không phải số tháng FastAPI.",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "SQLite",
+      "pytest"
+    ],
+    "stack": [
+      "FastAPI",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 15,
+        "quote": "Tôi có 15 tháng kinh nghiệm nghề nghiệp trong kịch bản mượn học cụ."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_JV",
+    "family": "education",
+    "role": "Backend Java",
+    "kind": "project",
+    "text": "Backend Java\nTôi làm lịch thi học phần giả lập trong 10 tháng dự án cá nhân. Java và Spring Boot kiểm trùng phòng, PostgreSQL lưu phiên bản lịch, JUnit kiểm việc đổi một môn có nhiều lớp. Tôi xuất danh sách xung đột để giải quyết thủ công thay vì tự hứa tìm lịch tối ưu. Chưa dùng Kafka hoặc phục vụ một trường thật; dữ liệu lớp và phòng đều được đặt cho bài học.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 10,
+        "quote": "Tôi làm lịch thi học phần giả lập trong 10 tháng dự án cá nhân."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_FE",
+    "family": "education",
+    "role": "Frontend",
+    "kind": "internship",
+    "text": "Frontend\nTrong 6 tháng thực tập, tôi hỗ trợ trang bài tập có thể dùng bằng bàn phím. React, TypeScript và CSS hiển thị câu hỏi cùng phần nháp. Tôi sửa lỗi mất nội dung khi chuyển câu, thêm Vitest cho trạng thái chưa lưu và kiểm nhãn đọc màn hình. Chưa viết hệ thống chấm điểm tự động hoặc chịu trách nhiệm phát hành. Tình huống bài tập do nhóm thực tập tự đặt, không có bài làm học sinh thật.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Vitest"
+    ],
+    "stack": [
+      "React",
+      "TypeScript"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 6,
+        "quote": "Trong 6 tháng thực tập, tôi hỗ trợ trang bài tập có thể dùng bằng bàn phím."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_DO",
+    "family": "education",
+    "role": "DevOps/Cloud",
+    "kind": "contract",
+    "text": "DevOps/Cloud\nTôi có 42 tháng kinh nghiệm nghề nghiệp qua hợp đồng hệ thống phòng máy mô phỏng. Ansible cấu hình Linux, Docker đóng gói bài thực hành, Prometheus theo dõi dung lượng. Tôi tách tài khoản học viên khỏi quyền sửa ảnh gốc và thử phục hồi lớp bị xóa nhầm. Chưa dùng Terraform; các số liệu tải chỉ đo trong mạng thử, không phải cam kết cho kỳ thi trực tuyến quy mô lớn.",
+    "skills": [
+      "Ansible",
+      "Linux",
+      "Docker",
+      "Prometheus"
+    ],
+    "stack": [
+      "Ansible",
+      "Docker"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 42,
+        "quote": "Tôi có 42 tháng kinh nghiệm nghề nghiệp qua hợp đồng hệ thống phòng máy mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_QA",
+    "family": "education",
+    "role": "QA/Testing",
+    "kind": "unknown",
+    "text": "QA/Testing\nTôi có bộ ghi chú kiểm tra tiến độ khóa học. Postman và SQL giúp đối chiếu các lần nộp bài giả lập; Jira ghi lỗi khi học viên chuyển lớp nhưng tiến độ cũ bị ghi đè. Tôi thử cả nộp lại sau hạn và bài không có tệp, chủ yếu kiểm thủ công. Chưa sử dụng Selenium. Thiếu lịch thực hiện nên không khai số tháng hay loại hợp đồng; không có tài khoản người học thật.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Jira"
+    ],
+    "stack": [
+      "Postman"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_ED_DN",
+    "family": "education",
+    "role": "Backend .NET",
+    "kind": "employment",
+    "text": "Backend .NET\nHồ sơ hư cấu ghi 54 tháng kinh nghiệm nghề nghiệp với hệ thống chứng nhận khóa học. C#, ASP.NET Core và SQL Server lưu phiên bản chương trình; xUnit kiểm cấp lại chứng nhận sau sửa tên mã học viên. Tôi lưu trạng thái thu hồi để đường dẫn cũ không tiếp tục báo hợp lệ. Chưa ký chứng thư pháp lý hay dùng danh tính thật; số tháng mỗi framework còn thiếu.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQL Server"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 54,
+        "quote": "Hồ sơ hư cấu ghi 54 tháng kinh nghiệm nghề nghiệp với hệ thống chứng nhận khóa học."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_FS",
+    "family": "education",
+    "role": "Fullstack",
+    "kind": "project",
+    "text": "Fullstack\nTrong 6 tháng dự án cá nhân, tôi tạo bảng nhận xét đồng đẳng cho lớp giả lập. Vue hiển thị bài được phân công, Django và PostgreSQL giữ quyền xem. Tôi kiểm lại quyền trên server để người nộp không đọc nhận xét chưa công bố, đồng thời cho phép rút một nhận xét nhập nhầm. Python dùng cho xử lý dữ liệu. Chưa xây chống gian lận hoặc dùng điểm này quyết định kết quả học tập thật.",
+    "skills": [
+      "Vue",
+      "Django",
+      "PostgreSQL",
+      "Python"
+    ],
+    "stack": [
+      "Vue",
+      "Django"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 6,
+        "quote": "Trong 6 tháng dự án cá nhân, tôi tạo bảng nhận xét đồng đẳng cho lớp giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_MO",
+    "family": "education",
+    "role": "Mobile",
+    "kind": "internship",
+    "text": "Mobile\nTôi có 4 tháng thực tập làm thẻ từ vựng trên Android bằng Kotlin. Room giữ lịch ôn và JUnit kiểm ngày đến hạn; tôi sửa trường hợp chỉnh giờ máy khiến thẻ lặp liên tục. Phần nội dung từ vựng do người hướng dẫn cung cấp cho bài thử. Tôi chưa viết thuật toán cá nhân hóa hoặc phát hành app cho trẻ em; không ghi thực tập thành số tháng nghề nghiệp chính thức.",
+    "skills": [
+      "Android",
+      "Kotlin",
+      "Room",
+      "JUnit"
+    ],
+    "stack": [
+      "Android",
+      "Room"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Tôi có 4 tháng thực tập làm thẻ từ vựng trên Android bằng Kotlin."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_DE",
+    "family": "education",
+    "role": "Data Engineer",
+    "kind": "contract",
+    "text": "Data Engineer\nTôi có 22 tháng kinh nghiệm nghề nghiệp theo hợp đồng mô phỏng di chuyển danh mục học liệu. Python đọc tệp cũ, SQL và PostgreSQL lưu mã phiên bản, Airflow điều phối kiểm tra hàng ngày. Tôi giữ danh sách mã không ánh xạ được để xử lý riêng, không ghép chỉ theo tên tài liệu. Chưa dùng Spark, chưa quản lý dữ liệu học sinh; tổng tháng không đủ suy ra thời gian làm Airflow.",
+    "skills": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "Airflow"
+    ],
+    "stack": [
+      "PostgreSQL",
+      "Airflow"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 22,
+        "quote": "Tôi có 22 tháng kinh nghiệm nghề nghiệp theo hợp đồng mô phỏng di chuyển danh mục học liệu."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_ED_AI",
+    "family": "education",
+    "role": "AI/ML Engineer",
+    "kind": "unknown",
+    "text": "AI/ML Engineer\nTôi thử nhận dạng ký hiệu toán viết trên ảnh tự tạo bằng Python, PyTorch và OpenCV. Tôi kiểm riêng dấu trừ ngắn với nét của chữ số, giữ các biến thể cùng nét gốc trong một nhóm. Ghi chú không đủ để xác định thời lượng hoặc loại công việc nên để trống. Chưa triển khai chấm bài thật và không dùng kết quả thử nghiệm để kết luận khả năng học tập của một người.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV"
+    ],
+    "stack": [
+      "PyTorch",
+      "OpenCV"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_SP_PY",
+    "family": "sports",
+    "role": "Backend Python",
+    "kind": "project",
+    "text": "Backend Python\nTrong 8 tháng dự án cá nhân, tôi viết sổ mượn dụng cụ leo núi giả lập. Python và Django lưu từng lần kiểm tra dây, SQLite phục vụ bản demo, pytest kiểm việc ngừng cho mượn thiết bị quá hạn. Tôi hiển thị lý do khóa thay vì tự đánh giá dụng cụ còn an toàn. Chưa có người sử dụng thật và chưa làm chứng nhận thiết bị; bài này không được ghi thành kinh nghiệm nghề nghiệp.",
+    "skills": [
+      "Python",
+      "Django",
+      "SQLite",
+      "pytest"
+    ],
+    "stack": [
+      "Django",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 8,
+        "quote": "Trong 8 tháng dự án cá nhân, tôi viết sổ mượn dụng cụ leo núi giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_JV",
+    "family": "sports",
+    "role": "Backend Java",
+    "kind": "internship",
+    "text": "Backend Java\nTôi có 5 tháng thực tập làm bảng kết quả vòng đấu. Java, Spring Boot và H2 lưu trận giả lập; JUnit thử trường hợp hòa điểm và sửa kết quả sau công bố. Tôi thêm lịch sử thay đổi để giải thích vì sao thứ hạng đổi. Người hướng dẫn cung cấp luật giải cho bài tập. Chưa dùng Kafka hoặc làm hệ thống cá cược; thực tập không được cộng thành tháng nghề nghiệp chính thức.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "H2",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "H2"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 5,
+        "quote": "Tôi có 5 tháng thực tập làm bảng kết quả vòng đấu."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_FE",
+    "family": "sports",
+    "role": "Frontend",
+    "kind": "contract",
+    "text": "Frontend\nHồ sơ hợp đồng ghi 27 tháng kinh nghiệm nghề nghiệp với trang đăng ký lớp bơi mô phỏng. React, TypeScript và CSS hiển thị sức chứa theo ca; Playwright kiểm luồng đổi ca khi chỗ cuối vừa hết. Tôi phân biệt danh sách chờ với đăng ký thành công và giữ thông tin nháp khi mạng lỗi. Chưa viết API thu phí hoặc sử dụng hồ sơ sức khỏe thật; không khai số tháng React riêng.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Playwright"
+    ],
+    "stack": [
+      "React",
+      "TypeScript"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 27,
+        "quote": "Hồ sơ hợp đồng ghi 27 tháng kinh nghiệm nghề nghiệp với trang đăng ký lớp bơi mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_DO",
+    "family": "sports",
+    "role": "DevOps/Cloud",
+    "kind": "unknown",
+    "text": "DevOps/Cloud\nTôi dựng thử máy hiển thị tỉ số sân tập bằng Linux, Docker và Nginx. Tôi kiểm các tệp cấu hình trước khi thay, ghi hướng dẫn phục hồi khi máy mất điện và dùng Grafana xem bộ nhớ theo thời gian. Chưa quản trị Kubernetes; hệ thống không phục vụ giải đấu thật. Không còn nhật ký bắt đầu dự án hay hợp đồng nên tôi không ghi thời gian kinh nghiệm thay cho dữ liệu bị thiếu.",
+    "skills": [
+      "Linux",
+      "Docker",
+      "Nginx",
+      "Grafana"
+    ],
+    "stack": [
+      "Docker",
+      "Nginx"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_SP_QA",
+    "family": "sports",
+    "role": "QA/Testing",
+    "kind": "employment",
+    "text": "QA/Testing\nTôi có 38 tháng kinh nghiệm nghề nghiệp trong hồ sơ kiểm thử đặt sân giả lập. Selenium và Java chạy kiểm tra lịch; Postman thử API và SQL kiểm tiền cọc mô phỏng. Tôi tìm lỗi hủy cả chuỗi lịch khi chỉ muốn hủy một buổi, thêm dữ liệu tái hiện cho tuần có ngày nghỉ. Chưa kiểm thiết bị cửa ra vào; số tháng công cụ cụ thể không được suy từ thời gian làm việc chung.",
+    "skills": [
+      "Selenium",
+      "Java",
+      "Postman",
+      "SQL"
+    ],
+    "stack": [
+      "Selenium",
+      "Postman"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 38,
+        "quote": "Tôi có 38 tháng kinh nghiệm nghề nghiệp trong hồ sơ kiểm thử đặt sân giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_DN",
+    "family": "sports",
+    "role": "Backend .NET",
+    "kind": "project",
+    "text": "Backend .NET\nTôi làm bảng bảo trì xe đạp trong 7 tháng dự án cá nhân. C#, ASP.NET Core và SQLite lưu mốc thay linh kiện, xUnit kiểm cảnh báo khi số kilomet bị sửa giảm. Tôi cho phép ghi lý do sửa và giữ giá trị cũ để xem lại. Dữ liệu xe là hư cấu, chưa có cửa hàng sử dụng. Tôi chưa xây định giá phụ tùng hoặc thiết bị đo hành trình và không coi dự án là thời gian đi làm.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQLite",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 7,
+        "quote": "Tôi làm bảng bảo trì xe đạp trong 7 tháng dự án cá nhân."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_FS",
+    "family": "sports",
+    "role": "Fullstack",
+    "kind": "internship",
+    "text": "Fullstack\nTrong 4 tháng thực tập, tôi hỗ trợ đăng ký tình nguyện viên cho ngày chạy bộ mô phỏng. Vue dựng biểu mẫu, Express và Node.js kiểm số chỗ từng chốt, PostgreSQL lưu ca. Tôi sửa lỗi gửi hai lần tạo hai đăng ký và thêm thông báo khi người phụ trách đổi điểm tập trung. Chưa tự phụ trách phát hành hay xác minh người tham gia; tất cả tên trong bài thử là mã tự đặt.",
+    "skills": [
+      "Vue",
+      "Express",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "stack": [
+      "Vue",
+      "Express"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Trong 4 tháng thực tập, tôi hỗ trợ đăng ký tình nguyện viên cho ngày chạy bộ mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_MO",
+    "family": "sports",
+    "role": "Mobile",
+    "kind": "contract",
+    "text": "Mobile\nTôi có 30 tháng kinh nghiệm nghề nghiệp qua hợp đồng ứng dụng ghi bài tập hư cấu. Flutter, Dart và SQLite lưu số hiệp ngay cả khi ngoại tuyến. Tôi tách bài mẫu khỏi nhật ký để thay hướng dẫn không sửa lịch sử, xử lý đồng bộ sau khi đổi điện thoại bằng mã giả. Chưa thu dữ liệu sức khỏe thật hay xây tư vấn y tế; không biết chính xác thời lượng riêng cho Flutter.",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "SQLite"
+    ],
+    "stack": [
+      "Flutter",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 30,
+        "quote": "Tôi có 30 tháng kinh nghiệm nghề nghiệp qua hợp đồng ứng dụng ghi bài tập hư cấu."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_SP_DE",
+    "family": "sports",
+    "role": "Data Engineer",
+    "kind": "unknown",
+    "text": "Data Engineer\nTôi có bản thử tổng hợp thời gian chạy từ nhiều định dạng tệp tự tạo. Python chuẩn hóa đơn vị, DuckDB và SQL kiểm các mốc bị đảo thứ tự. Tôi giữ mã tệp nguồn trong mỗi dòng để truy lại bản sửa và không tự loại kết quả chậm bất thường. Hồ sơ thiếu mốc thời gian nên phần kinh nghiệm để unknown. Chưa dùng Spark, chưa vận hành hệ thống đo thành tích giải thật.",
+    "skills": [
+      "Python",
+      "DuckDB",
+      "SQL"
+    ],
+    "stack": [
+      "DuckDB"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_SP_AI",
+    "family": "sports",
+    "role": "AI/ML Engineer",
+    "kind": "employment",
+    "text": "AI/ML Engineer\nTôi có 46 tháng kinh nghiệm nghề nghiệp trong kịch bản phân đoạn động tác bằng video tự tạo. Python, PyTorch và OpenCV dùng cho thí nghiệm; tôi tách cùng một buổi quay về một nhóm và kiểm lỗi với góc máy thấp. Tôi lưu phiên bản nhãn cùng run để giải thích khác biệt giữa hai lần thử. Chưa áp dụng cho chẩn đoán chấn thương hay đánh giá vận động viên thật; không khai riêng số tháng PyTorch.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV"
+    ],
+    "stack": [
+      "PyTorch",
+      "OpenCV"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 46,
+        "quote": "Tôi có 46 tháng kinh nghiệm nghề nghiệp trong kịch bản phân đoạn động tác bằng video tự tạo."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_PY",
+    "family": "agriculture",
+    "role": "Backend Python",
+    "kind": "internship",
+    "text": "Backend Python\nTôi có 6 tháng thực tập làm nhật ký lô gieo hạt giả lập. Python, Flask và PostgreSQL lưu ngày gieo với giống; pytest thử sửa ngày sau khi đã ghi nảy mầm. Tôi thêm lịch sử sửa để không âm thầm đổi tuổi cây, viết tài liệu các trường có thể thiếu. Chưa dùng dữ liệu nông hộ thật hoặc tự đưa khuyến nghị canh tác; phần thực tập được tách khỏi kinh nghiệm nghề nghiệp chính thức.",
+    "skills": [
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "pytest"
+    ],
+    "stack": [
+      "Flask",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 6,
+        "quote": "Tôi có 6 tháng thực tập làm nhật ký lô gieo hạt giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_JV",
+    "family": "agriculture",
+    "role": "Backend Java",
+    "kind": "contract",
+    "text": "Backend Java\nTôi ghi 44 tháng kinh nghiệm nghề nghiệp qua hợp đồng truy xuất lô thu hoạch mô phỏng. Java, Spring Boot và PostgreSQL giữ quan hệ chia lô; JUnit thử gộp khi hai lô có cách bảo quản khác nhau. Tôi lưu cả lượng hao hụt và lý do thay vì chỉ điều chỉnh tồn. Chưa chứng nhận nguồn gốc sản phẩm thật, chưa sử dụng Kafka; thời gian Java riêng không có trong hồ sơ.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 44,
+        "quote": "Tôi ghi 44 tháng kinh nghiệm nghề nghiệp qua hợp đồng truy xuất lô thu hoạch mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_FE",
+    "family": "agriculture",
+    "role": "Frontend",
+    "kind": "unknown",
+    "text": "Frontend\nTôi có bản demo bảng công việc vườn ươm dùng Vue, JavaScript và CSS. Mỗi luống giữ việc đã làm và việc còn chờ; tôi sửa lỗi kéo thẻ khiến thứ tự lưu khác thứ tự hiển thị, thêm trạng thái chưa đồng bộ. Chưa xây bản đồ địa lý hay điều khiển tưới. Ghi chú chỉ còn nội dung chức năng, không có ngày bắt đầu hoặc hợp đồng, nên phần thời lượng của hồ sơ để trống.",
+    "skills": [
+      "Vue",
+      "JavaScript",
+      "CSS"
+    ],
+    "stack": [
+      "Vue"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_AG_DO",
+    "family": "agriculture",
+    "role": "DevOps/Cloud",
+    "kind": "employment",
+    "text": "DevOps/Cloud\nTôi có 66 tháng kinh nghiệm nghề nghiệp trong kịch bản trạm thu dữ liệu nông trại. Linux, Ansible và Docker quản lý máy giả lập; Prometheus theo dõi dung lượng đệm khi mất mạng. Tôi kiểm phục hồi sau khi đồng bộ gửi lại một ngày dữ liệu, giới hạn log để tránh đầy đĩa. Chưa dùng Terraform hay điều khiển thiết bị tưới thật; không có thời lượng riêng từng công nghệ.",
+    "skills": [
+      "Linux",
+      "Ansible",
+      "Docker",
+      "Prometheus"
+    ],
+    "stack": [
+      "Ansible",
+      "Docker"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 66,
+        "quote": "Tôi có 66 tháng kinh nghiệm nghề nghiệp trong kịch bản trạm thu dữ liệu nông trại."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_QA",
+    "family": "agriculture",
+    "role": "QA/Testing",
+    "kind": "project",
+    "text": "QA/Testing\nTrong 9 tháng dự án cá nhân, tôi kiểm phần mềm mô phỏng nhập phân bón theo lô. Postman thử API, SQL đối chiếu đơn vị và Playwright chạy luồng trả hàng. Tôi tạo tình huống bao rách chỉ trả một phần để tìm lỗi quy đổi cân nặng, ghi lại request và ảnh màn hình. Chưa kiểm sản phẩm ngoài thực địa hoặc có hợp đồng QA; dữ liệu này không dùng để quyết định liều lượng bón thật.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Playwright"
+    ],
+    "stack": [
+      "Postman",
+      "Playwright"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 9,
+        "quote": "Trong 9 tháng dự án cá nhân, tôi kiểm phần mềm mô phỏng nhập phân bón theo lô."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_DN",
+    "family": "agriculture",
+    "role": "Backend .NET",
+    "kind": "internship",
+    "text": "Backend .NET\nTôi có 5 tháng thực tập trên sổ đặt lịch máy thu hoạch giả lập. C#, ASP.NET Core và SQL Server lưu khoảng ngày, xUnit kiểm việc kéo dài lịch khi máy đang sửa. Tôi thêm lý do chặn và bản ghi thông báo cho người đặt kế tiếp. Người hướng dẫn quyết định chính sách ưu tiên; tôi chưa tự vận hành máy hoặc quản lý thanh toán. Không suy số tháng công nghệ từ thời gian thực tập.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQL Server"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 5,
+        "quote": "Tôi có 5 tháng thực tập trên sổ đặt lịch máy thu hoạch giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_FS",
+    "family": "agriculture",
+    "role": "Fullstack",
+    "kind": "contract",
+    "text": "Fullstack\nHồ sơ giả lập ghi 19 tháng kinh nghiệm nghề nghiệp theo hợp đồng đăng ký thùng rau định kỳ. React hiển thị lựa chọn, Django xử lý tạm dừng tuần giao, PostgreSQL giữ lịch sử, Python kiểm số suất. Tôi tách địa điểm giao giả định khỏi hồ sơ đăng ký để thay địa điểm không sửa kỳ cũ. Chưa xử lý thanh toán thật hoặc dữ liệu khách hàng; không có thời lượng riêng của React.",
+    "skills": [
+      "React",
+      "Django",
+      "PostgreSQL",
+      "Python"
+    ],
+    "stack": [
+      "React",
+      "Django"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 19,
+        "quote": "Hồ sơ giả lập ghi 19 tháng kinh nghiệm nghề nghiệp theo hợp đồng đăng ký thùng rau định kỳ."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_MO",
+    "family": "agriculture",
+    "role": "Mobile",
+    "kind": "unknown",
+    "text": "Mobile\nTôi thử làm sổ ảnh sâu bệnh ngoại tuyến bằng Kotlin trên Android, Room giữ ảnh và ghi chú do tôi tự tạo. Tôi bổ sung trạng thái ảnh bị xóa khỏi máy, cho phép sửa ghi chú mà không mất mốc chụp. Chưa làm nhận dạng tự động, chưa đưa tư vấn thuốc hay sử dụng ảnh nông hộ thật. Hồ sơ không đủ mốc để khai tháng làm việc và không xác nhận được loại kinh nghiệm nên giữ unknown.",
+    "skills": [
+      "Kotlin",
+      "Android",
+      "Room"
+    ],
+    "stack": [
+      "Android",
+      "Room"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_AG_DE",
+    "family": "agriculture",
+    "role": "Data Engineer",
+    "kind": "employment",
+    "text": "Data Engineer\nTôi có 58 tháng kinh nghiệm nghề nghiệp trong kịch bản nhật ký kho lạnh. Python và SQL chuẩn hóa nhiệt độ, PostgreSQL lưu vùng bảo quản, Airflow chạy đối chiếu tệp đến muộn. Tôi giữ cờ thiết bị mất tín hiệu và không nội suy âm thầm khoảng trống. Tôi chưa dùng Spark hoặc cung cấp chứng nhận chất lượng thực phẩm; thời gian từng công nghệ không được ghi đủ để khai riêng.",
+    "skills": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "Airflow"
+    ],
+    "stack": [
+      "PostgreSQL",
+      "Airflow"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 58,
+        "quote": "Tôi có 58 tháng kinh nghiệm nghề nghiệp trong kịch bản nhật ký kho lạnh."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_AG_AI",
+    "family": "agriculture",
+    "role": "AI/ML Engineer",
+    "kind": "project",
+    "text": "AI/ML Engineer\nTôi dành 12 tháng dự án cá nhân thử phân loại mức chín từ ảnh quả tự tạo. Python, PyTorch và OpenCV phục vụ thí nghiệm. Tôi tách ảnh cùng một quả về cùng nhóm, kiểm riêng ảnh ngược sáng và ghi các trường hợp màu nền gây nhầm. Chưa thử trên mùa vụ thật hoặc kết nối dây chuyền; kết quả bài học không được mô tả là năng lực kiểm định thực phẩm hay kinh nghiệm đi làm.",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV"
+    ],
+    "stack": [
+      "PyTorch",
+      "OpenCV"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 12,
+        "quote": "Tôi dành 12 tháng dự án cá nhân thử phân loại mức chín từ ảnh quả tự tạo."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_PY",
+    "family": "nonprofit",
+    "role": "Backend Python",
+    "kind": "contract",
+    "text": "Backend Python\nTôi có 29 tháng kinh nghiệm nghề nghiệp theo hợp đồng quản lý kho đồ tặng mô phỏng. Python và FastAPI nhận phiếu, PostgreSQL lưu kiện và pytest thử phân chia kiện sau kiểm đếm. Tôi giữ số lượng chờ xác nhận thay vì cho xuất ngay khi nhận ảnh phiếu. Chưa làm hệ thống đánh giá người nhận hỗ trợ hoặc có thông tin cá nhân thật; số tháng công nghệ riêng chưa được khai.",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pytest"
+    ],
+    "stack": [
+      "FastAPI",
+      "PostgreSQL"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 29,
+        "quote": "Tôi có 29 tháng kinh nghiệm nghề nghiệp theo hợp đồng quản lý kho đồ tặng mô phỏng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_JV",
+    "family": "nonprofit",
+    "role": "Backend Java",
+    "kind": "unknown",
+    "text": "Backend Java\nTôi có dịch vụ thử điều phối xe chở vật tư hư cấu bằng Java, Spring Boot và MySQL. JUnit kiểm khi một chuyến bị chia thành hai và giữ liên kết phiếu giao. Tôi thêm trạng thái chờ đối soát cho kiện chưa ký nhận, chưa tối ưu tuyến đường hay dùng địa chỉ thật. Nhật ký thời gian bị thiếu nên không khai tổng tháng hoặc loại hợp đồng; chưa sử dụng Kafka trong công việc này.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "JUnit"
+    ],
+    "stack": [
+      "Spring Boot",
+      "MySQL"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_NP_FE",
+    "family": "nonprofit",
+    "role": "Frontend",
+    "kind": "employment",
+    "text": "Frontend\nTôi ghi 33 tháng kinh nghiệm nghề nghiệp trong hồ sơ cổng đăng ký ca hỗ trợ cộng đồng giả lập. React, TypeScript và CSS hiển thị điều kiện từng ca; Vitest kiểm chọn ca trùng giờ. Tôi sửa nội dung thông báo khi đăng ký chỉ ở danh sách chờ, bổ sung điều hướng bằng bàn phím. Chưa xác minh danh tính hoặc triển khai cho tổ chức thật; không biết thời lượng riêng của React.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Vitest"
+    ],
+    "stack": [
+      "React",
+      "TypeScript"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 33,
+        "quote": "Tôi ghi 33 tháng kinh nghiệm nghề nghiệp trong hồ sơ cổng đăng ký ca hỗ trợ cộng đồng giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_DO",
+    "family": "nonprofit",
+    "role": "DevOps/Cloud",
+    "kind": "project",
+    "text": "DevOps/Cloud\nTrong 6 tháng dự án cá nhân, tôi dựng máy lưu tài liệu hướng dẫn cứu trợ giả lập. Linux, Docker và Nginx phục vụ bản tĩnh; Ansible giúp tái dựng cấu hình. Tôi kiểm restore từ bản sao và ghi hash để phát hiện tài liệu thay đổi ngoài dự kiến. Chưa dùng Kubernetes hoặc vận hành dịch vụ khẩn cấp thật; không lấy thời gian học ở nhà làm thời gian hợp đồng nghề nghiệp.",
+    "skills": [
+      "Linux",
+      "Docker",
+      "Nginx",
+      "Ansible"
+    ],
+    "stack": [
+      "Docker",
+      "Ansible"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 6,
+        "quote": "Trong 6 tháng dự án cá nhân, tôi dựng máy lưu tài liệu hướng dẫn cứu trợ giả lập."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_QA",
+    "family": "nonprofit",
+    "role": "QA/Testing",
+    "kind": "internship",
+    "text": "QA/Testing\nTôi có 4 tháng thực tập kiểm biểu mẫu tiếp nhận sách tặng. Postman gửi dữ liệu giả, SQL kiểm số bản và Jira lưu lỗi. Tôi thử trường hợp sách cùng tên khác năm in, sửa các bước tái hiện cho lỗi gộp nhầm và kiểm thông báo khi thiếu tình trạng sách. Chưa sử dụng Selenium hoặc tự duyệt phát hành. Người hướng dẫn kiểm kết quả; không có dữ liệu người tặng thật trong hồ sơ này.",
+    "skills": [
+      "Postman",
+      "SQL",
+      "Jira"
+    ],
+    "stack": [
+      "Postman"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 4,
+        "quote": "Tôi có 4 tháng thực tập kiểm biểu mẫu tiếp nhận sách tặng."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_DN",
+    "family": "nonprofit",
+    "role": "Backend .NET",
+    "kind": "contract",
+    "text": "Backend .NET\nTôi có 41 tháng kinh nghiệm nghề nghiệp qua hợp đồng theo dõi tài sản cho mượn giả định. C#, ASP.NET Core và SQL Server giữ số hiệu, xUnit kiểm trả một phần sau chuyển địa điểm. Tôi lưu người giữ bằng mã hư cấu và giữ lịch sử bàn giao khi một đợt hoạt động kết thúc. Chưa có dữ liệu người hưởng hỗ trợ thật, chưa xây kế toán; số tháng của từng thư viện để chưa biết.",
+    "skills": [
+      "C#",
+      "ASP.NET Core",
+      "SQL Server",
+      "xUnit"
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "SQL Server"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 41,
+        "quote": "Tôi có 41 tháng kinh nghiệm nghề nghiệp qua hợp đồng theo dõi tài sản cho mượn giả định."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_FS",
+    "family": "nonprofit",
+    "role": "Fullstack",
+    "kind": "unknown",
+    "text": "Fullstack\nBản demo của tôi là lịch sửa đồ miễn phí, viết với Vue, Express và Node.js, dùng SQLite giữ đăng ký. Tôi thêm hàng chờ khi thiếu dụng cụ và cho người điều phối sửa thời lượng dự kiến mà không mất ghi chú ban đầu. Chưa có người dùng thật hoặc phần thu phí. Không còn bảng thời gian để xác định số tháng và loại công việc, vì vậy hồ sơ không tự điền những trường còn thiếu.",
+    "skills": [
+      "Vue",
+      "Express",
+      "Node.js",
+      "SQLite"
+    ],
+    "stack": [
+      "Vue",
+      "Express"
+    ],
+    "durations": []
+  },
+  {
+    "id": "CVA7_NP_MO",
+    "family": "nonprofit",
+    "role": "Mobile",
+    "kind": "employment",
+    "text": "Mobile\nTôi có 23 tháng kinh nghiệm nghề nghiệp trong kịch bản ứng dụng ghi biên bản bàn giao. Flutter, Dart và SQLite lưu biểu mẫu ngoại tuyến; tôi xử lý ảnh quá lớn và giữ trạng thái chưa tải để tránh báo đã hoàn tất sai. Tôi chưa làm chữ ký số pháp lý hay dùng hồ sơ cá nhân thật. Thời lượng Flutter riêng không được ghi đủ; đây là nghề nghiệp giả lập phục vụ nghiên cứu dữ liệu CV.",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "SQLite"
+    ],
+    "stack": [
+      "Flutter",
+      "SQLite"
+    ],
+    "durations": [
+      {
+        "scope": "professional experience",
+        "months": 23,
+        "quote": "Tôi có 23 tháng kinh nghiệm nghề nghiệp trong kịch bản ứng dụng ghi biên bản bàn giao."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_DE",
+    "family": "nonprofit",
+    "role": "Data Engineer",
+    "kind": "project",
+    "text": "Data Engineer\nTrong 10 tháng dự án cá nhân, tôi hợp nhất danh mục vật tư từ nhiều bảng hư cấu. Python kiểm cột, DuckDB và SQL giữ mã nguồn trước khi ánh xạ. Tôi xuất danh sách đơn vị chưa rõ để xử lý riêng, không tự xem một thùng bằng một món. Chưa dùng Spark hoặc xây báo cáo tài chính cho tổ chức thật; bộ tệp là bài tập và thời gian của nó không phải kinh nghiệm nghề nghiệp.",
+    "skills": [
+      "Python",
+      "DuckDB",
+      "SQL"
+    ],
+    "stack": [
+      "DuckDB"
+    ],
+    "durations": [
+      {
+        "scope": "dự án cá nhân",
+        "months": 10,
+        "quote": "Trong 10 tháng dự án cá nhân, tôi hợp nhất danh mục vật tư từ nhiều bảng hư cấu."
+      }
+    ]
+  },
+  {
+    "id": "CVA7_NP_AI",
+    "family": "nonprofit",
+    "role": "AI/ML Engineer",
+    "kind": "internship",
+    "text": "AI/ML Engineer\nTôi có 5 tháng thực tập với bài phân loại chủ đề tài liệu hỗ trợ tự soạn. Python, pandas và scikit-learn dùng cho baseline. Tôi kiểm tài liệu gần trùng trước khi chia tập, ghi riêng trường hợp một văn bản có nhiều chủ đề và giữ nhãn chưa rõ ở trạng thái thiếu. Chưa đưa mô hình ra phục vụ hoặc xử lý hồ sơ người nhận trợ giúp; thời gian thực tập không được đổi thành kinh nghiệm nghề nghiệp.",
+    "skills": [
+      "Python",
+      "pandas",
+      "scikit-learn"
+    ],
+    "stack": [
+      "scikit-learn"
+    ],
+    "durations": [
+      {
+        "scope": "thực tập",
+        "months": 5,
+        "quote": "Tôi có 5 tháng thực tập với bài phân loại chủ đề tài liệu hỗ trợ tự soạn."
+      }
+    ]
+  }
+]

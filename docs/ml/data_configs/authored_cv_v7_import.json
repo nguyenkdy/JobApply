@@ -1,0 +1,121 @@
+{
+  "dataset_version": "authored-careers-v7",
+  "historical_cv_sources": [
+    {
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "protected-original-v1",
+      "path": "../../../ml_data_runs/20261113_cv_expansion_v1/synthetic_cvs/cvs.csv",
+      "version": "sha256:7b8e0ff00e651cc9e26cfaa69e2bb4e0423c2abe1e2d26f43cddcb5ed0896130"
+    },
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "jobapply-synthetic-careers-v2",
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/old_cv_development.csv",
+      "source_url": null,
+      "usage_terms": "Fictional task-authored profiles; never real applicant data",
+      "version": "sha256:1a62360fdbb2e7f0029429fa88cc7a800f0abdcb57bb2bbfcbaa712994801fb9"
+    },
+    {
+      "collected_at": null,
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "independent-careers-v3",
+      "path": "../../../ml_data_runs/20261114_pretraining_v3_01/new_cv_batch/cvs.csv",
+      "source_url": null,
+      "usage_terms": "Fictional task-authored profiles; never real applicant data",
+      "version": "sha256:dcefb994be8ca7d068adfb1d38e9ecf4a4cd25423d2f626f6df191aa6b3df32d"
+    }
+  ],
+  "near_threshold": 0.85,
+  "schema_version": 1,
+  "sources": [
+    {
+      "collected_at": "2026-11-16",
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "authored-careers-v7",
+      "path": "../../../ml_data_runs/20261116_authored_cv_v7_01/authored/cvs.csv",
+      "source_url": null,
+      "usage_terms": "Fictional authored profiles; not actual applicants",
+      "version": "sha256:e9fc447de1547430b48e803d9c59c4c461ca2813915c848bbbcc79e5f780e25b"
+    },
+    {
+      "collected_at": "2026-11-16",
+      "columns": {
+        "experience": "experience_json",
+        "exposure": "exposure",
+        "external_id": "cv_id",
+        "is_synthetic": "is_synthetic",
+        "lineage": "lineage_json",
+        "role": "role",
+        "skills": "skills",
+        "source_group": "source_group",
+        "stack": "stack",
+        "template_group": "template_group",
+        "text": "cv_text",
+        "text_scope": "text_scope"
+      },
+      "kind": "cv",
+      "namespace": "authored-careers-v6",
+      "path": "../../../ml_data_runs/20261116_authored_cv_v7_01/prior/cvs.csv",
+      "source_url": null,
+      "usage_terms": "Fictional authored profiles; not actual applicants",
+      "version": "sha256:2a2d854b17fb8f7123a4c607f3c3bff5c6be62d893143c9f012ffe6f219f9631"
+    }
+  ]
+}

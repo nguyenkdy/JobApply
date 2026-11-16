@@ -1,0 +1,176 @@
+[
+  {
+    "id":"CVA6_R_PY","family":"research_operations","role":"Backend Python","kind":"employment",
+    "text":"Backend Python\nTôi phụ trách phần mềm tiếp nhận thông tin mẫu vi sinh giả lập. Hồ sơ này ghi 42 tháng kinh nghiệm nghề nghiệp, trong đó có 26 tháng sử dụng Python. Ban đầu tôi sửa bộ đọc mã mẫu bị mất số đầu; về sau nhận phần API nối mẫu với phiên chạy máy và cơ chế ngăn sửa mẫu đã khóa. FastAPI cùng PostgreSQL được dùng cho dịch vụ này. Tôi viết pytest cho tình huống bản ghi đến hai lần, rồi trao đổi với nhóm giao diện về thông báo lỗi. Có một lần đổi schema khiến chương trình cũ không đọc được dữ liệu; tôi bổ sung bước chuyển đổi có thể chạy thử trước khi áp dụng. Tôi chưa có kinh nghiệm phân tích sinh học và không coi việc làm phần mềm là năng lực đánh giá kết quả xét nghiệm.",
+    "skills":["Python","FastAPI","PostgreSQL","pytest"],"stack":["FastAPI","PostgreSQL"],
+    "durations":[{"scope":"professional experience","months":42,"quote":"Hồ sơ này ghi 42 tháng kinh nghiệm nghề nghiệp, trong đó có 26 tháng sử dụng Python."},{"scope":"python","months":26,"quote":"26 tháng sử dụng Python"}]
+  },
+  {
+    "id":"CVA6_R_JV","family":"research_operations","role":"Backend Java","kind":"project",
+    "text":"Backend Java — phần mềm tôi tự xây khi học\nTrong 9 tháng dự án cá nhân, tôi mô phỏng quy trình gửi yêu cầu đo quang phổ. Mã nguồn gồm dịch vụ Java dùng Spring Boot, bảng trạng thái trong H2 và bộ kiểm tra JUnit. Tôi chọn lưu từng bước chuyển trạng thái để hiểu vì sao một yêu cầu bị trả về, thay vì chỉ giữ trạng thái cuối. Demo còn có chức năng xuất phiếu hướng dẫn bằng dữ liệu bịa đặt; không kết nối với máy đo hoặc hồ sơ của người thật. Vấn đề tôi chưa giải quyết tốt là thay đổi một yêu cầu sau khi đã ghép vào lịch máy. Tôi chỉ chạy một tiến trình trên laptop, chưa có căn cứ nhận là kinh nghiệm vận hành dịch vụ doanh nghiệp.",
+    "skills":["Java","Spring Boot","H2","JUnit"],"stack":["Spring Boot","H2"],
+    "durations":[{"scope":"dự án cá nhân","months":9,"quote":"Trong 9 tháng dự án cá nhân, tôi mô phỏng quy trình gửi yêu cầu đo quang phổ."}]
+  },
+  {
+    "id":"CVA6_R_FE","family":"research_operations","role":"Frontend","kind":"internship",
+    "text":"Frontend\nĐợt thực tập của tôi kéo dài 5 tháng. Việc được giao là sửa màn hình xem đường cong lực kéo trong một ứng dụng thử nghiệm. Tôi dùng TypeScript với React để hiển thị các đoạn dữ liệu, CSS để xử lý khung chú giải và Testing Library để thử thao tác chọn đường cong. Tôi phát hiện tên mẫu dài làm nút xóa rơi khỏi vùng nhìn; bản sửa phải giữ thao tác bàn phím ở cùng thứ tự. Người hướng dẫn quyết định cách xử lý các tệp quá lớn, còn tôi viết thông báo giới hạn và thêm trường hợp kiểm tra. Chưa từng tự thiết kế API lấy dữ liệu hoặc đưa ứng dụng lên production. Tôi không cộng thời gian học TypeScript trước đợt này vào số tháng thực tập.",
+    "skills":["TypeScript","React","CSS","Testing Library"],"stack":["React","TypeScript"],
+    "durations":[{"scope":"thực tập","months":5,"quote":"Đợt thực tập của tôi kéo dài 5 tháng."}]
+  },
+  {
+    "id":"CVA6_R_DO","family":"research_operations","role":"DevOps/Cloud","kind":"contract",
+    "text":"DevOps/Cloud | Ghi nhận năng lực theo hợp đồng\nMột nhóm mô phỏng nghiên cứu vật liệu cần môi trường tính toán không truy cập Internet trực tiếp. Tôi nhận việc dựng kho gói nội bộ và quy trình đưa artifact vào vùng thử. Các hợp đồng không chồng nhau trong hồ sơ tạo thành 30 tháng kinh nghiệm nghề nghiệp. Tôi sử dụng Linux, Ansible và Podman; cấu hình Prometheus để xem dung lượng kho và tình trạng mirror. Phần khó là xác định gói nào đã được cho phép nhập, nên tôi lưu checksum kèm phiên bản danh mục. Tôi bàn giao tài khoản giới hạn quyền và hướng dẫn khôi phục một máy thử. Không có số tháng riêng cho từng công cụ, cũng chưa có kinh nghiệm quản lý tài khoản cloud công cộng được chứng minh trong hồ sơ.",
+    "skills":["Linux","Ansible","Podman","Prometheus"],"stack":["Ansible","Podman"],
+    "durations":[{"scope":"professional experience","months":30,"quote":"Các hợp đồng không chồng nhau trong hồ sơ tạo thành 30 tháng kinh nghiệm nghề nghiệp."}]
+  },
+  {
+    "id":"CVA6_R_QA","family":"research_operations","role":"QA/Testing","kind":"unknown",
+    "text":"QA/Testing\nTôi còn giữ một số ghi chú kiểm tra phần mềm quản lý thiết bị phòng thí nghiệm giả lập. Có lần tên thiết bị được đổi nhưng phiếu hiệu chuẩn vẫn hiện tên cũ; tôi dùng SQL đối chiếu hai bảng và ghi bước tái hiện trong Jira. Một đợt khác, tôi dùng Postman gửi yêu cầu thay người quản lý bằng tài khoản đã bị thu hồi quyền. Các ghi chú không ghi đủ ngày bắt đầu/kết thúc, vì vậy tôi không khai số tháng làm nghề. Tôi chủ yếu kiểm tra thủ công và API; chưa có bộ automation để đưa vào hồ sơ, cũng chưa thực hiện kiểm thử bảo mật chuyên sâu. Kết quả được nêu là những tình huống đã kiểm, không phải tỷ lệ lỗi tìm được hoặc chứng nhận phần mềm đạt chuẩn ngành.",
+    "skills":["SQL","Jira","Postman"],"stack":["Postman","Jira"],"durations":[]
+  },
+  {
+    "id":"CVA6_R_DN","family":"research_operations","role":"Backend .NET","kind":"employment",
+    "text":"Backend .NET\nKinh nghiệm nghề nghiệp của tôi là 54 tháng ở nhóm phát triển phần mềm mô phỏng kỹ thuật. Công việc gần nhất là dịch vụ cấp quyền sửa tệp thiết kế cơ khí: một tài liệu đang được khóa phải trả về thông tin người giữ khóa thay vì tạo bản sao không kiểm soát. Tôi làm phần API bằng C# và ASP.NET Core, lưu lịch sử bằng SQL Server, thêm xUnit cho các quy tắc hết hạn khóa. Có 36 tháng sử dụng C# được ghi rõ trong hồ sơ. Tôi từng hỗ trợ chuyển quyền giữa hai đơn vị khi tách dự án; không tham gia xây bộ đọc hình học của tệp CAD. Điều tôi cần học thêm là triển khai nhiều vùng và điều tra hiệu năng ở quy mô lớn.",
+    "skills":["C#","ASP.NET Core","SQL Server","xUnit"],"stack":["ASP.NET Core","SQL Server"],
+    "durations":[{"scope":"professional experience","months":54,"quote":"Kinh nghiệm nghề nghiệp của tôi là 54 tháng ở nhóm phát triển phần mềm mô phỏng kỹ thuật."},{"scope":"c#","months":36,"quote":"Có 36 tháng sử dụng C# được ghi rõ trong hồ sơ."}]
+  },
+  {
+    "id":"CVA6_R_FS","family":"research_operations","role":"Fullstack","kind":"project",
+    "text":"Fullstack / bài làm cuối khóa\nTôi làm cổng trao đổi phản biện cho các nhóm viết báo cáo thí nghiệm giả lập. Phần trình duyệt dùng Vue, phía server dùng Django và SQLite. Tôi viết cả thao tác gắn nhận xét vào một phiên bản báo cáo lẫn quy tắc không cho sinh viên thấy bản nhận xét chưa gửi. Dự án cá nhân này chiếm 6 tháng; sau buổi bảo vệ tôi còn sửa lỗi mất vị trí nhận xét khi đổi trang. Tôi đã dùng Python cho các truy vấn và kiểm tra dữ liệu đầu vào, chưa có số liệu để nói hệ thống phục vụ nhiều lớp học thật. Hồ sơ không có kinh nghiệm làm việc chính thức hoặc kinh nghiệm cloud; đoạn thời gian trên chỉ thuộc dự án học tập.",
+    "skills":["Vue","Django","SQLite","Python"],"stack":["Vue","Django","SQLite"],
+    "durations":[{"scope":"dự án cá nhân","months":6,"quote":"Dự án cá nhân này chiếm 6 tháng; sau buổi bảo vệ tôi còn sửa lỗi mất vị trí nhận xét khi đổi trang."}]
+  },
+  {
+    "id":"CVA6_R_MO","family":"research_operations","role":"Mobile","kind":"internship",
+    "text":"Mobile\nTôi có 4 tháng thực tập trong nhóm làm ứng dụng ghi chép hố khai quật mô phỏng. Tính năng tôi đóng góp chạy trên Android với Kotlin và Room: lưu điểm đánh dấu khi mất mạng, phân biệt bản nháp với bản đã gửi. Tôi thêm ca JUnit kiểm việc đổi mã hố trước khi đồng bộ. Khi thử xoay màn hình, nội dung vừa nhập từng bị mất; tôi sửa phần giữ trạng thái theo hướng dẫn của người phụ trách. Chưa viết phần xử lý bản đồ, chưa phát hành ứng dụng lên cửa hàng và chưa triển khai cho một đoàn khảo sát thật. Những tháng tự học Android sau giờ thực tập không được cộng thành kinh nghiệm nghề nghiệp trong metadata.",
+    "skills":["Android","Kotlin","Room","JUnit"],"stack":["Android","Room"],
+    "durations":[{"scope":"thực tập","months":4,"quote":"Tôi có 4 tháng thực tập trong nhóm làm ứng dụng ghi chép hố khai quật mô phỏng."}]
+  },
+  {
+    "id":"CVA6_R_DE","family":"research_operations","role":"Data Engineer","kind":"contract",
+    "text":"Data Engineer\nTôi ký hợp đồng dựng luồng dữ liệu cho bài toán quản lý tiêu bản thực vật giả lập. Tổng kinh nghiệm nghề nghiệp theo các đợt hợp đồng là 28 tháng. Nguồn đầu vào có bảng mã loài thay đổi theo phiên bản; tôi giữ mã nguồn, phiên bản từ điển và khóa liên kết tới bảng chuẩn hóa. Luồng chạy bằng Python và Airflow, phần truy vấn kiểm tra dùng SQL trên PostgreSQL. Khi phát hiện tên loài chưa ánh xạ được, pipeline đưa dòng vào bảng chờ thay vì đoán mã gần nhất. Tôi có tài liệu chạy lại từng lô nhưng chưa có kinh nghiệm quản trị Spark. Chưa xác định riêng số tháng Airflow, nên không gán toàn bộ thời gian hợp đồng cho công cụ này.",
+    "skills":["Python","Airflow","SQL","PostgreSQL"],"stack":["Airflow","PostgreSQL"],
+    "durations":[{"scope":"professional experience","months":28,"quote":"Tổng kinh nghiệm nghề nghiệp theo các đợt hợp đồng là 28 tháng."}]
+  },
+  {
+    "id":"CVA6_R_AI","family":"research_operations","role":"AI/ML Engineer","kind":"unknown",
+    "text":"AI/ML Engineer\nCác tài liệu tôi lưu lại liên quan đến mô hình đếm điểm giao của nét trong sơ đồ tổng hợp. Tôi đã dùng Python, NumPy và PyTorch để tạo tensor, huấn luyện mạng nhỏ và xem lại ảnh mà mô hình đếm sai. Tôi kiểm tra các ảnh biến thể của cùng sơ đồ nằm cùng nhóm dữ liệu, rồi so với một phép đếm hình học đơn giản. Không còn lịch làm việc đủ rõ để khai thời lượng hoặc loại hợp đồng. Tôi chưa có số liệu ổn định cho ảnh chụp ngoài đời, không nhận là đã giải quyết bài toán đọc bản vẽ kỹ thuật tổng quát. Việc gắn nhãn trong bài thử là theo cấu trúc sơ đồ tự tạo, không phải một tập nhãn chuyên gia độc lập.",
+    "skills":["Python","NumPy","PyTorch"],"stack":["NumPy","PyTorch"],"durations":[]
+  },
+  {
+    "id":"CVA6_C_PY","family":"creative_production","role":"Backend Python","kind":"internship",
+    "text":"Backend Python — thực tập tại studio giả lập\nTrong 3 tháng thực tập, tôi nhận phần kiểm tra bản kê âm thanh được gửi vào hệ thống dựng phim. Tệp kê sai mã cảnh phải có lỗi chỉ đúng dòng để người dựng sửa được. Tôi dùng Python đọc dữ liệu, viết một endpoint Flask cho giao diện gửi tệp và lưu phiên bản kê bằng SQLite. Một số bài kiểm tra pytest giúp tái hiện trường hợp tên tệp có ký tự tiếng Việt. Người hướng dẫn làm phần phân quyền; tôi không đưa phần đó vào danh sách công việc đã tự làm. Tôi từng thử xử lý nhiều tệp cùng lúc nhưng chưa đo tải hay vận hành dịch vụ. Trải nghiệm này không được khai thành thời gian Python làm việc toàn thời gian.",
+    "skills":["Python","Flask","SQLite","pytest"],"stack":["Flask","SQLite"],
+    "durations":[{"scope":"thực tập","months":3,"quote":"Trong 3 tháng thực tập, tôi nhận phần kiểm tra bản kê âm thanh được gửi vào hệ thống dựng phim."}]
+  },
+  {
+    "id":"CVA6_C_JV","family":"creative_production","role":"Backend Java","kind":"contract",
+    "text":"Backend Java\nHạng mục bàn giao của tôi là dịch vụ tính quyền phát lại các đoạn chương trình mô phỏng. Hợp đồng này nằm trong 46 tháng kinh nghiệm nghề nghiệp đã khai báo. Tôi làm Java với Quarkus, dùng PostgreSQL lưu khoảng hiệu lực quyền và Kafka phát sự kiện khi bộ phận nghiệp vụ sửa quyết định. Điểm cần chú ý là một đoạn có thể có quyền phát trên web nhưng không có quyền phát ở kênh khác; tôi không gộp các quyền thành một cờ đúng/sai. Tôi ghi được 32 tháng sử dụng Java, còn thời gian Kafka chưa có số riêng. Khâu giải thích hợp đồng bản quyền do người phụ trách nghiệp vụ thực hiện, không phải chuyên môn pháp lý của tôi.",
+    "skills":["Java","Quarkus","PostgreSQL","Kafka"],"stack":["Quarkus","PostgreSQL","Kafka"],
+    "durations":[{"scope":"professional experience","months":46,"quote":"Hợp đồng này nằm trong 46 tháng kinh nghiệm nghề nghiệp đã khai báo."},{"scope":"java","months":32,"quote":"Tôi ghi được 32 tháng sử dụng Java, còn thời gian Kafka chưa có số riêng."}]
+  },
+  {
+    "id":"CVA6_C_FE","family":"creative_production","role":"Frontend","kind":"unknown",
+    "text":"Frontend\nPhần có thể đối chiếu trong hồ sơ của tôi là một trình sắp xếp nhịp trống chạy trên trình duyệt. Tôi viết giao diện bằng Svelte và TypeScript, dùng CSS cho các ô nhịp có thể thay kích thước. Người dùng kéo một âm thanh vào ô; tôi bổ sung cách chọn ô bằng phím để thao tác đó không bắt buộc phải dùng chuột. Tôi dùng Playwright ghi các bước đổi bộ nhịp và quay lui một lần sửa. Không có bảng thời gian đáng tin để cộng các đợt đóng góp, nên kinh nghiệm theo tháng để trống. Tôi không viết bộ tổng hợp âm thanh và cũng không biết độ trễ âm thanh trên các trình duyệt chưa thử; không nhận những phần đó là năng lực đã được kiểm chứng.",
+    "skills":["Svelte","TypeScript","CSS","Playwright"],"stack":["Svelte","TypeScript","Playwright"],"durations":[]
+  },
+  {
+    "id":"CVA6_C_DO","family":"creative_production","role":"DevOps/Cloud","kind":"employment",
+    "text":"DevOps/Cloud\nTôi chuyển từ hỗ trợ máy dựng sang vận hành hàng đợi render trong một môi trường sản xuất nội dung giả lập. Có 66 tháng kinh nghiệm nghề nghiệp, trong đó 40 tháng DevOps. Tôi viết Terraform cho tài nguyên AWS, đóng gói worker bằng Docker và dùng Grafana xem tình trạng hàng đợi. Một thay đổi từng khiến máy worker tải lại toàn bộ dữ liệu, nên tôi thêm bước kiểm tra cache trước khi nâng phiên bản. Tôi phụ trách hạ tầng và việc phục hồi worker; nội dung phim và thuật toán render thuộc nhóm khác. Chưa có thời lượng riêng cho AWS hoặc bằng chứng triển khai nhiều vùng, vì vậy tôi không khai các năng lực ấy bằng cách suy từ số tháng DevOps.",
+    "skills":["DevOps","Terraform","AWS","Docker","Grafana"],"stack":["Terraform","AWS","Docker"],
+    "durations":[{"scope":"professional experience","months":66,"quote":"Có 66 tháng kinh nghiệm nghề nghiệp, trong đó 40 tháng DevOps."},{"scope":"devops","months":40,"quote":"40 tháng DevOps"}]
+  },
+  {
+    "id":"CVA6_C_QA","family":"creative_production","role":"QA/Testing","kind":"project",
+    "text":"QA/Testing | Hồ sơ dự án học\nTôi dành 7 tháng dự án cá nhân để kiểm thử một trang phối màu do bạn học cung cấp bằng dữ liệu mô phỏng. Mục tiêu là tìm các sai khác khi nhập mã màu, đổi chế độ và xuất bảng phối. Tôi viết ca Cypress bằng JavaScript, dùng DevTools tìm phản hồi API bị lỗi và ghi lại ví dụ để người viết trang sửa. Có một ca mà phần xem trước đúng nhưng tệp xuất sai thứ tự; tôi đã giữ nó trong bộ hồi quy. Đây chưa phải kinh nghiệm làm QA ở doanh nghiệp. Tôi cũng chưa có kiến thức đủ để chứng nhận khả năng truy cập của bảng màu; phần kiểm thử chỉ xác nhận các quy tắc cụ thể của bài học.",
+    "skills":["Cypress","JavaScript","DevTools"],"stack":["Cypress"],
+    "durations":[{"scope":"dự án cá nhân","months":7,"quote":"Tôi dành 7 tháng dự án cá nhân để kiểm thử một trang phối màu do bạn học cung cấp bằng dữ liệu mô phỏng."}]
+  },
+  {
+    "id":"CVA6_C_DN","family":"creative_production","role":"Backend .NET","kind":"internship",
+    "text":"Backend .NET\nTôi hoàn thành 6 tháng thực tập với bài toán theo dõi revision của bản thuyết minh giả lập. Phần mã tôi sửa là API C# dùng ASP.NET Core: khi người dùng gửi bản mới, hệ thống giữ liên kết tới bản trước và kiểm tra người gửi còn quyền sửa. Tôi dùng Entity Framework với SQL Server cho truy vấn, đọc lỗi trong log rồi thêm một ca xUnit cho cập nhật từ revision cũ. Tôi không tự thiết kế mô hình quyền từ đầu và không trực phát hành. Một giới hạn còn lại là chưa xử lý tốt việc gửi tệp lớn; nhiệm vụ đó đã được bàn giao cho người hướng dẫn. Không có thời gian kinh nghiệm nghề nghiệp chính thức trong hồ sơ này.",
+    "skills":["C#","ASP.NET Core","Entity Framework","SQL Server","xUnit"],"stack":["ASP.NET Core","Entity Framework","SQL Server"],
+    "durations":[{"scope":"thực tập","months":6,"quote":"Tôi hoàn thành 6 tháng thực tập với bài toán theo dõi revision của bản thuyết minh giả lập."}]
+  },
+  {
+    "id":"CVA6_C_FS","family":"creative_production","role":"Fullstack","kind":"contract",
+    "text":"Fullstack\nMột đơn vị giả lập cần cổng duyệt bản mix: người nghe ghi chú ở một vị trí thời gian, người dựng phản hồi rồi gửi bản mới. Tôi nhận cả phần React và API Node.js; dùng PostgreSQL cho các luồng phản hồi và kiểm tra quyền truy cập từng bản. TypeScript được dùng ở hai phía nhưng tôi chưa thống kê thời gian riêng theo công nghệ. Hồ sơ có 38 tháng kinh nghiệm nghề nghiệp qua hợp đồng. Tôi đã xử lý việc ghi chú cũ phải gắn với bản âm thanh cũ, không tự chuyển theo vị trí của bản mới. Phần xử lý tín hiệu và lưu trữ media dung lượng lớn do bên khác làm; chưa có căn cứ để nhận mình thiết kế toàn bộ nền tảng streaming.",
+    "skills":["React","Node.js","PostgreSQL","TypeScript"],"stack":["React","Node.js","PostgreSQL"],
+    "durations":[{"scope":"professional experience","months":38,"quote":"Hồ sơ có 38 tháng kinh nghiệm nghề nghiệp qua hợp đồng."}]
+  },
+  {
+    "id":"CVA6_C_MO","family":"creative_production","role":"Mobile","kind":"unknown",
+    "text":"Mobile — những phần việc tôi còn tài liệu\nTôi đã xây màn hình xem storyboard ngoại tuyến trên iOS. Swift được dùng để quản lý các trang, Core Data lưu ghi chú và XCTest kiểm tra hành vi chọn lại khung hình sau khi app mở lại. Có một lần cập nhật gói ảnh làm mất liên kết ghi chú; tôi bổ sung mã phiên bản gói để giữ dữ liệu cũ trong lúc tải bản mới. Thời gian tham gia các đợt không được ghi liên tục nên tôi không khai số tháng hoặc tự nhận là công việc toàn thời gian. Tôi chưa viết phần đồng bộ nhiều người cùng sửa. Hồ sơ cũng không có bằng chứng làm Android; kinh nghiệm trên iOS không được tự đổi thành kinh nghiệm cả hai nền tảng.",
+    "skills":["iOS","Swift","Core Data","XCTest"],"stack":["iOS","Core Data"],"durations":[]
+  },
+  {
+    "id":"CVA6_C_DE","family":"creative_production","role":"Data Engineer","kind":"employment",
+    "text":"Data Engineer\nTôi có 59 tháng kinh nghiệm nghề nghiệp trong hồ sơ giả lập này. Ban đầu tôi viết SQL đối chiếu thời lượng quảng cáo đã đặt với thời lượng đã phát; sau đó nhận luồng nhập nhật ký phát sóng. Tôi dùng dbt trên BigQuery để giữ quy tắc tính chỉ tiêu ở một nơi và Git để theo dõi thay đổi. Có trường hợp tên chương trình thay giữa mùa khiến báo cáo tách thành hai mục; tôi bổ sung ánh xạ theo mã và khoảng hiệu lực thay vì sửa bản ghi nguồn. Tôi biết làm kiểm tra chất lượng bảng, chưa có bằng chứng phát triển mô hình ML. Kinh nghiệm dùng dbt không được gán đủ 59 tháng vì phần đầu công việc không dùng công cụ này.",
+    "skills":["SQL","dbt","BigQuery","Git"],"stack":["dbt","BigQuery"],
+    "durations":[{"scope":"professional experience","months":59,"quote":"Tôi có 59 tháng kinh nghiệm nghề nghiệp trong hồ sơ giả lập này."}]
+  },
+  {
+    "id":"CVA6_C_AI","family":"creative_production","role":"AI/ML Engineer","kind":"project",
+    "text":"AI/ML Engineer\nBài tự học của tôi tìm các trang truyện tổng hợp có thứ tự ô thoại bị đảo. Trong 10 tháng dự án cá nhân, tôi tạo dữ liệu hình chữ nhật và mũi tên, thử đặc trưng hình học với scikit-learn rồi so với một mô hình PyTorch nhỏ. Python dùng cho quá trình dựng dữ liệu và phân tích lỗi. Tôi giữ các trang biến thể từ cùng bản gốc ở một nhóm khi chia tập. Kết quả trên ảnh tổng hợp không được trình bày như khả năng đọc truyện thật hoặc hiểu nội dung ngôn ngữ. Tôi chưa đưa mô hình vào một sản phẩm, chưa có kinh nghiệm nghề nghiệp làm ML và chưa ghi bất kỳ chỉ số accuracy nào vào CV khi không có run đối chiếu.",
+    "skills":["scikit-learn","PyTorch","Python"],"stack":["scikit-learn","PyTorch"],
+    "durations":[{"scope":"dự án cá nhân","months":10,"quote":"Trong 10 tháng dự án cá nhân, tôi tạo dữ liệu hình chữ nhật và mũi tên, thử đặc trưng hình học với scikit-learn rồi so với một mô hình PyTorch nhỏ."}]
+  },
+  {
+    "id":"CVA6_P_PY","family":"public_services","role":"Backend Python","kind":"unknown",
+    "text":"Backend Python\nTôi có mã nguồn và ghi chú cho dịch vụ phân loại yêu cầu sửa đèn đường giả lập, nhưng không có bảng thời gian để xác nhận tổng tháng tham gia. Tôi dùng Python với Django, Redis giữ các tác vụ ngắn và Celery gửi thông báo khi phiếu chuyển đội xử lý. Tôi đã sửa tình huống một phiếu gửi hai lần tạo hai thông báo khác nhau bằng khóa nghiệp vụ theo mã yêu cầu. Dữ liệu địa chỉ trong bài làm đều bịa đặt; tôi không thu thập hồ sơ công dân. Chưa có căn cứ về khả năng chịu tải, trực hệ thống hay số năm Python, nên các thông tin đó để trống thay vì suy ra từ số dòng mã đã viết.",
+    "skills":["Python","Django","Redis","Celery"],"stack":["Django","Redis","Celery"],"durations":[]
+  },
+  {
+    "id":"CVA6_P_JV","family":"public_services","role":"Backend Java","kind":"employment",
+    "text":"Backend Java\nTôi làm dịch vụ tính phí nạp xe điện trong một hệ thống mô phỏng. Hồ sơ ghi 72 tháng kinh nghiệm nghề nghiệp và 48 tháng sử dụng Java. Phần tôi chịu trách nhiệm gồm Spring Boot, bảng giá trong PostgreSQL và các kiểm tra JUnit cho phiên nạp đi qua thời điểm đổi biểu phí. Tôi lưu bản biểu phí áp dụng cho từng đoạn thời gian thay vì tính lại mọi phiên theo giá mới. Sau đó tôi hỗ trợ đối chiếu bản ghi tới trễ từ trụ nạp; việc điều khiển thiết bị thuộc nhóm firmware. Tôi chưa có kinh nghiệm viết giao diện Mobile và không coi kiến thức nghiệp vụ này là chuyên môn thiết kế hệ thống điện.",
+    "skills":["Java","Spring Boot","PostgreSQL","JUnit"],"stack":["Spring Boot","PostgreSQL"],
+    "durations":[{"scope":"professional experience","months":72,"quote":"Hồ sơ ghi 72 tháng kinh nghiệm nghề nghiệp và 48 tháng sử dụng Java."},{"scope":"java","months":48,"quote":"48 tháng sử dụng Java"}]
+  },
+  {
+    "id":"CVA6_P_FE","family":"public_services","role":"Frontend","kind":"project",
+    "text":"Frontend\nTôi tự làm màn hình tra cứu giờ hoạt động của các điểm dịch vụ giả lập bằng Vue và JavaScript. Dự án cá nhân kéo dài 8 tháng, chủ yếu thực hiện ngoài giờ học. Người dùng có thể đổi ngày để xem lịch ngoại lệ; tôi cần hiển thị rõ chưa có thông tin thay vì coi ô rỗng là đóng cửa. HTML và CSS được dùng cho phần nội dung có cấu trúc, còn Vitest kiểm các hàm xác định lịch hiển thị. Tôi chưa nối ứng dụng với nguồn dữ liệu công khai hoặc tài khoản người dùng thật. Có một giới hạn còn mở là hỗ trợ các múi giờ khác nhau; bản hiện tại chỉ dùng một múi giờ được khai báo trong dữ liệu thử.",
+    "skills":["Vue","JavaScript","HTML","CSS","Vitest"],"stack":["Vue"],
+    "durations":[{"scope":"dự án cá nhân","months":8,"quote":"Dự án cá nhân kéo dài 8 tháng, chủ yếu thực hiện ngoài giờ học."}]
+  },
+  {
+    "id":"CVA6_P_DO","family":"public_services","role":"DevOps/Cloud","kind":"internship",
+    "text":"DevOps/Cloud\nTrong 6 tháng thực tập, tôi hỗ trợ chuyển một bộ dịch vụ điều phối công việc giả lập sang môi trường staging. Tôi viết cấu hình Helm, đọc trạng thái Pod trên Kubernetes và dùng Bash gom các kiểm tra chỉ đọc trước triển khai. Nhóm dùng Azure; tôi chỉ được cấp quyền với namespace thử nghiệm, chưa quản trị tài khoản cloud. Một lần probe sai làm dịch vụ khởi động liên tục, tôi ghi lại hiện tượng và bổ sung cách phát hiện cấu hình đó. Người hướng dẫn duyệt mọi thay đổi trước khi áp dụng. Tôi không khai sáu tháng này là kinh nghiệm vận hành production hoặc thời gian quản trị Azure độc lập.",
+    "skills":["Helm","Kubernetes","Bash","Azure"],"stack":["Helm","Kubernetes","Azure"],
+    "durations":[{"scope":"thực tập","months":6,"quote":"Trong 6 tháng thực tập, tôi hỗ trợ chuyển một bộ dịch vụ điều phối công việc giả lập sang môi trường staging."}]
+  },
+  {
+    "id":"CVA6_P_QA","family":"public_services","role":"QA/Testing","kind":"contract",
+    "text":"QA/Testing\nTôi nhận kiểm thử chức năng xác nhận phiếu thu phí mô phỏng qua mã QR. Kinh nghiệm nghề nghiệp theo các hợp đồng là 33 tháng; có 22 tháng kiểm thử phần mềm được khai báo riêng. Tôi dùng Postman gửi các yêu cầu có token hết hạn, SQL kiểm tra phiếu đã được ghi nhận hay chưa và Selenium bằng Python cho vài đường đi trình duyệt. Tôi tập trung lỗi xác nhận lại cùng một phiếu và sự khác nhau giữa hết hạn thao tác với phiếu không tồn tại. Tôi không đánh giá thuật toán mật mã của QR hoặc chứng nhận bảo mật hệ thống. Bộ automation hiện chỉ là một phần nhỏ so với các ca kiểm tra thủ công.",
+    "skills":["Postman","SQL","Selenium","Python"],"stack":["Postman","Selenium"],
+    "durations":[{"scope":"professional experience","months":33,"quote":"Kinh nghiệm nghề nghiệp theo các hợp đồng là 33 tháng; có 22 tháng kiểm thử phần mềm được khai báo riêng."},{"scope":"kiểm thử phần mềm","months":22,"quote":"22 tháng kiểm thử phần mềm"}]
+  },
+  {
+    "id":"CVA6_P_DN","family":"public_services","role":"Backend .NET","kind":"unknown",
+    "text":"Backend .NET\nHồ sơ này có một số hạng mục liên quan đến quản lý biển báo giao thông giả lập. Tôi từng sửa API C# chạy .NET để ghi yêu cầu thay biển; dùng PostgreSQL lưu bản mô tả trước và sau thay đổi. Tôi cũng chạy Docker cho môi trường local và viết một truy vấn phát hiện hai yêu cầu đang mở cho cùng mã biển. Những đợt tham gia chưa có thời gian hoặc loại hợp đồng rõ ràng, nên không khai tổng kinh nghiệm. Tôi chưa làm phần bản đồ và chưa có bằng chứng về kỹ năng giao diện. Một số việc tôi đã làm có thể đối chiếu qua ghi chú kỹ thuật, nhưng không đủ để suy ra năng lực dẫn dắt nhóm hoặc vận hành toàn hệ thống.",
+    "skills":["C#",".NET","PostgreSQL","Docker"],"stack":[".NET","PostgreSQL","Docker"],"durations":[]
+  },
+  {
+    "id":"CVA6_P_FS","family":"public_services","role":"Fullstack","kind":"employment",
+    "text":"Fullstack\nTôi có 44 tháng kinh nghiệm nghề nghiệp ở nhóm phần mềm giả lập xử lý kiến nghị về tiếng ồn. Tôi làm cả giao diện Angular với TypeScript và API Java dùng Spring Boot. Trình duyệt cần thể hiện rõ phản hồi đang được soạn với phản hồi đã công bố, còn server kiểm tra quyền công bố của từng đơn vị. Tôi viết phần liên kết tệp đính kèm với một phiên bản phản hồi để việc sửa nội dung không làm mất bằng chứng cũ. Thời lượng từng công nghệ chưa được tổng hợp riêng. Tôi không làm hệ thống thu âm, không phân tích mức độ tiếng ồn và không dùng dữ liệu hoặc thông tin cá nhân thật trong hồ sơ synthetic này.",
+    "skills":["Angular","TypeScript","Java","Spring Boot"],"stack":["Angular","Spring Boot"],
+    "durations":[{"scope":"professional experience","months":44,"quote":"Tôi có 44 tháng kinh nghiệm nghề nghiệp ở nhóm phần mềm giả lập xử lý kiến nghị về tiếng ồn."}]
+  },
+  {
+    "id":"CVA6_P_MO","family":"public_services","role":"Mobile","kind":"project",
+    "text":"Mobile\nTôi dành 5 tháng dự án cá nhân để làm ứng dụng ghi nhận vị trí nắp cống trong khu phố giả lập. Flutter và Dart được dùng cho giao diện; SQLite giữ bản nháp khi người dùng đi qua vùng không có mạng. Tôi làm tính năng cho xem lại ảnh và sửa hướng mô tả trước khi đưa một bản ghi vào hàng chờ gửi. Tôi chưa có backend production, nên bước đồng bộ chỉ nối với server local để học cách xử lý thất bại. Một trường hợp chưa làm xong là hai bản nháp cùng mô tả một vật thể. Hồ sơ không khai số tháng làm việc chính thức, không có dữ liệu vị trí của người thật và chưa được dùng cho hoạt động kiểm tra hạ tầng ngoài thực tế.",
+    "skills":["Flutter","Dart","SQLite"],"stack":["Flutter","SQLite"],
+    "durations":[{"scope":"dự án cá nhân","months":5,"quote":"Tôi dành 5 tháng dự án cá nhân để làm ứng dụng ghi nhận vị trí nắp cống trong khu phố giả lập."}]
+  },
+  {
+    "id":"CVA6_P_DE","family":"public_services","role":"Data Engineer","kind":"internship",
+    "text":"Data Engineer\nTôi có 4 tháng thực tập với nhóm dựng dữ liệu thử về tiến độ xử lý lệnh công tác. Tôi dùng Python nhập các tệp sự kiện, SQL đối chiếu trạng thái cuối và pandas kiểm các cột thiếu. Người hướng dẫn yêu cầu giữ riêng thời điểm sự kiện xảy ra với thời điểm tệp được nhận; tôi đã sửa bảng staging và viết ghi chú cho cách xử lý dữ liệu đến muộn. Phần lịch chạy và cấp quyền kho dữ liệu do thành viên khác thực hiện. Tôi chưa dùng Spark hoặc tự xây kiến trúc streaming. Các ví dụ trong hồ sơ chỉ là dữ liệu mô phỏng; tôi không nhận là có kinh nghiệm phân tích hiệu quả hoạt động của một đơn vị thật.",
+    "skills":["Python","SQL","pandas"],"stack":["pandas"],
+    "durations":[{"scope":"thực tập","months":4,"quote":"Tôi có 4 tháng thực tập với nhóm dựng dữ liệu thử về tiến độ xử lý lệnh công tác."}]
+  },
+  {
+    "id":"CVA6_P_AI","family":"public_services","role":"AI/ML Engineer","kind":"contract",
+    "text":"AI/ML Engineer\nTôi nhận một hợp đồng nghiên cứu dự báo thời gian chờ từ dữ liệu hàng đợi tổng hợp. Tổng kinh nghiệm nghề nghiệp ghi trong hồ sơ là 27 tháng. Tôi dùng Python, pandas và scikit-learn để tạo baseline; MLflow lưu cấu hình và kết quả thử. Tôi chia dữ liệu theo khoảng thời gian, kiểm các feature chỉ được biết sau khi yêu cầu kết thúc, và bỏ chúng khỏi đầu vào. Tôi chưa có kết quả trên một quầy dịch vụ thật nên không ghi con số cải thiện hoặc gọi mô hình là đã sẵn sàng triển khai. Hợp đồng không bao gồm quyết định ưu tiên người dùng; dự báo chỉ là một bài thử kỹ thuật với dữ liệu được tạo ra.",
+    "skills":["Python","pandas","scikit-learn","MLflow"],"stack":["scikit-learn","MLflow"],
+    "durations":[{"scope":"professional experience","months":27,"quote":"Tổng kinh nghiệm nghề nghiệp ghi trong hồ sơ là 27 tháng."}]
+  }
+]

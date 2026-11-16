@@ -1,0 +1,46 @@
+role,jd_count,jd_groups
+unknown,136,123
+ai/ml engineer,37,26
+backend (unspecified stack),21,19
+backend .net,31,25
+backend golang,7,7
+backend java,88,75
+backend node.js,7,7
+backend php,11,9
+backend python,11,10
+backend ruby,2,2
+blockchain,4,3
+bridge engineer,9,8
+business analyst,12,12
+c/c++ software,7,6
+cnc/cam manufacturing,14,12
+cobol software,1,1
+data engineer,16,15
+data governance,1,1
+data scientist,1,1
+database/sql,9,7
+desktop application,9,8
+devops/cloud,14,14
+education/training,4,2
+embedded engineer,14,12
+engineering management,6,6
+erp/is specialist,8,8
+frontend,56,52
+fullstack,90,80
+game design,2,2
+game developer,18,15
+industrial automation,2,1
+it management,2,2
+marketing,2,1
+material development,2,1
+mobile,50,47
+network engineering,2,2
+product management,2,2
+project management,9,9
+qa/testing,39,39
+sales/business development,4,4
+scrum master,2,2
+security engineer,9,9
+technical architecture,8,7
+technical art,1,1
+ui/ux designer,8,8

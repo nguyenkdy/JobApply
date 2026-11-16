@@ -72,6 +72,28 @@ def main():
     experiment.add_argument("--output", type=Path, required=True)
     precheck = sub.add_parser("check-pretraining", help="Recompute all input/lineage/grid/label gates without training")
     precheck.add_argument("--artifact", type=Path, required=True)
+    full_jd = sub.add_parser("expand-jd-catalogue", help="Import all eligible JD; preserve unknowns, groups and completed-benchmark exposure")
+    full_jd.add_argument("--preparation", type=Path, required=True)
+    full_jd.add_argument("--benchmark", type=Path, required=True)
+    full_jd.add_argument("--output", type=Path, required=True)
+    refine = sub.add_parser("refine-jd-catalogue", help="Versioned metadata overlay and CV design; no labels or training")
+    refine.add_argument("--catalogue-run", type=Path, required=True)
+    refine.add_argument("--output", type=Path, required=True)
+    intake = sub.add_parser("prepare-cv-intake", help="Admit individual full-text CV sources; preview on all known JD")
+    intake.add_argument("--metadata-run", type=Path, required=True)
+    intake.add_argument("--catalogue-run", type=Path, required=True)
+    intake.add_argument("--preparation-run", type=Path, required=True)
+    intake.add_argument("--assets", type=Path, default=ROOT / "ml_data_assets/authored_cv_v6")
+    intake.add_argument("--output", type=Path, required=True)
+    intake.add_argument("--prior-intake", type=Path, default=None)
+    intake_check = sub.add_parser("check-cv-intake")
+    intake_check.add_argument("--artifact", type=Path, required=True)
+    proxy = sub.add_parser("prepare-expanded-labels", help="Frozen bounded proxy policy; sampled train and full evaluation census; no training")
+    proxy.add_argument("--intake", type=Path, required=True)
+    proxy.add_argument("--output", type=Path, required=True)
+    proxy_check = sub.add_parser("check-expanded-labels")
+    proxy_check.add_argument("--intake", type=Path, required=True)
+    proxy_check.add_argument("--artifact", type=Path, required=True)
     args = parser.parse_args()
     try:
         if args.command == "inventory":
@@ -109,6 +131,25 @@ def main():
             result = check_conditions(args.artifact)
             print(json.dumps(result, ensure_ascii=False, indent=2))
             parser.exit(0 if result["ready_for_automatic_label_experiment"] else 1)
+        elif args.command == "expand-jd-catalogue":
+            from .catalogue import expand_catalogue
+            full = expand_catalogue(args.preparation, args.benchmark, args.output)
+            result = {k: full[k] for k in ("source_jd_count", "catalogue_count", "catalogue_groups", "dispositions", "metadata_missing", "labels_created", "final_test_ready")}
+        elif args.command == "refine-jd-catalogue":
+            from .refinement import refine_catalogue
+            result = refine_catalogue(args.catalogue_run, args.output)
+        elif args.command == "prepare-cv-intake":
+            from .intake import prepare_intake
+            result = prepare_intake(args.metadata_run, args.catalogue_run, args.preparation_run, args.assets, args.output, args.prior_intake)
+        elif args.command == "check-cv-intake":
+            from .intake import check_intake
+            result = check_intake(args.artifact)
+        elif args.command == "prepare-expanded-labels":
+            from .expanded_labels import create_labels
+            result = create_labels(args.intake, args.output)
+        elif args.command == "check-expanded-labels":
+            from .expanded_labels import check_labels
+            result = check_labels(args.intake, args.artifact)
         elif args.command == "upstream":
             from .upstream import prepare_upstream
             full = prepare_upstream(args.source_dir, args.output, args.seed)

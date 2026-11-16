@@ -1,0 +1,461 @@
+{
+  "added_jd_count": 738,
+  "candidate_rows_in_multi_groups": 172,
+  "catalogue_benchmark_exposure": {
+    "completed_benchmark": 50,
+    "not_in_completed_benchmark_groups": 733,
+    "same_group_as_completed_benchmark": 5
+  },
+  "catalogue_count": 788,
+  "catalogue_groups": 698,
+  "cv_split_created": false,
+  "data_analyst": {
+    "interpretation": "Source tags and literal title cues are separate candidate counts, not verified occupational labels",
+    "nonpilot_gate_passing": 0,
+    "pilot_related": 4,
+    "rows": [
+      {
+        "decision": "quarantine",
+        "job_id": "job_e4c27b1bf363f62c9854",
+        "pilot_related": false,
+        "selected": false,
+        "source_tag": true,
+        "title": "Analytics Engineer",
+        "title_cue": false
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_06be4da301218aead0a4",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior Data Analyst (SQL,Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_3d91bd66351c91e206c7",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "[HN/ ] Data Analyst (English/ MS Office)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_ce9d4b53148ccab5609b",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst – StoreFront eCommerce | K/year",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_309fd6597950042f67d7",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Senior MIS Specialist (Data Analyst, SQL, Python, Java)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_f276ea42265aab730cdf",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Associate Reporting Specialist (Data Analyst)",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_60e8ded349354f397062",
+        "pilot_related": false,
+        "selected": true,
+        "source_tag": true,
+        "title": "Data Analyst (SQL, Python)",
+        "title_cue": true
+      },
+      {
+        "decision": "keep",
+        "job_id": "job_fa1e4b0bb4029f07128c",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analyst",
+        "title_cue": true
+      },
+      {
+        "decision": "quarantine",
+        "job_id": "job_db7d95cf020eb5437f89",
+        "pilot_related": true,
+        "selected": false,
+        "source_tag": true,
+        "title": "Data Analytics Specialist (SQL, Oracle, Python)",
+        "title_cue": true
+      }
+    ],
+    "selected": 4,
+    "source_only": 1,
+    "source_tagged": 9,
+    "title_cued": 8
+  },
+  "dispositions": {
+    "catalogue_candidate": 788,
+    "development_only": 100,
+    "exclude_exact_duplicate": 65,
+    "quarantine": 2109
+  },
+  "evidence": {
+    "extraction_rerun": false,
+    "extractor_versions": [
+      "jd-rule-extractor-v3-clause-evidence"
+    ],
+    "jd_count": 3062,
+    "literal_spans_verified": 37116,
+    "semantic_accuracy_established": false
+  },
+  "final_test_ready": false,
+  "groups_with_multiple_candidates": 82,
+  "identity_preservation": {
+    "development_records": 154,
+    "enriched_metadata_fields": [
+      "role",
+      "skills",
+      "stack",
+      "experience"
+    ],
+    "identity_text_gate_exposure_identical": true,
+    "records": 3062
+  },
+  "import_summary": {
+    "dataset_version": "all-eligible-jd-v1-937e48cce8bc",
+    "development_groups": 114,
+    "distribution": {
+      "cv": {
+        "decisions": {},
+        "missing": {},
+        "roles": {},
+        "synthetic": {},
+        "total": 0
+      },
+      "jd": {
+        "decisions": {
+          "exclude_exact_duplicate": 65,
+          "keep": 888,
+          "quarantine": 2109
+        },
+        "missing": {
+          "experience": 1468,
+          "role": 1246,
+          "skills": 589,
+          "stack": 949,
+          "template_group": 3062
+        },
+        "roles": {
+          "ai/ml engineer": 68,
+          "backend .net": 62,
+          "backend golang": 14,
+          "backend java": 372,
+          "backend node.js": 17,
+          "backend php": 37,
+          "backend python": 113,
+          "business analyst": 98,
+          "data analyst": 8,
+          "data engineer": 41,
+          "devops/cloud": 82,
+          "embedded engineer": 17,
+          "erp/is specialist": 21,
+          "frontend": 448,
+          "game developer": 45,
+          "mobile": 162,
+          "qa/testing": 178,
+          "security engineer": 14,
+          "ui/ux designer": 19,
+          "unknown": 1246
+        },
+        "synthetic": {
+          "False": 3062
+        },
+        "total": 3062
+      }
+    },
+    "duplicate_occurrences": 0,
+    "final_test_ready": false,
+    "groups": 2512,
+    "labels_created": 0,
+    "limitations": [
+      "Lexical near-duplicate heuristic, not semantic paraphrase detection",
+      "Source metadata/lineage and professional-text claim need review; not a privacy certifier",
+      "No upstream cleaning history reconstructed; raw sources preserved byte-for-byte"
+    ],
+    "records": 3062,
+    "source_rows": 3062
+  },
+  "input_manifests": {
+    "completed_benchmark": "f9d6c2f84f457c6fe643093f12ebb4e3098834925bf440e527d91025d155f0c9",
+    "preparation": "937e48cce8bccf7b185f29671efd1a2cf2cd2481f299dcb131473ac329ce5154"
+  },
+  "labels_created": 0,
+  "limitations": [
+    "Technical gate is not semantic metadata accuracy; unknown remains unknown",
+    "All roles are retained; existing five-role CV cohort does not cover all jobs",
+    "Multiple records in a near/source group are not independent examples",
+    "Completed benchmark CVs are regression only; fresh final test needs new unused CV groups",
+    "No old model/package or 50-JD metrics have been changed to claim 788-JD evaluation"
+  ],
+  "metadata_fields_present_count": 261,
+  "metadata_missing": {
+    "experience": 286,
+    "role": 308,
+    "skills": 95,
+    "stack": 172
+  },
+  "models_trained": 0,
+  "original_catalogue_count": 50,
+  "original_development_related": 154,
+  "pairs_created": 0,
+  "pilot_files_unchanged": 51,
+  "reproducibility": {
+    "all_bytes_identical": true,
+    "files_identical": 73,
+    "manifest_sha256": "a48e8cc03d494fc9bb0c62aeab9cfe7bc112e033a17e97bec70d9cb7c8390808",
+    "run_paths": [
+      "ml_data_runs/20261116_jd_catalogue_v1_01",
+      "ml_data_runs/20261116_jd_catalogue_v1_02"
+    ]
+  },
+  "role_distribution": {
+    "ai/ml engineer": 31,
+    "backend .net": 21,
+    "backend golang": 5,
+    "backend java": 110,
+    "backend node.js": 2,
+    "backend php": 6,
+    "backend python": 19,
+    "business analyst": 27,
+    "data engineer": 15,
+    "devops/cloud": 14,
+    "embedded engineer": 7,
+    "erp/is specialist": 9,
+    "frontend": 96,
+    "game developer": 18,
+    "mobile": 46,
+    "qa/testing": 40,
+    "security engineer": 6,
+    "ui/ux designer": 8,
+    "unknown": 308
+  },
+  "source_csv_unchanged": 3,
+  "source_jd_count": 3062,
+  "version": "all-eligible-jd-v1",
+  "workload": {
+    "by_role": [
+      {
+        "existing_cv_count": 0,
+        "jd_count": 31,
+        "jd_groups": 22,
+        "missing": {
+          "experience": 9,
+          "skills": 2,
+          "stack": 14
+        },
+        "role": "ai/ml engineer"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 21,
+        "jd_groups": 17,
+        "missing": {
+          "experience": 8,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "backend .net"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 5,
+        "jd_groups": 5,
+        "missing": {
+          "experience": 2,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "backend golang"
+      },
+      {
+        "existing_cv_count": 12,
+        "jd_count": 110,
+        "jd_groups": 93,
+        "missing": {
+          "experience": 37,
+          "skills": 1,
+          "stack": 6
+        },
+        "role": "backend java"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 2,
+        "jd_groups": 2,
+        "missing": {
+          "experience": 0,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "backend node.js"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 6,
+        "jd_groups": 5,
+        "missing": {
+          "experience": 1,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "backend php"
+      },
+      {
+        "existing_cv_count": 12,
+        "jd_count": 19,
+        "jd_groups": 18,
+        "missing": {
+          "experience": 6,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "backend python"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 27,
+        "jd_groups": 26,
+        "missing": {
+          "experience": 8,
+          "skills": 10,
+          "stack": 12
+        },
+        "role": "business analyst"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 15,
+        "jd_groups": 14,
+        "missing": {
+          "experience": 4,
+          "skills": 0,
+          "stack": 0
+        },
+        "role": "data engineer"
+      },
+      {
+        "existing_cv_count": 12,
+        "jd_count": 14,
+        "jd_groups": 14,
+        "missing": {
+          "experience": 6,
+          "skills": 0,
+          "stack": 1
+        },
+        "role": "devops/cloud"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 7,
+        "jd_groups": 6,
+        "missing": {
+          "experience": 1,
+          "skills": 2,
+          "stack": 2
+        },
+        "role": "embedded engineer"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 9,
+        "jd_groups": 9,
+        "missing": {
+          "experience": 1,
+          "skills": 2,
+          "stack": 4
+        },
+        "role": "erp/is specialist"
+      },
+      {
+        "existing_cv_count": 12,
+        "jd_count": 96,
+        "jd_groups": 90,
+        "missing": {
+          "experience": 33,
+          "skills": 0,
+          "stack": 3
+        },
+        "role": "frontend"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 18,
+        "jd_groups": 15,
+        "missing": {
+          "experience": 8,
+          "skills": 0,
+          "stack": 1
+        },
+        "role": "game developer"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 46,
+        "jd_groups": 43,
+        "missing": {
+          "experience": 15,
+          "skills": 10,
+          "stack": 27
+        },
+        "role": "mobile"
+      },
+      {
+        "existing_cv_count": 12,
+        "jd_count": 40,
+        "jd_groups": 40,
+        "missing": {
+          "experience": 11,
+          "skills": 7,
+          "stack": 9
+        },
+        "role": "qa/testing"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 6,
+        "jd_groups": 6,
+        "missing": {
+          "experience": 3,
+          "skills": 1,
+          "stack": 5
+        },
+        "role": "security engineer"
+      },
+      {
+        "existing_cv_count": 0,
+        "jd_count": 8,
+        "jd_groups": 8,
+        "missing": {
+          "experience": 1,
+          "skills": 6,
+          "stack": 8
+        },
+        "role": "ui/ux designer"
+      }
+    ],
+    "full_grid_pairs": 47280,
+    "interpretation": "Workload/metadata forecast only. No pair labels generated; previous CVs are regression data after Step 4.",
+    "observed_cv_count": 60,
+    "pairs_missing_minimum_proxy_metadata": 18576,
+    "pairs_with_minimum_proxy_metadata": 28704,
+    "unknown_role_jds": 308
+  }
+}
