@@ -1,0 +1,198 @@
+{
+  "checks": [
+    {
+      "labels": {
+        "0": 107,
+        "1": 325,
+        "2": 0,
+        "unlabeled": 47852
+      },
+      "models_trained": 0,
+      "pair_count": 48284,
+      "title_ablation_checked_pairs": 48284,
+      "verified": true
+    },
+    {
+      "labels": {
+        "0": 107,
+        "1": 325,
+        "2": 0,
+        "unlabeled": 47852
+      },
+      "models_trained": 0,
+      "pair_count": 48284,
+      "title_ablation_checked_pairs": 48284,
+      "verified": true
+    }
+  ],
+  "examples": {
+    "unknown_task_pair": {
+      "decision": {
+        "duration_states": [],
+        "label_status": "insufficient_evidence",
+        "mandatory_states": [
+          {
+            "clause": 0,
+            "state": "yes"
+          }
+        ],
+        "reason": "insufficient_task_and_skill_evidence",
+        "relevance_0_1_2": "",
+        "requirement_coverage_complete": true,
+        "shared_functions": [],
+        "shared_skills": [
+          "python"
+        ],
+        "title_used_for_decision": false,
+        "unresolved_clause_indices": [],
+        "unseen_title_rejected": false,
+        "version": "task-evidence-proxy-v4"
+      },
+      "path": "docs/ml/examples/unknown_task_pair.json",
+      "sha256": "0602d947d52868f0bed8fb548c5f0818fe5aaa9de138ff72597ebe1491642e7c"
+    },
+    "unseen_title_pair": {
+      "decision": {
+        "duration_states": [],
+        "label_status": "automatic_rule_proxy",
+        "mandatory_states": [
+          {
+            "clause": 0,
+            "state": "yes"
+          }
+        ],
+        "reason": "supported_bounded_tasks_and_requirements",
+        "relevance_0_1_2": "2",
+        "requirement_coverage_complete": true,
+        "shared_functions": [
+          "infrastructure_operations"
+        ],
+        "shared_skills": [
+          "kubernetes",
+          "python"
+        ],
+        "title_used_for_decision": false,
+        "unresolved_clause_indices": [],
+        "unseen_title_rejected": false,
+        "version": "task-evidence-proxy-v4"
+      },
+      "path": "docs/ml/examples/unseen_title_pair.json",
+      "sha256": "2579c5c5acb1a00e63d23e221b26807494eacc9dbddd81f56d14ab019901b1a5"
+    }
+  },
+  "first": "ml_data_runs/20261117_task_matching_v4_01",
+  "identical_files": 41,
+  "manifest_sha256": "6221bcd5aacf5cbde6667c26dca1514c5364592414cac87e53d420f3b459514d",
+  "repeat": "ml_data_runs/20261117_task_matching_v4_02",
+  "summary": {
+    "before_labels": {
+      "0": 98,
+      "1": 2427,
+      "2": 0,
+      "unlabeled": 45759
+    },
+    "blank_reasons": {
+      "insufficient_task_and_skill_evidence": 46086,
+      "preserved_dataset_scope_exclusion": 1766
+    },
+    "cv_count": 120,
+    "explicit_dataset_exclusions_preserved": 29,
+    "external_api_calls": 0,
+    "independent_test_cv_count": 0,
+    "interpretation": "Development proxy only; title invariance does not establish generalization to arbitrary new occupations",
+    "jd_complete_bounded_requirements": 0,
+    "jd_count": 788,
+    "labels": {
+      "0": 107,
+      "1": 325,
+      "2": 0,
+      "unlabeled": 47852
+    },
+    "llm_calls": 0,
+    "models_trained": 0,
+    "occupation_whitelist_used": false,
+    "pair_count": 48284,
+    "partitions": {
+      "test": {
+        "labels": {
+          "0": 61,
+          "1": 110,
+          "2": 0,
+          "unlabeled": 23469
+        },
+        "total": 23640
+      },
+      "train": {
+        "labels": {
+          "0": 2,
+          "1": 6,
+          "2": 0,
+          "unlabeled": 996
+        },
+        "total": 1004
+      },
+      "validation": {
+        "labels": {
+          "0": 44,
+          "1": 209,
+          "2": 0,
+          "unlabeled": 23387
+        },
+        "total": 23640
+      }
+    },
+    "positive_pairs_with_unknown_jd_role": 31,
+    "ready_for_training": false,
+    "source_cv_roles": {
+      "ai/ml engineer": 12,
+      "backend .net": 12,
+      "backend java": 12,
+      "backend python": 12,
+      "data engineer": 12,
+      "devops/cloud": 12,
+      "frontend": 12,
+      "fullstack": 12,
+      "mobile": 12,
+      "qa/testing": 12
+    },
+    "task_coverage": {
+      "cv_after": 13,
+      "cv_before": 23,
+      "functions_cv": {
+        "backend_services": 6,
+        "infrastructure_operations": 2,
+        "ml_modeling": 1,
+        "quality_testing": 2,
+        "user_interface": 3
+      },
+      "functions_jd": {
+        "backend_services": 159,
+        "data_analysis": 52,
+        "data_pipeline": 100,
+        "database_design": 45,
+        "infrastructure_operations": 54,
+        "ml_modeling": 14,
+        "mobile_application": 20,
+        "quality_testing": 71,
+        "user_interface": 112
+      },
+      "jd_after": 376,
+      "jd_before": 361
+    },
+    "title_ablation_checked_pairs": 48284,
+    "transitions": {
+      "0->0": 98,
+      "1->1": 161,
+      "1->unlabeled": 2266,
+      "unlabeled->0": 9,
+      "unlabeled->1": 164,
+      "unlabeled->unlabeled": 45586
+    },
+    "version": "task-evidence-proxy-v4"
+  },
+  "tests": {
+    "log_sha256": "dcaa2e81ca55debc8ab429a5ee18077236706bbb79f53d236c6400632a117678",
+    "passed": 210,
+    "seconds": 21.511
+  }
+}

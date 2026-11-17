@@ -1,0 +1,171 @@
+{
+  "check": {
+    "labels_unchanged": true,
+    "new_labels": 0,
+    "records": 908,
+    "verified": true
+  },
+  "first": "ml_data_runs/20261117_document_inventory_v1_01",
+  "identical_files": 34,
+  "manifest_sha256": "99c6cf5e75805b848ad424bd44f03f6499318da28a608fcc340b6b1d9e25eb8d",
+  "proposed_rubric": {
+    "applied": false,
+    "path": "docs/ml/recommendation_label_contract.md",
+    "sha256": "a7decca72423b10d73cb61b999bd5501fb0f42dcf804cd01186737027d791ea1"
+  },
+  "repeat": "ml_data_runs/20261117_document_inventory_v1_02",
+  "summary": {
+    "by_kind": {
+      "cv": {
+        "action_cues_without_task_function": 77,
+        "duration_status": {
+          "parsed_evidence_present_not_semantic_certification": 95,
+          "partial_extraction_with_unresolved_cues": 1,
+          "source_explicitly_leaves_timeline_unknown": 24
+        },
+        "jd_with_mandatory_clause": 0,
+        "nonempty_text": 120,
+        "preferred_field_empty": 120,
+        "records": 120,
+        "records_with_unresolved_clauses": 0,
+        "requirements_nonempty": 0,
+        "role_parsed": 120,
+        "task_functions_parsed": 23,
+        "tasks_nonempty": 120,
+        "technology_cues_without_positive_skill": 0
+      },
+      "jd": {
+        "action_cues_without_task_function": 381,
+        "duration_status": {
+          "no_numeric_cue_detected_absence_not_proven": 193,
+          "numeric_cue_without_parsed_scope": 485,
+          "numeric_cues_only_optional_or_unclassified": 22,
+          "parsed_evidence_present_not_semantic_certification": 80,
+          "partial_extraction_with_unresolved_cues": 8
+        },
+        "jd_with_mandatory_clause": 31,
+        "nonempty_text": 788,
+        "preferred_field_empty": 653,
+        "records": 788,
+        "records_with_unresolved_clauses": 759,
+        "requirements_nonempty": 788,
+        "role_parsed": 666,
+        "task_functions_parsed": 361,
+        "tasks_nonempty": 788,
+        "technology_cues_without_positive_skill": 9
+      }
+    },
+    "complete_semantic_inventory": false,
+    "cv_duration": {
+      "employment_or_contract": 48,
+      "no_duration": 24,
+      "specific_employment_scope": 10
+    },
+    "exposure": "development_only",
+    "frozen_pair_summary": {
+      "before_labels": {
+        "0": 41,
+        "1": 2434,
+        "2": 0,
+        "unlabeled": 45809
+      },
+      "blank_reasons_exclusive": {
+        "no_exact_shared_skill": 1129,
+        "no_jd_core_skill": 66,
+        "occupation_transfer_without_task_evidence": 37120,
+        "outside_software_scope": 1766,
+        "unresolved_occupation_and_tasks": 5678
+      },
+      "cv_count": 120,
+      "exposure": "All CV remain development; original partitions diagnostic only",
+      "independent_test_cv_count": 0,
+      "jd_count": 788,
+      "label_one_gaps_overlapping": {
+        "duration_unknown": 277,
+        "mandatory_skill_unknown": 105,
+        "no_mandatory_technology": 2293,
+        "no_scoped_duration": 2128,
+        "not_exact_occupation": 246,
+        "unconsumed_requirement": 2355
+      },
+      "labels": {
+        "0": 98,
+        "1": 2427,
+        "2": 0,
+        "unlabeled": 45759
+      },
+      "models_trained": 0,
+      "pair_count": 48284,
+      "parser": {
+        "changed_jd_count": 165,
+        "clause_states": {
+          "duration": 88,
+          "mandatory": 32,
+          "preferred": 1072,
+          "unresolved": 3975
+        },
+        "jd_with_mandatory_technology": 31,
+        "jd_with_parsed_duration": 88,
+        "unresolved_reasons": {
+          "conditional_applicability": 240,
+          "duration_syntax_or_scope": 542,
+          "mixed_unresolved": 98,
+          "unconsumed_requirement_prose": 3018,
+          "unconsumed_sentence_residual": 77
+        }
+      },
+      "partitions": {
+        "test": {
+          "labels": {
+            "0": 55,
+            "1": 1066,
+            "2": 0,
+            "unlabeled": 22519
+          },
+          "total": 23640
+        },
+        "train": {
+          "labels": {
+            "0": 2,
+            "1": 181,
+            "2": 0,
+            "unlabeled": 821
+          },
+          "total": 1004
+        },
+        "validation": {
+          "labels": {
+            "0": 41,
+            "1": 1180,
+            "2": 0,
+            "unlabeled": 22419
+          },
+          "total": 23640
+        }
+      },
+      "ready_for_training": false,
+      "scope": "Technical proxy, not gold, hiring accuracy or independent evaluation; counts do not measure semantic accuracy",
+      "transitions": {
+        "0->0": 41,
+        "1->0": 6,
+        "1->1": 2427,
+        "1->unlabeled": 1,
+        "unlabeled->0": 51,
+        "unlabeled->unlabeled": 45758
+      },
+      "version": "expanded-technical-proxy-v3"
+    },
+    "interpretation": "Source empty and explicit unknown are observed; lexical cues without extraction are candidates, not proven parser errors. No cue is not proof of absent information.",
+    "labels_unchanged": true,
+    "models_trained": 0,
+    "new_labels": 0,
+    "records": 908,
+    "semantic_accuracy_measured": false,
+    "version": "document-evidence-inventory-v1"
+  },
+  "tests": {
+    "log_sha256": "03ac108c2204158faa7c937cc14fe9ea1e7964e1778d5df683967958ee99599b",
+    "passed": 169,
+    "seconds": 51.479
+  }
+}

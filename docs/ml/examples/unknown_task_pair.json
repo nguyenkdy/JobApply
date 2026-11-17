@@ -1,0 +1,12 @@
+{
+  "cv": {
+    "role": "Research Software Engineer",
+    "text": "Tôi huấn luyện mô hình bằng Python."
+  },
+  "jd": {
+    "title": "API Integration Specialist",
+    "tasks_text": "Xây dựng API.",
+    "requirements_text": "Must know Python",
+    "preferred_requirements_text": ""
+  }
+}

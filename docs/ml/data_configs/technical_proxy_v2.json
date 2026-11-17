@@ -1,0 +1,13 @@
+{
+  "exposure": "All 120 CV groups become development in a separate overlay because revision follows their v1 diagnostic results; original partitions preserved only for comparison",
+  "gold": false,
+  "holdout_eligible": false,
+  "labels": "automatic_rule_proxy",
+  "model_training": false,
+  "negative": "Explicit mandatory contradiction only; missing skill/role difference is never negative",
+  "partial": "Shared affirmative technology plus same occupation or shared explicit task function; title inequality alone is unresolved",
+  "scope": "Bounded technical compatibility, not verified hiring suitability; education/languages/soft skills outside target",
+  "strong": "Same specific occupation, all parsed mandatory technology and scoped duration satisfied, no unresolved technical/duration conditions",
+  "time": "Exact scope; employment/contract only; no total-to-technology conversion. Range minimum is retained with unresolved upper interpretation",
+  "version": "expanded-technical-proxy-v2"
+}

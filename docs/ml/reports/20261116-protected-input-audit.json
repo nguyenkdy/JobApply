@@ -1,0 +1,527 @@
+{
+  "counts": {
+    "byte_identical": 50,
+    "eol_only_proven": 4
+  },
+  "data_files_normalized": false,
+  "files": [
+    {
+      "bytes": 11090108,
+      "current_crlf_count": 3102,
+      "current_lf_count": 106478,
+      "current_sha256": "52801f88a4f4273a519936823cd74c98d8313e59034b60c42108465df87fd852",
+      "expected_sha256": "52801f88a4f4273a519936823cd74c98d8313e59034b60c42108465df87fd852",
+      "path": "job_descriptions.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 12914,
+      "current_crlf_count": 0,
+      "current_lf_count": 163,
+      "current_sha256": "445e99a136441f23d1b6b4de5b99a60cb16a47e9b44c73b2f7789c13463b40ae",
+      "expected_sha256": "445e99a136441f23d1b6b4de5b99a60cb16a47e9b44c73b2f7789c13463b40ae",
+      "path": "jobapply_pilot_v1/JobApply_TienDo_2026-11-10.md",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 10254,
+      "current_crlf_count": 0,
+      "current_lf_count": 162,
+      "current_sha256": "73a82fcf335966c75a1398ae0cd6bae9fe101228bafb25baae0937e140bd146e",
+      "expected_sha256": "73a82fcf335966c75a1398ae0cd6bae9fe101228bafb25baae0937e140bd146e",
+      "path": "jobapply_pilot_v1/README_pilot.md",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 3914,
+      "current_crlf_count": 0,
+      "current_lf_count": 68,
+      "current_sha256": "6b17ffcd8a1c16711f6385708882aec8af3ac474cb722d30bcb15a9a68d197ca",
+      "expected_sha256": "6b17ffcd8a1c16711f6385708882aec8af3ac474cb722d30bcb15a9a68d197ca",
+      "path": "jobapply_pilot_v1/audit_pilot.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 5352,
+      "current_crlf_count": 0,
+      "current_lf_count": 136,
+      "current_sha256": "ecfd4c27575a315aeea7f4cc777a400d119e3fd8e44d7be47e1654c9f38918fc",
+      "expected_sha256": "ecfd4c27575a315aeea7f4cc777a400d119e3fd8e44d7be47e1654c9f38918fc",
+      "path": "jobapply_pilot_v1/baseline_common.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 6788,
+      "current_crlf_count": 0,
+      "current_lf_count": 160,
+      "current_sha256": "786ce9d47daa34389c9f152a168c9ce6796ba47cec15eae199fd2245288beaae",
+      "expected_sha256": "786ce9d47daa34389c9f152a168c9ce6796ba47cec15eae199fd2245288beaae",
+      "path": "jobapply_pilot_v1/compare_embeddings.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 8964,
+      "current_crlf_count": 7,
+      "current_lf_count": 31,
+      "current_sha256": "194719035230f844f940db698c996c518178cf729341804061cd20b09e15fbfd",
+      "expected_sha256": "194719035230f844f940db698c996c518178cf729341804061cd20b09e15fbfd",
+      "path": "jobapply_pilot_v1/cvs_synthetic.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 1663,
+      "current_crlf_count": 0,
+      "current_lf_count": 48,
+      "current_sha256": "88d75f2570fc95db50d089da6c90494e2f719c30282375a3b07d5a06cb90c66b",
+      "expected_sha256": "88d75f2570fc95db50d089da6c90494e2f719c30282375a3b07d5a06cb90c66b",
+      "path": "jobapply_pilot_v1/encoder.lock.json",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 170,
+      "canonical_lf_sha256": "0aed3aec401b30c3c1b731917b28a3333d3233a7e0bc2a4468065a015bf9305c",
+      "current_crlf_count": 0,
+      "current_lf_count": 5,
+      "current_matches_head_blob": true,
+      "current_sha256": "0aed3aec401b30c3c1b731917b28a3333d3233a7e0bc2a4468065a015bf9305c",
+      "expected_sha256": "011fb350711c5ec048f01ac58d11eaccbb196bf02e781e23535e8c906fce1054",
+      "git_eol": "i/lf    w/lf    attr/text eol=lf      \tjobapply_pilot_v1/evaluate_top5.py",
+      "head_blob_sha256": "0aed3aec401b30c3c1b731917b28a3333d3233a7e0bc2a4468065a015bf9305c",
+      "historical_eol": "CRLF",
+      "path": "jobapply_pilot_v1/evaluate_top5.py",
+      "proof": "Only CRLF/LF conversion in memory reconstructs the exact historical SHA256",
+      "reconstructed_historical_bytes": 175,
+      "status": "eol_only_proven"
+    },
+    {
+      "bytes": 2071,
+      "canonical_lf_sha256": "37facf302cac4ab3ecf323a975c5580353f6fd0029e12a601d43056e80752b82",
+      "current_crlf_count": 0,
+      "current_lf_count": 46,
+      "current_matches_head_blob": true,
+      "current_sha256": "37facf302cac4ab3ecf323a975c5580353f6fd0029e12a601d43056e80752b82",
+      "expected_sha256": "c41d13d3befbe8a1b6cbb4f868581c8799d4962dae9d2dacd0136f59fa7b1cff",
+      "git_eol": "i/lf    w/lf    attr/text eol=lf      \tjobapply_pilot_v1/evaluate_topk.py",
+      "head_blob_sha256": "37facf302cac4ab3ecf323a975c5580353f6fd0029e12a601d43056e80752b82",
+      "historical_eol": "CRLF",
+      "path": "jobapply_pilot_v1/evaluate_topk.py",
+      "proof": "Only CRLF/LF conversion in memory reconstructs the exact historical SHA256",
+      "reconstructed_historical_bytes": 2117,
+      "status": "eol_only_proven"
+    },
+    {
+      "bytes": 5783,
+      "current_crlf_count": 0,
+      "current_lf_count": 39,
+      "current_sha256": "0f7a66ccf981aec5e2d5a450b04fd7e49296880ac34df6d4767fdda2287661aa",
+      "expected_sha256": "0f7a66ccf981aec5e2d5a450b04fd7e49296880ac34df6d4767fdda2287661aa",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/HUONG_DAN.md",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 1649,
+      "current_crlf_count": 15,
+      "current_lf_count": 15,
+      "current_sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+      "expected_sha256": "16671f15c7dc90bc0927fb639ab789950ae0c1d0d3fe38c772b654f8b0e4c756",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/cv_experience.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 8782,
+      "current_crlf_count": 55,
+      "current_lf_count": 55,
+      "current_sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+      "expected_sha256": "4969e7f3990bf18eeb49e8d8af2d2ce9c3f5742a99274fb212aa3b662ff55859",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/jd_experience.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 250,
+      "current_crlf_count": 5,
+      "current_lf_count": 5,
+      "current_sha256": "a56fd48da0222e8e054fa526e739666b1e65031a06f382923f17e961ccf63bf4",
+      "expected_sha256": "a56fd48da0222e8e054fa526e739666b1e65031a06f382923f17e961ccf63bf4",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/lexical_control_metrics.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 4537,
+      "current_crlf_count": 0,
+      "current_lf_count": 86,
+      "current_sha256": "bb7d4659bd68bd536b2cd9511ef414cf76462c0fd8c7622fedd70e0f6a06b388",
+      "expected_sha256": "bb7d4659bd68bd536b2cd9511ef414cf76462c0fd8c7622fedd70e0f6a06b388",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/recommend.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 9695,
+      "current_crlf_count": 0,
+      "current_lf_count": 185,
+      "current_sha256": "dd867fadb0c767131961b40df3392ce199eff549160d90b19a334d8a3568d125",
+      "expected_sha256": "dd867fadb0c767131961b40df3392ce199eff549160d90b19a334d8a3568d125",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/run_experiment.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 252,
+      "canonical_lf_sha256": "be05973909d210e6a995bab1522ce4be9f30fe994d3ff2ba8874ea545c51fbbd",
+      "current_crlf_count": 0,
+      "current_lf_count": 9,
+      "current_matches_head_blob": true,
+      "current_sha256": "be05973909d210e6a995bab1522ce4be9f30fe994d3ff2ba8874ea545c51fbbd",
+      "expected_sha256": "298b4a61f80f448102327ec8b9f9b437e2890c3d24c373cd2ad24ead4a7e7ee3",
+      "git_eol": "i/lf    w/lf    attr/text eol=lf      \tjobapply_pilot_v1/jobapply_experience_v2/train_matcher.py",
+      "head_blob_sha256": "be05973909d210e6a995bab1522ce4be9f30fe994d3ff2ba8874ea545c51fbbd",
+      "historical_eol": "CRLF",
+      "path": "jobapply_pilot_v1/jobapply_experience_v2/train_matcher.py",
+      "proof": "Only CRLF/LF conversion in memory reconstructs the exact historical SHA256",
+      "reconstructed_historical_bytes": 261,
+      "status": "eol_only_proven"
+    },
+    {
+      "bytes": 184847,
+      "current_crlf_count": 51,
+      "current_lf_count": 2086,
+      "current_sha256": "82b6949d841a8cf9685bcd9313fd0041a5e45d01a80039b51369c91ee162fa1b",
+      "expected_sha256": "82b6949d841a8cf9685bcd9313fd0041a5e45d01a80039b51369c91ee162fa1b",
+      "path": "jobapply_pilot_v1/jobs_pilot.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 78237,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+      "expected_sha256": "b7aed4cdf337366137feb9408290772809431185b5da01a77debc7b96575c3b3",
+      "path": "jobapply_pilot_v1/judgments_ai_draft.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 6239,
+      "current_crlf_count": 22,
+      "current_lf_count": 32,
+      "current_sha256": "08944389cea6fed9acc1b62746c2cf949a8469b77b01becac42140f295ff1ad5",
+      "expected_sha256": "08944389cea6fed9acc1b62746c2cf949a8469b77b01becac42140f295ff1ad5",
+      "path": "jobapply_pilot_v1/pilot_edits.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 11954,
+      "current_crlf_count": 0,
+      "current_lf_count": 150,
+      "current_sha256": "4f76218387ba0a0f3a66cc949c2dae17dc6da01046c662cbfaf5fa373ace9263",
+      "expected_sha256": "4f76218387ba0a0f3a66cc949c2dae17dc6da01046c662cbfaf5fa373ace9263",
+      "path": "jobapply_pilot_v1/prepare_pilot.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 862,
+      "canonical_lf_sha256": "098694d5403f57e935fa5914cd100cf1b632685edaa2ce90b50c2a602bdf1843",
+      "current_crlf_count": 0,
+      "current_lf_count": 45,
+      "current_matches_head_blob": true,
+      "current_sha256": "098694d5403f57e935fa5914cd100cf1b632685edaa2ce90b50c2a602bdf1843",
+      "expected_sha256": "c223fb7aace377755b382ab95464b9c44f893e75a2106a4598608ce5404f7faa",
+      "git_eol": "i/lf    w/lf    attr/text=auto eol=lf \tjobapply_pilot_v1/requirements-ml-win-py314.lock.txt",
+      "head_blob_sha256": "098694d5403f57e935fa5914cd100cf1b632685edaa2ce90b50c2a602bdf1843",
+      "historical_eol": "CRLF",
+      "path": "jobapply_pilot_v1/requirements-ml-win-py314.lock.txt",
+      "proof": "Only CRLF/LF conversion in memory reconstructs the exact historical SHA256",
+      "reconstructed_historical_bytes": 907,
+      "status": "eol_only_proven"
+    },
+    {
+      "bytes": 1018,
+      "current_crlf_count": 0,
+      "current_lf_count": 35,
+      "current_sha256": "dae8eda890859705b8824c17c99488f17728810e036eddcdf1bf52bdf0371031",
+      "expected_sha256": "dae8eda890859705b8824c17c99488f17728810e036eddcdf1bf52bdf0371031",
+      "path": "jobapply_pilot_v1/results/audit_report.json",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 29604,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+      "expected_sha256": "d28e00dd253f3d049c2f79c50fab591fc9edadf2778a35dd61ea8e65df7ce915",
+      "path": "jobapply_pilot_v1/results/embedding_vs_bm25.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 29855,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "54af57ddff2ee391fbba46c41886518ff6627e350c3533de35bb52b41d13ae20",
+      "expected_sha256": "54af57ddff2ee391fbba46c41886518ff6627e350c3533de35bb52b41d13ae20",
+      "path": "jobapply_pilot_v1/results/embedding_vs_bm25_backup_20261110_163750.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 1713,
+      "current_crlf_count": 0,
+      "current_lf_count": 7,
+      "current_sha256": "f6e22fb1d63da32f025bf06c32ff15ba7287c9c0f93ca62062e3dbe3259ce43c",
+      "expected_sha256": "f6e22fb1d63da32f025bf06c32ff15ba7287c9c0f93ca62062e3dbe3259ce43c",
+      "path": "jobapply_pilot_v1/results/experience_v2/experience_classifier.joblib",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 22811,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "c3adba788625dd06b3a907a1ef20e329448ec2b1e00a31858e350324e3334b2c",
+      "expected_sha256": "c3adba788625dd06b3a907a1ef20e329448ec2b1e00a31858e350324e3334b2c",
+      "path": "jobapply_pilot_v1/results/experience_v2/experience_pairs.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 43051,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "1f5dbbe031804b3a2da2faf913516e4d03d860381303d977f560c577f2084588",
+      "expected_sha256": "1f5dbbe031804b3a2da2faf913516e4d03d860381303d977f560c577f2084588",
+      "path": "jobapply_pilot_v1/results/experience_v2/held_out_predictions.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 299,
+      "current_crlf_count": 6,
+      "current_lf_count": 6,
+      "current_sha256": "84b8d8ae60ee58b4fc04c82ab49ad5c19e819074b9d23213d5f50317cbe5a28f",
+      "expected_sha256": "84b8d8ae60ee58b4fc04c82ab49ad5c19e819074b9d23213d5f50317cbe5a28f",
+      "path": "jobapply_pilot_v1/results/experience_v2/macro_metrics.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 1708,
+      "current_crlf_count": 31,
+      "current_lf_count": 31,
+      "current_sha256": "9c916b40b5a85e006b6690321e77cc8efdc84afc4bb2f9ce4cf55c90b83842c9",
+      "expected_sha256": "9c916b40b5a85e006b6690321e77cc8efdc84afc4bb2f9ce4cf55c90b83842c9",
+      "path": "jobapply_pilot_v1/results/experience_v2/metrics_by_cv.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 666,
+      "current_crlf_count": 16,
+      "current_lf_count": 16,
+      "current_sha256": "1601c01d8d996beabc2b2d86953268535112686a8abe9a75294ae728adfc20b4",
+      "expected_sha256": "1601c01d8d996beabc2b2d86953268535112686a8abe9a75294ae728adfc20b4",
+      "path": "jobapply_pilot_v1/results/experience_v2/run_info.json",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 3798,
+      "current_crlf_count": 31,
+      "current_lf_count": 31,
+      "current_sha256": "e65f0e60c166da165aa338d28f263622e6ca289dc445228d8b4038e96a702a67",
+      "expected_sha256": "e65f0e60c166da165aa338d28f263622e6ca289dc445228d8b4038e96a702a67",
+      "path": "jobapply_pilot_v1/results/fairness_probe.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 2792,
+      "current_crlf_count": 22,
+      "current_lf_count": 22,
+      "current_sha256": "598d74fb4f8fe088cf879837b5fa49f07bca46362b33f5abf419ebc1d0979407",
+      "expected_sha256": "598d74fb4f8fe088cf879837b5fa49f07bca46362b33f5abf419ebc1d0979407",
+      "path": "jobapply_pilot_v1/results/hard_pair_candidates.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 11752,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "5dbdcbca1c58aefdb4d58583c4c6cf432dcb10246d9b181ff52abc38830007d0",
+      "expected_sha256": "5dbdcbca1c58aefdb4d58583c4c6cf432dcb10246d9b181ff52abc38830007d0",
+      "path": "jobapply_pilot_v1/results/judgments_template.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 137801,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "82e179a4bf0d6d341e0f95fcc55a940002f2661b7b346fd356ae7a6cc45eb740",
+      "expected_sha256": "82e179a4bf0d6d341e0f95fcc55a940002f2661b7b346fd356ae7a6cc45eb740",
+      "path": "jobapply_pilot_v1/results/rankings_all.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 736,
+      "current_crlf_count": 0,
+      "current_lf_count": 32,
+      "current_sha256": "e0aae7e2283183f5100b5b4b9602e44f0a68cbf166014f7bc400371ad5bc5973",
+      "expected_sha256": "e0aae7e2283183f5100b5b4b9602e44f0a68cbf166014f7bc400371ad5bc5973",
+      "path": "jobapply_pilot_v1/results/run_report.json",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 25337,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "b407e56fe746c457fd9c00a34b49e29892f2d8a40ebf707b5ad5be4918c99946",
+      "expected_sha256": "b407e56fe746c457fd9c00a34b49e29892f2d8a40ebf707b5ad5be4918c99946",
+      "path": "jobapply_pilot_v1/results/supervised/held_out_predictions.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 1589,
+      "current_crlf_count": 0,
+      "current_lf_count": 7,
+      "current_sha256": "4df8f4f3294150a75969d67779321cf49867e8eb971c5fed24f762b548e761a0",
+      "expected_sha256": "4df8f4f3294150a75969d67779321cf49867e8eb971c5fed24f762b548e761a0",
+      "path": "jobapply_pilot_v1/results/supervised/match_classifier.joblib",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 945,
+      "current_crlf_count": 19,
+      "current_lf_count": 19,
+      "current_sha256": "c0d15b383e4f43fd57129b13aa05f90e4415e68834b6ca5923e90e5250bccf9d",
+      "expected_sha256": "c0d15b383e4f43fd57129b13aa05f90e4415e68834b6ca5923e90e5250bccf9d",
+      "path": "jobapply_pilot_v1/results/supervised/metrics_by_cv.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 18620,
+      "current_crlf_count": 301,
+      "current_lf_count": 301,
+      "current_sha256": "5c75ed7a7d49a743a79faa586fab3a1928aff8c58613c03ad4950e6e9cd0bced",
+      "expected_sha256": "5c75ed7a7d49a743a79faa586fab3a1928aff8c58613c03ad4950e6e9cd0bced",
+      "path": "jobapply_pilot_v1/results/supervised/training_pairs.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 16849,
+      "current_crlf_count": 31,
+      "current_lf_count": 31,
+      "current_sha256": "24a8ef548b7998c977aa66e9cfcbe041bc2811d96cb2d55fe783b1093855e8b3",
+      "expected_sha256": "24a8ef548b7998c977aa66e9cfcbe041bc2811d96cb2d55fe783b1093855e8b3",
+      "path": "jobapply_pilot_v1/results/top_matches.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 7139,
+      "current_crlf_count": 0,
+      "current_lf_count": 120,
+      "current_sha256": "5fba3a86a5c721f00390fbbbe639c552bcc3a71433d9171eb5bab163fa8cdc6a",
+      "expected_sha256": "5fba3a86a5c721f00390fbbbe639c552bcc3a71433d9171eb5bab163fa8cdc6a",
+      "path": "jobapply_pilot_v1/run_artifacts.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 23521,
+      "current_crlf_count": 0,
+      "current_lf_count": 366,
+      "current_sha256": "3201ba0de61e9e1e7214bd580d96774d22e376ba201658b2809b3726d87b92f9",
+      "expected_sha256": "3201ba0de61e9e1e7214bd580d96774d22e376ba201658b2809b3726d87b92f9",
+      "path": "jobapply_pilot_v1/run_baseline.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 7680,
+      "current_crlf_count": 0,
+      "current_lf_count": 146,
+      "current_sha256": "96f51cd125b37f0b7f226e31f6a8135160d6118e9d4d7d5b7c68b0f8e69356f3",
+      "expected_sha256": "96f51cd125b37f0b7f226e31f6a8135160d6118e9d4d7d5b7c68b0f8e69356f3",
+      "path": "jobapply_pilot_v1/run_bm25.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 3738,
+      "current_crlf_count": 51,
+      "current_lf_count": 51,
+      "current_sha256": "2f0ec0b6c5bf98adfd30df2ed9ce44eb2e96ec690ebb36947713d3cfe0d7ecf9",
+      "expected_sha256": "2f0ec0b6c5bf98adfd30df2ed9ce44eb2e96ec690ebb36947713d3cfe0d7ecf9",
+      "path": "jobapply_pilot_v1/selection_manifest.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 743,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35",
+      "expected_sha256": "09b80cffb7f84c5dd4201f892541d3f666e0a85e3cde4068c6b664a97862ba35",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_01.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 747,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d",
+      "expected_sha256": "e5cadc651d3c9660cc2dd50e762c9ee127911195e4232d0ba7d73fb5ff0bf50d",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_02.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 642,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4",
+      "expected_sha256": "0971743fbaa2f91795d53a7b11c3870c26bf6f069acad0a73b72cb2e372820d4",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_03.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 692,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b",
+      "expected_sha256": "ac91a03fe11eeb5b421fcf0091c7d698c795260078ae1d0ffc1182ef7273af9b",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_04.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 748,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7",
+      "expected_sha256": "c09b55972fc691b5ffe89f642d810fcc0d4f069783fad97b60d2fdde971abda7",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_05.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 705,
+      "current_crlf_count": 0,
+      "current_lf_count": 4,
+      "current_sha256": "82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b",
+      "expected_sha256": "82b885bed595759bb724140272fe6f0003b481641b744291099a8ffa16022c0b",
+      "path": "jobapply_pilot_v1/synthetic_cv_texts/CV_SYN_06.txt",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 5027,
+      "current_crlf_count": 0,
+      "current_lf_count": 111,
+      "current_sha256": "d86d88ec6404df219006a349ea8699abf61af8d8273a03355c492cb7f2fd669e",
+      "expected_sha256": "d86d88ec6404df219006a349ea8699abf61af8d8273a03355c492cb7f2fd669e",
+      "path": "jobapply_pilot_v1/train_matcher.py",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 14384924,
+      "current_crlf_count": 3063,
+      "current_lf_count": 123171,
+      "current_sha256": "a9308c6eb4a59b7acf6b8a0996158b0e396e4e27040d9bc0ac5d81e1234638d3",
+      "expected_sha256": "a9308c6eb4a59b7acf6b8a0996158b0e396e4e27040d9bc0ac5d81e1234638d3",
+      "path": "jobs_clean.csv",
+      "status": "byte_identical"
+    },
+    {
+      "bytes": 11197747,
+      "current_crlf_count": 3063,
+      "current_lf_count": 107950,
+      "current_sha256": "2f77164049d1e29788c3b68bdc017836ffdbc3d96b8def723c1f5dc4d32fb4ab",
+      "expected_sha256": "2f77164049d1e29788c3b68bdc017836ffdbc3d96b8def723c1f5dc4d32fb4ab",
+      "path": "jobs_matching.csv",
+      "status": "byte_identical"
+    }
+  ],
+  "historical_receipt_rewritten": false,
+  "strict_gate_bypassed": false,
+  "strict_workspace_byte_check_passed": false,
+  "unexplained_changes": []
+}

@@ -1,5 +1,115 @@
 # Kiểm thử
 
+## Mở rộng ngữ pháp nhiệm vụ & yêu cầu có bằng chứng v5 — 17/11/2026
+
+**237/237 test đạt**, 35,752 giây. 27 test mới ở `tests/ml/test_task_matching_v5.py` kiểm đầy đủ các bất biến chức danh chưa từng gặp, đổi tên chức danh bất biến (`title_used_for_decision=false`), lọc phủ định/tương lai cục bộ cấp mệnh đề (không làm rơi nhiệm vụ/kỹ năng ở mệnh đề trước khi mệnh đề sau có trạng thái dữ liệu như `chưa đồng bộ`), mẫu `carrier + action + object`, trích xuất phủ định công nghệ tường minh `nonuse` (`chưa sử dụng Kafka`), cây yêu cầu có ngoặc đơn và lựa chọn `một trong các`, phân biệt phạm vi phi công nghệ đã khai báo (`outside_technical_scope`) với yêu cầu kỹ thuật lạ (`Must know SecretFramework` chặn nhãn 2), và đối chiếu byte-identical hai bản đóng dấu `20261117_task_matching_v5_01`/`_02`.
+
+Hai run `20261117_task_matching_v5_01`/`_02` có **41/41 file giống byte** (`290` nhãn 0, `4.227` nhãn 1, `3` nhãn 2, `43.764` chưa nhãn; `120/120` CV và `489/788` JD có bằng chứng nhiệm vụ). [Báo cáo v5](docs/ml/task_matching_v5.md), [receipt v5](docs/ml/reports/20261117-task-matching-v5.json).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_task_matching_v5 tests/ml/test_task_matching_v5.py scripts/report-task-matching-v5.py
+if ($LASTEXITCODE -ne 0) { throw 'Task matching v5 lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_task_matching_v5 check --artifact .\ml_data_runs\20261117_task_matching_v5_01
+if ($LASTEXITCODE -ne 0) { throw 'Task matching v5 check failed' }
+```
+
+## Đối chiếu nhiệm vụ có bằng chứng v4 — 17/11/2026
+
+**210/210 test đạt**, 21,511 giây. 22 test mới ở `tests/ml/test_task_matching.py` kiểm chức danh chưa từng gặp đạt nhãn 2 khi không yêu cầu số năm, bất biến khi đổi tên chức danh/nghề, trùng công nghệ nhưng khác nhiệm vụ giữ trống thay vì gán 0, loại trừ ngữ cảnh phủ định/giả định/tương lai/giảng dạy, ưu tiên cuối câu và bảo toàn offset trích dẫn.
+
+Hai run `20261117_task_matching_v4_01`/`_02` có **41/41 file giống byte** (`107` nhãn 0, `325` nhãn 1, `0` nhãn 2, `47.852` chưa nhãn). [Báo cáo v4](docs/ml/task_matching_v4.md), [receipt v4](docs/ml/reports/20261117-task-matching-v4.json).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_task_matching tests/ml/test_task_matching.py scripts/report-task-matching.py
+if ($LASTEXITCODE -ne 0) { throw 'Task matching v4 lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_task_matching check --artifact .\ml_data_runs\20261117_task_matching_v4_01
+if ($LASTEXITCODE -ne 0) { throw 'Task matching v4 check failed' }
+```
+
+## Bộ thử trích xuất có cấu trúc — 17/11/2026
+
+**188/188 test đạt**, 59,141 giây. 19 test mới ở `tests/ml/test_extraction_trial.py` kiểm hash nguồn, quote/occurrence và offset Unicode, unknown/null, scope chưa rõ, cận exact/range, trường thừa/nhãn relevance bị cấm, logic sai dạng, coverage tự khai không thành chứng nhận, assertion độc lập với output baseline, tính giao hoán AND/OR, thiếu phản hồi không tự pass, và import giữ raw/reject trùng ID hoặc sai prompt. Import unit test dùng parent giả được đánh dấu test-only, không phải lần suy luận AI thật.
+
+Hai run `20261117_extraction_trial_v1_02`/`_03` có **40/40 file giống byte**. Baseline đạt **21/24 assertion development**; ba fixture chưa đạt được giữ trong báo cáo, không đổi expected để nâng điểm. 188 test đạt không có nghĩa baseline đạt 24/24 hoặc LLM đã chạy. [Báo cáo](docs/ml/extraction_trial.md), [receipt](docs/ml/reports/20261117-extraction-trial.json).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_extraction_trial tests/ml/test_extraction_trial.py scripts/report-extraction-trial.py
+if ($LASTEXITCODE -ne 0) { throw 'Extraction lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_extraction_trial check --artifact .\ml_data_runs\20261117_extraction_trial_v1_02
+if ($LASTEXITCODE -ne 0) { throw 'Extraction trial check failed' }
+```
+
+## Kiểm kê hồ sơ và rà định nghĩa nhãn — 17/11/2026
+
+**169/169 test đạt**, 51,479 giây. 11 test mới trong `tests/ml/test_document_inventory.py` kiểm phân biệt nguồn rỗng/cue chưa đọc/unknown được nêu rõ, không coi thiếu cue là thiếu thông tin, không coi ưu tiên là yêu cầu thời lượng bắt buộc, kiểm coverage theo đúng field/offset, phần đã đọc và phần chưa hiểu, bảo toàn dữ liệu/facts. Hợp đồng nhãn đề xuất chỉ là tài liệu, chưa áp dụng; test không chứng nhận ngữ nghĩa nhãn hoặc độ chính xác bộ đọc.
+
+Hai run `20261117_document_inventory_v1_01`/`_02`; [báo cáo và kiểm chứng từ run](docs/ml/document_inventory.md), [receipt](docs/ml/reports/20261117-document-inventory.json). Tool kiểm tra chain v3, nguồn/pilot, inventory toàn bộ 908 record và evidence. Không sửa nhãn v3, CV/JD, lineage hoặc partition; không train và không gọi dịch vụ LLM.
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_readiness tests/ml/test_document_inventory.py scripts/report-document-inventory.py
+if ($LASTEXITCODE -ne 0) { throw 'Inventory lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_readiness check --artifact .\ml_data_runs\20261117_document_inventory_v1_01
+if ($LASTEXITCODE -ne 0) { throw 'Inventory check failed' }
+```
+
+## Mở rộng cú pháp và chẩn đoán nhãn v3 — 17/11/2026
+
+**158/158 test đạt**, 28,269 giây; thêm 16 test trong `tests/ml/test_policy_v3.py`. Bao gồm thứ tự câu thời lượng, prefix/ưu tiên cuối câu, scope nghề/công nghệ, số thập phân, khoảng năm và cận nghiêm ngặt, tách câu giữ Node.js, phần câu chưa hiểu, lựa chọn/phủ định ở câu sau, bảo toàn parent và census cặp theo schema thật. Không suy “development experience” thành kinh nghiệm phần mềm khi không có scope rõ; không dùng tổng kinh nghiệm hoặc thực tập thay thời lượng công nghệ trong công việc.
+
+Run hiện hành `20261117_label_revision_v3_02` và `_03`; `_01` là snapshot trung gian trước chốt chặn cuối, giữ nguyên. [Kết quả từ hai run và kiểm chứng](docs/ml/label_revision_v3.md), [receipt](docs/ml/reports/20261117-label-revision-v3.json). Toàn bộ CV vẫn development, chưa train. Module v2 không sửa; v3 nằm ở package con và có snapshot/hash riêng.
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data/policies tests/ml/test_policy_v3.py scripts/report-label-revision-v3.py
+if ($LASTEXITCODE -ne 0) { throw 'V3 lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_data.policies check --artifact .\ml_data_runs\20261117_label_revision_v3_02
+if ($LASTEXITCODE -ne 0) { throw 'V3 check failed' }
+```
+
+## Luật kỹ thuật và kiểm tra đầu vào v2 — 17/11/2026
+
+**142/142 test đạt**, 30,444 giây. 23 test mới trong `tests/ml/test_policy_v2.py` kiểm AND/OR và ngoặc, alias công nghệ, yêu cầu/ưu tiên/điều kiện, thời lượng và scope, khoảng năm, bằng chứng nhiệm vụ, phủ định, checksum và overlay development. Test xác nhận thay đổi nội dung code hoặc byte CSV bị từ chối; chỉ chấp nhận khác newline code theo hợp đồng đã ghi. Không coi “chưa quản trị” là “chưa dùng”, không suy nhãn 0 từ khác nghề hoặc thiếu skill.
+
+Hai run hiện hành là `20261117_label_revision_v2_02` và `_03`; `_01` là snapshot trung gian trước bổ sung kiểm tra fingerprint mã LF, giữ nguyên để truy vết. Checker dựng lại facts/nhãn/tổng hợp và kiểm toàn bộ nguồn, manifest, offset bằng chứng, partition và exposure. [Báo cáo sinh từ hai run](docs/ml/label_revision_v2.md), [receipt kiểm chứng](docs/ml/reports/20261117-label-revision-v2.json). Kết quả kiểm thử không chứng nhận nhãn đúng về ngữ nghĩa: toàn bộ 120 CV là development, không còn holdout độc lập và chưa train model mới.
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data tests/ml/test_policy_v2.py tests/ml/test_readiness_audit.py scripts/report-label-revision.py
+if ($LASTEXITCODE -ne 0) { throw 'Label revision lint failed' }
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m ml_data check-label-revision --artifact .\ml_data_runs\20261117_label_revision_v2_02
+if ($LASTEXITCODE -ne 0) { throw 'Label revision verification failed' }
+```
+
+## Kiểm tra checksum và nguyên nhân thiếu nhãn — 16/11/2026
+
+**119/119 test đạt**, 84,780 giây. Chín test mới trong `tests/ml/test_readiness_audit.py`: chứng minh hash lịch sử bằng CRLF/LF cho bốn đường dẫn code/lock cụ thể; không miễn kiểm tra thay đổi logic hoặc newline CSV; phân biệt nghề khác với parser lỗi; skill không trùng với thiếu văn bản; giữ đúng precedence của luật; cờ ngăn nhãn 2 có thể chồng lấn; chẩn đoán cơ chế ngữ pháp; tổng số cặp trống đối soát chính xác; JD có nội dung nhưng metadata unknown.
+
+Hai run `20261116_readiness_audit_v1_01`/`_02` có **36/36 file giống byte**. Audit xác minh sealed artifact và tái tính 48.284 quyết định theo luật v1, báo riêng **50 file khớp byte + 4 file chỉ khác newline**. Không sửa checksum lịch sử, không nới gate strict, không thay parser/nhãn/CV/JD. Ruff đạt; `git diff --check` sạch. [Báo cáo](docs/ml/readiness_audit.md), [receipt kiểm thử và hash run](docs/ml/reports/20261116-readiness-audit-verification.json).
+
+```powershell
+Set-Location D:\JobApply
+& .\jobapply_pilot_v1\.venv-embedding\Scripts\python.exe -m unittest discover -s tests/ml -v
+if ($LASTEXITCODE -ne 0) { throw 'ML tests failed' }
+& .\.venv\Scripts\python.exe -m ruff check ml_data/readiness_audit.py ml_data/__main__.py tests/ml/test_readiness_audit.py
+if ($LASTEXITCODE -ne 0) { throw 'Readiness audit lint failed' }
+```
+
 ## Chuẩn bị 120 CV và luật nhãn mở rộng — 16/11/2026
 
 **110/110 test đạt**, 69,220 giây. Bổ sung 2 test giữ ID/lineage và partition cũ, 13 test ngữ nghĩa luật nhãn: thiếu skill không phải phủ định; khác nghề không tự nhãn 0; unknown/outside scope; ưu tiên và AND/OR; scope tháng và ngưỡng nghiêm ngặt; câu điều kiện; offset theo schema JD thực; census toàn catalog và chặn metric khi thiếu nhãn. Dùng fixture riêng, không dùng CV holdout để sửa cách chấm.

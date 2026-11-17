@@ -1,0 +1,12 @@
+{
+  "cv": {
+    "role": "Platform Engineer",
+    "text": "Tôi triển khai Kubernetes bằng Python."
+  },
+  "jd": {
+    "title": "Site Reliability Engineer",
+    "tasks_text": "Triển khai Kubernetes.",
+    "requirements_text": "Must know Kubernetes and Python",
+    "preferred_requirements_text": ""
+  }
+}

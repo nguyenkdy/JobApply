@@ -1,0 +1,451 @@
+{
+  "$defs": {
+    "logic": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "term"
+            },
+            "term": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "op",
+            "term"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/logic"
+              },
+              "maxItems": 32,
+              "minItems": 2,
+              "type": "array"
+            },
+            "op": {
+              "enum": [
+                "all",
+                "any"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "op",
+            "children"
+          ],
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "items": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "occurrence": {
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "quote": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "quote",
+                    "occurrence"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 20,
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "const": "skill"
+              },
+              "modality": {
+                "enum": [
+                  "conditional",
+                  "observed",
+                  "preferred",
+                  "required",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "polarity": {
+                "enum": [
+                  "affirmative",
+                  "negated",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "kind",
+              "modality",
+              "polarity",
+              "value",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "occurrence": {
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "quote": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "quote",
+                    "occurrence"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 20,
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "const": "task"
+              },
+              "modality": {
+                "enum": [
+                  "conditional",
+                  "observed",
+                  "preferred",
+                  "required",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "polarity": {
+                "enum": [
+                  "affirmative",
+                  "negated",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "family": {
+                    "enum": [
+                      "backend_services",
+                      "data_analysis",
+                      "data_pipeline",
+                      "database_design",
+                      "infrastructure_operations",
+                      "ml_modeling",
+                      "mobile_application",
+                      "other",
+                      "quality_testing",
+                      "user_interface"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "family",
+                  "description"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "kind",
+              "modality",
+              "polarity",
+              "value",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "occurrence": {
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "quote": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "quote",
+                    "occurrence"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 20,
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "const": "logic"
+              },
+              "modality": {
+                "enum": [
+                  "conditional",
+                  "observed",
+                  "preferred",
+                  "required",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "polarity": {
+                "enum": [
+                  "affirmative",
+                  "negated",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "$ref": "#/$defs/logic"
+              }
+            },
+            "required": [
+              "kind",
+              "modality",
+              "polarity",
+              "value",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "evidence": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "occurrence": {
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "quote": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "quote",
+                    "occurrence"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 20,
+                "minItems": 1,
+                "type": "array"
+              },
+              "kind": {
+                "const": "experience"
+              },
+              "modality": {
+                "enum": [
+                  "conditional",
+                  "observed",
+                  "preferred",
+                  "required",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "polarity": {
+                "enum": [
+                  "affirmative",
+                  "negated",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "additionalProperties": false,
+                "properties": {
+                  "experience_kind": {
+                    "enum": [
+                      "contract",
+                      "employment",
+                      "internship",
+                      "project",
+                      "unspecified"
+                    ],
+                    "type": "string"
+                  },
+                  "maximum_months": {
+                    "anyOf": [
+                      {
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "minimum_months": {
+                    "anyOf": [
+                      {
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "operator": {
+                    "enum": [
+                      "exact",
+                      "minimum",
+                      "range",
+                      "strict_minimum",
+                      "unknown"
+                    ],
+                    "type": "string"
+                  },
+                  "scope": {
+                    "anyOf": [
+                      {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "scope",
+                  "minimum_months",
+                  "maximum_months",
+                  "operator",
+                  "experience_kind"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "kind",
+              "modality",
+              "polarity",
+              "value",
+              "evidence"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "maxItems": 500,
+      "type": "array"
+    },
+    "coverage": {
+      "additionalProperties": {
+        "enum": [
+          "claimed_complete",
+          "not_assessed",
+          "partial"
+        ],
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "document_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "structured-extraction-v1"
+    },
+    "source_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "document_id",
+    "source_sha256",
+    "coverage",
+    "claims"
+  ],
+  "type": "object"
+}

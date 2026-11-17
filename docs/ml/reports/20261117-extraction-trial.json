@@ -1,0 +1,161 @@
+{
+  "first": "ml_data_runs/20261117_extraction_trial_v1_02",
+  "identical_files": 40,
+  "manifest_sha256": "adb203aa511f64dc6972cf6377a9432926a4ab57a92626660f7de9e0eab5bca2",
+  "repeat": "ml_data_runs/20261117_extraction_trial_v1_03",
+  "summary": {
+    "baseline_fixture_assertions": {
+      "cases": [
+        {
+          "document_id": "FIXTURE_duration_vi",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_duration_strict",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_duration_range",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_duration_decimal",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_generic_time",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_ambiguous_scope",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_preferred_time",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_conditional_time",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_no_required_years",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_or_logic",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_and_logic",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_mixed_logic",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_optional_skill",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_unknown_tool",
+          "passed": false,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_backend_vi",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_backend_en",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_paraphrase",
+          "passed": false,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_negated",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_tool_not_task",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_ui",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_qa",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_task_analysis",
+          "passed": false,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_no_total_to_tech",
+          "passed": true,
+          "status": "checked"
+        },
+        {
+          "document_id": "FIXTURE_cross_sentence_or",
+          "passed": true,
+          "status": "checked"
+        }
+      ],
+      "interpretation": "Development assertion agreement only, not corpus accuracy, independent evaluation or ranking quality",
+      "passed": 21,
+      "total": 24
+    },
+    "baseline_source": "Real corpus: frozen v3 facts include upstream metadata and authored CV annotations; not a text-only end-to-end baseline. Fixtures: v3 JD parsing functions.",
+    "by_kind": {
+      "cv": 12,
+      "jd": 29
+    },
+    "candidate_status": "not_run_missing_model_endpoint_configuration",
+    "comparison_limit": "A future text-only LLM and metadata-assisted corpus baseline do not have equivalent inputs. No corpus semantic accuracy measured.",
+    "documents": 41,
+    "external_api_calls": 0,
+    "fixtures": 24,
+    "gold": false,
+    "independent_evaluation": false,
+    "labels_changed": 0,
+    "models_trained": 0,
+    "version": "structured-extraction-v1"
+  },
+  "tests": {
+    "log_sha256": "aaa383fc8ca3c69fc929256d9999f377ee96da1bca87469472946c9dd7757be7",
+    "passed": 188,
+    "seconds": 59.141
+  },
+  "verification": {
+    "candidate_executed": false,
+    "documents": 41,
+    "fixtures": 24,
+    "verified": true
+  }
+}

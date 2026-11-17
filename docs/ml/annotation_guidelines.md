@@ -1,5 +1,7 @@
 # Nhãn tự động — quy tắc và giới hạn
 
+**Lưu ý phiên bản:** phần dưới là quy tắc lịch sử ngày 14/11 cho benchmark 50 JD, không áp dụng trực tiếp cho catalog 788 JD. Luật đang chạy ở [báo cáo v3](label_revision_v3.md); [rà soát định nghĩa nhãn đề xuất](recommendation_label_contract.md) phân biệt rõ các thay đổi và chưa áp dụng để đổi nhãn. Đặc biệt không dùng quy tắc “khác nghề → 0” bên dưới cho dữ liệu mở rộng.
+
 Ngày 14/11/2026. Dùng `automatic-proxy-labeler-v3-scoped-coverage`; không yêu cầu người chấm, calibration hoặc vòng hai reviewer. Nhãn tự động là mục tiêu thí nghiệm nội bộ, không phải gold hoặc bằng chứng về mức phù hợp thật. Bộ luật được cố định trước khi sinh nhãn lô CV mới.
 
 - `0`: hai nghề chính đều được xác định và khác nhau theo quy tắc hiện tại. Từ khóa chung không đủ làm hai nghề tương đương.

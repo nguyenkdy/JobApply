@@ -1,0 +1,15 @@
+{
+  "files_identical": 36,
+  "frozen_policy_modified": false,
+  "manifest_sha256": "6d8bfb1afd997cc294915586854f6036fef474b1b1806e8b480caad8481d7a7b",
+  "runs": [
+    "ml_data_runs/20261116_readiness_audit_v1_01",
+    "ml_data_runs/20261116_readiness_audit_v1_02"
+  ],
+  "strict_byte_gate_modified": false,
+  "tests": {
+    "count": 119,
+    "log_sha256": "a23bef53ce3eb64e24885d47ad7846c78e416bf0687009d46afbb2979d374355",
+    "seconds": 84.78
+  }
+}

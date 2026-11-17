@@ -1,0 +1,276 @@
+{
+  "cv_diagnostics": {
+    "count": 120,
+    "cv_without_positive_skills": 0,
+    "duration_scopes": {
+      "c#": 1,
+      "devops": 1,
+      "dự án cá nhân": 24,
+      "java": 4,
+      "kiểm thử phần mềm": 2,
+      "professional experience": 48,
+      "python": 2,
+      "thực tập": 24
+    },
+    "experience_kinds": {
+      "contract": 24,
+      "employment": 24,
+      "internship": 24,
+      "project": 24,
+      "unknown": 24
+    },
+    "interpretation": "Source-declared synthetic evidence. Unknown timelines are not zero and missing skills do not prove inability.",
+    "no_duration_assertion": 24,
+    "unknown_timeline_declared": 24
+  },
+  "frozen_decisions_recomputed": true,
+  "git": {
+    "attributes": [
+      "* text=auto eol=lf",
+      "*.sh text eol=lf",
+      "*.py text eol=lf",
+      "*.yaml text eol=lf",
+      "*.yml text eol=lf",
+      "*.md text eol=lf",
+      "Dockerfile text eol=lf"
+    ],
+    "branch": "main",
+    "head": "5d672a62ee1df2b967601806bb005c479c907f34",
+    "tree": "2347735dd639db4d4a37f881e878707496cedbab"
+  },
+  "historical_manifests_verified": 6,
+  "inputs": {
+    "intake_manifest_sha256": "68544a80cedf516a720e895381caac8a4793209ba691103f534bba0db29f49a4",
+    "intake_path": "ml_data_runs/20261116_authored_cv_v7_01",
+    "labels_manifest_sha256": "c80bb85cb66f7dfb57edbdc97d0ee818e6aa3f3529a0fe0ab9716f8d9021be42",
+    "labels_path": "ml_data_runs/20261116_expanded_labels_v1_01",
+    "receipt_path": "docs/ml/reports/20261116-retired-200-cv-cleanup.json",
+    "receipt_sha256": "0e7d90e4cf8883b744c37e6a2d995e6db95cfd8b4b3f8e0821c79daa74275502"
+  },
+  "jd_diagnostics": {
+    "duration_indicators_overlapping": {
+      "alternatives_or_condition": 80,
+      "minimum_cue_present": 349,
+      "other_unsupported_duration_syntax_or_scope": 61,
+      "range_or_plus_notation": 87,
+      "relative_role_scope": 25
+    },
+    "empty_source_fields": {
+      "preferred_requirements_text": 653,
+      "requirements_text": 0,
+      "tasks_text": 0,
+      "title_for_matching": 0
+    },
+    "jd_count": 788,
+    "jd_with_mandatory_technology": 5,
+    "jd_with_parsed_duration": 1,
+    "jd_with_unresolved_duration": 428,
+    "jd_without_core_skill_evidence": 69,
+    "jd_without_nonoptional_numeric_duration_pattern": 359,
+    "limits": "Observed field presence and frozen-parser mechanisms, not a semantic accuracy audit. No numeric pattern is not proof of no experience requirement.",
+    "unknown_role_diagnostics": {
+      "multiple_candidates": 20,
+      "no_candidate_from_extractor": 116
+    },
+    "unresolved_clause_categories": {
+      "document_guard_disabled_local_parse": 1,
+      "duration_sentence_not_supported": 212,
+      "prefix_not_supported": 1869,
+      "technology_expression_not_supported": 211
+    },
+    "unresolved_clause_count": 2293,
+    "unresolved_duration_clause_count": 473
+  },
+  "label_policy_changed": false,
+  "labels_created": 0,
+  "live_workspace_byte_match": false,
+  "models_trained": 0,
+  "old_strict_command_status": "Protected originals changed: code/lock files differ only by CRLF/LF; no receipt rewrite or guard bypass",
+  "pair_diagnostics": {
+    "holdout_cv_text_inspected_for_tuning": false,
+    "interpretation": "Exclusive categories describe the actual decision path. Parser flags and label-2 blockers overlap and cannot be summed or equated to recoverable labels.",
+    "label_one_count": 4319,
+    "label_one_gaps_by_partition": {
+      "test": {
+        "mandatory_technology_not_fully_supported": 19,
+        "no_parsed_mandatory_technology": 1940,
+        "no_parsed_required_duration": 1959,
+        "required_duration_not_fully_supported": 3,
+        "role_overlap_not_exact": 973,
+        "unresolved_duration_clause": 1053,
+        "unresolved_technical_clause": 1913
+      },
+      "train": {
+        "mandatory_technology_not_fully_supported": 2,
+        "no_parsed_mandatory_technology": 255,
+        "no_parsed_required_duration": 257,
+        "role_overlap_not_exact": 79,
+        "unresolved_duration_clause": 129,
+        "unresolved_technical_clause": 253
+      },
+      "validation": {
+        "mandatory_technology_not_fully_supported": 16,
+        "no_parsed_mandatory_technology": 2082,
+        "no_parsed_required_duration": 2097,
+        "required_duration_not_fully_supported": 2,
+        "role_overlap_not_exact": 1084,
+        "unresolved_duration_clause": 1114,
+        "unresolved_technical_clause": 2048
+      }
+    },
+    "label_one_gaps_overlapping": {
+      "mandatory_technology_not_fully_supported": 37,
+      "no_parsed_mandatory_technology": 4277,
+      "no_parsed_required_duration": 4313,
+      "required_duration_not_fully_supported": 5,
+      "role_overlap_not_exact": 2136,
+      "unresolved_duration_clause": 2296,
+      "unresolved_technical_clause": 4214
+    },
+    "labels": {
+      "0": 1,
+      "1": 4319,
+      "unlabeled": 43964
+    },
+    "labels_by_partition": {
+      "test": {
+        "1": 1962,
+        "unlabeled": 21678
+      },
+      "train": {
+        "1": 257,
+        "unlabeled": 747
+      },
+      "validation": {
+        "0": 1,
+        "1": 2100,
+        "unlabeled": 21539
+      }
+    },
+    "no_new_judgments": true,
+    "no_policy_change": true,
+    "pair_count": 48284,
+    "unlabeled_by_cv_role": {
+      "ai/ml engineer": {
+        "different_roles_fit_unresolved": 3454,
+        "generic_jd_role": 132,
+        "no_exact_shared_skill": 48,
+        "no_jd_core_skill_evidence": 18,
+        "outside_software_scope": 170,
+        "unknown_or_conflicting_jd_role": 827
+      },
+      "backend .net": {
+        "different_roles_fit_unresolved": 1835,
+        "generic_jd_role": 129,
+        "no_exact_shared_skill": 1592,
+        "outside_software_scope": 172,
+        "unknown_or_conflicting_jd_role": 828
+      },
+      "backend java": {
+        "different_roles_fit_unresolved": 1831,
+        "generic_jd_role": 129,
+        "no_exact_shared_skill": 889,
+        "outside_software_scope": 169,
+        "unknown_or_conflicting_jd_role": 830
+      },
+      "backend python": {
+        "different_roles_fit_unresolved": 1832,
+        "generic_jd_role": 131,
+        "no_exact_shared_skill": 1441,
+        "outside_software_scope": 172,
+        "unknown_or_conflicting_jd_role": 830
+      },
+      "data engineer": {
+        "different_roles_fit_unresolved": 3534,
+        "generic_jd_role": 130,
+        "no_exact_shared_skill": 13,
+        "outside_software_scope": 169,
+        "unknown_or_conflicting_jd_role": 828
+      },
+      "devops/cloud": {
+        "different_roles_fit_unresolved": 3534,
+        "generic_jd_role": 126,
+        "no_exact_shared_skill": 46,
+        "no_jd_core_skill_evidence": 24,
+        "outside_software_scope": 169,
+        "unknown_or_conflicting_jd_role": 831
+      },
+      "frontend": {
+        "different_roles_fit_unresolved": 1474,
+        "generic_jd_role": 127,
+        "no_exact_shared_skill": 1366,
+        "outside_software_scope": 170,
+        "unknown_or_conflicting_jd_role": 827
+      },
+      "fullstack": {
+        "different_roles_fit_unresolved": 1835,
+        "generic_jd_role": 131,
+        "no_exact_shared_skill": 903,
+        "outside_software_scope": 173,
+        "unknown_or_conflicting_jd_role": 827
+      },
+      "mobile": {
+        "different_roles_fit_unresolved": 2987,
+        "generic_jd_role": 128,
+        "no_exact_shared_skill": 475,
+        "outside_software_scope": 170,
+        "unknown_or_conflicting_jd_role": 825
+      },
+      "qa/testing": {
+        "different_roles_fit_unresolved": 3450,
+        "generic_jd_role": 127,
+        "no_exact_shared_skill": 66,
+        "no_jd_core_skill_evidence": 43,
+        "outside_software_scope": 170,
+        "unknown_or_conflicting_jd_role": 827
+      }
+    },
+    "unlabeled_by_partition": {
+      "test": {
+        "different_roles_fit_unresolved": 12642,
+        "generic_jd_role": 630,
+        "no_exact_shared_skill": 3444,
+        "no_jd_core_skill_evidence": 42,
+        "outside_software_scope": 840,
+        "unknown_or_conflicting_jd_role": 4080
+      },
+      "train": {
+        "different_roles_fit_unresolved": 482,
+        "generic_jd_role": 30,
+        "no_exact_shared_skill": 90,
+        "no_jd_core_skill_evidence": 1,
+        "outside_software_scope": 24,
+        "unknown_or_conflicting_jd_role": 120
+      },
+      "validation": {
+        "different_roles_fit_unresolved": 12642,
+        "generic_jd_role": 630,
+        "no_exact_shared_skill": 3305,
+        "no_jd_core_skill_evidence": 42,
+        "outside_software_scope": 840,
+        "unknown_or_conflicting_jd_role": 4080
+      }
+    },
+    "unlabeled_categories_exclusive": {
+      "different_roles_fit_unresolved": 25766,
+      "generic_jd_role": 1290,
+      "no_exact_shared_skill": 6839,
+      "no_jd_core_skill_evidence": 85,
+      "outside_software_scope": 1704,
+      "unknown_or_conflicting_jd_role": 8280
+    },
+    "unlabeled_count": 43964,
+    "unlabeled_parser_flags_overlapping": {
+      "jd_has_unresolved_duration": 23916,
+      "jd_has_unresolved_technical_clause": 37861
+    }
+  },
+  "protected_counts": {
+    "byte_identical": 50,
+    "eol_only_proven": 4
+  },
+  "ready_for_training": false,
+  "scope": "Steps 1 and 2 only: integrity explanation and evidence-gap diagnostics. No parser/label changes.",
+  "snapshot_integrity_verified": true,
+  "version": "readiness-diagnostics-v1"
+}

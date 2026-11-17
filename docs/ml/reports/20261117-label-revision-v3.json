@@ -1,0 +1,128 @@
+{
+  "checks": [
+    {
+      "labels": {
+        "0": 98,
+        "1": 2427,
+        "2": 0,
+        "unlabeled": 45759
+      },
+      "models_trained": 0,
+      "ready_for_training": false,
+      "verified": true
+    },
+    {
+      "labels": {
+        "0": 98,
+        "1": 2427,
+        "2": 0,
+        "unlabeled": 45759
+      },
+      "models_trained": 0,
+      "ready_for_training": false,
+      "verified": true
+    }
+  ],
+  "first": "ml_data_runs/20261117_label_revision_v3_02",
+  "identical_files": 44,
+  "manifest_sha256": "42421bac5851f39339d084a2c5e5b3e43c8896e65f1bde196e8cdeeeb3db679b",
+  "repeat": "ml_data_runs/20261117_label_revision_v3_03",
+  "summary": {
+    "before_labels": {
+      "0": 41,
+      "1": 2434,
+      "2": 0,
+      "unlabeled": 45809
+    },
+    "blank_reasons_exclusive": {
+      "no_exact_shared_skill": 1129,
+      "no_jd_core_skill": 66,
+      "occupation_transfer_without_task_evidence": 37120,
+      "outside_software_scope": 1766,
+      "unresolved_occupation_and_tasks": 5678
+    },
+    "cv_count": 120,
+    "exposure": "All CV remain development; original partitions diagnostic only",
+    "independent_test_cv_count": 0,
+    "jd_count": 788,
+    "label_one_gaps_overlapping": {
+      "duration_unknown": 277,
+      "mandatory_skill_unknown": 105,
+      "no_mandatory_technology": 2293,
+      "no_scoped_duration": 2128,
+      "not_exact_occupation": 246,
+      "unconsumed_requirement": 2355
+    },
+    "labels": {
+      "0": 98,
+      "1": 2427,
+      "2": 0,
+      "unlabeled": 45759
+    },
+    "models_trained": 0,
+    "pair_count": 48284,
+    "parser": {
+      "changed_jd_count": 165,
+      "clause_states": {
+        "duration": 88,
+        "mandatory": 32,
+        "preferred": 1072,
+        "unresolved": 3975
+      },
+      "jd_with_mandatory_technology": 31,
+      "jd_with_parsed_duration": 88,
+      "unresolved_reasons": {
+        "conditional_applicability": 240,
+        "duration_syntax_or_scope": 542,
+        "mixed_unresolved": 98,
+        "unconsumed_requirement_prose": 3018,
+        "unconsumed_sentence_residual": 77
+      }
+    },
+    "partitions": {
+      "test": {
+        "labels": {
+          "0": 55,
+          "1": 1066,
+          "2": 0,
+          "unlabeled": 22519
+        },
+        "total": 23640
+      },
+      "train": {
+        "labels": {
+          "0": 2,
+          "1": 181,
+          "2": 0,
+          "unlabeled": 821
+        },
+        "total": 1004
+      },
+      "validation": {
+        "labels": {
+          "0": 41,
+          "1": 1180,
+          "2": 0,
+          "unlabeled": 22419
+        },
+        "total": 23640
+      }
+    },
+    "ready_for_training": false,
+    "scope": "Technical proxy, not gold, hiring accuracy or independent evaluation; counts do not measure semantic accuracy",
+    "transitions": {
+      "0->0": 41,
+      "1->0": 6,
+      "1->1": 2427,
+      "1->unlabeled": 1,
+      "unlabeled->0": 51,
+      "unlabeled->unlabeled": 45758
+    },
+    "version": "expanded-technical-proxy-v3"
+  },
+  "tests": {
+    "log_sha256": "1f0688cf30390de769a9dab6cda90ce7afb711bcac8f20ae5f3b3a507b8684fb",
+    "passed": 158,
+    "seconds": 28.269
+  }
+}

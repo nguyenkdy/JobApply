@@ -94,6 +94,18 @@ def main():
     proxy_check = sub.add_parser("check-expanded-labels")
     proxy_check.add_argument("--intake", type=Path, required=True)
     proxy_check.add_argument("--artifact", type=Path, required=True)
+    readiness = sub.add_parser("audit-readiness", help="Explain protected-input drift and frozen missing-label decisions; no new labels")
+    readiness.add_argument("--intake", type=Path, required=True)
+    readiness.add_argument("--labels", type=Path, required=True)
+    readiness.add_argument("--receipt", type=Path, default=ROOT / "docs/ml/reports/20261116-retired-200-cv-cleanup.json")
+    readiness.add_argument("--output", type=Path, required=True)
+    revision = sub.add_parser("prepare-label-revision", help="v2 evidence policy on development cohort; preserve original partitions, no training")
+    revision.add_argument("--intake", type=Path, required=True)
+    revision.add_argument("--old-labels", type=Path, required=True)
+    revision.add_argument("--audit", type=Path, required=True)
+    revision.add_argument("--output", type=Path, required=True)
+    revision_check = sub.add_parser("check-label-revision")
+    revision_check.add_argument("--artifact", type=Path, required=True)
     args = parser.parse_args()
     try:
         if args.command == "inventory":
@@ -150,6 +162,15 @@ def main():
         elif args.command == "check-expanded-labels":
             from .expanded_labels import check_labels
             result = check_labels(args.intake, args.artifact)
+        elif args.command == "audit-readiness":
+            from .readiness_audit import audit_readiness
+            result = audit_readiness(args.intake, args.labels, args.receipt, args.output)
+        elif args.command == "prepare-label-revision":
+            from .label_revision import prepare_revision
+            result = prepare_revision(args.intake, args.old_labels, args.audit, args.output)
+        elif args.command == "check-label-revision":
+            from .label_revision import check_revision
+            result = check_revision(args.artifact)
         elif args.command == "upstream":
             from .upstream import prepare_upstream
             full = prepare_upstream(args.source_dir, args.output, args.seed)

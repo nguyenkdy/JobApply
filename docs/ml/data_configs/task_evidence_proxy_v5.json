@@ -1,0 +1,14 @@
+{
+  "exposure": "development; existing partitions diagnostic only",
+  "limitations": "Finite task/technology vocabulary; open occupation input does not mean universal occupation support. Technical proxy, not gold or hiring suitability",
+  "llm_calls": 0,
+  "matching_basis": "actual_work_tasks_and_explicit_technical_requirements_only",
+  "models_trained": 0,
+  "negative": "Explicit contradiction of an applicable mandatory requirement only; absence/title mismatch/task difference are not negatives",
+  "parent": "task-evidence-proxy-v4",
+  "positive": "Affirmative shared task function AND content-derived common technology",
+  "scope": "Preserve existing explicit dataset exclusions; do not derive new exclusions from free-form job title",
+  "strong": "Shared task and technology, all detected JD task families covered, task segments accounted, complete bounded requirement grammar, supported mandatory conditions; duration not mandatory if none stated",
+  "title_policy": "Job title and CV role are non-gating metadata; unseen or renamed titles never reject, promote, or demote a pair",
+  "version": "task-evidence-proxy-v5"
+}
